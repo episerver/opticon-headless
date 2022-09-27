@@ -1,0 +1,55 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+#create a volume for the my sql container.To ensure Data persists after my sql container is stopped
+volumes:
+  mssqldata:
+  App_Data:
+
+services:
+  # Database Service
+  db:
+    container_name: "opticon-sql"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql/data
+    build:
+      dockerfile: ./Sql.Dockerfile
+      context: .
+    environment:
+      SA_PASSWORD: "r@QP65dDM%mqH@^R@Lv6iBICf"
+      ACCEPT_EULA: "Y"
+
+  # Backend Service
+  backend:
+    container_name: "opticon-backend"
+    volumes:
+      - App_Data:/app/App_Data
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    depends_on: 
+      - db
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    environment: 
+      ConnectionStrings__EPiServerDB: "Server=db;Database=opticon.headless.cms;User Id=cmsUser;Password=epi#Server7Local;TrustServerCertificate=True"
+      ASPNETCORE_ENVIRONMENT: "Development"
+
+    # Frontend Service
+  frontend:
+    container_name: "opticon-frontend"
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+    depends_on: 
+      - backend
+    ports:
+      - "5001:80"
+    restart: unless-stopped
+    environment: 
+      BASE_URL: "http://localhost:5000/"
+      ENV: "Development"

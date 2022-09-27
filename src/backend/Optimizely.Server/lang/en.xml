@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language name="English" id="en">
+		<displayoptions>
+			<full>Full (1/1)</full>
+			<half>Half (1/2)</half>
+			<onesixth>One Sixth (1/6)</onesixth>
+			<onefourth>One Fourth (1/4)</onefourth>
+			<onethird>One Third (1/3)</onethird>
+			<twothird>Two Thirds (2/3)</twothird>
+			<threefourth>Three Fourths (3/4)</threefourth>
+			<fivesixth>Five Sixths (5/6)</fivesixth>
+		</displayoptions>
+	</language>
+</languages>
