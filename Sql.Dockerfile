@@ -8,7 +8,6 @@ EXPOSE 1433
 
 WORKDIR /src
 COPY ./build/SetupDatabases.sh /docker/SetupDatabases.sh
-COPY ./build/CreateDatabaseAndUser.sql /docker/CreateDatabaseAndUser.sql
 RUN chmod -R 777 /docker/.
 
 ENTRYPOINT /docker/SetupDatabases.sh & /opt/mssql/bin/sqlservr

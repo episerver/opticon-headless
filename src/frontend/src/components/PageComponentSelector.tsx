@@ -1,18 +1,13 @@
-﻿import { ContentData, ContentResolver, defaultConfig, ResolvedContent } from "@episerver/content-delivery";
+﻿import { ContentData  } from "@episerver/content-delivery";
+import {  getContentResolver } from "../DefaultContext";
 import Config from "../config.json";
-import React, { lazy } from "react";
+import React, { lazy, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import loadable from '@loadable/component';
 
 export const PageDataLoader = async (): Promise<ContentData | undefined> => {
-    let baseUrl = Config.BASE_URL;
-    if (baseUrl === '$BASE_URL') {
-        baseUrl = "http://localhost:5000/";
-    }
-    defaultConfig.apiUrl = `${baseUrl}api/episerver/v3.0`;
-    defaultConfig.expandAllProperties = true;
-    const contentResolver = new ContentResolver(defaultConfig);
-    const content = await contentResolver.resolveContent(window.location.pathname, true);
+    const context = getContentResolver();
+    const content = await  context.resolveContent(window.location.pathname, true);
     return content.content;
 }
 

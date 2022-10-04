@@ -1,486 +1,714 @@
 {
-    "contentTypes": [
-      {
-        "id": "887a4935-9b8b-4460-a02c-5991f19b54ee",
-        "name": "ButtonBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Button Block",
-          "description": "Block to create a call to action button to navigate to specified link.",
-          "available": true,
-          "sortOrder": 100
-        },
-        "properties": [
-          {
-            "name": "Text",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Text",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The call to action text for the button."
-            }
-          },
-          {
-            "name": "Link",
-            "dataType": "PropertyUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Link",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "Where to send the user when clicking on the button.",
-              "hint": "Url"
-            }
+  "contentTypes": [
+    {
+      "id": "887a4935-9b8b-4460-a02c-5991f19b54ee",
+      "name": "ButtonBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Button Block",
+        "description": "Block to create a call to action button to navigate to specified link.",
+        "available": true,
+        "sortOrder": 100
+      },
+      "properties": [
+        {
+          "name": "Text",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Text",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The call to action text for the button."
           }
-        ]
-      },
-      {
-        "id": "9d10b889-b516-4aa9-bf79-235287c4f400",
-        "name": "TextBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Text Block",
-          "description": "Block with HTML editor",
-          "available": true,
-          "sortOrder": 100
         },
-        "properties": [
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main Body",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The text to show."
-            }
+        {
+          "name": "Link",
+          "dataType": "PropertyUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Link",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "Where to send the user when clicking on the button.",
+            "hint": "Url"
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "9d10b889-b516-4aa9-bf79-235287c4f400",
+      "name": "TextBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Text Block",
+        "description": "Block with HTML editor",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "id": "5555441a-1d02-461f-bb60-697d8869c09a",
-        "name": "VideoBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Video Block",
-          "description": "Show videos from the default media library",
-          "available": true,
-          "sortOrder": 100
+      "properties": [
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main Body",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The text to show."
+          }
+        }
+      ]
+    },
+    {
+      "id": "5555441a-1d02-461f-bb60-697d8869c09a",
+      "name": "VideoBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Video Block",
+        "description": "Show videos from the default media library",
+        "available": true,
+        "sortOrder": 100
+      },
+      "properties": [
+        {
+          "name": "Heading",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Heading",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The heading to show above the video"
+          }
         },
-        "properties": [
-          {
-            "name": "Heading",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Heading",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The heading to show above the video"
-            }
-          },
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main Body",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "The text to show below the heading and above the video."
-            }
-          },
-          {
-            "name": "Video",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Video",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "The video to show."
-            }
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main Body",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "The text to show below the heading and above the video."
           }
-        ]
-      },
-      {
-        "id": "78078113-ccdb-4467-b24a-5489c81437e5",
-        "name": "VimeoBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Vimeo Link",
-          "description": "The block to show the vimeo video.",
-          "available": true,
-          "sortOrder": 100
         },
-        "properties": [
-          {
-            "name": "Heading",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Heading",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The heading to display above the vimeo video."
-            }
-          },
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main Body ",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "The text to display below the heading and above the vimeo video."
-            }
-          },
-          {
-            "name": "VimeoLink",
-            "dataType": "PropertyUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Vimeo LInk",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "The vimeo video link.",
-              "hint": "Url"
-            }
+        {
+          "name": "Video",
+          "dataType": "PropertyContentReference",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Video",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "The video to show."
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "78078113-ccdb-4467-b24a-5489c81437e5",
+      "name": "VimeoBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Vimeo Link",
+        "description": "The block to show the vimeo video.",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "id": "527199e6-e8af-4124-a528-2dca5d6f2531",
-        "name": "HeroBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Hero Block",
-          "description": "Block for image or video with text overlay and ability to set link to navigate to",
-          "available": true,
-          "sortOrder": 100
+      "properties": [
+        {
+          "name": "Heading",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Heading",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The heading to display above the vimeo video."
+          }
         },
-        "properties": [
-          {
-            "name": "BackgroundImage",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Background Image",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The image to be used as the background.  If background video is set it takes precedent."
-            }
-          },
-          {
-            "name": "BackgroundVideo",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Background Video",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "The background video to use."
-            }
-          },
-          {
-            "name": "Title",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Title",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "Headline for the hero block"
-            }
-          },
-          {
-            "name": "Description",
-            "dataType": "PropertyLongString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Description",
-              "groupName": "Information",
-              "sortOrder": 3,
-              "helpText": "Text underneath the title to give more context or call to action"
-            }
-          },
-          {
-            "name": "Link",
-            "dataType": "PropertyUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Link",
-              "groupName": "Information",
-              "sortOrder": 4,
-              "helpText": "The link where to call to action should take the user to.",
-              "hint": "Url"
-            }
-          },
-          {
-            "name": "ButtonText",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Button Text",
-              "groupName": "Information",
-              "sortOrder": 5,
-              "helpText": "The call to action text on the button.  If no text is set, no button is showed."
-            }
-          },
-          {
-            "name": "IsScreenWidth",
-            "dataType": "PropertyBoolean",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Is Screen width",
-              "groupName": "Information",
-              "sortOrder": 6,
-              "helpText": "If selected the hero block will be the screen width rather than the width of the parent container or display option."
-            }
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main Body ",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "The text to display below the heading and above the vimeo video."
           }
-        ]
-      },
-      {
-        "id": "4de2c737-6155-4f72-9ba1-5c7d83ee5adc",
-        "name": "Standard",
-        "baseType": "Page",
-        "editSettings": {
-          "displayName": "Standard page",
-          "description": "The default standard page type",
-          "available": true,
-          "sortOrder": 100
         },
-        "properties": [
-          {
-            "name": "MainContentArea",
-            "dataType": "PropertyContentArea",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main content area",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "Add blocks here for the home page"
-            }
-          },
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main body",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "The markup for the main body"
-            }
-          },
-          {
-            "name": "MainImage",
-            "dataType": "PropertyImageUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main image",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "Image to be used in meta properties"
-            }
-          },
-          {
-            "name": "MetaDescription",
-            "dataType": "PropertyLongString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Meta description",
-              "groupName": "Information",
-              "sortOrder": 3,
-              "helpText": "Used for seo meta description pruposes"
-            }
+        {
+          "name": "Link",
+          "dataType": "PropertyUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Link",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "The vimeo video link.",
+            "hint": "Url"
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "527199e6-e8af-4124-a528-2dca5d6f2531",
+      "name": "HeroBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Hero Block",
+        "description": "Block for image or video with text overlay and ability to set link to navigate to",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "id": "29b4ba45-3e18-45b2-8ee6-60880254e315",
-        "name": "NavbarItem",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Navigation Menu Item",
-          "description": "Used for header and footer navigation items",
-          "available": true,
-          "sortOrder": 100
+      "properties": [
+        {
+          "name": "BackgroundImage",
+          "dataType": "PropertyContentReference",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Background Image",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The image to be used as the background.  If background video is set it takes precedent."
+          }
         },
-        "properties": [
-          {
-            "name": "Text",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Text",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The menu item text to dispplay."
-            }
-          },
-          {
-            "name": "Link",
-            "dataType": "PropertyUrl",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Link",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "The link the navbar item should take you to.",
-              "hint": "Url"
-            }
-          },
-          {
-            "name": "Image",
-            "dataType": "PropertyImageUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Image",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "The image associated with the navbar item"
-            }
-          },
-          {
-            "name": "Teaser",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Teaser",
-              "groupName": "Information",
-              "sortOrder": 3,
-              "helpText": "The teaser text or description for the navbar item."
-            }
+        {
+          "name": "BackgroundVideo",
+          "dataType": "PropertyContentReference",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Background Video",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "The background video to use."
           }
-        ]
-      },
-      {
-        "id": "f5a52e91-edaf-408e-b6fa-7e5075a8d23c",
-        "name": "YoutubeBlock",
-        "baseType": "Block",
-        "editSettings": {
-          "displayName": "Youtube Block",
-          "description": "Block for showing youtube videos.",
-          "available": true,
-          "sortOrder": 100
         },
-        "properties": [
-          {
-            "name": "Heading",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Heading",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The heading to to display above the video."
-            }
-          },
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main Body",
-              "groupName": "Information",
-              "sortOrder": 1,
-              "helpText": "Text to display below the heading and above the video."
-            }
-          },
-          {
-            "name": "YoutubeLink",
-            "dataType": "PropertyUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Youtube link",
-              "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "The link to youtube video.",
-              "hint": "Url"
-            }
+        {
+          "name": "Title",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Title",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "Headline for the hero block"
           }
-        ]
-      }
-    ],
-    "editorDefinitions": [],
-    "propertyGroups": [
-      {
-        "name": "Information",
-        "sortOrder": 10,
-        "systemGroup": true
+        },
+        {
+          "name": "Description",
+          "dataType": "PropertyLongString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Description",
+            "groupName": "Information",
+            "sortOrder": 3,
+            "helpText": "Text underneath the title to give more context or call to action"
+          }
+        },
+        {
+          "name": "Link",
+          "dataType": "PropertyUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Link",
+            "groupName": "Information",
+            "sortOrder": 4,
+            "helpText": "The link where to call to action should take the user to.",
+            "hint": "Url"
+          }
+        },
+        {
+          "name": "ButtonText",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Button Text",
+            "groupName": "Information",
+            "sortOrder": 5,
+            "helpText": "The call to action text on the button.  If no text is set, no button is showed."
+          }
+        },
+        {
+          "name": "IsScreenWidth",
+          "dataType": "PropertyBoolean",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Is Screen width",
+            "groupName": "Information",
+            "sortOrder": 6,
+            "helpText": "If selected the hero block will be the screen width rather than the width of the parent container or display option."
+          }
+        }
+      ]
+    },
+    {
+      "id": "4de2c737-6155-4f72-9ba1-5c7d83ee5adc",
+      "name": "Standard",
+      "baseType": "Page",
+      "editSettings": {
+        "displayName": "Standard page",
+        "description": "The default standard page type",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "name": "Scheduling",
-        "sortOrder": 20,
-        "systemGroup": true
+      "properties": [
+        {
+          "name": "MainContentArea",
+          "dataType": "PropertyContentArea",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main content area",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "Add blocks here for the home page"
+          }
+        },
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main body",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "The markup for the main body"
+          }
+        },
+        {
+          "name": "MainImage",
+          "dataType": "PropertyImageUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main image",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "Image to be used in meta properties"
+          }
+        },
+        {
+          "name": "MetaDescription",
+          "dataType": "PropertyLongString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Meta description",
+            "groupName": "Information",
+            "sortOrder": 3,
+            "helpText": "Used for seo meta description pruposes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "29b4ba45-3e18-45b2-8ee6-60880254e315",
+      "name": "NavbarItem",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Navigation Menu Item",
+        "description": "Used for header and footer navigation items",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "name": "Advanced",
-        "sortOrder": 30,
-        "systemGroup": true
+      "properties": [
+        {
+          "name": "Text",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Text",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The menu item text to dispplay."
+          }
+        },
+        {
+          "name": "Link",
+          "dataType": "PropertyUrl",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Link",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "The link the navbar item should take you to.",
+            "hint": "Url"
+          }
+        },
+        {
+          "name": "Image",
+          "dataType": "PropertyImageUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Image",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "The image associated with the navbar item"
+          }
+        },
+        {
+          "name": "Teaser",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Teaser",
+            "groupName": "Information",
+            "sortOrder": 3,
+            "helpText": "The teaser text or description for the navbar item."
+          }
+        }
+      ]
+    },
+    {
+      "id": "f5a52e91-edaf-408e-b6fa-7e5075a8d23c",
+      "name": "YoutubeBlock",
+      "baseType": "Block",
+      "editSettings": {
+        "displayName": "Youtube Block",
+        "description": "Block for showing youtube videos.",
+        "available": true,
+        "sortOrder": 100
       },
-      {
-        "name": "Shortcut",
-        "sortOrder": 40,
-        "systemGroup": true
+      "properties": [
+        {
+          "name": "Heading",
+          "dataType": "PropertyString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Heading",
+            "groupName": "Information",
+            "sortOrder": 0,
+            "helpText": "The heading to to display above the video."
+          }
+        },
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main Body",
+            "groupName": "Information",
+            "sortOrder": 1,
+            "helpText": "Text to display below the heading and above the video."
+          }
+        },
+        {
+          "name": "YoutubeLink",
+          "dataType": "PropertyUrl",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Link",
+            "groupName": "Information",
+            "sortOrder": 2,
+            "helpText": "The link to youtube video.",
+            "hint": "Url"
+          }
+        }
+      ]
+    },
+    {
+      "id": "597afd14-391b-4e99-8e4f-8827e3e82354",
+      "name": "LocationListPage",
+      "baseType": "Page",
+      "editSettings": {
+        "displayName": "Destinations List Page",
+        "description": "Used to display a list of all destinations",
+        "available": true,
+        "sortOrder": 0
       },
-      {
-        "name": "Categories",
-        "sortOrder": 50,
-        "systemGroup": true
+      "properties": [
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main body",
+            "groupName": "Information",
+            "sortOrder": 40
+          }
+        },
+        {
+          "name": "MetaTitle",
+          "dataType": "PropertyLongString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Title",
+            "groupName": "Metadata",
+            "sortOrder": 10
+          }
+        },
+        {
+          "name": "PageImage",
+          "dataType": "PropertyContentReference",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Image",
+            "groupName": "Information",
+            "sortOrder": 20,
+            "hint": "image"
+          }
+        },
+        {
+          "name": "MainContentArea",
+          "dataType": "PropertyContentArea",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main content area",
+            "groupName": "Information",
+            "sortOrder": 30
+          }
+        },
+        {
+          "name": "FilterArea",
+          "dataType": "PropertyContentArea",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Filter area",
+            "groupName": "Information",
+            "sortOrder": 50
+          }
+        }
+      ]
+    },
+    {
+      "id": "ac26ee4b-104f-4719-8aab-ad6d3fcb0d75",
+      "name": "LocationItemPage",
+      "baseType": "Page",
+      "editSettings": {
+        "displayName": "Destination Page",
+        "description": "Used to display the details of a destination",
+        "available": true,
+        "sortOrder": 0
       },
-      {
-        "name": "DynamicBlocks",
-        "sortOrder": 60,
-        "systemGroup": true
-      }
-    ],
-    "languageBranches": [
-      {
-        "name": "en",
-        "displayName": "English",
-        "urlSegment": "en",
-        "sortOrder": 10,
-        "enabled": true
-      },
-      {
-        "name": "es",
-        "displayName": "español",
-        "urlSegment": "es",
-        "sortOrder": 70,
-        "enabled": false
-      }
-    ]
-  }
+      "properties": [
+        {
+          "name": "MainIntro",
+          "dataType": "PropertyLongString",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Intro text",
+            "groupName": "Information",
+            "sortOrder": 10,
+            "hint": "textarea"
+          }
+        },
+        {
+          "name": "Continent",
+          "dataType": "PropertyString",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Continent",
+            "groupName": "Location",
+            "sortOrder": 10
+          }
+        },
+        {
+          "name": "Country",
+          "dataType": "PropertyString",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Country",
+            "groupName": "Location",
+            "sortOrder": 20
+          }
+        },
+        {
+          "name": "Latitude",
+          "dataType": "PropertyFloatNumber",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Latitude",
+            "groupName": "Location",
+            "sortOrder": 30
+          }
+        },
+        {
+          "name": "Longitude",
+          "dataType": "PropertyFloatNumber",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Longitude",
+            "groupName": "Location",
+            "sortOrder": 40
+          }
+        },
+        {
+          "name": "AvgTemp",
+          "dataType": "PropertyFloatNumber",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Average temperature",
+            "groupName": "Location",
+            "sortOrder": 50
+          }
+        },
+        {
+          "name": "AirportInitials",
+          "dataType": "PropertyString",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Airport initials",
+            "groupName": "Location",
+            "sortOrder": 60
+          }
+        },
+        {
+          "name": "YearlyPassengers",
+          "dataType": "PropertyNumber",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Yearly passengers",
+            "groupName": "Location",
+            "sortOrder": 70
+          }
+        },
+        {
+          "name": "MainBody",
+          "dataType": "PropertyXhtmlString",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main body",
+            "groupName": "Information",
+            "sortOrder": 100
+          }
+        },
+        {
+          "name": "PageImage",
+          "dataType": "PropertyContentReference",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Image",
+            "groupName": "Teaser",
+            "sortOrder": 100,
+            "hint": "image"
+          }
+        },
+        {
+          "name": "MainContentArea",
+          "dataType": "PropertyContentArea",
+          "branchSpecific": true,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Main content area",
+            "groupName": "Information",
+            "sortOrder": 200
+          }
+        },
+        {
+          "name": "New",
+          "dataType": "PropertyBoolean",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "New location",
+            "groupName": "Information",
+            "sortOrder": 230
+          }
+        },
+        {
+          "name": "Promoted",
+          "dataType": "PropertyBoolean",
+          "branchSpecific": false,
+          "editSettings": {
+            "visibility": "default",
+            "displayName": "Promoted location",
+            "groupName": "Information",
+            "sortOrder": 240,
+            "helpText": "Check this, in order to boost this destination and promote it in suggestions"
+          }
+        }
+      ]
+    }
+  ],
+  "editorDefinitions": [],
+  "propertyGroups": [
+    {
+      "name": "Information",
+      "sortOrder": 10,
+      "systemGroup": true
+    },
+    {
+      "name": "Scheduling",
+      "sortOrder": 20,
+      "systemGroup": true
+    },
+    {
+      "name": "Advanced",
+      "sortOrder": 30,
+      "systemGroup": true
+    },
+    {
+      "name": "Shortcut",
+      "sortOrder": 40,
+      "systemGroup": true
+    },
+    {
+      "name": "Categories",
+      "sortOrder": 50,
+      "systemGroup": true
+    },
+    {
+      "name": "DynamicBlocks",
+      "sortOrder": 60,
+      "systemGroup": true
+    }
+  ],
+  "languageBranches": [
+    {
+      "name": "en",
+      "displayName": "English",
+      "urlSegment": "en",
+      "sortOrder": 10,
+      "enabled": true
+    },
+    {
+      "name": "es",
+      "displayName": "español",
+      "urlSegment": "es",
+      "sortOrder": 70,
+      "enabled": false
+    }
+  ]
+}

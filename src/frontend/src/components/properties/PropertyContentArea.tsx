@@ -1,8 +1,8 @@
-﻿import React, { FC, useEffect } from 'react';
+﻿import React, { FC, useEffect, useContext } from 'react';
 import { ContentArea } from '../../models/ContentArea';
 import loadable from '@loadable/component';
 import { ContentData, ContentLoader, defaultConfig } from '@episerver/content-delivery';
-import Config from "../../config.json";
+import { getContentLoader } from "../../DefaultContext";
 
 interface PropertyContentAreaProps {
     value: ContentArea | null;
@@ -24,9 +24,9 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
     }, []);
     return (
         <section className="flex flex-row flex-wrap">
-            {expandedContentArea?.value.map((contentAreaItem, index) => {
+            {expandedContentArea?.map((contentAreaItem, index) => {
                 const className = getClassName(contentAreaItem.displayOption);
-                const content = expandedContentArea.expandedValue[index];
+                const content = contentAreaItem.contentLink.expanded;
                 if (content === undefined) {
                     return <></>;
                 }
@@ -79,38 +79,21 @@ const getClassName = (displayOption: string): string => {
 }
 
 const getContentData = async (id: string): Promise<ContentData> => {
-    let baseUrl = Config.BASE_URL;
-    if (baseUrl === '$BASE_URL') {
-        baseUrl = "http://localhost:5000/";
-    }
-    defaultConfig.apiUrl = `${baseUrl}api/episerver/v3.0`;
-    defaultConfig.expandAllProperties = true;
-    const contentLoader = new ContentLoader(defaultConfig);
+    const contentLoader = getContentLoader();
     const content = await contentLoader.getContent(id);
     return content;
 }
 
 const expandContentArea = async (contentArea: ContentArea | null): Promise<ContentArea | null> => {
-    if (contentArea === null || contentArea.value === null) {
+    if (contentArea === null) {
         return null;
     }
-    for (let index = 0; index < contentArea.value.length; index++) {
-        if (!contentArea.expandedValue) {
-            contentArea.expandedValue = Array<ContentData>(0)
-        }
-        if (!contentArea.expandedValue[index] === undefined) {
-            const content = await getContentData(contentArea.value[index].contentLink.guidValue)
-            contentArea.expandedValue.push(content);
-        }
-    }
-    for (let index = 0; index < contentArea.expandedValue.length; index++) {
+    for (let index = 0; index < contentArea.length; index++) {
 
-        for (var key in contentArea.expandedValue[index]) {
-            if (contentArea.expandedValue[index][key] instanceof Object && (contentArea.expandedValue[index][key].propertyDataType ?? '') === 'PropertyContentReference'
-                && contentArea.expandedValue[index][key].value !== undefined) {
-                
-                const referencedContent = await getContentData(contentArea.expandedValue[index][key].value.guidValue);
-                contentArea.expandedValue[index][key].expandedValue = referencedContent;
+        for (var key in contentArea[index].contentLink.expanded) {
+            if (key !== 'contentLink' && key !== 'parentLink' && contentArea[index].contentLink.expanded[key].guidValue) {
+                const referencedContent = await getContentData(contentArea[index].contentLink.expanded[key].guidValue);
+                contentArea[index].contentLink.expanded[key].expanded = referencedContent;
                
             }
         }

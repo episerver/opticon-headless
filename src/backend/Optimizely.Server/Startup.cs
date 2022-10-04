@@ -27,7 +27,7 @@ namespace Optimizely.Server
         private readonly IWebHostEnvironment _webHostingEnvironment;
         private readonly IConfiguration _configuration;
 
-        public Startup(IWebHostEnvironment webHostingEnvironment, 
+        public Startup(IWebHostEnvironment webHostingEnvironment,
             IConfiguration configuration)
         {
             _webHostingEnvironment = webHostingEnvironment;
@@ -45,8 +45,13 @@ namespace Optimizely.Server
                 .AddFluid()
                 .AddCmsFluid();
 
+            services.Configure<FluidMvcViewOptions>(options =>
+            {
+                options.ViewsFileProvider  = new ContentFileProvider("/globalassets/templates");
+                options.PartialsFileProvider = new ContentFileProvider("/globalassets/templates/shared");
+            });
             services.AddCms()
-                .AddCmsAspNetIdentity<ApplicationUser>();
+            .AddCmsAspNetIdentity<ApplicationUser>();
 
             services.AddFind();
             services.AddAdvancedReviews();
@@ -56,7 +61,7 @@ namespace Optimizely.Server
             {
                 o.EnablePreviewFeatures = true;
                 o.IncludeEmptyContentProperties = true;
-                o.FlattenPropertyModel = false;
+                o.FlattenPropertyModel = true;
                 o.IncludeMasterLanguage = false;
             });
 
@@ -65,8 +70,8 @@ namespace Optimizely.Server
                .WithSiteBasedCors();
 
             services.AddContentSearchApi(o => o.MaximumSearchResults = 100);
-            services.AddContentDefinitionsApi(OpenIDConnectOptionsDefaults.AuthenticationScheme);
-            services.AddContentManagementApi(OpenIDConnectOptionsDefaults.AuthenticationScheme);
+            services.AddContentDefinitionsApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, o => o.DisableScopeValidation = true);
+            services.AddContentManagementApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, o => o.DisableScopeValidation = true);
 
             services.AddOpenIDConnect<ApplicationUser>(true, null, null, true, options =>
             {
@@ -107,7 +112,7 @@ namespace Optimizely.Server
                 options.Add("threefourth", "/displayoptions/threefourth", "basis-3/4", "", "epi-icon__layout--fice-sixths");
                 options.Add("fivesixth", "/displayoptions/fivesixth", "basis-5/6", "", "epi-icon__layout--full");
             });
-           
+
         }
 
 

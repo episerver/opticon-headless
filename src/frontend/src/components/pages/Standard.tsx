@@ -10,7 +10,7 @@ interface StandardProps {
 const Standard : FC<StandardProps> = ({value}) : JSX.Element => {
     return (
         <section className='container mx-auto'>
-            <PropertyXhtmlString value={value?.mainBody?.value ?? ''}/>
+            <PropertyXhtmlString value={value?.mainBody ?? ''}/>
             <PropertyContentArea value={value?.mainContentArea} />
         </section>
     );

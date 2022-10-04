@@ -11,6 +11,7 @@ namespace Optimizely.Server
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Warning()
                 .WriteTo.Console()
+                .WriteTo.File("App_Data/log.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             CreateHostBuilder(args).Build().Run();
