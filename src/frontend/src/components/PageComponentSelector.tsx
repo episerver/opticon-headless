@@ -1,15 +1,15 @@
-﻿import { ContentData  } from "@episerver/content-delivery";
-import {  getContentResolver } from "../DefaultContext";
+﻿import { ContentData } from "@episerver/content-delivery";
+import { getContentResolver } from "../DefaultContext";
 import Config from "../config.json";
 import React, { lazy, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import loadable from '@loadable/component';
+import loadable from "@loadable/component";
 
 export const PageDataLoader = async (): Promise<ContentData | undefined> => {
     const context = getContentResolver();
-    const content = await  context.resolveContent(window.location.pathname, true);
+    const content = await context.resolveContent(window.location.pathname, true);
     return content.content;
-}
+};
 
 const PageComponentSelector = () => {
     const content = useLoaderData() as ContentData;
@@ -20,9 +20,9 @@ const PageComponentSelector = () => {
         fallback: <div>Loading...</div>,
     });
     return (
-        <View value={content} />
+        <h1>TODO: Error here. What is this about?</h1>
+        // <View value={content} />
     );
 };
 
 export default PageComponentSelector;
-
