@@ -1,40 +1,40 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-    content: ["src/**/*.{ts,tsx}"],
+    content: ["./src/**/*.{ts,tsx}"],
     theme: {
         extend: {
             fontFamily: {
                 poppins: ["Poppins", "sans-serif"],
-              },
+            },
         },
         screens: {
-            'xs': '475px',
+            xs: "475px",
             ...defaultTheme.screens,
         },
     },
 
     safelist: [
         {
-            pattern: /^bg-/
+            pattern: /^bg-/,
         },
         {
-            pattern: /^text-/
+            pattern: /^text-/,
         },
         {
-            pattern: /^border-/
+            pattern: /^border-/,
         },
         {
-            pattern: /^basis-/
+            pattern: /^basis-/,
         },
         {
-            pattern: /^m-/
+            pattern: /^m-/,
         },
         {
-            pattern: /^p-/
-        }
+            pattern: /^p-/,
+        },
     ],
 
     variants: {
         extend: {},
-    }
-}
+    },
+};

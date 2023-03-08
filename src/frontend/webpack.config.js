@@ -1,7 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (env) => {
+module.exports = () => {
     const webpack_server = {
         mode: "development",
         devtool: "cheap-module-source-map",
@@ -9,12 +11,13 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 hash: true,
                 template: "./src/template.index.html",
-                filename: "index.html", //relative to root of the application
+                filename: "index.html",
                 inject: "body",
                 title: "Opticon Headless",
             }),
         ],
         devServer: {
+            port: 8080,
             historyApiFallback: true,
         },
     };
@@ -28,7 +31,12 @@ module.exports = (env) => {
         devtool: false,
         plugins: [],
     };
-    const webpack_config = env.server ? webpack_server : env.development ? webpack_dev : webpack_prod;
+    const webpack_config =
+        process.env.NODE_ENV === "server"
+            ? webpack_server
+            : process.env.NODE_ENV === "development"
+            ? webpack_dev
+            : webpack_prod;
 
     return {
         ...webpack_config,
@@ -41,9 +49,8 @@ module.exports = (env) => {
         },
         output: {
             filename: "[name].min.js",
-            path: path.resolve(__dirname, "public"),
+            path: path.resolve(__dirname, "dist"),
         },
-        plugins: [...webpack_config.plugins],
         module: {
             rules: [
                 {
@@ -56,6 +63,10 @@ module.exports = (env) => {
                     ],
                 },
                 {
+                    test: /\.(c|s[ac])ss$/i,
+                    use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
+                },
+                {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
                     type: "asset/resource",
                 },
@@ -65,5 +76,12 @@ module.exports = (env) => {
                 },
             ],
         },
+        plugins: [
+            ...webpack_config.plugins,
+            new CleanWebpackPlugin(),
+            new MiniCssExtractPlugin({
+                filename: "[name].min.css",
+            }),
+        ],
     };
 };
