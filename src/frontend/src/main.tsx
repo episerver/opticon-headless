@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from "./App";
 import PageComponentSelector, { PageDataLoader } from "./components/PageComponentSelector";
+import "./main.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
