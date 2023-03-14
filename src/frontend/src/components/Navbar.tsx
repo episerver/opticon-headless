@@ -16,7 +16,19 @@ const Navbar = () => {
                         if (items) {
                             setMenuItems(items as ContentData[]);
                         }
+                        else {
+                            setMenuItems([{
+                                link:'#',
+                                text: "Please add menu items in menu folder"
+                            }])
+                        }
                     });
+                }
+                else {
+                    setMenuItems([{
+                        link:'#',
+                        text: "Please create Menu folder under shared blocks and add menu items"
+                    }])
                 }
             }
         });

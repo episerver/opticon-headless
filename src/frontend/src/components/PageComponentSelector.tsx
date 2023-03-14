@@ -20,8 +20,7 @@ const PageComponentSelector = () => {
         fallback: <div>Loading...</div>,
     });
     return (
-        <h1>TODO: Error here. What is this about?</h1>
-        // <View value={content} />
+        <View value={content} />
     );
 };
 
