@@ -82,4 +82,4 @@ modules/
 *.min.js.map
 *.min.js
 /src/backend/Optimizely.Server/App_Data/
-/src/frontend/public/
+/src/frontend/dist/

@@ -7,7 +7,7 @@
     "scripts:dev": "set NODE_ENV=development&& webpack",
     "scripts:production": "set NODE_ENV=production&& webpack",
     "scripts:watch": "set NODE_ENV=development&& webpack --watch",
-    "content-definitions:push": "content-definitions push manifest.json -s http://localhost:5000 --authority http://localhost:5000 --client-id postman-client --client-secret postman --allowed-upgrades major",
+    "content-definitions:push": "content-definitions push manifest.json -s http://localhost:5000 --authority http://localhost:5000 --client-id postman-client --client-secret postman --allowed-upgrades major -force",
     "content-definitions:pull": "content-definitions pull manifest.json -s http://localhost:5000 --authority http://localhost:5000 --client-id postman-client --client-secret postman",
     "seed": "node run seed.js"
   },

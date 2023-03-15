@@ -5,15 +5,15 @@ using EPiServer.DataAnnotations;
 using EPiServer.Framework.DataAnnotations;
 using System.ComponentModel.DataAnnotations;
 
-namespace Optimizely.Server;
+namespace Optimizely.Server.ExtendedContentTypes;
 
 [ContentType(DisplayName = "Image File",
+    Order = 201,
     GUID = "20644be7-3ca1-4f84-b893-ee021b73ce6c",
     Description = "Used for image file types such as jpg, jpeg, jpe, ico, gif, bmp, png")]
 [MediaDescriptor(ExtensionString = "jpg,jpeg,jpe,ico,gif,bmp,png")]
 public class ImageMediaData : ImageData
 {
-
     [Display(GroupName = SystemTabNames.Content, Order = 40)]
     public virtual string Caption { get; set; }
 
