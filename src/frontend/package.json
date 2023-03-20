@@ -9,7 +9,7 @@
     "scripts:watch": "set NODE_ENV=development&& webpack --watch",
     "content-definitions:push": "content-definitions push manifest.json -s http://localhost:5000 --authority http://localhost:5000 --client-id postman-client --client-secret postman --allowed-upgrades major -force",
     "content-definitions:pull": "content-definitions pull manifest.json -s http://localhost:5000 --authority http://localhost:5000 --client-id postman-client --client-secret postman",
-    "seed": "node run seed.js"
+    "seed": "node seed.js"
   },
   "dependencies": {
     "@episerver/content-delivery": "^1.1.0",
@@ -30,7 +30,6 @@
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
-    "async": "^3.2.4",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -43,7 +42,6 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.3",
     "node-sass": "^8.0.0",
-    "node-sass-glob-importer": "^3.0.2",
     "postcss": "^8.4.7",
     "postcss-loader": "^7.0.2",
     "prettier": "^2.8.4",
