@@ -1,0 +1,58 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "name": "Blog",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "BlogListPage"],
+        "parentLink": {
+            "guidValue": "3729d832-357e-409a-87e2-5242400fb47f"
+        },
+        "status": "Published"
+    },
+    {
+        "contentLink": {
+            "guidValue": "3674d8e2-9fe1-4564-b43e-c0ab90c1d250"
+        },
+        "name": "2019",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "BlogListPage"],
+        "parentLink": {
+            "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "status": "Published"
+    },
+    {
+        "contentLink": {
+            "guidValue": "bf3aa61f-761d-47cc-a852-43c14c063cbc"
+        },
+        "name": "8",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "BlogListPage"],
+        "parentLink": {
+            "guidValue": "3674d8e2-9fe1-4564-b43e-c0ab90c1d250"
+        },
+        "status": "Published"
+    },
+    {
+        "contentLink": {
+            "guidValue": "19ef947f-eb2f-4d4e-bf5f-4bb3c2dbd6bb"
+        },
+        "name": "How I Travel - Jacob Khan",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "BlogItemPage"],
+        "parentLink": {
+            "guidValue": "bf3aa61f-761d-47cc-a852-43c14c063cbc"
+        },
+        "status": "Published"
+    }
+]

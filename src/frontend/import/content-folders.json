@@ -1,0 +1,35 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "name": "Logo",
+        "contentType": ["Folder", "SysContentFolder"],
+        "parentLink": {
+            "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
+        },
+        "routeSegment": "logo"
+    },
+    {
+        "contentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "name": "Menu",
+        "contentType": ["Folder", "SysContentFolder"],
+        "parentLink": {
+            "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
+        },
+        "routeSegment": "menu"
+    },
+    {
+        "contentLink": {
+            "guidValue": "4ca52556-d30c-433c-95e2-92a0abc6f86e"
+        },
+        "name": "HeroBlocks",
+        "contentType": ["Folder", "SysContentFolder"],
+        "parentLink": {
+            "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
+        },
+        "routeSegment": "heroblocks"
+    }
+]

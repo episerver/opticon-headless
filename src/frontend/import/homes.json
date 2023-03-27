@@ -1,0 +1,16 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "3729d832-357e-409a-87e2-5242400fb47f"
+        },
+        "name": "Home",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "HomePage"],
+        "parentLink": {
+            "id": 1
+        },
+        "status": "Published"
+    }
+]

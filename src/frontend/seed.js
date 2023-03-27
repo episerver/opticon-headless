@@ -10,8 +10,44 @@ if (baseUrl === "$BASE_URL") {
 }
 
 let token = "";
+let site = {};
 
-async function getToken() {
+async function publishContent(content, headers = []) {
+    const contentInfo = await axios
+        .request({
+            url: `api/episerver/v3.0/content/${content.contentLink.guidValue}`,
+            method: "get",
+            baseURL: baseUrl,
+            headers: {
+                Authorization: "Bearer: " + token,
+                "Content-Type": "application/json",
+            },
+        })
+        .catch((err) => {
+            console.error("getContentInfo: ", err.response.statusText);
+        });
+
+    if (!contentInfo) {
+        await axios
+            .request({
+                url: "/api/episerver/v3.0/contentmanagement",
+                method: "post",
+                baseURL: baseUrl,
+                headers: {
+                    ...headers,
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + token,
+                    "x-epi-validation-mode": "minimal",
+                },
+                data: content,
+            })
+            .catch((err) => {
+                console.error("publishContent: ", err);
+            });
+    }
+}
+
+function getToken() {
     var data = {
         grant_type: "password",
         client_secret: "postman",
@@ -21,7 +57,7 @@ async function getToken() {
         password: `${config.PASSWORD}`,
     };
 
-    const response = await axios.request({
+    const response = axios.request({
         url: "/api/episerver/connect/token",
         method: "post",
         baseURL: baseUrl,
@@ -36,65 +72,151 @@ async function getToken() {
 
 (async () => {
     try {
-        let tokenResponse = await getToken();
-        if (!tokenResponse) {
-            throw new Error("Error getting token, please make sure the backend site is available.");
+        /**
+         * Gets a token.
+         */
+        {
+            let tokenResponse = await getToken();
+            if (!tokenResponse) {
+                throw new Error("Error getting token, please make sure the backend site is available.");
+            }
+
+            token = tokenResponse.data.access_token;
         }
 
-        token = tokenResponse.data.access_token;
-        console.log("=====> [DEBUGGING] Script skips here", token);
-        return;
-        let home = await axios
-            .request({
-                url: "api/episerver/v3.0/content/3729d832-357e-409a-87e2-5242400fb47f",
-                method: "get",
-                baseURL: baseUrl,
-                headers: {
-                    Authorization: "Bearer: " + token,
-                    "Content-Type": "application/json",
-                },
-            })
-            .catch((err) => {
-                console.error("Getting HomePage of the site:", err.response.statusText);
-            });
+        /**
+         * Generates a home page.
+         */
+        {
+            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < homePages.length; i++) {
+                const homePage = homePages[i];
+                promises.push(publishContent(homePage));
+            }
 
-        if (!home?.data) {
-            const homeResponse = await axios
-                .request({
-                    url: "/api/episerver/v3.0/contentmanagement",
-                    method: "post",
-                    baseURL: baseUrl,
+            await Promise.all(promises);
+        }
+
+        /**
+         * Creates a new site.
+         */
+        // {
+        //     site = await axios
+        //         .request({
+        //             url: "/api/episerver/v3.0/site",
+        //             method: "get",
+        //             baseURL: baseUrl,
+        //             headers: {
+        //                 Authorization: "Bearer " + token,
+        //                 "Content-Type": "application/json",
+        //             },
+        //         })
+        //         .catch((err) => {
+        //             console.error(err);
+        //         });
+
+        //     if (!site || site.length === 0) {
+        //         const siteResponse = await axios
+        //             .request({
+        //                 url: "/api/episerver/v3.0/site",
+        //                 method: "post",
+        //                 baseURL: baseUrl,
+        //                 headers: {
+        //                     "Content-Type": "application/json",
+        //                     Authorization: "Bearer " + token,
+        //                 },
+        //             })
+        //             .catch((err) => {
+        //                 console.error(err);
+        //             });
+        //         if (siteResponse.data) {
+        //             site = siteResponse.data;
+        //         }
+        //     }
+
+        //     if (!site) {
+        //         throw new Error("Error getting or creating site, please make sure the backend site is available.");
+        //     }
+        // }
+
+        /**
+         * Generates blogs.
+         */
+        {
+            let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
+            for (let i = 0; i < blogs.length; i++) {
+                const blog = blogs[i];
+                await publishContent(blog);
+            }
+        }
+
+        /**
+         * Generates content folders.
+         */
+        {
+            let folders = JSON.parse(fs.readFileSync("./import/content-folders.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < folders.length; i++) {
+                const folder = folders[i];
+                promises.push(publishContent(folder));
+            }
+
+            await Promise.all(promises);
+        }
+
+        console.log("[DEBUGGING] Stop here");
+        return;
+
+        /**
+         * Generates blocks.
+         */
+        {
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                promises.push(publishContent(block));
+            }
+
+            await Promise.all(promises);
+        }
+
+        /**
+         * Generates videos.
+         */
+        {
+            let videos = JSON.parse(fs.readFileSync("./import/videos.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < videos.length; i++) {
+                const video = videos[i];
+                let file = fs.readFileSync(`./import/videos/${video.name}`, "base64");
+                const form = new FormData();
+                form.append("file", file, video.name);
+                form.append("content", JSON.stringify(video));
+                promises.push(publishContent(form, form.getHeaders()));
+            }
+
+            await Promise.all(promises);
+        }
+
+        if (heroBlockResponse?.data) {
+            const beachVideoResponse = await axios
+                .post(baseUrl + "api/episerver/v3.0/contentmanagement", form, {
                     headers: {
-                        "Content-Type": "application/json",
+                        ...form.getHeaders(),
                         Authorization: "Bearer " + token,
                         "x-epi-validation-mode": "minimal",
                     },
-                    data: {
-                        contentLink: {
-                            guidValue: "3729d832-357e-409a-87e2-5242400fb47f",
-                        },
-                        name: "Home",
-                        language: {
-                            name: "en",
-                        },
-                        contentType: ["Page", "HomePage"],
-                        parentLink: {
-                            id: 1,
-                        },
-                        status: "Published",
-                    },
                 })
-
                 .catch((err) => {
                     console.error(err);
                 });
-
-            if (homeResponse?.data) {
-                home = homeResponse.data;
-                const heroBlockResponse = await axios
+            if (beachVideoResponse?.data) {
+                await axios
                     .request({
                         url: "/api/episerver/v3.0/contentmanagement",
-                        method: "post",
+                        method: "patch",
                         baseURL: baseUrl,
                         headers: {
                             "Content-Type": "application/json",
@@ -105,120 +227,15 @@ async function getToken() {
                             contentLink: {
                                 guidValue: "ca5aa43d-20f1-4992-9f1b-1cacbd7eda27",
                             },
-                            title: "First Class Destinations",
-                            description: "Top 1% locations worldwide",
-                            name: "Beach Hero",
-                            language: {
-                                name: "en",
+                            backgroundVideo: {
+                                id: beachVideoResponse.data.contentLink.id,
                             },
-                            contentType: ["Block", "HeroBlock"],
-                            parentLink: {
-                                id: home.contentLink.id,
-                            },
-                            status: "Published",
-                            buttonText: "Explore",
-                            isScreenWidth: true,
                         },
                     })
                     .catch((err) => {
                         console.error(err);
                     });
-
-                if (heroBlockResponse?.data) {
-                    const form = new FormData();
-                    form.append(
-                        "content",
-                        JSON.stringify({
-                            contentLink: {
-                                guidValue: "246f4b37-1431-45c7-96f9-65548063fd23",
-                            },
-                            name: "beachVid.mp4",
-                            contentType: ["Video", "VideoFile"],
-                            parentLink: {
-                                id: heroBlockResponse.data.contentLink.id,
-                            },
-                            status: "Published",
-                        })
-                    );
-
-                    let file = fs.readFileSync("./import/images/beachVid.mp4", "base64");
-                    form.append("file", file, "beachVid.mp4");
-
-                    const beachVideoResponse = await axios
-                        .post(baseUrl + "api/episerver/v3.0/contentmanagement", form, {
-                            headers: {
-                                ...form.getHeaders(),
-                                Authorization: "Bearer " + token,
-                                "x-epi-validation-mode": "minimal",
-                            },
-                        })
-                        .catch((err) => {
-                            console.error(err);
-                        });
-                    if (beachVideoResponse?.data) {
-                        await axios
-                            .request({
-                                url: "/api/episerver/v3.0/contentmanagement",
-                                method: "patch",
-                                baseURL: baseUrl,
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    Authorization: "Bearer " + token,
-                                    "x-epi-validation-mode": "minimal",
-                                },
-                                data: {
-                                    contentLink: {
-                                        guidValue: "ca5aa43d-20f1-4992-9f1b-1cacbd7eda27",
-                                    },
-                                    backgroundVideo: {
-                                        id: beachVideoResponse.data.contentLink.id,
-                                    },
-                                },
-                            })
-                            .catch((err) => {
-                                console.error(err);
-                            });
-                    }
-                }
             }
-            //beachVid.mp4
-        }
-
-        let site = await axios
-            .request({
-                url: "/api/episerver/v3.0/site",
-                method: "get",
-                baseURL: baseUrl,
-                headers: {
-                    Authorization: "Bearer " + token,
-                    "Content-Type": "application/json",
-                },
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-
-        if (!site || site.length === 0) {
-            const siteResponse = await axios
-                .request({
-                    url: "/api/episerver/v3.0/sites",
-                    method: "post",
-                    baseURL: baseUrl,
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "Bearer " + token,
-                    },
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-            if (siteResponse.data) {
-                site = siteResponse.data;
-            }
-        }
-
-        if (!site) {
-            throw new Error("Error getting or creating site, please make sure the backend site is available.");
         }
 
         let destinations = JSON.parse(fs.readFileSync("./import/destinations.json", "utf8"));

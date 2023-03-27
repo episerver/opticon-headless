@@ -688,7 +688,7 @@
         "properties": []
       },
       {
-        "id": "3cb4e10c-cb09-44d2-b818-212d01e5468f",
+        "id": "5d6594fe-0a8f-4c15-8af6-749ee86ccee7",
         "name": "HomePage",
         "baseType": "Page",
         "version": "1.0.0.0",
@@ -698,7 +698,153 @@
           "available": true,
           "sortOrder": 701
         },
-        "properties": []
+        "properties": [
+          {
+            "name": "SiteLogo",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Site Logo",
+              "groupName": "Header",
+              "sortOrder": 0,
+              "helpText": "Site logo."
+            }
+          },
+          {
+            "name": "MainContentArea",
+            "dataType": "PropertyContentArea",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Main content area",
+              "groupName": "Information",
+              "sortOrder": 0,
+              "helpText": "Add blocks here for the home page"
+            }
+          },
+          {
+            "name": "Introduction",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Introduction",
+              "groupName": "Footer",
+              "sortOrder": 1
+            }
+          },
+          {
+            "name": "CompanyHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company header",
+              "groupName": "Footer",
+              "sortOrder": 2
+            }
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company name",
+              "groupName": "Footer",
+              "sortOrder": 3
+            }
+          },
+          {
+            "name": "CompanyAddress",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company address",
+              "groupName": "Footer",
+              "sortOrder": 4
+            }
+          },
+          {
+            "name": "CompanyPhone",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company phone",
+              "groupName": "Footer",
+              "sortOrder": 5
+            }
+          },
+          {
+            "name": "CompanyEmail",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company email",
+              "groupName": "Footer",
+              "sortOrder": 6
+            }
+          },
+          {
+            "name": "LinksHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Links header",
+              "groupName": "Footer",
+              "sortOrder": 7
+            }
+          },
+          {
+            "name": "Links",
+            "dataType": "PropertyLinkCollection",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Links",
+              "groupName": "Footer",
+              "sortOrder": 8
+            }
+          },
+          {
+            "name": "SocialHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Social header",
+              "groupName": "Footer",
+              "sortOrder": 9
+            }
+          },
+          {
+            "name": "SocialLinks",
+            "dataType": "PropertyLinkCollection",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Social links",
+              "groupName": "Footer",
+              "sortOrder": 10
+            }
+          },
+          {
+            "name": "Copyright",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Copyright",
+              "groupName": "Footer",
+              "sortOrder": 11
+            }
+          }
+        ]
       },
       {
         "id": "b087f703-677c-4487-9943-d972cfc51438",
@@ -707,7 +853,7 @@
         "version": "1.0.0.0",
         "editSettings": {
           "displayName": "Landing Page",
-          "description": "Default standard page that has top content area, main body, and main content area.",
+          "description": "Default landing page that has top content area, main body, and main content area.",
           "available": true,
           "sortOrder": 702
         },
@@ -733,7 +879,7 @@
               "displayName": "Main content area",
               "groupName": "Information",
               "sortOrder": 0,
-              "helpText": "Add blocks here for the home page"
+              "helpText": "Add blocks here for the standard page"
             }
           },
           {
@@ -1203,106 +1349,11 @@
         "name": "DynamicBlocks",
         "sortOrder": 60,
         "systemGroup": true
-      }
-    ],
-    "languageBranches": [
-      {
-        "name": "en",
-        "displayName": "English",
-        "urlSegment": "en",
-        "sortOrder": 10,
-        "enabled": true
       },
       {
-        "name": "en-GB",
-        "displayName": "English (United Kingdom)",
-        "urlSegment": "en-GB",
-        "sortOrder": 20,
-        "enabled": false
-      },
-      {
-        "name": "en-NZ",
-        "displayName": "English (New Zealand)",
-        "urlSegment": "en-NZ",
-        "sortOrder": 30,
-        "enabled": false
-      },
-      {
-        "name": "en-ZA",
-        "displayName": "English (South Africa)",
-        "urlSegment": "en-ZA",
-        "sortOrder": 40,
-        "enabled": false
-      },
-      {
-        "name": "de",
-        "displayName": "Deutsch",
-        "urlSegment": "de",
-        "sortOrder": 50,
-        "enabled": false
-      },
-      {
-        "name": "fr",
-        "displayName": "français",
-        "urlSegment": "fr",
-        "sortOrder": 60,
-        "enabled": false
-      },
-      {
-        "name": "es",
-        "displayName": "español",
-        "urlSegment": "es",
+        "name": "Footer",
         "sortOrder": 70,
-        "enabled": false
-      },
-      {
-        "name": "sv",
-        "displayName": "svenska",
-        "urlSegment": "sv",
-        "sortOrder": 80,
-        "enabled": true
-      },
-      {
-        "name": "no",
-        "displayName": "norsk",
-        "urlSegment": "no",
-        "sortOrder": 90,
-        "enabled": false
-      },
-      {
-        "name": "da",
-        "displayName": "dansk",
-        "urlSegment": "da",
-        "sortOrder": 100,
-        "enabled": false
-      },
-      {
-        "name": "fi",
-        "displayName": "suomi",
-        "urlSegment": "fi",
-        "sortOrder": 110,
-        "enabled": false
-      },
-      {
-        "name": "nl",
-        "displayName": "Nederlands",
-        "urlSegment": "nl",
-        "sortOrder": 120,
-        "enabled": false
-      },
-      {
-        "name": "nl-BE",
-        "displayName": "Nederlands (België)",
-        "urlSegment": "nl-BE",
-        "sortOrder": 130,
-        "enabled": false
-      },
-      {
-        "name": "pt-BR",
-        "displayName": "português (Brasil)",
-        "urlSegment": "pt-BR",
-        "sortOrder": 140,
-        "enabled": false
+        "systemGroup": false
       }
     ]
   }
