@@ -12,6 +12,17 @@
     },
     {
         "contentLink": {
+            "guidValue": "03bde4b9-3bbe-4ef9-ac7b-17cea25eb224"
+        },
+        "name": "HomePage",
+        "contentType": ["Folder", "SysContentFolder"],
+        "parentLink": {
+            "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
+        },
+        "routeSegment": "homepage"
+    },
+    {
+        "contentLink": {
             "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
         },
         "name": "Menu",

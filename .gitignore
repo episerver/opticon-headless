@@ -83,3 +83,4 @@ modules/
 *.min.js
 /src/backend/Optimizely.Server/App_Data/
 /src/frontend/dist/
+*.log

@@ -12,41 +12,6 @@ if (baseUrl === "$BASE_URL") {
 let token = "";
 let site = {};
 
-async function publishContent(content, headers = []) {
-    const contentInfo = await axios
-        .request({
-            url: `api/episerver/v3.0/content/${content.contentLink.guidValue}`,
-            method: "get",
-            baseURL: baseUrl,
-            headers: {
-                Authorization: "Bearer: " + token,
-                "Content-Type": "application/json",
-            },
-        })
-        .catch((err) => {
-            console.error("getContentInfo: ", err.response.statusText);
-        });
-
-    if (!contentInfo) {
-        await axios
-            .request({
-                url: "/api/episerver/v3.0/contentmanagement",
-                method: "post",
-                baseURL: baseUrl,
-                headers: {
-                    ...headers,
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer " + token,
-                    "x-epi-validation-mode": "minimal",
-                },
-                data: content,
-            })
-            .catch((err) => {
-                console.error("publishContent: ", err);
-            });
-    }
-}
-
 function getToken() {
     var data = {
         grant_type: "password",
@@ -70,12 +35,75 @@ function getToken() {
     return response;
 }
 
+async function getContentInfo(content) {
+    return await axios
+        .request({
+            url: `api/episerver/v3.0/content/${content.contentLink.guidValue}`,
+            method: "get",
+            baseURL: baseUrl,
+            headers: {
+                Authorization: "Bearer: " + token,
+                "Content-Type": "application/json",
+            },
+        })
+        .catch((err) => {
+            console.error("Getting content info: ", err.response.statusText);
+        });
+}
+
+async function publishContent(content) {
+    const contentInfo = await getContentInfo(content);
+
+    if (!contentInfo) {
+        await axios
+            .request({
+                url: "/api/episerver/v3.0/contentmanagement",
+                method: "post",
+                baseURL: baseUrl,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + token,
+                    "x-epi-validation-mode": "minimal",
+                },
+                data: content,
+            })
+            .catch((err) => {
+                console.error("Publish content: ", err.response.statusText);
+            });
+    }
+}
+
+async function publishContentUsingForm(content, form) {
+    // const contentInfo = await getContentInfo(content);
+
+    // if (!contentInfo) {
+    await axios
+        .request({
+            url: "/api/episerver/v3.0/contentmanagement",
+            method: "post",
+            baseURL: baseUrl,
+            maxBodyLength: Infinity,
+            headers: {
+                ...form.getHeaders(),
+                "Content-Type": "multipart/form-data",
+                Authorization: "Bearer " + token,
+                "x-epi-validation-mode": "minimal",
+            },
+            data: form,
+        })
+        .catch((err) => {
+            console.error("Publish content: ", err.response.statusText);
+        });
+    // }
+}
+
 (async () => {
     try {
         /**
          * Gets a token.
          */
         {
+            console.log("=== Gets a token. ===");
             let tokenResponse = await getToken();
             if (!tokenResponse) {
                 throw new Error("Error getting token, please make sure the backend site is available.");
@@ -85,9 +113,51 @@ function getToken() {
         }
 
         /**
+         * Generates content folders.
+         */
+        {
+            console.log("=== Generates content folders. ===");
+            let folders = JSON.parse(fs.readFileSync("./import/content-folders.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < folders.length; i++) {
+                const folder = folders[i];
+                promises.push(publishContent(folder));
+            }
+
+            await Promise.all(promises);
+        }
+
+        /**
+         * Upload images.
+         */
+        {
+            console.log("=== Upload images. ===");
+        }
+
+        /**
+         * Upload videos.
+         */
+        {
+            console.log("=== Upload videos. ===");
+            let videos = JSON.parse(fs.readFileSync("./import/videos.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < videos.length; i++) {
+                const video = videos[i];
+                let file = fs.createReadStream(`./import/videos/${video.name}`);
+                const form = new FormData();
+                form.append("file", file, video.name);
+                form.append("content", JSON.stringify(video));
+                promises.push(publishContentUsingForm(video, form));
+            }
+
+            await Promise.all(promises);
+        }
+
+        /**
          * Generates a home page.
          */
         {
+            console.log("=== Generates a home page. ===");
             let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
             let promises = [];
             for (let i = 0; i < homePages.length; i++) {
@@ -144,6 +214,7 @@ function getToken() {
          * Generates blogs.
          */
         {
+            console.log("=== Generates blogs. ===");
             let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
             for (let i = 0; i < blogs.length; i++) {
                 const blog = blogs[i];
@@ -152,26 +223,10 @@ function getToken() {
         }
 
         /**
-         * Generates content folders.
-         */
-        {
-            let folders = JSON.parse(fs.readFileSync("./import/content-folders.json", "utf8"));
-            let promises = [];
-            for (let i = 0; i < folders.length; i++) {
-                const folder = folders[i];
-                promises.push(publishContent(folder));
-            }
-
-            await Promise.all(promises);
-        }
-
-        console.log("[DEBUGGING] Stop here");
-        return;
-
-        /**
          * Generates blocks.
          */
         {
+            console.log("=== Generates blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks.json", "utf8"));
             let promises = [];
             for (let i = 0; i < blocks.length; i++) {
@@ -182,23 +237,8 @@ function getToken() {
             await Promise.all(promises);
         }
 
-        /**
-         * Generates videos.
-         */
-        {
-            let videos = JSON.parse(fs.readFileSync("./import/videos.json", "utf8"));
-            let promises = [];
-            for (let i = 0; i < videos.length; i++) {
-                const video = videos[i];
-                let file = fs.readFileSync(`./import/videos/${video.name}`, "base64");
-                const form = new FormData();
-                form.append("file", file, video.name);
-                form.append("content", JSON.stringify(video));
-                promises.push(publishContent(form, form.getHeaders()));
-            }
-
-            await Promise.all(promises);
-        }
+        console.log("[DEBUGGING] Stop here");
+        return;
 
         if (heroBlockResponse?.data) {
             const beachVideoResponse = await axios

@@ -1,12 +1,12 @@
 [
     {
         "contentLink": {
-            "guidValue": "246f4b37-1431-45c7-96f9-65548063fd23"
+            "guidValue": "246f4b37-1431-45c7-96f9-65548063fd25"
         },
         "name": "beachVid.mp4",
-        "contentType": ["Video", "VideoFile"],
+        "contentType": ["Video", "Media", "VideoFile"],
         "parentLink": {
-            "guidValue": "940c322b-d65c-4f87-8735-6dac45179a65"
+            "guidValue": "03bde4b9-3bbe-4ef9-ac7b-17cea25eb224"
         },
         "status": "Published"
     }
