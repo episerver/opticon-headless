@@ -2,24 +2,27 @@
 import React, { FC } from 'react';
 import PropertyXhtmlString from '../properties/PropertyXhtmlString';
 
-interface YoutubeBlockProps {
-    value?: ContentData;
+interface YoutubeBlockProps extends ContentData {
+    heading?: string;
+    mainBody?: string;
+    link?: string;
 }
 
-const YoutubeBlock: FC<YoutubeBlockProps> = ({ value }): JSX.Element => {
-    if (value == null || value == undefined) {
+const YoutubeBlock: FC<YoutubeBlockProps> = (props): JSX.Element => {
+    if (!props) {
         return <></>;
     }
+    const {heading, mainBody, link} = props;
     return (
         <div>
             <div className="w-full">
-                { value.heading &&
-                    <h1>{value.heading}</h1>
+                { heading &&
+                    <h1>{heading}</h1>
                 } 
                 
-                <PropertyXhtmlString value={value.mainBody}/>
+                <PropertyXhtmlString value={mainBody}/>
                 <div className="relative w-full p-[56.25%]">
-                    <iframe src={value.link} className="absolute top-0 left-0 w-full h-full border-0"/>
+                    <iframe src={link} className="absolute top-0 left-0 w-full h-full border-0"/>
                 </div>
             </div>
         </div>

@@ -1,27 +1,29 @@
 ﻿import { ContentData } from "@episerver/content-delivery";
 import { getContentResolver } from "../DefaultContext";
-import Config from "../config.json";
-import React, { lazy, useContext } from "react";
-import { useLoaderData } from "react-router-dom";
-import loadable from "@loadable/component";
+import React, { lazy, Suspense } from "react";
+import { Navigate, useLoaderData } from "react-router-dom";
+import Loading from "./Loading";
 
-export const PageDataLoader = async (): Promise<ContentData | undefined> => {
+export const PageDataLoader = async ({ request }: any): Promise<ContentData | null> => {
+    const url = new URL(request.url);
     const context = getContentResolver();
-    const content = await context.resolveContent(window.location.pathname, true);
-    return content.content;
+    const content = await context.resolveContent(url.pathname, true);
+    return content.content ?? null;
 };
 
 const PageComponentSelector = () => {
     const content = useLoaderData() as ContentData;
-    if (content === null || content === undefined) {
-        return <></>;
+    if (content === null) {
+        return <Navigate to="/error" replace />;
     }
-    const View = loadable(() => import(`./pages/${content.contentType.at(-1)}`), {
-        fallback: <div>Loading...</div>,
-    });
+
+    const View = lazy(() => import(`./pages/${content.contentType.at(-1)}`));
     return (
-        <View value={content} />
+        <Suspense fallback={<Loading />}>
+            <View {...content} />
+        </Suspense>
     );
 };
 
 export default PageComponentSelector;
+

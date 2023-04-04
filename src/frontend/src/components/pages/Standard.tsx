@@ -1,17 +1,19 @@
 ﻿import { ContentData } from "@episerver/content-delivery";
 import React, { FC } from "react";
+import { ContentArea } from "../../models/ContentArea";
 import PropertyContentArea from "../properties/PropertyContentArea";
 import PropertyXhtmlString from "../properties/PropertyXhtmlString";
 
-interface StandardProps {
-    value?: ContentData;
+interface StandardProps extends ContentData{
+    mainBody?: string;
+    mainContentArea: ContentArea;
 }
 
-const Standard: FC<StandardProps> = ({ value }): JSX.Element => {
+const Standard: FC<StandardProps> = (props): JSX.Element => {
     return (
         <section className="container mx-auto">
-            <PropertyXhtmlString value={value?.mainBody ?? ""} />
-            <PropertyContentArea value={value?.mainContentArea} />
+            <PropertyXhtmlString value={props?.mainBody ?? ""} />
+            <PropertyContentArea value={props.mainContentArea} />
         </section>
     );
 };

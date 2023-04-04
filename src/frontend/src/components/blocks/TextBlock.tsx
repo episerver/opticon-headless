@@ -2,17 +2,17 @@
 import React, { FC } from 'react';
 import PropertyXhtmlString from '../properties/PropertyXhtmlString';
 
-interface TextBlockProps {
-    value?: ContentData;
+interface TextBlockProps extends ContentData {
+    mainBody?: string;
 }
 
-const TextBlock: FC<TextBlockProps> = ({ value }): JSX.Element => {
-    if (value == null || value == undefined) {
+const TextBlock: FC<TextBlockProps | null> = (props): JSX.Element => {
+    if (!props) {
         return <></>;
     }
     return (
         <div>
-            <PropertyXhtmlString value={value.mainBody}/>
+            <PropertyXhtmlString value={props.mainBody}/>
         </div>
     )
 };

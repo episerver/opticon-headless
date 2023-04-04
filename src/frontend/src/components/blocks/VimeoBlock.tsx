@@ -2,22 +2,33 @@
 import React, { FC } from 'react';
 import PropertyXhtmlString from '../properties/PropertyXhtmlString';
 
-interface VimeoBlockProps {
-    value?: ContentData;
+interface VimeoBlockProps extends ContentData {
+    heading?: string;
+    mainBody?: string;
+    link?: string;
 }
 
-const VimeoBlock: FC<VimeoBlockProps> = ({ value }): JSX.Element => {
-    if (value == null || value == undefined) {
+const VimeoBlock: FC<VimeoBlockProps | null> = (props): JSX.Element => {
+    if (!props) {
         return <></>;
     }
+    const {heading, mainBody, link} = props;
     return (
         <div>
-            { value.heading &&
-                <h1>{value.heading}</h1>
+            { heading &&
+                <h1>{heading}</h1>
             } 
                 
-            <PropertyXhtmlString value={value.mainBody}/>
-            <iframe src={value.link} frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen/>
+            <PropertyXhtmlString value={mainBody}/>
+            <iframe {...{
+                src: link, 
+                frameBorder: "0", 
+                allow: "autoplay; fullscreen", 
+                webkitallowfullscreen: true, 
+                mozallowfullscreen: true, 
+                allowfullscreen: true
+            }}
+            />
         </div>
     )
 };

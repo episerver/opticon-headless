@@ -1,8 +1,3 @@
-﻿import { ContentData } from "@episerver/content-delivery";
-import { ContentAreaItem } from "./ContentAreaItem";
+﻿import ContentAreaItem from "./ContentAreaItem";
 
-export interface ContentArea {
-    propertyDataType: string;
-    value: ContentAreaItem[];
-    expandedValue: ContentData[];
-};
+export type ContentArea = ContentAreaItem[] | null;

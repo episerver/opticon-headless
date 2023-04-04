@@ -1,5 +1,5 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
-import React, { FC } from 'react';
+import React, { FC, lazy, Suspense } from 'react';
 
 interface PropertyContentReferenceProps {
     value?: ContentData;
@@ -18,31 +18,31 @@ const PropertyContentReference: FC<PropertyContentReferenceProps> = ({ value, cl
                 loop
                 muted
             >
-                 <source src={value.url} type="video/mp4"/>
+                 <source src={value.contentLink.url} type="video/mp4"/>
             </video>
         );
     }
     else if (value.contentType[0] === 'Image') {
         return (
-            <img src={value.url}
+            <img src={value.contentLink.url}
                 className={className}
             />
         );
     }
     else if (value.contentType[0] === 'Page') {
-        const View = loadable(() => import(`../pages/${value.contentType.at(-1)}`), {
-            fallback: <div>Loading...</div>,
-        });
+        const View = lazy(() => import(`../pages/${value.contentType.at(-1)}`));
         return <div className={className}>
-            <View value={value}/>
+            <Suspense fallback={<div>Loading...</div>}>
+                <View value={value}/>
+            </Suspense>
         </div>
     }
     else if (value.contentType[0] === 'Block') {
-        const View = loadable(() => import(`../blocks/${value.contentType.at(-1)}`), {
-            fallback: <div>Loading...</div>,
-        });
+        const View = lazy(() => import(`../blocks/${value.contentType.at(-1)}`));
         return <div className={className}>
-            <View value={value}/>
+            <Suspense fallback={<div>Loading...</div>}>
+                <View value={value}/>
+            </Suspense>
         </div>
     }
     return <></>;
