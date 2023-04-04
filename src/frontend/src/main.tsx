@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from "./App";
 import PageComponentSelector, { PageDataLoader } from "./components/PageComponentSelector";
+import NotFound from "./components/NotFound";
 import "./main.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App />}>
             <Route index loader={PageDataLoader} element={<PageComponentSelector />} />
+            <Route path="/error" element={<NotFound />} />
             <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
         </Route>
     )

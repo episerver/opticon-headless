@@ -1,20 +1,21 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
 import React, { FC } from 'react';
 
-interface ButtonBlockProps {
-    value?: ContentData;
+interface ButtonBlockProps extends ContentData {
+    text?: string;
+    link?: string;
 }
 
-const ButtonBlock: FC<ButtonBlockProps> = ({ value }): JSX.Element => {
-    if (value == null || value == undefined) {
+const ButtonBlock: FC<ButtonBlockProps | null> = (props): JSX.Element => {
+    if (!props) {
         return <></>;
     }
     return (
         <div className="">
             <a className=""
-                title={value.text}
-                href={value.link}>
-                {value.text}
+                title={props.text}
+                href={props.link}>
+                {props.text}
             </a>
     
         </div>

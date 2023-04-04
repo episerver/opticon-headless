@@ -1,8 +1,8 @@
 ﻿import { ContentData, ContentLink } from "@episerver/content-delivery"
 
-export interface ContentAreaItem {
+export default interface ContentAreaItem {
     contentLink: ContentLink
     displayOption: string
     tag: string
-    expandedValue?: ContentData
+    content: ContentData;
 }
