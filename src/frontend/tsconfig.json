@@ -12,8 +12,14 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
-        "allowJs": true
+        "allowJs": true,
+        "paths": {
+            "@components/*": ["./src/components/*"],
+            "@views/*": ["./src/views/*"],
+            "@models/*": ["./src/models/*"],
+            "@assets/*": ["./src/assets/*"]
+        },
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "index.d.ts"],
     "exclude": ["node_modules", "public"]
 }

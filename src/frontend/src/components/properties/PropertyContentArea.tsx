@@ -1,6 +1,6 @@
-﻿import React, { FC, useEffect, lazy, Suspense } from 'react';
-import { ContentArea } from '../../models/ContentArea';
-import Loading from '../Loading';
+﻿import React, { FC, lazy, Suspense } from 'react';
+import { ContentArea } from '@models/ContentArea';
+import Loading from '@components/common/Loading';
 
 interface PropertyContentAreaProps {
     value: ContentArea;

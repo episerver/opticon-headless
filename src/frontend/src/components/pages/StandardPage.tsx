@@ -1,8 +1,8 @@
 ﻿import { ContentData } from "@episerver/content-delivery";
 import React, { FC } from "react";
-import { ContentArea } from "../../models/ContentArea";
-import PropertyContentArea from "../properties/PropertyContentArea";
-import PropertyXhtmlString from "../properties/PropertyXhtmlString";
+import { ContentArea } from "@models/ContentArea";
+import PropertyContentArea from "@components/properties/PropertyContentArea";
+import PropertyXhtmlString from "@components/properties/PropertyXhtmlString";
 
 interface StandardProps extends ContentData{
     mainBody?: string;

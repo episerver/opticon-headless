@@ -1,6 +1,6 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
 import React, { FC } from 'react';
-import PropertyXhtmlString from '../properties/PropertyXhtmlString';
+import PropertyXhtmlString from '@components/properties/PropertyXhtmlString';
 
 interface TextBlockProps extends ContentData {
     mainBody?: string;
