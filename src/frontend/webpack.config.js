@@ -46,6 +46,12 @@ module.exports = () => {
         resolve: {
             modules: [path.join(__dirname, "src"), "node_modules"],
             extensions: [".js", ".ts", ".tsx"],
+            alias: {
+                "@components": path.resolve(__dirname, 'src/components'),
+                "@views": path.resolve(__dirname, 'src/views'),
+                "@models": path.resolve(__dirname, 'src/models'),
+                "@assets": path.resolve(__dirname, 'src/assets'),
+            }
         },
         output: {
             filename: "[name].min.js",
@@ -69,7 +75,7 @@ module.exports = () => {
                 },
                 {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: "asset/resource",
+                    type: "asset/resource"
                 },
                 {
                     test: /\.mp4$/,

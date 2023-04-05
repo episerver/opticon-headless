@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getContentLoader } from "../DefaultContext";
-import LayoutSetting from "../models/LayoutSetting";
+import { getContentLoader } from "../../DefaultContext";
+import LayoutSetting from "@models/LayoutSetting";
 
 const Footer = () => {
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);

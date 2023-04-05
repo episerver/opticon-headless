@@ -1,9 +1,9 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
 import React, { FC } from 'react';
-import PropertyButton from '../properties/PropertyButton';
-import PropertyContentReference from '../properties/PropertyContentReference';
-import PropertyString from '../properties/PropertyString';
-import PropertyUrl from '../properties/PropertyUrl';
+import PropertyButton from '@components/properties/PropertyButton';
+import PropertyContentReference from '@components/properties/PropertyContentReference';
+import PropertyString from '@components/properties/PropertyString';
+import PropertyUrl from '@components/properties/PropertyUrl';
 
 interface HeroBlockProps extends ContentData {
     isScreenWidth: boolean;

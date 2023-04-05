@@ -1,8 +1,5 @@
 ﻿import { ContentData } from "@episerver/content-delivery";
 import React, { FC } from "react";
-import { ContentArea } from "../../models/ContentArea";
-import PropertyContentArea from "../properties/PropertyContentArea";
-import PropertyXhtmlString from "../properties/PropertyXhtmlString";
 
 interface BlogListProps extends ContentData{}
 
