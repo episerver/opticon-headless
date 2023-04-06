@@ -276,6 +276,152 @@
         "properties": []
       },
       {
+        "id": "b7926797-0e33-4193-938b-da36a8b2c512",
+        "name": "SettingBlock",
+        "baseType": "Block",
+        "editSettings": {
+          "displayName": "Setting Block",
+          "description": "Block contains site global settings.",
+          "available": true,
+          "sortOrder": 405
+        },
+        "properties": [
+          {
+            "name": "SiteLogo",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Site Logo",
+              "groupName": "Header",
+              "sortOrder": 0,
+              "helpText": "Site logo."
+            }
+          },
+          {
+            "name": "Introduction",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Introduction",
+              "groupName": "Footer",
+              "sortOrder": 1
+            }
+          },
+          {
+            "name": "CompanyHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company header",
+              "groupName": "Footer",
+              "sortOrder": 2
+            }
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company name",
+              "groupName": "Footer",
+              "sortOrder": 3
+            }
+          },
+          {
+            "name": "CompanyAddress",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company address",
+              "groupName": "Footer",
+              "sortOrder": 4
+            }
+          },
+          {
+            "name": "CompanyPhone",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company phone",
+              "groupName": "Footer",
+              "sortOrder": 5
+            }
+          },
+          {
+            "name": "CompanyEmail",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Company email",
+              "groupName": "Footer",
+              "sortOrder": 6
+            }
+          },
+          {
+            "name": "LinksHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Links header",
+              "groupName": "Footer",
+              "sortOrder": 7
+            }
+          },
+          {
+            "name": "Links",
+            "dataType": "PropertyLinkCollection",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Links",
+              "groupName": "Footer",
+              "sortOrder": 8
+            }
+          },
+          {
+            "name": "SocialHeader",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Social header",
+              "groupName": "Footer",
+              "sortOrder": 9
+            }
+          },
+          {
+            "name": "SocialLinks",
+            "dataType": "PropertyLinkCollection",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Social links",
+              "groupName": "Footer",
+              "sortOrder": 10
+            }
+          },
+          {
+            "name": "Copyright",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Copyright",
+              "groupName": "Footer",
+              "sortOrder": 11
+            }
+          }
+        ]
+      },
+      {
         "id": "9d10b889-b516-4aa9-bf79-235287c4f400",
         "name": "TextBlock",
         "baseType": "Block",
@@ -686,165 +832,6 @@
           "sortOrder": 445
         },
         "properties": []
-      },
-      {
-        "id": "5d6594fe-0a8f-4c15-8af6-749ee86ccee7",
-        "name": "HomePage",
-        "baseType": "Page",
-        "version": "1.0.0.0",
-        "editSettings": {
-          "displayName": "Home Page",
-          "description": "Used for home page of all sites.",
-          "available": true,
-          "sortOrder": 701
-        },
-        "properties": [
-          {
-            "name": "SiteLogo",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Site Logo",
-              "groupName": "Header",
-              "sortOrder": 0,
-              "helpText": "Site logo."
-            }
-          },
-          {
-            "name": "MainContentArea",
-            "dataType": "PropertyContentArea",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main content area",
-              "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "Add blocks here for the home page"
-            }
-          },
-          {
-            "name": "Introduction",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Introduction",
-              "groupName": "Footer",
-              "sortOrder": 1
-            }
-          },
-          {
-            "name": "CompanyHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company header",
-              "groupName": "Footer",
-              "sortOrder": 2
-            }
-          },
-          {
-            "name": "CompanyName",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company name",
-              "groupName": "Footer",
-              "sortOrder": 3
-            }
-          },
-          {
-            "name": "CompanyAddress",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company address",
-              "groupName": "Footer",
-              "sortOrder": 4
-            }
-          },
-          {
-            "name": "CompanyPhone",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company phone",
-              "groupName": "Footer",
-              "sortOrder": 5
-            }
-          },
-          {
-            "name": "CompanyEmail",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company email",
-              "groupName": "Footer",
-              "sortOrder": 6
-            }
-          },
-          {
-            "name": "LinksHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Links header",
-              "groupName": "Footer",
-              "sortOrder": 7
-            }
-          },
-          {
-            "name": "Links",
-            "dataType": "PropertyLinkCollection",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Links",
-              "groupName": "Footer",
-              "sortOrder": 8
-            }
-          },
-          {
-            "name": "SocialHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Social header",
-              "groupName": "Footer",
-              "sortOrder": 9
-            }
-          },
-          {
-            "name": "SocialLinks",
-            "dataType": "PropertyLinkCollection",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Social links",
-              "groupName": "Footer",
-              "sortOrder": 10
-            }
-          },
-          {
-            "name": "Copyright",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Copyright",
-              "groupName": "Footer",
-              "sortOrder": 11
-            }
-          }
-        ]
       },
       {
         "id": "b087f703-677c-4487-9943-d972cfc51438",
