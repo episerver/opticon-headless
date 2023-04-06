@@ -25,7 +25,7 @@ namespace Optimizely.Server
         [Route("api/episerver/v3.0/sites")]
         public IActionResult CreateSite()
         {
-            var reference = _permanentLinkMapper.Find(new Guid("97333fc8-932c-47d4-8693-9c0870fb7fc9"));
+            var reference = _permanentLinkMapper.Find(new Guid("3729d832-357e-409a-87e2-5242400fb47f"));
             if (reference == null || ContentReference.IsNullOrEmpty(reference.ContentReference))
             {
                 return Problem(detail: "Could not find home page", statusCode: 400);
@@ -33,7 +33,7 @@ namespace Optimizely.Server
             var site = new SiteDefinition
             {
                 Name = "Opticon Headless",
-                SiteUrl = new Uri($"{Request.Scheme}://{Request.Host.Host}/"),
+                SiteUrl = new Uri($"{Request.Scheme}://{Request.Host.Host}:5000/"),
                 StartPage = reference.ContentReference,
                 Hosts = new List<HostDefinition>()
                 {

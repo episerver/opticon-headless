@@ -1,112 +1,28 @@
-﻿[
+[
     {
         "contentLink": {
-            "guidValue" : "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
+            "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
         "name": "Destinations",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationListPage"
-        ],
+        "contentType": ["Page", "LocationListPage"],
         "parentLink": {
-            "guidValue": "97333fc8-932c-47d4-8693-9c0870fb7fc9"
+            "guidValue": "3729d832-357e-409a-87e2-5242400fb47f"
         },
         "status": "Published",
         "metaTitle": "Destinations"
     },
     {
         "contentLink": {
-            "guidValue" : "b2ff4c03-16ec-4586-bd4c-4c64ed37cae7"
-        },
-        "name": "Alanya",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
-        "parentLink": {
-            "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
-        },
-        "status": "Published",
-        "mainIntro": "Situated on the Gulf of Antalya on Turkey's Mediterranean coast, Alanya has been a favoured seaside holiday resort for over 800 years. Today's tourist is drawn here for much the same reasons as the Seljuk Turks all those centuries ago; the sea is warm and gentle, the beaches stretch for miles and the town has an interesting history.",
-        "continent": "Europe",
-        "country": "Turkey",
-        "latitude": 36.55,
-        "longitude": 32,
-        "avgTemp": 19.36,
-        "airportInitials": "GZP",
-        "yearlyPassengers": 85000,
-        "mainBody": "<p>Alanya, formerly Alaiye, is a beach resort city and a component district of Antalya Province in the Mediterranean Region of Turkey, 166 kilometres (103 mi) from the city of Antalya. On the southern coast of Turkey, the district (which includes the city and its built-up area) has an area of 1,598.51 km2 and (2010 Census) 248,286 inhabitants (city 98,627). The population is almost entirely of Turkish origin, but is home to around 10,000 European residents.</p>\r\n<p>Because of its natural strategic position on a small peninsula into the Mediterranean Sea below the Taurus Mountains, Alanya has been a local stronghold for many Mediterranean-based empires, including the Ptolemaic, Seleucid, Roman, Byzantine, and Ottoman Empires. Alanya's greatest political importance came in the Middle Ages, with the Seljuk Sultanate of Rûm under the rule of Alaeddin Kayqubad I, from whom the city derives its name. His building campaign resulted in many of the city's landmarks, such as the Kizil Kule (Red Tower), Tersane (Shipyard), and Alanya Castle.</p>\r\n<p>The Mediterranean climate, natural attractions, and historic heritage makes Alanya a popular destination for tourism, and responsible for nine percent of Turkey's tourism sector and thirty percent of foreign purchases of real estate in Turkey. Tourism has risen since 1958 to become the dominant industry in the city, resulting in a corresponding increase in city population. Warm-weather sporting events and cultural festivals take place annually in Alanya. Mayor Hasan Sipahioglu, of the Justice and Development Party, has led the city since 1999.</p>\r\n<p>Alanya has a typical Mediterranean climate. The Mediterranean Basin ensures that most rain comes during the winter, leaving the summers long, hot, and dry, prompting the Alanya board of Tourism to use the slogan \"where the sun smiles\". Storm cells sometimes bring with them fair weather waterspouts when close to the shore. The presence of the Taurus Mountain in close proximity to the sea causes fog, in turn creating visible rainbows many mornings. The height of the mountains creates an interesting effect as snow can often be seen on them even on hot days in the city below. The sea at Alanya has an average temperature of 21.4 °C (71 °F) annually, with an average August temperature of 27.9 °C (82 °F).</p>"
-    },
-    {
-        "contentLink": {
-           "guidValue" : "75add37a-b8c7-4d02-9ed8-d99395e63bbb"
-        },
-        "name": "Amsterdam",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
-        "parentLink": {
-            "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
-        },
-        "status": "Published",
-        "mainIntro": "Amsterdam is one of the most popular tourist destinations in Europe, receiving more than 4.63 million international visitors annually. The number of visitors has been growing steadily over the past decade. The city is also cultural capital of the Netherlands.",
-        "continent": "Europe",
-        "country": "Netherlands",
-        "latitude": 52.373056,
-        "longitude": 5,
-        "avgTemp": 9.9,
-        "airportInitials": "AMS",
-        "yearlyPassengers": 51035590,
-        "mainBody": "<p>Amsterdam is the largest city and the capital of the Netherlands. The current position of Amsterdam as capital city of the Kingdom of the Netherlands is governed by the constitution of August 24, 1815 and its successors. Amsterdam has a population of 783,364 within city limits, an urban population of 1,209,419 and a metropolitan population of 2,158,592. The city is in the province of North Holland in the west of the country. It comprises the northern part of the Randstad, one of the larger conurbations in Europe, with a population of approximately 7 million.</p>\r\n<p>Its name is derived from Amstelredamme, indicative of the city's origin :  a dam in the river Amstel. Settled as a small fishing village in the late 12th century, Amsterdam became one of the most important ports in the world during the Dutch Golden Age, a result of its innovative developments in trade. During that time, the city was the leading center for finance and diamonds. In the 19th and 20th centuries, the city expanded, and many new neighborhoods and suburbs were formed. The 17th-century canals of Amsterdam (in Dutch :  'Grachtengordel'), located in the heart of Amsterdam, were added to the UNESCO World Heritage List in July 2010.</p>\r\n<p>As Netherlands' commercial capital and one of the top financial centres in Europe, Amsterdam is considered an alpha world city by the Globalization and World Cities (GaWC) study group. The city is also cultural capital of the Netherlands. Many large Dutch institutions have their headquarters there, and 7 of the world's top 500 companies, including Philips and ING, are based in the city. In 2010, Amsterdam was ranked 13th globally on quality of living by Mercer, and previously ranked 3rd in innovation by 2thinknow in the Innovation Cities Index 2009.<br />The Amsterdam Stock Exchange, the oldest stock exchange in the world, is located in the city center. Amsterdam's main attractions, including its historic canals, the Rijksmuseum, the Van Gogh Museum, Stedelijk Museum, Hermitage Amsterdam, Anne Frank House, Amsterdam Museum, its red-light district, and its many cannabis coffee shops draw more than 3.66 million international visitors annually.</p>"
-    },
-    {
-        "contentLink": {
-           "guidValue" : "07e343e5-090a-4259-930d-2714f9af3579"
-        },
-        "name": "Åre",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
-        "parentLink": {
-            "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
-        },
-        "status": "Published",
-        "mainIntro": "Åre in Sweden is Northern Europe´s largest and most advanced and diverse alpine sport resort, with skiing and a wide variety of other sports and activities to suit every possible preference and level of skill.",
-        "continent": "Europe",
-        "country": "Sweden",
-        "latitude": 63.4,
-        "longitude": 13,
-        "avgTemp": 2.6,
-        "airportInitials": "OSD",
-        "yearlyPassengers": 377868,
-        "mainBody": "<p>Åre is a locality and one of the leading Scandinavian ski resorts situated in Åre Municipality, Jämtland County, Sweden with 1,417 inhabitants in 2010. It is however, not the seat of the municipality, which is Järpen. 25% of the municipal industry is based on tourism, most notably the downhill skiing and biking resorts in Åre and Storlien. The growth in tourism has resulted in the development of hotels, recreational and shopping opportunities in the area.</p>\r\n<p>Tourism in Åre started as King Oscar II in 1882 built the railroad to Trondheim in Norway. With this new railroad many people came to Åre to breathe the fresh air and to walk to the top of Åreskutan. They were soon known as “air-guests” (luftgäster).</p>\r\n<p>There was no hotel, but in 1888 Albin Wettergren opened a restaurant by the railroad station. In 1891 Åre Tourist Station opened and even more guests were attracted to the village.</p>\r\n<p>A woman from Östersund saw this increasing tourism as a great opportunity to open a hotel and did so in 1895. It was called “Hotell Åreskutan”. Also Albin Wettergren opened a hotel (“Grand Hotell”). These were only a few of all the hotels that were going to be founded in Åre.</p>\r\n<p>In 1910, the Åre Bergbana was built and was the third one in Sweden after the one in Skansen (1898) and the one in Kirunavaara (1907). This was a more convenient way for the air-guests to reach the top of Åreskutan.</p>\r\n<p>Taking advantage of the Åreskutan fell, the major center for alpine skiing in Sweden has become Åre Ski Area, sporting more than 30 modern ski-lifts. It hosted the Alpine World Championships in 1954 and 2007, and the annual Jon Olsson Invitational freeskiing competition, ending in 2007. On March 9–10 2012 the Freestyle FIS World Cup will be held in \"slalombacken\" close to the village centre.</p>\r\n<p>Åre would also have been the secondary site for the alpine events of Östersund in its bid for the organization of the XXII Olympic Winter Games, the 2014 Winter Olympics.</p>"
-    },
-    {
-        "contentLink": {
-           "guidValue" : "58eb8848-dd64-4d23-af3f-c64741ef4307"
+            "guidValue": "58eb8848-dd64-4d23-af3f-c64741ef4307"
         },
         "name": "Aspen",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -123,16 +39,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "76de887b-76a6-4488-a5b9-fbc3707d13cf"
+            "guidValue": "76de887b-76a6-4488-a5b9-fbc3707d13cf"
         },
         "name": "Athens",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -149,16 +62,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "b33efae3-a565-4458-b0a1-cb81de711b0a"
+            "guidValue": "b33efae3-a565-4458-b0a1-cb81de711b0a"
         },
         "name": "Azores",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -175,16 +85,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "98f97c94-df70-487f-b84d-1331810f0b1c"
+            "guidValue": "98f97c94-df70-487f-b84d-1331810f0b1c"
         },
         "name": "Bangkok",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -201,16 +108,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "cc7c742e-b03b-4842-bb60-3b71bb39d3b6"
+            "guidValue": "cc7c742e-b03b-4842-bb60-3b71bb39d3b6"
         },
         "name": "Barcelona",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -227,16 +131,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "babc8922-042f-4aba-8c11-ec63e783e12b"
+            "guidValue": "babc8922-042f-4aba-8c11-ec63e783e12b"
         },
         "name": "Beijing",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -253,16 +154,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "dd5b244a-bb85-4c9e-969f-e8336c5c3d25"
+            "guidValue": "dd5b244a-bb85-4c9e-969f-e8336c5c3d25"
         },
         "name": "Bergen",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -279,16 +177,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "8e0fb7cd-8476-4ba7-aae7-ce317f9f5f80"
+            "guidValue": "8e0fb7cd-8476-4ba7-aae7-ce317f9f5f80"
         },
         "name": "Berlin",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -305,16 +200,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "b004e08c-dd9b-4be4-8018-c92dd1b1f38a"
+            "guidValue": "b004e08c-dd9b-4be4-8018-c92dd1b1f38a"
         },
         "name": "Bordeaux",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -331,16 +223,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "5fc14f4f-127d-44af-92fa-acb2919cc25f"
+            "guidValue": "5fc14f4f-127d-44af-92fa-acb2919cc25f"
         },
         "name": "Buenos Aires",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -357,16 +246,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "64e103fa-f6e3-4fb2-a572-727d654d0a3d"
+            "guidValue": "64e103fa-f6e3-4fb2-a572-727d654d0a3d"
         },
         "name": "Burgas",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -383,16 +269,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "859cce9c-0eb9-4780-a6a5-b0b60d114272"
+            "guidValue": "859cce9c-0eb9-4780-a6a5-b0b60d114272"
         },
         "name": "Cairo",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -409,16 +292,16 @@
     },
     {
         "contentLink": {
-           "guidValue" : "d55f81dc-646b-4fad-b136-564a67907783"
+            "guidValue": "d55f81dc-646b-4fad-b136-564a67907783"
         },
         "name": "Cape Town",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
+        "parentLink": {
+            "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
+        },
         "status": "Published",
         "mainIntro": "A city with a diverse range of attractions, sights and activities to offer. From lavish and luxurious to back-packing on a budget, Cape Town has something for everyone.  From the landmark beaches of Clifton and Camps Bay to the vibrant V&A Waterfront and Cape Town city centre and the award winning wine farms of Stellenbosch and Franschhoek - time spent in CapeTown will not be forgotten.",
         "continent": "Africa",
@@ -428,20 +311,17 @@
         "avgTemp": 16.8,
         "airportInitials": "CPT",
         "yearlyPassengers": 6000000,
-        "mainBody": "<p>Cape Town is the second-most populous city in South Africa, and the provincial capital and primate city of the Western Cape. As the seat of the National Parliament, it is also the legislative capital of the country. It forms part of the City of Cape Town metropolitan municipality. The city is famous for its harbour as well as its natural setting in the Cape floral kingdom, including such well-known landmarks as Table Mountain and Cape Point. Cape Town is also Africa's most popular tourist destination.</p>\r\n<p>Located on the shore of Table Bay, Cape Town was originally developed by the Dutch East India Company as a victualling (supply) station for Dutch ships sailing to Eastern Africa, India, and the Far East. Jan van Riebeeck's arrival on 6 April 1652 established the first permanent European settlement in South Africa. Cape Town quickly outgrew its original purpose as the first European outpost at the Castle of Good Hope, becoming the economic and cultural hub of the Cape Colony. Until the Witwatersrand Gold Rush and the development of Johannesburg, Cape Town was the largest city in South Africa.</p>\r\n<p>Today it is one of the most multicultural cities in the world, reflecting its role as a major destination for immigrants and expatriates to South Africa. As of 2007 the city had an estimated population of 3.5 million. Cape Town's land area of 2,455 square kilometres (948 sq mi) is larger than other South African cities, resulting in a comparatively lower population density of 1,425 inhabitants per square kilometre (3,690 /sq mi).</p>\r\n<p>The city was named the World Design Capital for 2014 by the International Council of Societies of Industrial Design.</p>\r\n<p>The Cape Peninsula has a Mediterranean climate (Koppen Csa), with mild, wet winters, and dry and very warm summers. In winter time, which lasts from the beginning of June to end of August, large cold fronts come across from the Atlantic Ocean with heavy precipitation and strong north-westerly winds. The winter months are cool, with an average minimum of 7.0 °C (45 °F) and maximum of 17.5 °C (63 °F). Most of the city's annual rainfall occurs in wintertime, but due to the mountainous topography, rainfall amounts for specific areas can vary dramatically. Newlands, to the south of the city, is the wettest suburb in South Africa. The valleys and coastal plains average 515 millimetres (20.3 in) of rain per annum, while mountain areas can average as much as 1,500 millimetres (59 in) per annum.</p>\r\n<p>Summer, which lasts from November to March, is warm and dry. The Peninsula gets frequent strong winds from the south-east, known locally as the Cape Doctor, because it blows away pollution and cleans the air. The south-easterly wind is caused by a high-pressure system which sits in the South Atlantic to the west of Cape Town, known as the South-Atlantic High. Summer temperatures are mild, with an average maximum of 26.5 °C (80 °F). Cape Town can be uncomfortably hot when the Berg Wind, meaning \"mountain wind\" blows from the Karoo interior for a couple of weeks in February or early March.</p>\r\n<p>Cape Town's weather is remarkably similar to that of San Francisco, with temperature being the conspicuous exception. Cape Town receives slightly more hours of sunlight than San Francisco (3,090 to 3,030 hours), somewhat less rainfall (515mm to 518mm)&nbsp; and marginally less wind (a mid-range 3 on the Beaufort scale with just under 50% wind probability, compared to an average low Beaufort 4 at barely over 50% wind probability). Cape Town is, however, noticeably warmer, with an average annual ambient air temperature of 19 °C (66 °F) versus San Francisco's 13 °C (55 °F). On a much smaller, national scale compared to other large South African cities, Cape Town receives a nearly identical annual amount of precipatation as Pretoria 517 millimetres (20.4 in), and considerably less than Durban 828 millimetres (32.6 in). Remarkably, given that its 3,094 hours of sunshine is extremely high by international standards, Cape Town in fact receives slightly less sunshine than the South African national average for sunshine. It is the least sunny of South Africa's three capital cities (Bloemfontein receives 3,470 hours of sun a year, and Pretoria receives 3300), and also less sunny than the country’s financial centre of Johannesburg (3,250 hours), Kimberly (3,500 hours), Calvinia (3590 hours) or Upington (3,840 hours). However, Cape Town surpasses subtropical Durban (2,354 hours) by a great deal in terms of sunshine, though it is far cooler.</p>\r\n<p>As a matter of fact, Cape Town receives even more annual sunshine hours than almost all locations in the tropical zones of both the Northern and Southern Hemispheres, as do many Mediterranean climate areas due to their dry summers. Compared to other Mediterranean climates, Cape Town is rather warm but it is not hot. As an annual average, Cape Town (19 °C (66 °F)) is significantly warmer than Barcelona (16 °C (61 °F)), barely warmer than Rome (18 °C (64 °F)), fractionally cooler than Palermo, or Athens (20 °C (68 °F)), and the same as Naples. The city receives very much more sunlight than any major city in the Mediterranean however (e.g. Athens (2800 hours per year)&nbsp; and Madrid (2830 hours per year)).</p>\r\n<p>Water temperatures range greatly, between 10 °C (50 °F) on the Atlantic Seaboard, to 22 °C (72 °F) in False Bay. Average annual Ocean temperatures are between 13 °C (55 °F) on the Atlantic Seaboard (similar to Californian waters, such as San Francisco or Big Sur), and 17 °C (63 °F) in False Bay (similar to Northern Mediterranean temperatures, such as Nice or Monte Carlo).</p>"
+        "mainBody": "<p>Cape Town is the second-most populous city in South Africa, and the provincial capital and primate city of the Western Cape. As the seat of the National Parliament, it is also the legislative capital of the country. It forms part of the City of Cape Town metropolitan municipality. The city is famous for its harbour as well as its natural setting in the Cape floral kingdom, including such well-known landmarks as Table Mountain and Cape Point. Cape Town is also Africa's most popular tourist destination.</p>\r\n<p>Located on the shore of Table Bay, Cape Town was originally developed by the Dutch East India Company as a victualling (supply) station for Dutch ships sailing to Eastern Africa, India, and the Far East. Jan van Riebeeck's arrival on 6 April 1652 established the first permanent European settlement in South Africa. Cape Town quickly outgrew its original purpose as the first European outpost at the Castle of Good Hope, becoming the economic and cultural hub of the Cape Colony. Until the Witwatersrand Gold Rush and the development of Johannesburg, Cape Town was the largest city in South Africa.</p>\r\n<p>Today it is one of the most multicultural cities in the world, reflecting its role as a major destination for immigrants and expatriates to South Africa. As of 2007 the city had an estimated population of 3.5 million. Cape Town's land area of 2,455 square kilometres (948 sq mi) is larger than other South African cities, resulting in a comparatively lower population density of 1,425 inhabitants per square kilometre (3,690 /sq mi).</p>\r\n<p>The city was named the World Design Capital for 2014 by the International Council of Societies of Industrial Design.</p>\r\n<p>The Cape Peninsula has a Mediterranean climate (Koppen Csa), with mild, wet winters, and dry and very warm summers. In winter time, which lasts from the beginning of June to end of August, large cold fronts come across from the Atlantic Ocean with heavy precipitation and strong north-westerly winds. The winter months are cool, with an average minimum of 7.0 °C (45 °F) and maximum of 17.5 °C (63 °F). Most of the city's annual rainfall occurs in wintertime, but due to the mountainous topography, rainfall amounts for specific areas can vary dramatically. Newlands, to the south of the city, is the wettest suburb in South Africa. The valleys and coastal plains average 515 millimetres (20.3 in) of rain per annum, while mountain areas can average as much as 1,500 millimetres (59 in) per annum.</p>\r\n<p>Summer, which lasts from November to March, is warm and dry. The Peninsula gets frequent strong winds from the south-east, known locally as the Cape Doctor, because it blows away pollution and cleans the air. The south-easterly wind is caused by a high-pressure system which sits in the South Atlantic to the west of Cape Town, known as the South-Atlantic High. Summer temperatures are mild, with an average maximum of 26.5 °C (80 °F). Cape Town can be uncomfortably hot when the Berg Wind, meaning \\\"mountain wind\\\" blows from the Karoo interior for a couple of weeks in February or early March.</p>\r\n<p>Cape Town's weather is remarkably similar to that of San Francisco, with temperature being the conspicuous exception. Cape Town receives slightly more hours of sunlight than San Francisco (3,090 to 3,030 hours), somewhat less rainfall (515mm to 518mm)&nbsp; and marginally less wind (a mid-range 3 on the Beaufort scale with just under 50% wind probability, compared to an average low Beaufort 4 at barely over 50% wind probability). Cape Town is, however, noticeably warmer, with an average annual ambient air temperature of 19 °C (66 °F) versus San Francisco's 13 °C (55 °F). On a much smaller, national scale compared to other large South African cities, Cape Town receives a nearly identical annual amount of precipatation as Pretoria 517 millimetres (20.4 in), and considerably less than Durban 828 millimetres (32.6 in). Remarkably, given that its 3,094 hours of sunshine is extremely high by international standards, Cape Town in fact receives slightly less sunshine than the South African national average for sunshine. It is the least sunny of South Africa's three capital cities (Bloemfontein receives 3,470 hours of sun a year, and Pretoria receives 3300), and also less sunny than the country’s financial centre of Johannesburg (3,250 hours), Kimberly (3,500 hours), Calvinia (3590 hours) or Upington (3,840 hours). However, Cape Town surpasses subtropical Durban (2,354 hours) by a great deal in terms of sunshine, though it is far cooler.</p>\r\n<p>As a matter of fact, Cape Town receives even more annual sunshine hours than almost all locations in the tropical zones of both the Northern and Southern Hemispheres, as do many Mediterranean climate areas due to their dry summers. Compared to other Mediterranean climates, Cape Town is rather warm but it is not hot. As an annual average, Cape Town (19 °C (66 °F)) is significantly warmer than Barcelona (16 °C (61 °F)), barely warmer than Rome (18 °C (64 °F)), fractionally cooler than Palermo, or Athens (20 °C (68 °F)), and the same as Naples. The city receives very much more sunlight than any major city in the Mediterranean however (e.g. Athens (2800 hours per year)&nbsp; and Madrid (2830 hours per year)).</p>\r\n<p>Water temperatures range greatly, between 10 °C (50 °F) on the Atlantic Seaboard, to 22 °C (72 °F) in False Bay. Average annual Ocean temperatures are between 13 °C (55 °F) on the Atlantic Seaboard (similar to Californian waters, such as San Francisco or Big Sur), and 17 °C (63 °F) in False Bay (similar to Northern Mediterranean temperatures, such as Nice or Monte Carlo).</p>"
     },
     {
         "contentLink": {
-           "guidValue" : "57b58530-6571-4fdc-8c84-ee916ff1b901"
+            "guidValue": "57b58530-6571-4fdc-8c84-ee916ff1b901"
         },
         "name": "Cardiff",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -458,16 +338,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "34b26a25-6ede-458a-9a23-0a2b1f83bf6b"
+            "guidValue": "34b26a25-6ede-458a-9a23-0a2b1f83bf6b"
         },
         "name": "Chamonix",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -484,16 +361,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "1d098889-e6fe-46c6-8f4b-4ea2cd8fff41"
+            "guidValue": "1d098889-e6fe-46c6-8f4b-4ea2cd8fff41"
         },
         "name": "Chicago",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -510,16 +384,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "f2bee22a-625c-48bc-b511-8cf73e2ad6f1"
+            "guidValue": "f2bee22a-625c-48bc-b511-8cf73e2ad6f1"
         },
         "name": "Copenhagen",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -536,16 +407,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "be509e14-33a1-4ab7-9773-fc323ac1acc0"
+            "guidValue": "be509e14-33a1-4ab7-9773-fc323ac1acc0"
         },
         "name": "Corsica",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -562,16 +430,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "915accd5-693a-4ebb-a56b-a7576b073bab"
+            "guidValue": "915accd5-693a-4ebb-a56b-a7576b073bab"
         },
         "name": "Cortina",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -588,16 +453,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "acc455bc-f5d4-4e64-a7b9-e298b1f3a426"
+            "guidValue": "acc455bc-f5d4-4e64-a7b9-e298b1f3a426"
         },
         "name": "Crete",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -614,16 +476,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "d7f45529-5450-4860-b726-fb563f76c91d"
+            "guidValue": "d7f45529-5450-4860-b726-fb563f76c91d"
         },
         "name": "Dublin",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -640,16 +499,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "fb40aace-71b3-4caa-b3a2-46d29c822468"
+            "guidValue": "fb40aace-71b3-4caa-b3a2-46d29c822468"
         },
         "name": "Dubrovnik",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -666,16 +522,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "760613df-9795-4406-80f1-081def8af973"
+            "guidValue": "760613df-9795-4406-80f1-081def8af973"
         },
         "name": "Goa",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -692,16 +545,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "f364bc57-f1dd-4123-bb44-efd0132194c0"
+            "guidValue": "f364bc57-f1dd-4123-bb44-efd0132194c0"
         },
         "name": "Gothenburg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -718,16 +568,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "bb95fb86-6394-4206-9766-76024512f383"
+            "guidValue": "bb95fb86-6394-4206-9766-76024512f383"
         },
         "name": "Havana",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -744,16 +591,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "a12e51db-cb73-40a7-9fc4-4b6e24602da7"
+            "guidValue": "a12e51db-cb73-40a7-9fc4-4b6e24602da7"
         },
         "name": "Hawaii",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -770,16 +614,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "08b17e7e-660e-4194-8c80-75705e65a7cd"
+            "guidValue": "08b17e7e-660e-4194-8c80-75705e65a7cd"
         },
         "name": "Helsinki",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -796,16 +637,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "7791cfbb-cca5-411a-ba58-3a3d4d76c6cb"
+            "guidValue": "7791cfbb-cca5-411a-ba58-3a3d4d76c6cb"
         },
         "name": "Hurghada",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -822,16 +660,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "45d1fcf5-7b14-4c62-8d5f-70d6add6f84a"
+            "guidValue": "45d1fcf5-7b14-4c62-8d5f-70d6add6f84a"
         },
         "name": "Khao Lak",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -848,16 +683,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "bc6072e8-7183-460b-b271-d713d8022bfa"
+            "guidValue": "bc6072e8-7183-460b-b271-d713d8022bfa"
         },
         "name": "Kiev",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -874,16 +706,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "d2d6ec70-01c8-4549-a124-cc334bf98346"
+            "guidValue": "d2d6ec70-01c8-4549-a124-cc334bf98346"
         },
         "name": "Kos",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -900,16 +729,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "36ffc6f0-4c61-4a7b-a7d4-2153131b1b38"
+            "guidValue": "36ffc6f0-4c61-4a7b-a7d4-2153131b1b38"
         },
         "name": "Krabi",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -926,16 +752,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "963b95ef-7438-471c-89e2-96b334722329"
+            "guidValue": "963b95ef-7438-471c-89e2-96b334722329"
         },
         "name": "London",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -952,16 +775,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "8e90556f-1ef8-4cf0-90b8-efddc7faf989"
+            "guidValue": "8e90556f-1ef8-4cf0-90b8-efddc7faf989"
         },
         "name": "Los Angeles",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -978,16 +798,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "6460c9e0-7047-4e0e-adc7-7e2b4732d520"
+            "guidValue": "6460c9e0-7047-4e0e-adc7-7e2b4732d520"
         },
         "name": "Luxor",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1004,16 +821,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "80f01bec-0b5a-44ff-b784-8df586d51abf"
+            "guidValue": "80f01bec-0b5a-44ff-b784-8df586d51abf"
         },
         "name": "Madrid",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1030,16 +844,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "261e0325-0292-44d6-bd1a-853cb92084e7"
+            "guidValue": "261e0325-0292-44d6-bd1a-853cb92084e7"
         },
         "name": "Málaga",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1056,16 +867,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "e13c3360-85ea-4f08-bbbe-d67a6df14898"
+            "guidValue": "e13c3360-85ea-4f08-bbbe-d67a6df14898"
         },
         "name": "Mallorca",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1082,16 +890,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "6fcf052f-262b-4d23-985e-561d18603120"
+            "guidValue": "6fcf052f-262b-4d23-985e-561d18603120"
         },
         "name": "Manchester",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1108,16 +913,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "784430dd-0c9c-4bf2-8b46-68017b445fed"
+            "guidValue": "784430dd-0c9c-4bf2-8b46-68017b445fed"
         },
         "name": "Mexico City",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1134,16 +936,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "a52e68f6-2a45-4d44-b329-f7ce620d0022"
+            "guidValue": "a52e68f6-2a45-4d44-b329-f7ce620d0022"
         },
         "name": "Miami",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1160,16 +959,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "e09c8b6f-1eaa-4006-9c12-6d66de41565c"
+            "guidValue": "e09c8b6f-1eaa-4006-9c12-6d66de41565c"
         },
         "name": "Milan",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1186,16 +982,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "6bfa6961-440b-4723-9503-904e1adddb50"
+            "guidValue": "6bfa6961-440b-4723-9503-904e1adddb50"
         },
         "name": "Mont-Tremblant",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1212,16 +1005,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "4f9fd3d9-1376-4ac2-ba19-fbfe6ae67276"
+            "guidValue": "4f9fd3d9-1376-4ac2-ba19-fbfe6ae67276"
         },
         "name": "Moscow",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1238,16 +1028,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "0bc78dd2-02bd-4b5a-ba25-29d2445bb189"
+            "guidValue": "0bc78dd2-02bd-4b5a-ba25-29d2445bb189"
         },
         "name": "Munich",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1264,16 +1051,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "14a78ca4-66f0-444d-91ee-6e6d5286fe1c"
+            "guidValue": "14a78ca4-66f0-444d-91ee-6e6d5286fe1c"
         },
         "name": "Nairobi",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1290,16 +1074,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "428ade08-ba86-44cb-b46c-b29f5586313f"
+            "guidValue": "428ade08-ba86-44cb-b46c-b29f5586313f"
         },
         "name": "New York",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1316,16 +1097,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "f315edf7-983c-4eac-9f87-d60a0eeaf90b"
+            "guidValue": "f315edf7-983c-4eac-9f87-d60a0eeaf90b"
         },
         "name": "Nice",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1342,16 +1120,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "b21f20d8-ba93-4a4e-aaa6-93f524f908ab"
+            "guidValue": "b21f20d8-ba93-4a4e-aaa6-93f524f908ab"
         },
         "name": "Nuuk",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1368,16 +1143,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "42fef3a1-16b3-4f94-87fd-691391115d55"
+            "guidValue": "42fef3a1-16b3-4f94-87fd-691391115d55"
         },
         "name": "Osaka",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1394,16 +1166,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "61478b4c-6d9c-47ca-9af8-bd9a11cd630e"
+            "guidValue": "61478b4c-6d9c-47ca-9af8-bd9a11cd630e"
         },
         "name": "Oslo",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1420,16 +1189,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "2bd9a184-8e35-4bc7-8251-6c1d6f0b01d9"
+            "guidValue": "2bd9a184-8e35-4bc7-8251-6c1d6f0b01d9"
         },
         "name": "Paris",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1446,16 +1212,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "82dae01b-5f80-46a0-83b9-106475e6b620"
+            "guidValue": "82dae01b-5f80-46a0-83b9-106475e6b620"
         },
         "name": "Prague",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1472,16 +1235,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "9f8cdcaa-1fda-4144-8a5b-9e58bbaa8a34"
+            "guidValue": "9f8cdcaa-1fda-4144-8a5b-9e58bbaa8a34"
         },
         "name": "Pula",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1498,16 +1258,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "053da147-fab0-4163-bb5e-67cb1e874509"
+            "guidValue": "053da147-fab0-4163-bb5e-67cb1e874509"
         },
         "name": "Reykjavík",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1524,16 +1281,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "52720f7e-662e-4d0b-bc86-d3c0e323e091"
+            "guidValue": "52720f7e-662e-4d0b-bc86-d3c0e323e091"
         },
         "name": "Rhodes",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1550,16 +1304,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "c2462ef0-c3e1-4920-ae83-f94a203afd53"
+            "guidValue": "c2462ef0-c3e1-4920-ae83-f94a203afd53"
         },
         "name": "Rio de Janeiro",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1576,16 +1327,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "657c08db-b591-46bc-9716-4062e54c9978"
+            "guidValue": "657c08db-b591-46bc-9716-4062e54c9978"
         },
         "name": "Rome",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1602,16 +1350,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "ed7093bd-85cf-4756-84a8-7d01f47c4004"
+            "guidValue": "ed7093bd-85cf-4756-84a8-7d01f47c4004"
         },
         "name": "Saint Petersburg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1628,16 +1373,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "a06d5c7e-744d-4533-9536-92dc8581d14c"
+            "guidValue": "a06d5c7e-744d-4533-9536-92dc8581d14c"
         },
         "name": "San Francisco",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1654,16 +1396,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "748fd59f-ec31-4853-ba5d-68db76a06935"
+            "guidValue": "748fd59f-ec31-4853-ba5d-68db76a06935"
         },
         "name": "Sharm el-Sheikh",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1680,16 +1419,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "baefba20-0349-4c2c-a7fe-53e5af06fc9f"
+            "guidValue": "baefba20-0349-4c2c-a7fe-53e5af06fc9f"
         },
         "name": "Stockholm",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1706,16 +1442,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "02c2b040-2922-4e39-856c-b1d508e198ca"
+            "guidValue": "02c2b040-2922-4e39-856c-b1d508e198ca"
         },
         "name": "Sydney",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1732,16 +1465,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "99516d82-db76-4c0a-bb0c-44650f241ed0"
+            "guidValue": "99516d82-db76-4c0a-bb0c-44650f241ed0"
         },
         "name": "Tokyo",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1758,16 +1488,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "5426871b-dc06-44ab-909c-eb3619122e9b"
+            "guidValue": "5426871b-dc06-44ab-909c-eb3619122e9b"
         },
         "name": "Venice",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1784,16 +1511,13 @@
     },
     {
         "contentLink": {
-           "guidValue" : "924a052b-fb46-44c3-83fa-0c5afc077305"
+            "guidValue": "924a052b-fb46-44c3-83fa-0c5afc077305"
         },
         "name": "Viljujsk",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "Page",
-            "LocationItemPage"
-        ],
+        "contentType": ["Page", "LocationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },

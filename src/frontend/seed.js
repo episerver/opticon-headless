@@ -53,8 +53,8 @@ async function getContentInfo(content) {
 
 async function publishContent(content) {
     const contentInfo = await getContentInfo(content);
-
     if (!contentInfo) {
+        console.log("publishContent", contentInfo);
         await axios
             .request({
                 url: "/api/episerver/v3.0/contentmanagement",
@@ -68,33 +68,33 @@ async function publishContent(content) {
                 data: content,
             })
             .catch((err) => {
-                console.error("Publish content: ", err.response.statusText);
+                console.error("Publishing content: ", err.response.statusText);
             });
     }
 }
 
 async function publishContentUsingForm(content, form) {
-    // const contentInfo = await getContentInfo(content);
+    const contentInfo = await getContentInfo(content);
 
-    // if (!contentInfo) {
-    await axios
-        .request({
-            url: "/api/episerver/v3.0/contentmanagement",
-            method: "post",
-            baseURL: baseUrl,
-            maxBodyLength: Infinity,
-            headers: {
-                ...form.getHeaders(),
-                "Content-Type": "multipart/form-data",
-                Authorization: "Bearer " + token,
-                "x-epi-validation-mode": "minimal",
-            },
-            data: form,
-        })
-        .catch((err) => {
-            console.error("Publish content: ", err.response.statusText);
-        });
-    // }
+    if (!contentInfo) {
+        await axios
+            .request({
+                url: "/api/episerver/v3.0/contentmanagement",
+                method: "post",
+                baseURL: baseUrl,
+                maxBodyLength: Infinity,
+                headers: {
+                    ...form.getHeaders(),
+                    "Content-Type": "multipart/form-data",
+                    Authorization: "Bearer " + token,
+                    "x-epi-validation-mode": "minimal",
+                },
+                data: form,
+            })
+            .catch((err) => {
+                console.error("Publish content: ", err.response);
+            });
+    }
 }
 
 (async () => {
@@ -128,10 +128,100 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
-         * Upload images.
+         * Generates a home page.
          */
         {
-            console.log("=== Upload images. ===");
+            console.log("=== Generates a home page. ===");
+            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
+            let promises = [];
+            for (let i = 0; i < homePages.length; i++) {
+                const homePage = homePages[i];
+                promises.push(publishContent(homePage));
+            }
+
+            await Promise.all(promises);
+        }
+
+        /**
+         * Creates a new site.
+         */
+        {
+            site = await axios
+                .request({
+                    url: "/api/episerver/v3.0/site",
+                    method: "get",
+                    baseURL: baseUrl,
+                    headers: {
+                        Authorization: "Bearer " + token,
+                        "Content-Type": "application/json",
+                    },
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+
+            if (!site || site.data.length === 0) {
+                const siteResponse = await axios
+                    .request({
+                        url: "/api/episerver/v3.0/sites",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+                if (siteResponse.data) {
+                    site = siteResponse.data;
+                }
+            }
+
+            if (!site) {
+                throw new Error("Error getting or creating site, please make sure the backend site is available.");
+            }
+        }
+
+        /**
+         * Generates blogs.
+         */
+        {
+            console.log("=== Generates blogs. ===");
+            let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
+            for (let i = 0; i < blogs.length; i++) {
+                const blog = blogs[i];
+                await publishContent(blog);
+            }
+        }
+
+        /**
+         * Generates destinations.
+         */
+        {
+            console.log("=== Generates destinations. ===");
+            let promises = [];
+            let destinations = JSON.parse(fs.readFileSync("./import/destinations.json", "utf8"));
+            await publishContent(destinations[0]);
+            for (let i = 1; i < destinations.length; i++) {
+                const destination = destinations[i];
+                promises.push(publishContent(destination));
+            }
+            await Promise.all(promises);
+            console.log("[DEBUGGING] Stop here");
+            return;
+            promises = [];
+            let images = JSON.parse(fs.readFileSync("./import/images-destinations.json", "utf8"));
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                let file = fs.createReadStream(`./import/images/destinations/${image.name}`);
+                const form = new FormData();
+                form.append("file", file, image.name);
+                form.append("content", JSON.stringify(image));
+                promises.push(publishContentUsingForm(image, form));
+            }
+            await Promise.all(promises);
         }
 
         /**
@@ -154,75 +244,6 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
-         * Generates a home page.
-         */
-        {
-            console.log("=== Generates a home page. ===");
-            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
-            let promises = [];
-            for (let i = 0; i < homePages.length; i++) {
-                const homePage = homePages[i];
-                promises.push(publishContent(homePage));
-            }
-
-            await Promise.all(promises);
-        }
-
-        /**
-         * Creates a new site.
-         */
-        // {
-        //     site = await axios
-        //         .request({
-        //             url: "/api/episerver/v3.0/site",
-        //             method: "get",
-        //             baseURL: baseUrl,
-        //             headers: {
-        //                 Authorization: "Bearer " + token,
-        //                 "Content-Type": "application/json",
-        //             },
-        //         })
-        //         .catch((err) => {
-        //             console.error(err);
-        //         });
-
-        //     if (!site || site.length === 0) {
-        //         const siteResponse = await axios
-        //             .request({
-        //                 url: "/api/episerver/v3.0/site",
-        //                 method: "post",
-        //                 baseURL: baseUrl,
-        //                 headers: {
-        //                     "Content-Type": "application/json",
-        //                     Authorization: "Bearer " + token,
-        //                 },
-        //             })
-        //             .catch((err) => {
-        //                 console.error(err);
-        //             });
-        //         if (siteResponse.data) {
-        //             site = siteResponse.data;
-        //         }
-        //     }
-
-        //     if (!site) {
-        //         throw new Error("Error getting or creating site, please make sure the backend site is available.");
-        //     }
-        // }
-
-        /**
-         * Generates blogs.
-         */
-        {
-            console.log("=== Generates blogs. ===");
-            let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
-            for (let i = 0; i < blogs.length; i++) {
-                const blog = blogs[i];
-                await publishContent(blog);
-            }
-        }
-
-        /**
          * Generates blocks.
          */
         {
@@ -236,9 +257,6 @@ async function publishContentUsingForm(content, form) {
 
             await Promise.all(promises);
         }
-
-        console.log("[DEBUGGING] Stop here");
-        return;
 
         if (heroBlockResponse?.data) {
             const beachVideoResponse = await axios
