@@ -433,6 +433,18 @@
         },
         "properties": [
           {
+            "name": "Title",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Title",
+              "groupName": "Information",
+              "sortOrder": 5,
+              "helpText": "The title to show."
+            }
+          },
+          {
             "name": "MainBody",
             "dataType": "PropertyXhtmlString",
             "branchSpecific": true,
@@ -440,7 +452,7 @@
               "visibility": "default",
               "displayName": "Main Body",
               "groupName": "Information",
-              "sortOrder": 0,
+              "sortOrder": 10,
               "helpText": "The text to show."
             }
           }

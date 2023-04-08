@@ -1,73 +1,13 @@
 [
     {
         "contentLink": {
-            "guidValue" : "a522bfbe-88b1-40f6-a818-c6f2cd720eb0"
+            "guidValue": "dc86fd73-c3ba-4251-b563-a1852af5a4d4"
         },
-        "name": "Alanya.jpg",
+        "name": "Aspen.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
-        "parentLink": {
-            "guidValue": "b2ff4c03-16ec-4586-bd4c-4c64ed37cae7"
-        },
-        "status": "Published",
-        "title": "Alanya",
-        "altText": "Alanya"
-    },
-    {
-        "contentLink": {
-            "guidValue" : "eb16f930-dbac-45a0-89c7-58a34137e392"
-        },
-        "name": "amsterdam.jpg",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
-        "parentLink": {
-            "guidValue": "75add37a-b8c7-4d02-9ed8-d99395e63bbb"
-        },
-        "status": "Published",
-        "title": "Amsterdam",
-        "altText": "Amsterdam"
-    },
-    {
-        "contentLink": {
-            "guidValue" : "61484464-79de-49d8-b0ec-6379a795e0e4"
-        },
-        "name": "Åre.jpg",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
-        "parentLink": {
-            "guidValue": "07e343e5-090a-4259-930d-2714f9af3579"
-        },
-        "status": "Published",
-        "title": "Åre",
-        "altText": "Åre"
-    },
-    {
-        "contentLink": {
-            "guidValue" : "dc86fd73-c3ba-4251-b563-a1852af5a4d4"
-        },
-        "name": "aspen.jpg",
-        "language": {
-            "name": "en"
-        },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "58eb8848-dd64-4d23-af3f-c64741ef4307"
         },
@@ -77,16 +17,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "fc83d847-e0b9-4a75-a598-be35b7435723"
+            "guidValue": "fc83d847-e0b9-4a75-a598-be35b7435723"
         },
         "name": "Athens.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "76de887b-76a6-4488-a5b9-fbc3707d13cf"
         },
@@ -96,16 +33,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "80e48648-e9c6-4508-85df-8fd6587c5ed4"
+            "guidValue": "80e48648-e9c6-4508-85df-8fd6587c5ed4"
         },
-        "name": "azores.jpg",
+        "name": "Azores.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "b33efae3-a565-4458-b0a1-cb81de711b0a"
         },
@@ -115,16 +49,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "0072358b-21f5-4706-b644-843d4b9a5a25"
+            "guidValue": "0072358b-21f5-4706-b644-843d4b9a5a25"
         },
-        "name": "bangkok.jpg",
+        "name": "Bangkok.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "98f97c94-df70-487f-b84d-1331810f0b1c"
         },
@@ -134,16 +65,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "4a6622d1-1bcd-4441-85ab-249bc79b5ef4"
+            "guidValue": "4a6622d1-1bcd-4441-85ab-249bc79b5ef4"
         },
-        "name": "barcelona.jpg",
+        "name": "Barcelona.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "cc7c742e-b03b-4842-bb60-3b71bb39d3b6"
         },
@@ -153,16 +81,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "8be2329c-9694-4ca2-ae13-52f6accd5e6b"
+            "guidValue": "8be2329c-9694-4ca2-ae13-52f6accd5e6b"
         },
         "name": "Beijing.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "babc8922-042f-4aba-8c11-ec63e783e12b"
         },
@@ -172,16 +97,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "6d4419cf-4e38-432b-86b6-61224e29c81c"
+            "guidValue": "6d4419cf-4e38-432b-86b6-61224e29c81c"
         },
-        "name": "bergen.jpg",
+        "name": "Bergen.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "dd5b244a-bb85-4c9e-969f-e8336c5c3d25"
         },
@@ -191,16 +113,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "eae1792c-acc7-4eb8-b6b1-53e5d23c9c86"
+            "guidValue": "eae1792c-acc7-4eb8-b6b1-53e5d23c9c86"
         },
-        "name": "berlin.jpg",
+        "name": "Berlin.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "8e0fb7cd-8476-4ba7-aae7-ce317f9f5f80"
         },
@@ -210,16 +129,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "aaf00524-986c-4a8f-9bef-5d89e15e962b"
+            "guidValue": "aaf00524-986c-4a8f-9bef-5d89e15e962b"
         },
-        "name": "bordeaux.jpg",
+        "name": "Bordeaux.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "b004e08c-dd9b-4be4-8018-c92dd1b1f38a"
         },
@@ -229,16 +145,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "0a5e78c2-6671-4986-bee2-47a6a2ede6b3"
+            "guidValue": "0a5e78c2-6671-4986-bee2-47a6a2ede6b3"
         },
         "name": "Buenos-Aires.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "5fc14f4f-127d-44af-92fa-acb2919cc25f"
         },
@@ -248,16 +161,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "010bac55-b64b-4b77-9267-f6b60e13b860"
+            "guidValue": "010bac55-b64b-4b77-9267-f6b60e13b860"
         },
-        "name": "burgas.jpg",
+        "name": "Burgas.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "64e103fa-f6e3-4fb2-a572-727d654d0a3d"
         },
@@ -267,16 +177,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "fa533338-12e5-4b6d-8bab-6342e8da3f90"
+            "guidValue": "fa533338-12e5-4b6d-8bab-6342e8da3f90"
         },
-        "name": "cairo.jpg",
+        "name": "Cairo.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "859cce9c-0eb9-4780-a6a5-b0b60d114272"
         },
@@ -286,16 +193,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "a06106505-c5b6-44d9-9df6-c5e29159904a"
+            "guidValue": "c5d0e85e-7d79-4da8-a697-a5d982881498"
         },
-        "name": "capetown.jpg",
+        "name": "Capetown.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "d55f81dc-646b-4fad-b136-564a67907783"
         },
@@ -305,16 +209,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "18572ab2-3a54-48cc-8882-765ddff8c150"
+            "guidValue": "18572ab2-3a54-48cc-8882-765ddff8c150"
         },
-        "name": "cardiff.jpg",
+        "name": "Cardiff.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "57b58530-6571-4fdc-8c84-ee916ff1b901"
         },
@@ -324,16 +225,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "d003227f-c521-4a90-842c-9cd32c9154a5"
+            "guidValue": "d003227f-c521-4a90-842c-9cd32c9154a5"
         },
         "name": "Chamonix.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "34b26a25-6ede-458a-9a23-0a2b1f83bf6b"
         },
@@ -343,16 +241,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "c42a03e6-dca5-4edd-ac29-10139363710b"
+            "guidValue": "c42a03e6-dca5-4edd-ac29-10139363710b"
         },
-        "name": "chicago.jpg",
+        "name": "Chicago.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "1d098889-e6fe-46c6-8f4b-4ea2cd8fff41"
         },
@@ -362,16 +257,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "f7f40b56-a41b-47fb-a367-f07a307e9fc4"
+            "guidValue": "f7f40b56-a41b-47fb-a367-f07a307e9fc4"
         },
-        "name": "copenhagen.jpg",
+        "name": "Copenhagen.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "f2bee22a-625c-48bc-b511-8cf73e2ad6f1"
         },
@@ -381,16 +273,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "9cd8cc8c-ef99-4073-9a07-b532ce23b79c"
+            "guidValue": "9cd8cc8c-ef99-4073-9a07-b532ce23b79c"
         },
         "name": "Corsica.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "be509e14-33a1-4ab7-9773-fc323ac1acc0"
         },
@@ -400,16 +289,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "aeea077ec-42b1-4143-b370-07e16c9a2ba3"
+            "guidValue": "172ae5a9-458f-4a85-a4cc-5e7dc61f76ce"
         },
-        "name": "cortina.jpg",
+        "name": "Cortina.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "915accd5-693a-4ebb-a56b-a7576b073bab"
         },
@@ -419,16 +305,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "4f23d717-2b3d-494a-aa21-de21afd1371e"
+            "guidValue": "4f23d717-2b3d-494a-aa21-de21afd1371e"
         },
-        "name": "crete.jpg",
+        "name": "Crete.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "acc455bc-f5d4-4e64-a7b9-e298b1f3a426"
         },
@@ -438,16 +321,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "6f57280c-e00d-49f0-94f4-90d99a2d3eb8"
+            "guidValue": "6f57280c-e00d-49f0-94f4-90d99a2d3eb8"
         },
         "name": "Dublin.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "d7f45529-5450-4860-b726-fb563f76c91d"
         },
@@ -457,16 +337,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "60600cb6-7d2c-45c4-a586-b1050141492e"
+            "guidValue": "60600cb6-7d2c-45c4-a586-b1050141492e"
         },
-        "name": "dubrovnik.jpg",
+        "name": "Dubrovnik.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "fb40aace-71b3-4caa-b3a2-46d29c822468"
         },
@@ -476,16 +353,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "4c7d2a2c-58da-4a5a-b3fd-0951953b3389"
+            "guidValue": "4c7d2a2c-58da-4a5a-b3fd-0951953b3389"
         },
-        "name": "goa.jpg",
+        "name": "Goa.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "760613df-9795-4406-80f1-081def8af973"
         },
@@ -495,16 +369,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "3e4592bb-1eeb-4543-8334-30d52e8fd6c0"
+            "guidValue": "3e4592bb-1eeb-4543-8334-30d52e8fd6c0"
         },
-        "name": "gothenburg.jpg",
+        "name": "Gothenburg.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "f364bc57-f1dd-4123-bb44-efd0132194c0"
         },
@@ -514,16 +385,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "21a96326-336b-4663-be37-a1b030db4b37"
+            "guidValue": "21a96326-336b-4663-be37-a1b030db4b37"
         },
         "name": "Havana.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "bb95fb86-6394-4206-9766-76024512f383"
         },
@@ -533,16 +401,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "ed764848-b3e1-406f-afc9-d497d4d30564"
+            "guidValue": "ed764848-b3e1-406f-afc9-d497d4d30564"
         },
-        "name": "hawaii.jpg",
+        "name": "Hawaii.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "a12e51db-cb73-40a7-9fc4-4b6e24602da7"
         },
@@ -552,16 +417,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "853e7736-98b8-4a7c-af63-1b6fb3719bd7"
+            "guidValue": "853e7736-98b8-4a7c-af63-1b6fb3719bd7"
         },
         "name": "Helsinki.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "08b17e7e-660e-4194-8c80-75705e65a7cd"
         },
@@ -571,16 +433,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "fd274ea2-64d6-4b4c-8b10-ff1a945580c5"
+            "guidValue": "fd274ea2-64d6-4b4c-8b10-ff1a945580c5"
         },
         "name": "Hurghada.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "7791cfbb-cca5-411a-ba58-3a3d4d76c6cb"
         },
@@ -590,16 +449,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "f8df0af1-6d91-4fab-b272-f3c1b637cc16"
+            "guidValue": "f8df0af1-6d91-4fab-b272-f3c1b637cc16"
         },
         "name": "Khao-Lak.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "45d1fcf5-7b14-4c62-8d5f-70d6add6f84a"
         },
@@ -609,16 +465,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "8d502d66-55bf-4ae4-acfc-b20a37370d9c"
+            "guidValue": "8d502d66-55bf-4ae4-acfc-b20a37370d9c"
         },
         "name": "Kiev.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "bc6072e8-7183-460b-b271-d713d8022bfa"
         },
@@ -628,16 +481,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "a7b6030d-8767-40d6-971d-e3e1cd8a9b53"
+            "guidValue": "a7b6030d-8767-40d6-971d-e3e1cd8a9b53"
         },
-        "name": "kos.jpg",
+        "name": "Kos.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "d2d6ec70-01c8-4549-a124-cc334bf98346"
         },
@@ -647,16 +497,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "d77ebc16-8b0c-4dda-b6e4-6c0ec45907bc"
+            "guidValue": "d77ebc16-8b0c-4dda-b6e4-6c0ec45907bc"
         },
-        "name": "krabi.jpg",
+        "name": "Krabi.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "36ffc6f0-4c61-4a7b-a7d4-2153131b1b38"
         },
@@ -666,16 +513,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "d687c4cc-2fdc-4d20-b15d-145c4897238c"
+            "guidValue": "d687c4cc-2fdc-4d20-b15d-145c4897238c"
         },
         "name": "London.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "963b95ef-7438-471c-89e2-96b334722329"
         },
@@ -685,16 +529,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "e7ae52ba-0a17-45a8-93fa-f4eb114db846"
+            "guidValue": "e7ae52ba-0a17-45a8-93fa-f4eb114db846"
         },
         "name": "Los-Angeles.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "8e90556f-1ef8-4cf0-90b8-efddc7faf989"
         },
@@ -704,16 +545,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "6c77439f-8abc-40b0-9b62-ca275ff47126"
+            "guidValue": "6c77439f-8abc-40b0-9b62-ca275ff47126"
         },
         "name": "Luxor.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "6460c9e0-7047-4e0e-adc7-7e2b4732d520"
         },
@@ -723,16 +561,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "5f1fbf54-0954-4b2a-ab3a-8102bdf7c29e"
+            "guidValue": "5f1fbf54-0954-4b2a-ab3a-8102bdf7c29e"
         },
         "name": "Madrid.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "80f01bec-0b5a-44ff-b784-8df586d51abf"
         },
@@ -742,16 +577,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "47940bff-4061-431d-9b2d-592b9065e602"
+            "guidValue": "47940bff-4061-431d-9b2d-592b9065e602"
         },
-        "name": "Málaga.jpg",
+        "name": "Malaga.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "261e0325-0292-44d6-bd1a-853cb92084e7"
         },
@@ -761,16 +593,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "618cb900-6ad4-4107-8e4d-f1781ed21612"
+            "guidValue": "618cb900-6ad4-4107-8e4d-f1781ed21612"
         },
         "name": "Mallorca.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "e13c3360-85ea-4f08-bbbe-d67a6df14898"
         },
@@ -780,16 +609,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "c74d29fa-a986-4708-bb20-3a6174da15e5"
+            "guidValue": "c74d29fa-a986-4708-bb20-3a6174da15e5"
         },
         "name": "Manchester.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "6fcf052f-262b-4d23-985e-561d18603120"
         },
@@ -799,16 +625,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "00610a6f-bf67-4b9e-98b6-0a378b1bfa71"
+            "guidValue": "00610a6f-bf67-4b9e-98b6-0a378b1bfa71"
         },
-        "name": "Mexico_City.jpg",
+        "name": "Mexico-City.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "784430dd-0c9c-4bf2-8b46-68017b445fed"
         },
@@ -818,16 +641,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "57f23c58-8744-4156-bd7f-d935de787674"
+            "guidValue": "57f23c58-8744-4156-bd7f-d935de787674"
         },
         "name": "Miami.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "a52e68f6-2a45-4d44-b329-f7ce620d0022"
         },
@@ -837,16 +657,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "c14062c4-1fe9-4e15-9427-13f1e853e619"
+            "guidValue": "c14062c4-1fe9-4e15-9427-13f1e853e619"
         },
         "name": "Milan.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "e09c8b6f-1eaa-4006-9c12-6d66de41565c"
         },
@@ -856,16 +673,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "cd795b8f-0654-4046-b3d0-2eda600a8410"
+            "guidValue": "cd795b8f-0654-4046-b3d0-2eda600a8410"
         },
-        "name": "Mont-Tremblant",
+        "name": "Mont-Tremblant.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "6bfa6961-440b-4723-9503-904e1adddb50"
         },
@@ -875,16 +689,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "2562b6e8-a40b-44f9-b379-1916c0762dff"
+            "guidValue": "2562b6e8-a40b-44f9-b379-1916c0762dff"
         },
         "name": "Moscow.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "4f9fd3d9-1376-4ac2-ba19-fbfe6ae67276"
         },
@@ -894,16 +705,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "74af3259-f0c6-4504-9c71-b8bd19d23db2"
+            "guidValue": "74af3259-f0c6-4504-9c71-b8bd19d23db2"
         },
         "name": "Munich.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "0bc78dd2-02bd-4b5a-ba25-29d2445bb189"
         },
@@ -913,16 +721,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "50747c04-95b5-482f-ba8e-2aeb3e4566d0"
+            "guidValue": "50747c04-95b5-482f-ba8e-2aeb3e4566d0"
         },
         "name": "Nairobi.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "14a78ca4-66f0-444d-91ee-6e6d5286fe1c"
         },
@@ -932,16 +737,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "38682d5c-a273-4ce9-b4fe-433e50002303"
+            "guidValue": "38682d5c-a273-4ce9-b4fe-433e50002303"
         },
         "name": "New-York.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "428ade08-ba86-44cb-b46c-b29f5586313f"
         },
@@ -951,16 +753,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "e7f2ae03-f6da-4385-b662-5624052e0a0d"
+            "guidValue": "e7f2ae03-f6da-4385-b662-5624052e0a0d"
         },
         "name": "Nice.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "f315edf7-983c-4eac-9f87-d60a0eeaf90b"
         },
@@ -970,16 +769,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "094a2b19-45f1-4fe6-9c93-dfc82f41397f"
+            "guidValue": "094a2b19-45f1-4fe6-9c93-dfc82f41397f"
         },
-        "name": "nuuk.jpg",
+        "name": "Nuuk.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "b21f20d8-ba93-4a4e-aaa6-93f524f908ab"
         },
@@ -989,16 +785,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "d31cba28-d017-46a0-bcbe-85c23b11aa3a"
+            "guidValue": "d31cba28-d017-46a0-bcbe-85c23b11aa3a"
         },
         "name": "Osaka.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "42fef3a1-16b3-4f94-87fd-691391115d55"
         },
@@ -1008,16 +801,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "cdf11dda-7c26-49db-a517-712dfceafb78"
+            "guidValue": "cdf11dda-7c26-49db-a517-712dfceafb78"
         },
         "name": "Oslo.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "61478b4c-6d9c-47ca-9af8-bd9a11cd630e"
         },
@@ -1027,16 +817,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "ac6d5a95-1756-4308-98a9-e015af43728f"
+            "guidValue": "ac6d5a95-1756-4308-98a9-e015af43728f"
         },
         "name": "Paris.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "2bd9a184-8e35-4bc7-8251-6c1d6f0b01d9"
         },
@@ -1046,16 +833,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "ffb902ca-bfd0-4835-ae59-dc6832c28a48"
+            "guidValue": "ffb902ca-bfd0-4835-ae59-dc6832c28a48"
         },
         "name": "Prague.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "82dae01b-5f80-46a0-83b9-106475e6b620"
         },
@@ -1065,16 +849,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "8535ea07-132d-429a-a404-064abaac8d2e"
+            "guidValue": "8535ea07-132d-429a-a404-064abaac8d2e"
         },
         "name": "Pula.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "9f8cdcaa-1fda-4144-8a5b-9e58bbaa8a34"
         },
@@ -1084,16 +865,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "e408ad90-6673-46d4-a70c-375553fdabd1"
+            "guidValue": "e408ad90-6673-46d4-a70c-375553fdabd1"
         },
-        "name": "Reykjavík.jpg",
+        "name": "Reykjavik.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "053da147-fab0-4163-bb5e-67cb1e874509"
         },
@@ -1103,16 +881,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "c75954c9-b6c7-43fa-8a92-c78424acb9d6"
+            "guidValue": "c75954c9-b6c7-43fa-8a92-c78424acb9d6"
         },
-        "name": "rhodes.jpg",
+        "name": "Rhodes.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "52720f7e-662e-4d0b-bc86-d3c0e323e091"
         },
@@ -1122,16 +897,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "74c4b9bc-f85e-44ad-af41-5c8419211ed4"
+            "guidValue": "74c4b9bc-f85e-44ad-af41-5c8419211ed4"
         },
         "name": "Rio-de-Janeiro.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "c2462ef0-c3e1-4920-ae83-f94a203afd53"
         },
@@ -1141,16 +913,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "0ee50e01-e784-4c72-b8d4-5479bbaab408"
+            "guidValue": "0ee50e01-e784-4c72-b8d4-5479bbaab408"
         },
         "name": "Rome.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "657c08db-b591-46bc-9716-4062e54c9978"
         },
@@ -1160,16 +929,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "4f4b25c1-b712-4fb1-9926-bc52ba30bce7"
+            "guidValue": "4f4b25c1-b712-4fb1-9926-bc52ba30bce7"
         },
-        "name": "St-Petersburg.jpg",
+        "name": "Saint-Petersburg.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "ed7093bd-85cf-4756-84a8-7d01f47c4004"
         },
@@ -1179,16 +945,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "38dbfa69-f653-463d-9b8f-fc1a2a667335"
+            "guidValue": "38dbfa69-f653-463d-9b8f-fc1a2a667335"
         },
         "name": "San-Francisco.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "a06d5c7e-744d-4533-9536-92dc8581d14c"
         },
@@ -1198,16 +961,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "9856bdc3-91a5-4660-b1da-5db1dce22e21"
+            "guidValue": "9856bdc3-91a5-4660-b1da-5db1dce22e21"
         },
         "name": "Sharm-el-Sheikh.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "748fd59f-ec31-4853-ba5d-68db76a06935"
         },
@@ -1217,16 +977,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "a38f33b5-f250-4d43-acb6-fe174d797d24"
+            "guidValue": "a38f33b5-f250-4d43-acb6-fe174d797d24"
         },
-        "name": "stockholm.jpg",
+        "name": "Stockholm.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "baefba20-0349-4c2c-a7fe-53e5af06fc9f"
         },
@@ -1236,16 +993,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "bcac49ac-4b55-431e-9ea1-c09e3ea9bd07"
+            "guidValue": "bcac49ac-4b55-431e-9ea1-c09e3ea9bd07"
         },
         "name": "Sydney.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "02c2b040-2922-4e39-856c-b1d508e198ca"
         },
@@ -1255,16 +1009,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "52ae232a-9455-4572-9541-8fb4bd2ffd3d"
+            "guidValue": "52ae232a-9455-4572-9541-8fb4bd2ffd3d"
         },
         "name": "Tokyo.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "99516d82-db76-4c0a-bb0c-44650f241ed0"
         },
@@ -1274,16 +1025,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "1fd438ee-f96e-4e25-bae4-fae16c6debc8"
+            "guidValue": "1fd438ee-f96e-4e25-bae4-fae16c6debc8"
         },
         "name": "Venice.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "5426871b-dc06-44ab-909c-eb3619122e9b"
         },
@@ -1293,16 +1041,13 @@
     },
     {
         "contentLink": {
-            "guidValue" : "b518036a-edab-4af9-af9c-035621d7e8d7"
+            "guidValue": "b518036a-edab-4af9-af9c-035621d7e8d7"
         },
-        "name": "viljujsk.jpg",
+        "name": "Viljujsk.jpg",
         "language": {
             "name": "en"
         },
-        "contentType": [
-            "ImageFile",
-            "ImageMediaData"
-        ],
+        "contentType": ["ImageFile", "ImageMediaData"],
         "parentLink": {
             "guidValue": "924a052b-fb46-44c3-83fa-0c5afc077305"
         },

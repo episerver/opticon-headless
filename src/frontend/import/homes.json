@@ -7,7 +7,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "StardardPage"],
+        "contentType": ["Page", "StandardPage"],
         "parentLink": {
             "id": 1
         },
