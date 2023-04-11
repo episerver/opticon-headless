@@ -54,7 +54,6 @@ async function getContentInfo(content) {
 async function publishContent(content) {
     const contentInfo = await getContentInfo(content);
     if (!contentInfo) {
-        console.log("publishContent", contentInfo);
         await axios
             .request({
                 url: "/api/episerver/v3.0/contentmanagement",
@@ -118,13 +117,10 @@ async function publishContentUsingForm(content, form) {
         {
             console.log("=== Generates content folders. ===");
             let folders = JSON.parse(fs.readFileSync("./import/content-folders.json", "utf8"));
-            let promises = [];
             for (let i = 0; i < folders.length; i++) {
                 const folder = folders[i];
-                promises.push(publishContent(folder));
+                await publishContent(folder);
             }
-
-            await Promise.all(promises);
         }
 
         /**
@@ -185,6 +181,18 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
+         * Generates blocks.
+         */
+        {
+            console.log("=== Generates blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                await publishContent(block);
+            }
+        }
+
+        /**
          * Generates blogs.
          */
         {
@@ -201,17 +209,12 @@ async function publishContentUsingForm(content, form) {
          */
         {
             console.log("=== Generates destinations. ===");
-            let promises = [];
             let destinations = JSON.parse(fs.readFileSync("./import/destinations.json", "utf8"));
-            await publishContent(destinations[0]);
-            for (let i = 1; i < destinations.length; i++) {
-                const destination = destinations[i];
-                promises.push(publishContent(destination));
+            for (let i = 0; i < destinations.length; i++) {
+                await publishContent(destinations[i]);
             }
-            await Promise.all(promises);
-            console.log("[DEBUGGING] Stop here");
-            return;
-            promises = [];
+
+            console.log("=== Adding images for destinations. ===");
             let images = JSON.parse(fs.readFileSync("./import/images-destinations.json", "utf8"));
             for (let i = 0; i < images.length; i++) {
                 const image = images[i];
@@ -219,9 +222,10 @@ async function publishContentUsingForm(content, form) {
                 const form = new FormData();
                 form.append("file", file, image.name);
                 form.append("content", JSON.stringify(image));
-                promises.push(publishContentUsingForm(image, form));
+                await publishContentUsingForm(image, form);
             }
-            await Promise.all(promises);
+            console.log("[DEBUGGING] Stop here");
+            return;
         }
 
         /**
@@ -241,135 +245,6 @@ async function publishContentUsingForm(content, form) {
             }
 
             await Promise.all(promises);
-        }
-
-        /**
-         * Generates blocks.
-         */
-        {
-            console.log("=== Generates blocks. ===");
-            let blocks = JSON.parse(fs.readFileSync("./import/blocks.json", "utf8"));
-            let promises = [];
-            for (let i = 0; i < blocks.length; i++) {
-                const block = blocks[i];
-                promises.push(publishContent(block));
-            }
-
-            await Promise.all(promises);
-        }
-
-        if (heroBlockResponse?.data) {
-            const beachVideoResponse = await axios
-                .post(baseUrl + "api/episerver/v3.0/contentmanagement", form, {
-                    headers: {
-                        ...form.getHeaders(),
-                        Authorization: "Bearer " + token,
-                        "x-epi-validation-mode": "minimal",
-                    },
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-            if (beachVideoResponse?.data) {
-                await axios
-                    .request({
-                        url: "/api/episerver/v3.0/contentmanagement",
-                        method: "patch",
-                        baseURL: baseUrl,
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: "Bearer " + token,
-                            "x-epi-validation-mode": "minimal",
-                        },
-                        data: {
-                            contentLink: {
-                                guidValue: "ca5aa43d-20f1-4992-9f1b-1cacbd7eda27",
-                            },
-                            backgroundVideo: {
-                                id: beachVideoResponse.data.contentLink.id,
-                            },
-                        },
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                    });
-            }
-        }
-
-        let destinations = JSON.parse(fs.readFileSync("./import/destinations.json", "utf8"));
-        if (!destinations) {
-            throw new Error("Error reading destinations.");
-        }
-
-        destinations.forEach((destination) => {
-            (async () => {
-                await axios
-                    .request({
-                        url: "/api/episerver/v3.0/contentmanagement",
-                        method: "post",
-                        baseURL: baseUrl,
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: "Bearer " + token,
-                            "x-epi-validation-mode": "minimal",
-                        },
-                        data: JSON.stringify(destination),
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                    });
-            })();
-        });
-
-        let images = JSON.parse(fs.readFileSync("./import/images.json", "utf8"));
-
-        if (!images) {
-            throw new Error("Error reading images.");
-        }
-
-        images.forEach((image) => {
-            (async () => {
-                await axios
-                    .request({
-                        url: "/api/episerver/v3.0/contentmanagement",
-                        method: "post",
-                        baseURL: baseUrl,
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: "Bearer " + token,
-                            "x-epi-validation-mode": "minimal",
-                        },
-                        data: JSON.stringify(image),
-                    })
-                    .catch((err) => {
-                        console.error(err);
-                    });
-            })();
-        });
-
-        for (let i = 0; i < destinations.length; i++) {
-            await axios
-                .request({
-                    url: "/api/episerver/v3.0/content",
-                    method: "patch",
-                    baseURL: baseUrl,
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "Bearer " + token,
-                        "x-epi-validation-mode": "minimal",
-                    },
-                    data: {
-                        contentLink: {
-                            guidValue: destinations[i].contentLink.guidValue,
-                        },
-                        pageImage: {
-                            guidValue: images[i].contentLink.guidValue,
-                        },
-                    },
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
         }
     } catch (error) {
         console.error(error);
