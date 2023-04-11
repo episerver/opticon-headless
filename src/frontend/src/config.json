@@ -1,6 +1,9 @@
 ﻿{
     "ENV": "$ENV",
     "BASE_URL": "http://localhost:5000/",
-    "USERNAME": "CHANGE_ME",
-    "PASSWORD": "CHANGE_ME"
+    "USERNAME": "admin",
+    "PASSWORD": "7101991hH!@#",
+    "CONTENT_DELIVERY_API": "http://localhost:5000",
+    "LOGIN_AUTHORITY": "http://localhost:5000",
+    "LOGIN_CLIENT_ID": "frontend"
 }
