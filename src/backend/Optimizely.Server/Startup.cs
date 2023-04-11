@@ -7,6 +7,7 @@ using EPiServer.ContentApi.Cms;
 using EPiServer.ContentApi.Cms.Internal;
 using EPiServer.ContentDefinitionsApi;
 using EPiServer.ContentManagementApi;
+using EPiServer.Data;
 using EPiServer.DependencyInjection;
 using EPiServer.OpenIDConnect;
 using EPiServer.Web;
@@ -41,7 +42,11 @@ namespace Optimizely.Server
             {
                 //Add development configuration
             }
-
+            services.Configure<DataAccessOptions>(options => options.ConnectionStrings.Add(new ConnectionStringOptions
+            {
+                Name = "EcfSqlConnection",
+                ConnectionString = _configuration.GetConnectionString("EcfSqlConnection")
+            }));
             services.AddMvc()
                 .AddFluid()
                 .AddCmsFluid();
@@ -51,12 +56,16 @@ namespace Optimizely.Server
                 options.ViewsFileProvider  = new ContentFileProvider("/globalassets/templates");
                 options.PartialsFileProvider = new ContentFileProvider("/globalassets/templates/shared");
             });
-            services.AddCms()
+            services.AddCommerce()
             .AddCmsAspNetIdentity<ApplicationUser>();
 
             services.AddFind();
             services.AddAdvancedReviews();
-            services.AddAdminUserRegistration(options => options.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly);
+            services.AddAdminUserRegistration(options =>
+            {
+                options.Behavior = RegisterAdminUserBehaviors.Enabled | RegisterAdminUserBehaviors.SingleUserOnly;
+                options.Roles.Add("Administrators");
+            });
 
             services.ConfigureContentApiOptions(o =>
             {
@@ -73,7 +82,7 @@ namespace Optimizely.Server
             services.AddContentSearchApi(o => o.MaximumSearchResults = 100);
             services.AddContentDefinitionsApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, o => o.DisableScopeValidation = true);
             services.AddContentManagementApi(OpenIDConnectOptionsDefaults.AuthenticationScheme, o => o.DisableScopeValidation = true);
-
+            services.AddCommerceApi<ApplicationUser>(OpenIDConnectOptionsDefaults.AuthenticationScheme, o => o.DisableScopeValidation = true);
             services.AddOpenIDConnect<ApplicationUser>(true, null, null, true, options =>
             {
                 options.RequireHttps = !_webHostingEnvironment.IsDevelopment();
