@@ -26,6 +26,7 @@ namespace Optimizely.Server
     {
         private readonly IWebHostEnvironment _webHostingEnvironment;
         private readonly IConfiguration _configuration;
+        private readonly Uri _frontendUri = new("http://localhost:8080");
 
         public Startup(IWebHostEnvironment webHostingEnvironment,
             IConfiguration configuration)
@@ -76,7 +77,9 @@ namespace Optimizely.Server
             services.AddOpenIDConnect<ApplicationUser>(true, null, null, true, options =>
             {
                 options.RequireHttps = !_webHostingEnvironment.IsDevelopment();
-                var application = new OpenIDConnectApplication()
+                options.AllowResourceOwnerPasswordFlow = true;
+
+                options.Applications.Add(new OpenIDConnectApplication()
                 {
                     ClientId = "postman-client",
                     ClientSecret = "postman",
@@ -85,15 +88,25 @@ namespace Optimizely.Server
                         ContentDeliveryApiOptionsDefaults.Scope,
                         ContentManagementApiOptionsDefaults.Scope,
                         ContentDefinitionsApiOptionsDefaults.Scope,
-                    }
-                };
+                    },
+                    RedirectUris =
+                    {
+                        new Uri("https://oauth.pstmn.io/v1/callback")
+                    },
+                });
 
-                // Using Postman for testing purpose.
-                // The authorization code is sent to postman after successful authentication.
-                application.RedirectUris.Add(new Uri("https://oauth.pstmn.io/v1/callback"));
-                options.Applications.Add(application);
-                options.AllowResourceOwnerPasswordFlow = true;
-            }, null);
+                options.Applications.Add(new OpenIDConnectApplication()
+                {
+                    ClientId = "frontend",
+                    Scopes = { "openid", "offline_access", "profile", "email", "roles", ContentDeliveryApiOptionsDefaults.Scope },
+                    PostLogoutRedirectUris = { new Uri(_frontendUri, "/signin"), },
+                    RedirectUris =
+                    {
+                        new Uri(_frontendUri, "/signin-callback"),
+                        new Uri(_frontendUri, "/signin-renewal"),
+                    },
+                });
+            });
 
             services.AddOpenIDConnectUI();
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);

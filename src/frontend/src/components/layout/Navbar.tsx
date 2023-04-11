@@ -1,16 +1,19 @@
 import { ContentData } from "@episerver/content-delivery";
 import React, { useEffect, useState } from "react";
 import { getContentLoader } from "../../DefaultContext";
-import { ShoppingCart } from 'react-feather';
+import { ShoppingCart, User } from 'react-feather';
 import NavigationMenuItem from "@models/NavigationMenuItem";
 import LayoutSetting from "@models/LayoutSetting";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Config from "../../config.json";
+import AuthService from "../../AuthService";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[] | null>(null);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
-  
+    const [username, setUsername] = useState<string>("");
+
     const getLayoutSetting = async () => {
       const contentLoader = getContentLoader();
       const content = await contentLoader.getContent("3729d832-357e-409a-87e2-5242400fb47f", { branch: "en" }) as LayoutSetting;
@@ -47,6 +50,14 @@ const Navbar = () => {
         });
     }
 
+    const getUser = () => {
+        AuthService.getUser().then((user: any) => {
+            if (user && !user.expired) {
+              setUsername(user.profile.name);
+            }
+        });
+    }
+
     const toggleMenu = () => {
         document.getElementById('isToggle')?.classList.toggle('open');
         let isOpen = document.getElementById('navigation') as HTMLElement;
@@ -57,9 +68,14 @@ const Navbar = () => {
         }
     };
 
+    const signout = () => {
+        AuthService.logout();
+    }
+
     useEffect(() => {
       getLayoutSetting();
       getMenu();
+      getUser();
     }, [])
 
     return (
@@ -81,10 +97,26 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul className="buy-button list-none mb-0">
-                    <li className="inline ltr:pl-1 rtl:pr-1 mb-0">
+                    <li className="inline mb-0">
                         <Link to="/cart" className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
                             <ShoppingCart className="h-4 w-4"/>
                         </Link>
+                    </li>
+                    <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                        <button className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
+                            <User className="h-4 w-4"/>
+                        </button>
+                        <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+                            <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+                                <div className="px-4 py-3">         
+                                    <p className="text-sm leading-5">Signed in as</p>
+                                    <p className="text-sm font-medium leading-5 text-gray-900 truncate font-bold">{username}</p>
+                                </div>
+                                <div className="py-1">
+                                    <p className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" onClick={signout}>Sign out</p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 <div id="navigation">
