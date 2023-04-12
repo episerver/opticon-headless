@@ -19,7 +19,7 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
                 if(content){
                     const baseType = content.contentType.at(0);
                     if (baseType=== 'Page') {
-                        const View = lazy(() => import(`../pages/${content.contentType.at(-1)}`));
+                        const View = lazy(() => import(`@components/pages/${content.contentType.at(-1)}`));
                         return <div key={index} className={className}>
                             <Suspense fallback={<Loading/>}>
                                 <View {...content}/>
@@ -27,7 +27,7 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
                         </div>
                     }
                     else if (baseType === 'Video') {
-                        const View = lazy(() => import(`../media/${content.contentType.at(-1)}`));
+                        const View = lazy(() => import(`@components/media/${content.contentType.at(-1)}`));
                         return <div key={index} className={className}>
                             <Suspense fallback={<Loading/>}>
                                 <View {...content}/>
@@ -35,7 +35,7 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
                         </div>
                     }
                     else if (baseType === 'Image') {
-                        const View = lazy(() => import(`../media/${content.contentType.at(-1)}`));
+                        const View = lazy(() => import(`@components/media/${content.contentType.at(-1)}`));
                         return <div key={index} className={className}>
                             <Suspense fallback={<Loading/>}>
                                 <View {...content}/>
@@ -43,7 +43,7 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
                         </div>
                     }
                     else if (baseType === 'Block') {
-                        const View = lazy(() => import(`../blocks/${content.contentType.at(-1)}`));
+                        const View = lazy(() => import(`@components/blocks/${content.contentType.at(-1)}`));
                         return <div key={index} className={className}>
                             <Suspense fallback={<Loading/>}>
                                 <View {...content}/>
