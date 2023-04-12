@@ -4,13 +4,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import App from "./App";
 import PageComponentSelector, { PageDataLoader } from "@views/PageComponentSelector";
 import NotFound from "@components/common/NotFound";
-import SignIn from "@views/SignIn";
-import SignUp from "@views/SignUp";
+import SignIn from "@views/SignIn";;
 import ResetPassword from "@views/ResetPassword";
 import SignInCallback from "@views/SignInCallback";
 import SignInRenewal from "@views/SignInRenewal";
-import "./main.css";
 import AccessDenied from "@components/common/AccessDenied";
+import SignUp from "@views/SignUp";
+import "./main.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(

@@ -155,7 +155,7 @@ namespace Optimizely.Server
                 .WithOrigins(new[] { "http://localhost:8080", "https://oauth.pstmn.io" })
                 .WithExposedContentDeliveryApiHeaders()
                 .WithExposedContentDefinitionApiHeaders()
-                .WithHeaders("Authorization")
+                .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials());
 

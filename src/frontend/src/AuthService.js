@@ -4,14 +4,14 @@ import Config from "./config.json";
 class AuthService {
   constructor() {
     const settings = {
-      userStore: new WebStorageStateStore({ store: window.localStorage }),
+      userStore: new WebStorageStateStore({ store: localStorage }),
       authority: Config.LOGIN_AUTHORITY,
       client_id: Config.LOGIN_CLIENT_ID,
-      redirect_uri: `${window.location.origin}/signin-callback`,
-      silent_redirect_uri: `${window.location.origin}/signin-renewal`,
+      redirect_uri: `${location.origin}/signin-callback`,
+      silent_redirect_uri: `${location.origin}/signin-renewal`,
       response_type: 'code',
       scope: 'openid profile offline_access email roles epi_content_delivery',
-      post_logout_redirect_uri: `${window.location.origin}/signin`,
+      post_logout_redirect_uri: `${location.origin}/signin`,
       filterProtocolClaims: true,
       loadUserInfo: true,
     };
@@ -23,19 +23,22 @@ class AuthService {
     return this.userManager.getUser();
   }
 
-  login() {
+  signIn() {
     let args = {};
-    if(!window.location.href.includes("/signin")){
+    if(!["/signin", "/signup"].includes(location.pathname)){
       args = {
-        state: window.location.href,
+        state: location.href,
       }
     }
-
     return this.userManager.signinRedirect(args);
   }
 
-  logout() {
+  signOut() {
     return this.userManager.signoutRedirect();
+  }
+
+  signOutSilent(){
+    return this.userManager.signoutSilent();
   }
 
   async getAccessToken() {
