@@ -264,18 +264,6 @@
         "properties": []
       },
       {
-        "id": "0a89e464-56d4-449f-aea8-2bf774ab8790",
-        "name": "PdfFile",
-        "baseType": "Media",
-        "editSettings": {
-          "displayName": "PdfFile",
-          "description": "Using to preview pdf files in system.",
-          "available": true,
-          "sortOrder": 302
-        },
-        "properties": []
-      },
-      {
         "id": "b7926797-0e33-4193-938b-da36a8b2c512",
         "name": "SettingBlock",
         "baseType": "Block",

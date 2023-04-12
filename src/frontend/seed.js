@@ -3,6 +3,7 @@ const fs = require("fs");
 const axios = require("axios");
 const config = require("./src/config.json");
 let FormData = require("form-data");
+const { Console } = require("console");
 
 let baseUrl = config.BASE_URL;
 if (baseUrl === "$BASE_URL") {
@@ -14,12 +15,10 @@ let site = {};
 
 function getToken() {
     var data = {
-        grant_type: "password",
+        grant_type: "client_credentials",
         client_secret: "postman",
         client_id: "postman-client",
         scope: "epi_content_delivery epi_content_management epi_content_definitions",
-        username: `${config.USERNAME}`,
-        password: `${config.PASSWORD}`,
     };
 
     const response = axios.request({
@@ -47,13 +46,16 @@ async function getContentInfo(content) {
             },
         })
         .catch((err) => {
-            console.error("Getting content info: ", err.response.statusText);
+            if (err.response.status != 404) {
+                console.error("Error Getting content info: ", err.response.statusText);
+            }
         });
 }
 
 async function publishContent(content) {
     const contentInfo = await getContentInfo(content);
     if (!contentInfo) {
+        console.log("Content not found creating content: " + content.name);
         await axios
             .request({
                 url: "/api/episerver/v3.0/contentmanagement",
@@ -67,17 +69,35 @@ async function publishContent(content) {
                 data: content,
             })
             .catch((err) => {
-                console.error("Publishing content: ", err.response.statusText);
+                console.error("Error Publishing content: ", err.response.statusText);
             });
     }
+}
+
+async function patchContent(contentGuid, content) {
+    await axios
+        .request({
+            url: "/api/episerver/v3.0/contentmanagement/" + contentGuid,
+            method: "patch",
+            baseURL: baseUrl,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + token,
+                "x-epi-validation-mode": "minimal",
+            },
+            data: content,
+        })
+        .catch((err) => {
+            console.error("Error patching content: ", err.response.statusText);
+        });
 }
 
 async function publishContentUsingForm(content, form) {
     const contentInfo = await getContentInfo(content);
 
     if (!contentInfo) {
-        await axios
-            .request({
+        console.log("Content not found creating content: " + content.name);
+        let response = await axios.request({
                 url: "/api/episerver/v3.0/contentmanagement",
                 method: "post",
                 baseURL: baseUrl,
@@ -87,13 +107,16 @@ async function publishContentUsingForm(content, form) {
                     "Content-Type": "multipart/form-data",
                     Authorization: "Bearer " + token,
                     "x-epi-validation-mode": "minimal",
+                    "x-epi-parent-location-rule" : "AssetFolder"
                 },
                 data: form,
-            })
-            .catch((err) => {
-                console.error("Publish content: ", err.response);
             });
+        if (response.status != 201) {
+                console.error("Error in Publish content: ", response);
+        }
+        return response.data;
     }
+    return contentInfo;
 }
 
 (async () => {
@@ -224,7 +247,10 @@ async function publishContentUsingForm(content, form) {
                 form.append("content", JSON.stringify(image));
                 await publishContentUsingForm(image, form);
             }
-            console.log("[DEBUGGING] Stop here");
+
+            for (let i = 1; i < destinations.length; i++) {
+                await patchContent(destinations[i].contentLink.guidValue, { "pageImage" : destinations[i].pageImage });
+            }
             return;
         }
 

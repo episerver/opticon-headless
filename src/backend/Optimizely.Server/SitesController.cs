@@ -1,5 +1,7 @@
-﻿using EPiServer.ContentApi.Core.Serialization.Models;
+﻿using EPiServer;
+using EPiServer.ContentApi.Core.Serialization.Models;
 using EPiServer.Core;
+using EPiServer.DataAbstraction;
 using EPiServer.Web;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +16,18 @@ namespace Optimizely.Server
     {
         private ISiteDefinitionRepository _siteDefinitionRepository;
         private IPermanentLinkMapper _permanentLinkMapper;
+        private IContentRepository _contentRepository;
+        private IContentTypeRepository _contentTypeRepository;
 
-        public SitesController(ISiteDefinitionRepository siteDefinitionRepository, IPermanentLinkMapper permanentLinkMapper)
+        public SitesController(ISiteDefinitionRepository siteDefinitionRepository,
+            IPermanentLinkMapper permanentLinkMapper,
+            IContentRepository contentRepository, 
+            IContentTypeRepository contentTypeRepository)
         {
             _siteDefinitionRepository = siteDefinitionRepository;
             _permanentLinkMapper = permanentLinkMapper;
+            _contentRepository = contentRepository;
+            _contentTypeRepository = contentTypeRepository;
         }
 
         [HttpPost]
@@ -26,9 +35,19 @@ namespace Optimizely.Server
         public IActionResult CreateSite()
         {
             var reference = _permanentLinkMapper.Find(new Guid("3729d832-357e-409a-87e2-5242400fb47f"));
-            if (reference == null || ContentReference.IsNullOrEmpty(reference.ContentReference))
+
+            if (reference == null)
             {
-                return Problem(detail: "Could not find home page", statusCode: 400);
+                var homeType = _contentTypeRepository.List().FirstOrDefault(x => x.Name.Equals("StandardPage"));
+                if (homeType == null)
+                {
+                    return Problem(detail: "No home content type. Plase run yarn command \"yarn run content-definitions:push\"", statusCode: 400);
+                }
+
+                var home = _contentRepository.GetDefault<PageData>(ContentReference.RootPage, homeType.ID);
+                home.Name = "Home";
+                home.ContentGuid = new Guid("3729d832-357e-409a-87e2-5242400fb47f");
+                reference = new PermanentLinkMap(Guid.NewGuid(), _contentRepository.Save(home, EPiServer.DataAccess.SaveAction.Publish, EPiServer.Security.AccessLevel.NoAccess));
             }
             var site = new SiteDefinition
             {
