@@ -1309,38 +1309,38 @@
     "propertyGroups": [
       {
         "name": "Information",
-        "sortOrder": 10,
+        "sortOrder": 100,
         "systemGroup": true
       },
       {
         "name": "Scheduling",
-        "sortOrder": 20,
-        "systemGroup": true
-      },
-      {
-        "name": "Advanced",
-        "sortOrder": 30,
+        "sortOrder": 200,
         "systemGroup": true
       },
       {
         "name": "Shortcut",
-        "sortOrder": 40,
+        "sortOrder": 300,
         "systemGroup": true
       },
       {
         "name": "Categories",
-        "sortOrder": 50,
+        "sortOrder": 400,
         "systemGroup": true
       },
       {
         "name": "DynamicBlocks",
-        "sortOrder": 60,
+        "sortOrder": 500,
         "systemGroup": true
       },
       {
         "name": "Footer",
-        "sortOrder": 70,
+        "sortOrder": 600,
         "systemGroup": false
-      }
+      },
+      {
+        "name": "Advanced",
+        "sortOrder": 900,
+        "systemGroup": true
+      },
     ]
   }

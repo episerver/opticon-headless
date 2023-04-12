@@ -55,7 +55,7 @@ async function getContentInfo(content) {
 async function publishContent(content) {
     const contentInfo = await getContentInfo(content);
     if (!contentInfo) {
-        console.log("Content not found creating content: " + content.name);
+        console.log("Content not found. Creating content: " + content.name);
         await axios
             .request({
                 url: "/api/episerver/v3.0/contentmanagement",
@@ -96,23 +96,23 @@ async function publishContentUsingForm(content, form) {
     const contentInfo = await getContentInfo(content);
 
     if (!contentInfo) {
-        console.log("Content not found creating content: " + content.name);
+        console.log("Content not found. Creating content: " + content.name);
         let response = await axios.request({
-                url: "/api/episerver/v3.0/contentmanagement",
-                method: "post",
-                baseURL: baseUrl,
-                maxBodyLength: Infinity,
-                headers: {
-                    ...form.getHeaders(),
-                    "Content-Type": "multipart/form-data",
-                    Authorization: "Bearer " + token,
-                    "x-epi-validation-mode": "minimal",
-                    "x-epi-parent-location-rule" : "AssetFolder"
-                },
-                data: form,
-            });
+            url: "/api/episerver/v3.0/contentmanagement",
+            method: "post",
+            baseURL: baseUrl,
+            maxBodyLength: Infinity,
+            headers: {
+                ...form.getHeaders(),
+                "Content-Type": "multipart/form-data",
+                Authorization: "Bearer " + token,
+                "x-epi-validation-mode": "minimal",
+                "x-epi-parent-location-rule": "AssetFolder",
+            },
+            data: form,
+        });
         if (response.status != 201) {
-                console.error("Error in Publish content: ", response);
+            console.error("Error in Publish content: ", response);
         }
         return response.data;
     }
@@ -249,7 +249,7 @@ async function publishContentUsingForm(content, form) {
             }
 
             for (let i = 1; i < destinations.length; i++) {
-                await patchContent(destinations[i].contentLink.guidValue, { "pageImage" : destinations[i].pageImage });
+                await patchContent(destinations[i].contentLink.guidValue, { pageImage: destinations[i].pageImage });
             }
             return;
         }
