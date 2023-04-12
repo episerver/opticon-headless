@@ -9,14 +9,13 @@ import Config from "../../config.json";
 import AuthService from "../../AuthService";
 
 const Navbar = () => {
-    const navigate = useNavigate();
     const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[] | null>(null);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
     const [username, setUsername] = useState<string>("");
 
     const getLayoutSetting = async () => {
       const contentLoader = getContentLoader();
-      const content = await contentLoader.getContent("3729d832-357e-409a-87e2-5242400fb47f", { branch: "en" }) as LayoutSetting;
+      const content = await contentLoader.getContent("de079474-5e46-429a-b3fc-2ef582254785", { branch: "en" }) as LayoutSetting;
       setLayoutSettings(content);
     }
 
@@ -69,7 +68,7 @@ const Navbar = () => {
     };
 
     const signout = () => {
-        AuthService.logout();
+        AuthService.signOut();
     }
 
     useEffect(() => {
@@ -102,7 +101,7 @@ const Navbar = () => {
                             <ShoppingCart className="h-4 w-4"/>
                         </Link>
                     </li>
-                    <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                    {username && <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
                         <button className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
                             <User className="h-4 w-4"/>
                         </button>
@@ -117,7 +116,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li>}
                 </ul>
                 <div id="navigation">
                     <ul className="navigation-menu"> 

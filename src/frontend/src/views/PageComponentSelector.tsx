@@ -24,7 +24,7 @@ const PageComponentSelector = () => {
         case ResolvedContentStatus.Unauthorized:
           AuthService.getUser().then((user: any) => {
             if (!user || user.expired) {
-                AuthService.login();
+                AuthService.signIn();
                 return <></>;
             } else {
                 return <Navigate to="/signin" replace />;

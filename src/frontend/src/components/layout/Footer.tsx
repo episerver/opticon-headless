@@ -7,7 +7,7 @@ const Footer = () => {
   
     const getLayoutSetting = async () => {
       const contentLoader = getContentLoader();
-      const content = await contentLoader.getContent("3729d832-357e-409a-87e2-5242400fb47f", { branch: "en" }) as LayoutSetting;
+      const content = await contentLoader.getContent("de079474-5e46-429a-b3fc-2ef582254785", { branch: "en" }) as LayoutSetting;
       setLayoutSettings(content);
     }
 

@@ -16,7 +16,7 @@ const ResetPassword = () => {
                                 <form className="ltr:text-left rtl:text-right">
                                     <div className="grid grid-cols-1">
                                         <div className="mb-4">
-                                            <label className="font-semibold" htmlFor="LoginEmail">Email Address:</label>
+                                            <label className="font-semibold" htmlFor="LoginEmail">Email Address</label>
                                             <input id="LoginEmail" type="email" className="form-input mt-3" placeholder="name@example.com" />
                                         </div>
                                         <div className="mb-4">
