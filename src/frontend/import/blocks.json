@@ -1,6 +1,69 @@
 [
     {
         "contentLink": {
+            "guidValue": "de079474-5e46-429a-b3fc-2ef582254785"
+        },
+        "name": "Global Settings",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "SettingBlock"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published",
+        "introduction": "Mosey is a fictional brand of Episerver created for demo purposes.",
+        "companyHeader": "CONTACT EPISERVER",
+        "companyName": "",
+        "companyAddress": "542 Amherst Street, Nashua, NH 03063, USA",
+        "companyPhone": "+1 603 594 0249",
+        "companyEmail": "info@episerver.com",
+        "linksHeader": "EPISERVER SITES",
+        "links": [
+            {
+                "href": "https://episerver.com",
+                "title": "Episerver",
+                "target": "_blank",
+                "text": "episerver.com"
+            },
+            {
+                "href": "https://world.episerver.com",
+                "title": "Developer Community",
+                "target": "_blank",
+                "text": "Developer Community"
+            },
+            {
+                "href": "https://webhelp.episerver.com/latest/en/home.htm",
+                "title": "User Guides",
+                "target": "_blank",
+                "text": "User Guides"
+            }
+        ],
+        "socialHeader": "Follow US",
+        "socialLinks": [
+            {
+                "href": "https://www.facebook.com/Episerver",
+                "title": "Facebook",
+                "target": "_blank",
+                "text": "Facebook"
+            },
+            {
+                "href": "https://twitter.com/episerver",
+                "title": "Twitter",
+                "target": "_blank",
+                "text": "Twitter"
+            },
+            {
+                "href": "http://www.linkedin.com/company/episerver-ab",
+                "title": "LinkedIn",
+                "target": "_blank",
+                "text": "LinkedIn"
+            }
+        ],
+        "copyright": "Episerver. All Rights Reserved."
+    },
+    {
+        "contentLink": {
             "guidValue": "28ef3041-a12b-4f53-aae3-3a4353b8026d"
         },
         "title": "How It Work ?",

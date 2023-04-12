@@ -5,6 +5,7 @@ using EPiServer.Cms.Shell.UI.Configurations;
 using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.ContentApi.Cms;
 using EPiServer.ContentApi.Cms.Internal;
+using EPiServer.ContentApi.Commerce;
 using EPiServer.ContentDefinitionsApi;
 using EPiServer.ContentManagementApi;
 using EPiServer.Data;
@@ -87,6 +88,7 @@ namespace Optimizely.Server
             {
                 options.RequireHttps = !_webHostingEnvironment.IsDevelopment();
                 options.AllowResourceOwnerPasswordFlow = true;
+                options.AllowAnonymousFlow = true;
 
                 options.Applications.Add(new OpenIDConnectApplication()
                 {
@@ -96,7 +98,7 @@ namespace Optimizely.Server
                     {
                         ContentDeliveryApiOptionsDefaults.Scope,
                         ContentManagementApiOptionsDefaults.Scope,
-                        ContentDefinitionsApiOptionsDefaults.Scope,
+                        ContentDefinitionsApiOptionsDefaults.Scope
                     },
                     RedirectUris =
                     {
@@ -107,7 +109,7 @@ namespace Optimizely.Server
                 options.Applications.Add(new OpenIDConnectApplication()
                 {
                     ClientId = "frontend",
-                    Scopes = { "openid", "offline_access", "profile", "email", "roles", ContentDeliveryApiOptionsDefaults.Scope },
+                    Scopes = { "openid", "offline_access", "profile", "email", "roles", "anonymous_id", ContentDeliveryApiOptionsDefaults.Scope },
                     PostLogoutRedirectUris = { new Uri(_frontendUri, "/signin"), },
                     RedirectUris =
                     {
