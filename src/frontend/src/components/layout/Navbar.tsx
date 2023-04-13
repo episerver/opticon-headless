@@ -65,7 +65,7 @@ const Navbar = () => {
         } else {
             isOpen.style.display = "block";
         }
-    };
+    }
 
     const signout = () => {
         AuthService.signOut();
@@ -78,8 +78,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <>
-        <nav id="topnav" className="defaultscroll is-sticky fixed">
+        <nav id="topnav" className="defaultscroll nav-sticky is-sticky">
             <div className="container">
                 <Link to="/" className="logo w-1/5">
                     {layoutSettings?.siteLogo && <img src={layoutSettings?.siteLogo.url} className="inline-block dark:hidden" alt="" />}
@@ -131,7 +130,6 @@ const Navbar = () => {
                 </div>  
             </div>
         </nav>
-        </>
     );
 };
 

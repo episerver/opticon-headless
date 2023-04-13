@@ -87,14 +87,14 @@ const SignUp = () => {
                             <form action="auth-signup-success.html" className="ltr:text-left rtl:text-right">
                                 <div className="grid grid-cols-1">
                                     <div className="mb-4">
-                                        <label className="font-semibold" htmlFor="RegisterName">Username</label>
+                                        <label className="font-semibold" htmlFor="username">Username</label>
                                         <Controller
                                             name={"username"}
                                             control={control}
                                             rules={{
                                                 required: {
                                                     value: true,
-                                                    message: "The username is required",
+                                                    message: "Username is required",
                                                 },
                                             }}
                                             render={({ field: { onChange, value } }) => (
@@ -112,7 +112,7 @@ const SignUp = () => {
                                         </p>}
                                     </div>
                                     <div className="mb-4">
-                                        <label className="font-semibold" htmlFor="LoginEmail">Email Address</label>
+                                        <label className="font-semibold" htmlFor="email">Email Address</label>
                                         <Controller
                                             name={"email"}
                                             control={control}
@@ -141,7 +141,7 @@ const SignUp = () => {
                                         </p>}
                                     </div>
                                     <div className="mb-4">
-                                        <label className="font-semibold" htmlFor="LoginPassword">Password</label>
+                                        <label className="font-semibold" htmlFor="password">Password</label>
                                         <Controller
                                             name={"password"}
                                             control={control}
@@ -170,7 +170,7 @@ const SignUp = () => {
                                         </p>}
                                     </div>
                                     <div className="mb-4">
-                                        <label className="font-semibold" htmlFor="LoginPassword">Confirm Password</label>
+                                        <label className="font-semibold" htmlFor="confirmPassword">Confirm Password</label>
                                         <Controller
                                             name={"confirmPassword"}
                                             control={control}
