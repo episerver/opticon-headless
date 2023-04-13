@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@episerver/content-delivery": "^1.1.0",
+    "@iconscout/react-unicons": "^2.0.2",
     "axios": "^0.26.0",
     "oidc-client": "^1.10.1",
     "oidc-client-ts": "^2.2.2",
     "react-feather": "^2.0.10",
-    "react-hook-form": "^7.43.9",
-    "react-toastify": "^9.1.2"
+    "react-hook-form": "^7.43.9"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",

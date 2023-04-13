@@ -6,6 +6,8 @@ import ErrorBoundary from "@components/common/ErrorBoundary";
 import { defaultConfig } from '@episerver/content-delivery';
 import Config from "./config.json";
 import AuthService from './AuthService';
+import Mode from "@components/common/Mode";
+import ScrollTop from "@components/common/ScrollTop";
 
 const App = () => {
   useEffect(() => {
@@ -16,7 +18,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+    <>
       <Navbar />
       <section className="relative md:pt-18 pt-16 bg-gray-50 dark:bg-slate-800">
         <ErrorBoundary>
@@ -24,7 +26,9 @@ const App = () => {
         </ErrorBoundary>
       </section>
       <Footer />
-    </div>
+      <ScrollTop/>
+      <Mode/>
+    </>
 )};
 
 export default App;
