@@ -1,0 +1,62 @@
+{
+    "contentLink": {
+        "guidValue": "de079474-5e46-429a-b3fc-2ef582254785"
+    },
+    "name": "Global Settings",
+    "language": {
+        "name": "en"
+    },
+    "contentType": ["Block", "SettingBlock"],
+    "parentLink": {
+        "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+    },
+    "status": "Published",
+    "introduction": "Destinations is a fictional brand of Optimizely created for demo purposes.",
+    "companyHeader": "CONTACT OPTIMIZELY",
+    "companyName": "",
+    "companyAddress": "119 5th Ave 7th floor New York, NY 10003, USA",
+    "companyPhone": "+1 603 594 0249",
+    "companyEmail": "info@optimizely.com",
+    "linksHeader": "OPTIMIZELY SITES",
+    "links": [
+        {
+            "href": "https://optimizely.com",
+            "title": "Optimizely",
+            "target": "_blank",
+            "text": "optimizely.com"
+        },
+        {
+            "href": "https://world.optimizely.com",
+            "title": "Developer Community",
+            "target": "_blank",
+            "text": "Developer Community"
+        },
+        {
+            "href": "https://webhelp.optimizely.com/latest/en/home.htm",
+            "title": "User Guides",
+            "target": "_blank",
+            "text": "User Guides"
+        }
+    ],
+    "socialHeader": "Follow Us",
+    "socialLinks": [
+        {
+            "href": "https://www.facebook.com/optimizely",
+            "title": "Facebook",
+            "target": "_blank",
+            "text": "Facebook"
+        },
+        {
+            "href": "https://twitter.com/optimizely",
+            "title": "Twitter",
+            "target": "_blank",
+            "text": "Twitter"
+        },
+        {
+            "href": "http://www.linkedin.com/company/optimizely",
+            "title": "LinkedIn",
+            "target": "_blank",
+            "text": "LinkedIn"
+        }
+    ]
+}
