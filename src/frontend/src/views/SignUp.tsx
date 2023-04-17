@@ -7,7 +7,6 @@ import axios from "axios";
 import qs from "qs";
 import Config from "../config.json";
 import AuthService from "../AuthService";
-import { toast } from "react-toastify";
 
 const SignUp = () => {
     const [loading, setLoading] = useState<boolean>(false);

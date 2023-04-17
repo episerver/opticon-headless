@@ -8,6 +8,7 @@ import Config from "./config.json";
 import AuthService from './AuthService';
 import Mode from "@components/common/Mode";
 import ScrollTop from "@components/common/ScrollTop";
+import CookieConsent from "@components/common/CookieConsent";
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = () => {
       <Footer />
       <ScrollTop/>
       <Mode/>
+      <CookieConsent/>
     </>
 )};
 
