@@ -1159,7 +1159,63 @@
           "available": true,
           "sortOrder": 716
         },
-        "properties": []
+        "properties": [
+          {
+            "name": "Author",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Author",
+              "groupName": "Information",
+              "sortOrder": 10
+            }
+          },
+          {
+            "name": "Image",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Image",
+              "groupName": "Information",
+              "sortOrder": 20
+            }
+          },
+          {
+            "name": "MetaDescription",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Meta Description",
+              "groupName": "Information",
+              "sortOrder": 30
+            }
+          },
+          {
+            "name": "MainBody",
+            "dataType": "PropertyXHTMLString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Main Body",
+              "groupName": "Information",
+              "sortOrder": 40
+            }
+          },
+          {
+            "name": "MinsToRead",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Minutes To Read",
+              "groupName": "Information",
+              "sortOrder": 50
+            }
+          }
+        ]
       },
       {
         "id": "d2ea7f1b-d69a-48c5-99f9-963674880d43",

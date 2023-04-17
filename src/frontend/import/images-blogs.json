@@ -1,0 +1,194 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "6c6428ea-372d-4913-8a79-4aca1c4455de"
+        },
+        "name": "01.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "19ef947f-eb2f-4d4e-bf5f-4bb3c2dbd6bb"
+        },
+        "status": "Published",
+        "title": "Design your apps in your own way",
+        "altText": "Design your apps in your own way"
+    },
+    {
+        "contentLink": {
+            "guidValue": "2f52156d-617f-4480-83e2-05f4c85b4871"
+        },
+        "name": "02.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "4f68e0cf-82e7-4f5c-928c-517f9bbfceb3"
+        },
+        "status": "Published",
+        "title": "How apps is changing the IT world",
+        "altText": "How apps is changing the IT world"
+    },
+    {
+        "contentLink": {
+            "guidValue": "4286926d-25ff-4dac-9a1a-6b578db87078"
+        },
+        "name": "03.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "9457e6ec-6f1a-4166-8149-11749d82c72f"
+        },
+        "status": "Published",
+        "title": "Smartest Applications for Business",
+        "altText": "Smartest Applications for Business"
+    },
+    {
+        "contentLink": {
+            "guidValue": "955a9760-b33e-40dd-8ef6-70044f17e0bf"
+        },
+        "name": "04.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "b8bd0c48-69d0-400e-9d21-5cfe50563e82"
+        },
+        "status": "Published",
+        "title": "Mobile Marketing, Its Synthes and 2021 Offer Prognosis",
+        "altText": "Mobile Marketing, Its Synthes and 2021 Offer Prognosis"
+    },
+    {
+        "contentLink": {
+            "guidValue": "87751288-0712-4c02-b461-960c55d2f214"
+        },
+        "name": "05.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "69dca3d1-93c7-4ce7-89a2-cc937a82a990"
+        },
+        "status": "Published",
+        "title": "Stop Worrying About Deadlines! We Got You Covered",
+        "altText": "Stop Worrying About Deadlines! We Got You Covered"
+    },
+    {
+        "contentLink": {
+            "guidValue": "f1e93d30-681c-4877-8954-d363456c7468"
+        },
+        "name": "06.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "db82f77f-3cae-47df-a430-b81754d2d02a"
+        },
+        "status": "Published",
+        "title": "Change Your Strategy: Find a Business Consultant",
+        "altText": "Change Your Strategy: Find a Business Consultant"
+    },
+    {
+        "contentLink": {
+            "guidValue": "88fd5c98-c329-4f2a-b946-04a2ea71f2f6"
+        },
+        "name": "07.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "bb666377-03d7-484b-9621-4434dbbbe66e"
+        },
+        "status": "Published",
+        "title": "Everything About Financial Modeling",
+        "altText": "Everything About Financial Modeling"
+    },
+    {
+        "contentLink": {
+            "guidValue": "e4909885-b3b8-4239-9942-16aa2f7dff6f"
+        },
+        "name": "08.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "6a1c06a8-8849-43bd-9286-df12f14c23f3"
+        },
+        "status": "Published",
+        "title": "On the other hand we provide denounce",
+        "altText": "On the other hand we provide denounce"
+    },
+    {
+        "contentLink": {
+            "guidValue": "eab2978d-b925-4f63-80a5-f7bd22cd5350"
+        },
+        "name": "01.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "ca53a5ba-cb0e-4f33-8811-4083f2956364"
+        },
+        "status": "Published",
+        "title": "How can we keep up with technology?",
+        "altText": "How can we keep up with technology?"
+    },
+    {
+        "contentLink": {
+            "guidValue": "4da73581-e7c6-48d9-bd65-82a29117ccd3"
+        },
+        "name": "02.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "5f8d13ba-471d-41e6-8d83-2541e521bd1f"
+        },
+        "status": "Published",
+        "title": "Technology is changing our live",
+        "altText": "Technology is changing our live"
+    },
+    {
+        "contentLink": {
+            "guidValue": "6d84fa1a-bfdd-41fa-b6d9-0ab1beec5f37"
+        },
+        "name": "03.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "614c0b94-9d0f-43b5-b024-9fb34ed6f125"
+        },
+        "status": "Published",
+        "title": "Big data - The new era has come",
+        "altText": "Big data - The new era has come"
+    },
+    {
+        "contentLink": {
+            "guidValue": "5b06b5c8-2a7d-4895-8c4f-d78dd9fb9ebd"
+        },
+        "name": "04.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["ImageFile", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "709ccfe1-c279-4e28-bc82-e5e4ed6fb7b3"
+        },
+        "status": "Published",
+        "title": "AI will never be able to replace human beings",
+        "altText": "AI will never be able to replace human beings"
+    }
+]

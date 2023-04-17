@@ -74,10 +74,11 @@ async function publishContent(content) {
     }
 }
 
-async function patchContent(contentGuid, content) {
+async function patchContent(content, updateData) {
+    console.log("Updating content: " + content.name);
     await axios
         .request({
-            url: "/api/episerver/v3.0/contentmanagement/" + contentGuid,
+            url: "/api/episerver/v3.0/contentmanagement/" + content.contentLink.guidValue,
             method: "patch",
             baseURL: baseUrl,
             headers: {
@@ -85,7 +86,7 @@ async function patchContent(contentGuid, content) {
                 Authorization: "Bearer " + token,
                 "x-epi-validation-mode": "minimal",
             },
-            data: content,
+            data: updateData,
         })
         .catch((err) => {
             console.error("Error patching content: ", err.response.statusText);
@@ -147,18 +148,24 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
+         * Generates a setting block for global settings.
+         */
+        {
+            console.log("=== Generates a setting block for global settings. ===");
+            let globalSettings = JSON.parse(fs.readFileSync("./import/setting-block.json", "utf8"));
+            await publishContent(globalSettings);
+        }
+
+        /**
          * Generates a home page.
          */
         {
             console.log("=== Generates a home page. ===");
             let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
-            let promises = [];
             for (let i = 0; i < homePages.length; i++) {
                 const homePage = homePages[i];
-                promises.push(publishContent(homePage));
+                await publishContent(homePage);
             }
-
-            await Promise.all(promises);
         }
 
         /**
@@ -225,6 +232,17 @@ async function publishContentUsingForm(content, form) {
                 const blog = blogs[i];
                 await publishContent(blog);
             }
+
+            console.log("=== Adding images for blogs. ===");
+            let images = JSON.parse(fs.readFileSync("./import/images-blogs.json", "utf8"));
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                let file = fs.createReadStream(`./import/images/blogs/${image.name}`);
+                const form = new FormData();
+                form.append("file", file, image.name);
+                form.append("content", JSON.stringify(image));
+                await publishContentUsingForm(image, form);
+            }
         }
 
         /**
@@ -249,10 +267,11 @@ async function publishContentUsingForm(content, form) {
             }
 
             for (let i = 1; i < destinations.length; i++) {
-                await patchContent(destinations[i].contentLink.guidValue, { pageImage: destinations[i].pageImage });
+                await patchContent(destinations[i], { pageImage: destinations[i].pageImage });
             }
-            return;
         }
+
+        return;
 
         /**
          * Upload videos.
