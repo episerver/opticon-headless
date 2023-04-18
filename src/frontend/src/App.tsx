@@ -21,11 +21,9 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <section className="relative md:pt-18 pt-16 bg-gray-50 dark:bg-slate-800">
-        <ErrorBoundary>
-            <Outlet />
-        </ErrorBoundary>
-      </section>
+      <ErrorBoundary>
+          <Outlet />
+      </ErrorBoundary>
       <Footer />
       <ScrollTop/>
       <Mode/>
