@@ -25,7 +25,7 @@
 		<PackageReference Include="EPiServer.Session" Version="2.1.0" />
 		<PackageReference Include="HiddenFoundry.ContentDeliveryApi.ExpandContentAreas" Version="1.0.4" />
 		<PackageReference Include="Optimizely.CMS.Labs.LiquidTemplating" Version="0.5.0" />
-		<PackageReference Include="Optimizely.ContentGraph.Cms" Version="2.2.2" />
+		<!--<PackageReference Include="Optimizely.ContentGraph.Cms" Version="2.2.2" />-->
 		<PackageReference Include="Serilog" Version="2.12.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
