@@ -9,7 +9,7 @@ interface StandardProps extends ContentData{
     mainContentArea: ContentArea;
 }
 
-const Standard: FC<StandardProps> = (props): JSX.Element => {
+const StandardPage: FC<StandardProps> = (props): JSX.Element => {
     return (
         <section className="container mx-auto">
             <PropertyXhtmlString value={props?.mainBody ?? ""} />
@@ -18,4 +18,4 @@ const Standard: FC<StandardProps> = (props): JSX.Element => {
     );
 };
 
-export default Standard;
+export default StandardPage;

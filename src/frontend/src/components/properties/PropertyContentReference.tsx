@@ -1,4 +1,5 @@
-﻿import { ContentData } from '@episerver/content-delivery';
+﻿import Loading from '@components/common/Loading';
+import { ContentData } from '@episerver/content-delivery';
 import React, { FC, lazy, Suspense } from 'react';
 
 interface PropertyContentReferenceProps {
@@ -32,7 +33,7 @@ const PropertyContentReference: FC<PropertyContentReferenceProps> = ({ value, cl
     else if (value.contentType[0] === 'Page') {
         const View = lazy(() => import(`../pages/${value.contentType.at(-1)}`));
         return <div className={className}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading/>}>
                 <View value={value}/>
             </Suspense>
         </div>
@@ -40,7 +41,7 @@ const PropertyContentReference: FC<PropertyContentReferenceProps> = ({ value, cl
     else if (value.contentType[0] === 'Block') {
         const View = lazy(() => import(`../blocks/${value.contentType.at(-1)}`));
         return <div className={className}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading/>}>
                 <View value={value}/>
             </Suspense>
         </div>

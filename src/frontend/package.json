@@ -15,6 +15,8 @@
     "@episerver/content-delivery": "^1.1.0",
     "@iconscout/react-unicons": "^2.0.2",
     "axios": "^0.26.0",
+    "mdi-react": "^9.2.0",
+    "moment": "^2.29.4",
     "oidc-client": "^1.10.1",
     "oidc-client-ts": "^2.2.2",
     "react-feather": "^2.0.10",

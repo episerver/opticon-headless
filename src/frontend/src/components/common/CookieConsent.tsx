@@ -3,14 +3,16 @@ import * as Unicons from '@iconscout/react-unicons';
 import { Link } from "react-router-dom";
 
 const CookieConsent = () => {
-    const [show, setShow] = useState<Boolean>(true);
+    const [show, setShow] = useState<Boolean>(!localStorage.getItem("confirmed_cookie_consent"));
     
     const accept = () => {
-        setShow(false)
+        localStorage.setItem("confirmed_cookie_consent", "true");
+        setShow(false);
     }
 
     const deny = () => {
-        setShow(false)
+        localStorage.setItem("confirmed_cookie_consent", "true");
+        setShow(false);
     }
 
 
@@ -18,8 +20,8 @@ const CookieConsent = () => {
         <>
             {show && <div className="cookie-popup fixed max-w-lg bottom-3 ltr:right-3 rtl:left-3 left-3 sm:left-0 sm:right-0 mx-auto bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md py-5 px-6 z-50">
                 <p className="text-slate-400 text-center">
-                    This website uses cookies to provide you with a great user experience. By using it, you accept our 
-                    By using it, you accept our <Link to="https://shreethemes.in" target="_blank" className="text-emerald-600 dark:text-emerald-500 font-semibold ml-1">use of cookies</Link>
+                    This website uses cookies to provide you with a great user experience. 
+                    By using it, you accept our <Link to="https://shreethemes.in" target="_blank" className="text-emerald-600 dark:text-emerald-500 font-semibold">use of cookies</Link>
                 </p>
                 <div className="cookie-popup-actions ltr:text-right rtl:text-left">
                     <button className="absolute border-none bg-none p-0 cursor-pointer font-semibold top-2 ltr:right-2 rtl:left-2" onClick={() => setShow(false)}>

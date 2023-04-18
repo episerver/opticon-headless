@@ -67,6 +67,20 @@ const Navbar = () => {
         }
     }
 
+    const windowScroll = () => {
+        const navbar = document.getElementById("topnav");
+        if (navbar != null) {
+            if (
+                document.body.scrollTop >= 50 ||
+                document.documentElement.scrollTop >= 50
+            ) {
+                navbar.classList.add("nav-sticky");
+            } else {
+                navbar.classList.remove("nav-sticky");
+            }
+        }
+    }
+
     const signout = () => {
         AuthService.signOut();
     }
@@ -75,10 +89,14 @@ const Navbar = () => {
       getLayoutSetting();
       getMenu();
       getUser();
+      window.addEventListener('scroll', (ev) => {
+        ev.preventDefault();
+        windowScroll();
+      })
     }, [])
 
     return (
-        <nav id="topnav" className="defaultscroll nav-sticky is-sticky">
+        <nav id="topnav" className="defaultscroll is-sticky">
             <div className="container">
                 <Link to="/" className="logo w-1/5">
                     {layoutSettings?.siteLogo && <img src={layoutSettings?.siteLogo.url} className="inline-block dark:hidden" alt="" />}
@@ -94,13 +112,13 @@ const Navbar = () => {
                         </a>
                     </div>
                 </div>
-                <ul className="buy-button list-none mb-0">
+                {username && <ul className="buy-button list-none mb-0">
                     <li className="inline mb-0">
                         <Link to="/cart" className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
                             <ShoppingCart className="h-4 w-4"/>
                         </Link>
                     </li>
-                    {username && <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                    <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
                         <button className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
                             <User className="h-4 w-4"/>
                         </button>
@@ -115,10 +133,10 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                    </li>}
-                </ul>
+                    </li>
+                </ul>}
                 <div id="navigation">
-                    <ul className="navigation-menu"> 
+                    <ul className="navigation-menu nav-light"> 
                         {menuItems?.map((item) => {
                             return (
                                 <li key={item.text}>
