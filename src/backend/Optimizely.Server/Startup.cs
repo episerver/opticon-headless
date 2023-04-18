@@ -123,7 +123,7 @@ namespace Optimizely.Server
             services.ConfigureContentDeliveryApiSerializer(settings => settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore);
             services.ConfigureApplicationCookie(options => options.LoginPath = "/util/Login");
             services.Configure<HeadlessModeOptions>(o => o.HeadlessModeEnabled = false);
-            services.AddContentGraph(_configuration);
+            //services.AddContentGraph(_configuration);
             services.Configure<UploadOptions>(x => x.FileSizeLimit = 20971520L);
             services.Configure<DisplayOptions>(options =>
             {

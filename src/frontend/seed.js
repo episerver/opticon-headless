@@ -3,7 +3,6 @@ const fs = require("fs");
 const axios = require("axios");
 const config = require("./src/config.json");
 let FormData = require("form-data");
-const { Console } = require("console");
 
 let baseUrl = config.BASE_URL;
 if (baseUrl === "$BASE_URL") {
