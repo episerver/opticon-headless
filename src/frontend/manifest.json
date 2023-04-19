@@ -845,6 +845,18 @@
             }
           },
           {
+            "name": "Description",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Description",
+              "groupName": "Information",
+              "sortOrder": 15,
+              "helpText": "Description for the page list block."
+            }
+          },
+          {
             "name": "NumberOfResults",
             "dataType": "PropertyNumber",
             "branchSpecific": true,
@@ -853,7 +865,7 @@
               "displayName": "Number of Results",
               "groupName": "Information",
               "sortOrder": 20,
-              "helpText": "Heading for the page list block."
+              "helpText": "Number of items displayed."
             }
           },
           {
@@ -865,7 +877,7 @@
               "displayName": "Roots",
               "groupName": "Information",
               "sortOrder": 30,
-              "helpText": "Heading for the page list block."
+              "helpText": "This is where Parent folders or pages are placed and their children pages will be used."
             }
           }
         ]
@@ -1209,14 +1221,15 @@
             }
           },
           {
-            "name": "Image",
+            "name": "PageImage",
             "dataType": "PropertyContentReference",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Image",
+              "displayName": "PageImage",
               "groupName": "Information",
-              "sortOrder": 20
+              "sortOrder": 20,
+              "hint": "image"
             }
           },
           {
