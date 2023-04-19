@@ -831,7 +831,44 @@
           "available": true,
           "sortOrder": 445
         },
-        "properties": []
+        "properties": [
+          {
+            "name": "Heading",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Heading",
+              "groupName": "Information",
+              "sortOrder": 10,
+              "helpText": "Heading for the page list block."
+            }
+          },
+          {
+            "name": "NumberOfResults",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Number of Results",
+              "groupName": "Information",
+              "sortOrder": 20,
+              "helpText": "Heading for the page list block."
+            }
+          },
+          {
+            "name": "Roots",
+            "dataType": "PropertyContentArea",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Roots",
+              "groupName": "Information",
+              "sortOrder": 30,
+              "helpText": "Heading for the page list block."
+            }
+          }
+        ]
       },
       {
         "id": "b087f703-677c-4487-9943-d972cfc51438",

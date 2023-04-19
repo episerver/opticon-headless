@@ -1,0 +1,25 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "793392ad-61b5-4fc2-ada0-b75ea30081f5"
+        },
+        "name": "Blog list page: Blogs",
+        "language": {
+            "name": "en"
+        },
+        "heading": "Recent posts",
+        "contentType": ["Block", "PageListBlock"],
+        "numberOfResults": 6,
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "roots": [
+            {
+                "contentLink": {
+                    "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+                }
+            }
+        ],
+        "status": "Published"
+    }
+]

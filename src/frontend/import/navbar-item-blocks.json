@@ -1,0 +1,50 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "02a60c20-5520-4ecc-b091-b3442d036c3a"
+        },
+        "name": "Home",
+        "text": "Home",
+        "link": "http://localhost:5000/en/",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "NavbarItem"],
+        "parentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "status": "Published"
+    },
+    {
+        "contentLink": {
+            "guidValue": "719e8021-880e-4a1a-a501-f46a2462456a"
+        },
+        "name": "Destinations",
+        "text": "Destinations",
+        "link": "http://localhost:5000/en/destinations/",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "NavbarItem"],
+        "parentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "status": "Published"
+    },
+    {
+        "contentLink": {
+            "guidValue": "00a701f8-daa5-4bdb-a30b-63f9ec177044"
+        },
+        "name": "Blog",
+        "text": "Blog",
+        "link": "http://localhost:5000/en/blog/",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "NavbarItem"],
+        "parentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "status": "Published"
+    }
+]
