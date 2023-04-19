@@ -67,18 +67,21 @@ const Navbar = () => {
         }
     }
 
-    const windowScroll = () => {
-        const navbar = document.getElementById("topnav");
-        if (navbar != null) {
-            if (
-                document.body.scrollTop >= 50 ||
-                document.documentElement.scrollTop >= 50
-            ) {
-                navbar.classList.add("nav-sticky");
-            } else {
-                navbar.classList.remove("nav-sticky");
+    const addScrollEvent = () => {
+        window.addEventListener('scroll', (ev) => {
+            ev.preventDefault();
+            const navbar = document.getElementById("topnav");
+            if (navbar != null) {
+                if (
+                    document.body.scrollTop >= 50 ||
+                    document.documentElement.scrollTop >= 50
+                ) {
+                    navbar.classList.add("nav-sticky");
+                } else {
+                    navbar.classList.remove("nav-sticky");
+                }
             }
-        }
+        })
     }
 
     const signout = () => {
@@ -89,10 +92,7 @@ const Navbar = () => {
       getLayoutSetting();
       getMenu();
       getUser();
-      window.addEventListener('scroll', (ev) => {
-        ev.preventDefault();
-        windowScroll();
-      })
+      addScrollEvent();
     }, [])
 
     return (

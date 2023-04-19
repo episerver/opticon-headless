@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AccessDenied = () => {
     return (
@@ -8,13 +9,13 @@ const AccessDenied = () => {
                 <div className="grid grid-cols-1">
                     <div className="flex flex-col min-h-screen justify-center md:px-10 py-10 px-4">
                         <div className="title-heading text-center my-auto">
-                            <img src={require("./../../assets/images/error.png")} className="w-1/5 mx-auto" alt="" />
+                            <img src={require("./../assets/images/error.png")} className="w-1/5 mx-auto" alt="" />
                             <h1 className="mt-3 mb-6 md:text-5xl text-3xl font-bold">Access Denied</h1>
                             <p className="text-slate-400">
                                 You do not have permission to access this page.
                             </p>           
                             <div className="mt-4">
-                                <a href="/" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">Back to Home</a>
+                                <Link to="/" reloadDocument className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">Back to Home</Link>
                             </div>
                         </div>
                     </div>
