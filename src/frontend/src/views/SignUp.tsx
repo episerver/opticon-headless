@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import backgroundImage from "@assets/images/cta.jpg";
 import { Link } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
-import SignUpModel from "@models/SignUp";
+import SignUpModel from "@models/page/SignUp";
 import axios from "axios";
 import qs from "qs";
 import Config from "../config.json";
