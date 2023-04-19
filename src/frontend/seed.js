@@ -33,10 +33,10 @@ function getToken() {
     return response;
 }
 
-async function getContentInfo(content) {
+async function getContentInfo(contentGuid) {
     return await axios
         .request({
-            url: `api/episerver/v3.0/content/${content.contentLink.guidValue}`,
+            url: `api/episerver/v3.0/content/${contentGuid}`,
             method: "get",
             baseURL: baseUrl,
             headers: {
@@ -52,7 +52,7 @@ async function getContentInfo(content) {
 }
 
 async function publishContent(content) {
-    const contentInfo = await getContentInfo(content);
+    const contentInfo = await getContentInfo(content.contentLink.guidValue);
     if (!contentInfo) {
         console.log("Content not found. Creating content: " + content.name);
         await axios
@@ -92,8 +92,79 @@ async function patchContent(content, updateData) {
         });
 }
 
+async function patchPropertyContentReferences(content, updateData) {
+    const contentInfo = await getContentInfo(content.contentLink.guidValue);
+    let updateDataKey = Object.keys(updateData)[0];
+    let updateDataValue = Object.values(updateData)[0];
+    let updateDataInfo = {};
+    let found = false;
+    if (Array.isArray(updateDataValue)) {
+        const ids = [];
+        for (let i = 0; i < updateDataValue.length; i++) {
+            updateDataInfo = await getContentInfo(updateDataValue[i].contentLink.guidValue);
+            if (updateDataInfo) {
+                ids.push(updateDataInfo.data.contentLink.id);
+            }
+        }
+
+        if (!contentInfo || ids.length == 0) {
+            return;
+        }
+
+        if (contentInfo.data[updateDataKey]) {
+            for (let i = 0; i < contentInfo.data[updateDataKey].length; i++) {
+                const element = contentInfo.data[updateDataKey][i];
+                if (ids.includes(element.contentLink.id)) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found) {
+            return;
+        }
+
+        for (let i = 0; i < ids.length; i++) {
+            updateData[updateDataKey][i].contentLink.id = ids[i];
+        }
+    } else {
+        const contentInfo = await getContentInfo(content.contentLink.guidValue);
+        updateDataInfo = await getContentInfo(updateData[updateDataKey].guidValue);
+        if (!contentInfo && !updateDataInfo) {
+            return;
+        }
+
+        if (
+            contentInfo.data[updateDataKey] &&
+            updateData[updateDataKey].guidValue == updateDataInfo.data.contentLink.guidValue
+        ) {
+            return;
+        }
+
+        updateData[updateDataKey].id = updateDataInfo.data.contentLink.id;
+    }
+
+    console.log("Updating references for content: " + content.name);
+    await axios
+        .request({
+            url: "/api/episerver/v3.0/contentmanagement/" + content.contentLink.guidValue,
+            method: "patch",
+            baseURL: baseUrl,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + token,
+                "x-epi-validation-mode": "minimal",
+            },
+            data: updateData,
+        })
+        .catch((err) => {
+            console.error("Error patching content: ", err.response.statusText);
+        });
+}
+
 async function publishContentUsingForm(content, form) {
-    const contentInfo = await getContentInfo(content);
+    const contentInfo = await getContentInfo(content.contentLink.guidValue);
 
     if (!contentInfo) {
         console.log("Content not found. Creating content: " + content.name);
@@ -210,11 +281,11 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
-         * Generates blocks.
+         * Generates navbar item blocks.
          */
         {
-            console.log("=== Generates blocks. ===");
-            let blocks = JSON.parse(fs.readFileSync("./import/blocks.json", "utf8"));
+            console.log("=== Generates navbar item blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/navbar-item-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 const block = blocks[i];
                 await publishContent(block);
@@ -225,7 +296,7 @@ async function publishContentUsingForm(content, form) {
          * Generates blogs.
          */
         {
-            console.log("=== Generates blogs. ===");
+            console.log("=== Generates blog pages. ===");
             let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
             for (let i = 0; i < blogs.length; i++) {
                 const blog = blogs[i];
@@ -241,6 +312,23 @@ async function publishContentUsingForm(content, form) {
                 form.append("file", file, image.name);
                 form.append("content", JSON.stringify(image));
                 await publishContentUsingForm(image, form);
+            }
+        }
+
+        /**
+         * Generates blog list page blocks.
+         */
+        {
+            console.log("=== Generates page list blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/page-list-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                await publishContent(block);
+            }
+
+            console.log("=== Adding reference of page for blocks. ===");
+            for (let i = 0; i < blocks.length; i++) {
+                await patchPropertyContentReferences(blocks[i], { roots: blocks[i].roots });
             }
         }
 
@@ -266,7 +354,9 @@ async function publishContentUsingForm(content, form) {
             }
 
             for (let i = 1; i < destinations.length; i++) {
-                await patchContent(destinations[i], { pageImage: destinations[i].pageImage });
+                await patchPropertyContentReferences(destinations[i], {
+                    pageImage: destinations[i].pageImage,
+                });
             }
         }
 
