@@ -29,6 +29,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "6c6428ea-372d-4913-8a79-4aca1c4455de"
+        },
         "status": "Published"
     },
     {
@@ -46,6 +49,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "2f52156d-617f-4480-83e2-05f4c85b4871"
         },
         "status": "Published"
     },
@@ -65,6 +71,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "4286926d-25ff-4dac-9a1a-6b578db87078"
+        },
         "status": "Published"
     },
     {
@@ -82,6 +91,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "955a9760-b33e-40dd-8ef6-70044f17e0bf"
         },
         "status": "Published"
     },
@@ -101,6 +113,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "87751288-0712-4c02-b461-960c55d2f214"
+        },
         "status": "Published"
     },
     {
@@ -118,6 +133,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "f1e93d30-681c-4877-8954-d363456c7468"
         },
         "status": "Published"
     },
@@ -137,6 +155,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "88fd5c98-c329-4f2a-b946-04a2ea71f2f6"
+        },
         "status": "Published"
     },
     {
@@ -154,6 +175,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "e4909885-b3b8-4239-9942-16aa2f7dff6f"
         },
         "status": "Published"
     },
@@ -173,6 +197,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "eab2978d-b925-4f63-80a5-f7bd22cd5350"
+        },
         "status": "Published"
     },
     {
@@ -190,6 +217,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "4da73581-e7c6-48d9-bd65-82a29117ccd3"
         },
         "status": "Published"
     },
@@ -209,6 +239,9 @@
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
         },
+        "pageImage": {
+            "guidValue": "6d84fa1a-bfdd-41fa-b6d9-0ab1beec5f37"
+        },
         "status": "Published"
     },
     {
@@ -226,6 +259,9 @@
         "contentType": ["Page", "BlogItemPage"],
         "parentLink": {
             "guidValue": "8384a02d-23c0-4dea-89f3-198639d32155"
+        },
+        "pageImage": {
+            "guidValue": "5b06b5c8-2a7d-4895-8c4f-d78dd9fb9ebd"
         },
         "status": "Published"
     }

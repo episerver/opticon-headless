@@ -313,6 +313,12 @@ async function publishContentUsingForm(content, form) {
                 form.append("content", JSON.stringify(image));
                 await publishContentUsingForm(image, form);
             }
+
+            for (let i = 1; i < blogs.length; i++) {
+                await patchPropertyContentReferences(blogs[i], {
+                    pageImage: blogs[i].pageImage,
+                });
+            }
         }
 
         /**
