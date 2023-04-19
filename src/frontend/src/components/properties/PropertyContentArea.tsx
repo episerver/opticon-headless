@@ -25,19 +25,19 @@ const PropertyContentArea: FC<PropertyContentAreaProps> = ({ value }): JSX.Eleme
                     }
                     else if (baseType === 'Video') {
                         const View = lazy(() => import(`@components/media/${content.contentType.at(-1)}`));
-                        return <Suspense fallback={<Loading/>}>
+                        return <Suspense key={index} fallback={<Loading/>}>
                                     <View {...content}/>
                                 </Suspense>
                     }
                     else if (baseType === 'Image') {
                         const View = lazy(() => import(`@components/media/${content.contentType.at(-1)}`));
-                        return <Suspense fallback={<Loading/>}>
+                        return <Suspense key={index} fallback={<Loading/>}>
                                     <View {...content}/>
                                 </Suspense>
                     }
                     else if (baseType === 'Block') {
                         const View = lazy(() => import(`@components/blocks/${content.contentType.at(-1)}`));
-                        return <Suspense fallback={<Loading/>}>
+                        return <Suspense key={index} fallback={<Loading/>}>
                                     <View {...content}/>
                                 </Suspense>
                     }

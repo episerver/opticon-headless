@@ -6,7 +6,7 @@ import ErrorBoundary from "@components/common/ErrorBoundary";
 import { defaultConfig } from '@episerver/content-delivery';
 import Config from "./config.json";
 import AuthService from './AuthService';
-import Mode from "@components/common/Mode";
+import Mode from "@components/common/DisplayMode";
 import ScrollTop from "@components/common/ScrollTop";
 import CookieConsent from "@components/common/CookieConsent";
 

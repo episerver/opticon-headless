@@ -1,33 +1,37 @@
+import { FC, useEffect, useState } from "react";
+import ErrorBoundaryInner from "./ErrorBoundaryInner";
+import { useLocation } from "react-router-dom";
 import React from "react";
 
-class ErrorBoundary extends React.Component<any, any> {
-    state = {
-      hasError: false
-    };
-  
-    static getDerivedStateFromError = () => {
-      return { hasError: true };
-    };
-  
-    render() {
-      return this.state.hasError ? 
-        <section className="relative bg-indigo-600/5">
-            <div className="container-fluid relative">
-                <div className="grid grid-cols-1">
-                    <div className="flex flex-col min-h-screen justify-center md:px-10 py-10 px-4">
-                        <div className="title-heading text-center my-auto">
-                            <img src={require("./../../assets/images/error.png")} className="w-1/5 mx-auto" alt="" />
-                            <h1 className="mt-3 mb-6 md:text-5xl text-3xl font-bold">Oops..!</h1>
-                            <p className="text-slate-400">Something Went Wrong. Please try again later.</p>           
-                            <div className="mt-4">
-                                <a href="/" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">Back to Home</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> : this.props.children;
-    }
+const ErrorBoundary: FC<any> = ({children}) => {
+    const [hasError, setHasError] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+      if (hasError) {
+        setHasError(false);
+      }
+    }, [location.key]);
+
+    useEffect(() => {
+        const navbar = document.getElementById("topnav");
+        if (navbar != null) {
+          if(hasError){
+            navbar.classList.add("nav-sticky");
+          }else{
+            navbar.classList.remove("nav-sticky");
+          }
+        }
+    }, [hasError])
+
+    return (
+      <ErrorBoundaryInner 
+        hasError={hasError} 
+        setHasError={setHasError}
+      >
+        {children}
+      </ErrorBoundaryInner>
+    );
   }
 
   export default ErrorBoundary;

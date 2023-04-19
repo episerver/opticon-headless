@@ -3,7 +3,7 @@ import * as Unicons from '@iconscout/react-unicons';
 import { Link } from "react-router-dom";
 
 const CookieConsent = () => {
-    const [show, setShow] = useState<Boolean>(!localStorage.getItem("confirmed_cookie_consent"));
+    const [show, setShow] = useState<boolean>(!localStorage.getItem("confirmed_cookie_consent"));
     
     const accept = () => {
         localStorage.setItem("confirmed_cookie_consent", "true");
@@ -14,7 +14,6 @@ const CookieConsent = () => {
         localStorage.setItem("confirmed_cookie_consent", "true");
         setShow(false);
     }
-
 
     return (
         <>

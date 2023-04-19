@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from "./App";
 import PageComponentSelector, { PageDataLoader } from "@views/PageComponentSelector";
-import NotFound from "@components/common/NotFound";
+import NotFound from "@views/NotFound";
 import SignIn from "@views/SignIn";;
 import ResetPassword from "@views/ResetPassword";
 import SignInCallback from "@views/SignInCallback";
 import SignInRenewal from "@views/SignInRenewal";
-import AccessDenied from "@components/common/AccessDenied";
+import AccessDenied from "@views/AccessDenied";
 import SignUp from "@views/SignUp";
 import "./main.css";
 

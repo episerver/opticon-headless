@@ -28,13 +28,13 @@ const ScrollTop = () => {
     }, [])
 
     return (
-        <Link to="#"
+        <p
             id="back-to-top" 
-            className="btn btn-icon fixed hidden rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white z-10 bottom-5 right-5"
+            className="btn btn-icon fixed cursor-pointer hidden rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white z-10 bottom-5 right-5"
             onClick={goTop} 
         >
             <ArrowUp className="h-4 w-4"/>
-        </Link>
+        </p>
    )
 }
 

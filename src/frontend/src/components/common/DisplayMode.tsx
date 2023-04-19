@@ -1,21 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as Unicons from '@iconscout/react-unicons';
+import { ModeType } from "@models/common/Enum";
 
-const Mode = () => {
-    const changeMode = () => {
+const DisplayMode = () => {
+    const loadMode = () => {
+        const htmlTag = document.getElementsByTagName("html")[0];
+        htmlTag.className = localStorage.getItem("display_mode") ?? ModeType.Light;
+    }
+
+    const toggleMode = () => {
         const htmlTag = document.getElementsByTagName("html")[0];
         if (htmlTag.className.includes("dark")) {
             htmlTag.className = 'light';
+            localStorage.setItem("display_mode", ModeType.Light);
         } else {
             htmlTag.className = 'dark';
+            localStorage.setItem("display_mode", ModeType.Dark);
         }
     }
 
-    useEffect(() => {
+    const addEvent = () => {
         const switcher = document.getElementById("theme-mode");
-        switcher?.addEventListener("click" , changeMode);
+        switcher?.addEventListener("click" , toggleMode);
         const chk = document.getElementById('chk');
-        chk?.addEventListener('change', changeMode);
+        chk?.addEventListener('change', toggleMode);
+    }
+
+    useEffect(() => {
+        addEvent();
+        loadMode();
     }, [])
 
     return (
@@ -32,4 +45,4 @@ const Mode = () => {
    )
 }
 
-export default Mode;
+export default DisplayMode;
