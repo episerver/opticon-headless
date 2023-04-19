@@ -1,13 +1,12 @@
 ﻿import React, { FC, useEffect, useState } from "react";
-import Blog01 from "@assets/images/blog/01.jpg";
 import backgroundImage from "@assets/images/blog/bg.jpg";
 import * as Unicons from '@iconscout/react-unicons';
 import { Link } from "react-router-dom";
 import { ContentData } from "@episerver/content-delivery";
 import { getContentLoader } from "../../DefaultContext";
-import { BlogItem } from "@models/Blog";
 import Config from "../../config.json";
-import Pagination from "@models/Pagination";
+import Pagination from "@models/common/Pagination";
+import BlogItem from "@models/page/BlogItem";
 
 const BlogListPage: FC<ContentData> = (props) => {
     const [blogs, setBlogs] = useState<BlogItem[]>([]);
@@ -29,7 +28,6 @@ const BlogListPage: FC<ContentData> = (props) => {
         setBlogs(blogs);
     }
 
-
     useEffect(() => {
         getBlogs();
     }, [pagination.pageIndex])
@@ -48,12 +46,12 @@ const BlogListPage: FC<ContentData> = (props) => {
                 <div className="container">
                     <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
                         {blogs.map(blog => (<div className="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden" key={blog.contentLink.guidValue}>
-                            <img src={Blog01} alt="" />
+                            {blog.pageImage && <img src={blog.pageImage.url} alt="" />}
                             <div className="content p-6">
-                                <Link to="blog-detail.html" className="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">{blog.name}</Link>
+                                <Link to={blog.url.replace(Config.BASE_URL, "")} className="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">{blog.name}</Link>
                                 <p className="text-slate-400 mt-3">{blog.metaDescription}</p>
                                 <div className="mt-4">
-                                <Link to={blog.url.replace(Config.BASE_URL, "")} className="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                                    <Link to={blog.url.replace(Config.BASE_URL, "")} className="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
                                         Read More <Unicons.UilArrowRight className="float-right"/>
                                     </Link>
                                 </div>

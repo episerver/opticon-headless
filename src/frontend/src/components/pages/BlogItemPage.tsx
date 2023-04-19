@@ -1,16 +1,13 @@
-﻿import React, { FC } from "react";
-import Slide02 from "@assets/images/blog/slide02.jpg";
+﻿import React, { FC, useEffect } from "react";
 import Blog06 from "@assets/images/blog/06.jpg";
 import Blog07 from "@assets/images/blog/07.jpg";
 import Blog08 from "@assets/images/blog/08.jpg";
-import Client01 from "@assets/images/client/01.jpg";
 import Client05 from "@assets/images/client/05.jpg";
 import backgroundImage from "@assets/images/blog/bg.jpg";
 import { Link } from "react-router-dom";
-import ReplyIcon from "mdi-react/ReplyIcon";
 import moment from "moment";
-import { User, Mail, MessageCircle, Facebook, Twitter, Linkedin, GitHub, Youtube, Gitlab } from 'react-feather';
-import { BlogItem } from "@models/Blog";
+import { Facebook, Twitter, Linkedin, GitHub, Youtube, Gitlab } from 'react-feather';
+import BlogItem from "@models/page/BlogItem";
 
 const BlogItemPage: FC<BlogItem> = (props) => {
     return (
@@ -39,7 +36,7 @@ const BlogItemPage: FC<BlogItem> = (props) => {
                     <div className="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                         <div className="lg:col-span-8 md:col-span-6">
                             <div className="p-6 rounded-md shadow dark:shadow-gray-800">
-                                <img src={Slide02} className="rounded-md" alt=""/>
+                                {props.pageImage && <img src={props.pageImage?.url} className="rounded-md" alt=""/>}
                                 <div className="mt-6" dangerouslySetInnerHTML={{
                                     __html: props.mainBody ?? ""
                                 }}>
