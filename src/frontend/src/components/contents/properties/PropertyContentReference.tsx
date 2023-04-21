@@ -1,4 +1,4 @@
-﻿import Loading from '@components/common/Loading';
+﻿import Loading from '@components/layout/Loading';
 import { ContentData } from '@episerver/content-delivery';
 import React, { FC, lazy, Suspense } from 'react';
 

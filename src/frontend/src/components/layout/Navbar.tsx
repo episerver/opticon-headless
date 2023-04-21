@@ -1,17 +1,18 @@
 import { ContentData } from "@episerver/content-delivery";
 import React, { useEffect, useState } from "react";
 import { getContentLoader } from "../../DefaultContext";
-import { ShoppingCart, User } from 'react-feather';
+import { ShoppingCart } from 'react-feather';
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Config from "../../config.json";
-import AuthService from "../../AuthService";
+import UserMenu from "@components/layout/UserMenu";
+import { NavStickyRoutes } from "../../constants/NavStickyRoutes";
 
 const Navbar = () => {
+    const location = useLocation();
     const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[] | null>(null);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
-    const [username, setUsername] = useState<string>("");
 
     const getLayoutSetting = async () => {
       const contentLoader = getContentLoader();
@@ -49,14 +50,6 @@ const Navbar = () => {
         });
     }
 
-    const getUser = () => {
-        AuthService.getUser().then((user: any) => {
-            if (user && !user.expired) {
-              setUsername(user.profile.name);
-            }
-        });
-    }
-
     const toggleMenu = () => {
         document.getElementById('isToggle')?.classList.toggle('open');
         let isOpen = document.getElementById('navigation') as HTMLElement;
@@ -67,11 +60,10 @@ const Navbar = () => {
         }
     }
 
-    const addScrollEvent = () => {
-        window.addEventListener('scroll', (ev) => {
-            ev.preventDefault();
-            const navbar = document.getElementById("topnav");
-            if (navbar != null) {
+    const updateNavBarClass = () => {
+        const navbar = document.getElementById("topnav");
+        if (navbar != null) {
+            if(!NavStickyRoutes.includes(location.pathname)){
                 if (
                     document.body.scrollTop >= 50 ||
                     document.documentElement.scrollTop >= 50
@@ -80,20 +72,28 @@ const Navbar = () => {
                 } else {
                     navbar.classList.remove("nav-sticky");
                 }
+            }else{
+                navbar.classList.add("nav-sticky");
             }
-        })
+        }
     }
 
-    const signout = () => {
-        AuthService.signOut();
+    const addScrollEvent = () => {
+        window.addEventListener('scroll', (ev) => {
+            ev.preventDefault();
+            updateNavBarClass();
+        })
     }
 
     useEffect(() => {
       getLayoutSetting();
       getMenu();
-      getUser();
       addScrollEvent();
     }, [])
+
+    useEffect(() => {
+        updateNavBarClass();
+    }, [location.key])
 
     return (
         <nav id="topnav" className="defaultscroll is-sticky">
@@ -112,29 +112,16 @@ const Navbar = () => {
                         </a>
                     </div>
                 </div>
-                {username && <ul className="buy-button list-none mb-0">
+                <ul className="buy-button list-none mb-0">
                     <li className="inline mb-0">
                         <Link to="/cart" className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
                             <ShoppingCart className="h-4 w-4"/>
                         </Link>
                     </li>
-                    <li className="inline ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
-                        <button className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
-                            <User className="h-4 w-4"/>
-                        </button>
-                        <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
-                            <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                                <div className="px-4 py-3">         
-                                    <p className="text-sm leading-5">Signed in as</p>
-                                    <p className="text-sm font-medium leading-5 text-gray-900 truncate font-bold">{username}</p>
-                                </div>
-                                <div className="py-1">
-                                    <p className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" onClick={signout}>Sign out</p>
-                                </div>
-                            </div>
-                        </div>
+                    <li className="inline-block ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                        <UserMenu />
                     </li>
-                </ul>}
+                </ul>
                 <div id="navigation">
                     <ul className="navigation-menu nav-light"> 
                         {menuItems?.map((item) => {

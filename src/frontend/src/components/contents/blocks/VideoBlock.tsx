@@ -1,7 +1,6 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
 import React, { FC } from 'react';
-import PropertyXhtmlString from '@components/properties/PropertyXhtmlString';
-import { Video } from 'react-feather';
+import PropertyXhtmlString from '@components/contents/properties/PropertyXhtmlString';
 
 interface VideoBlockProps extends ContentData {
     heading?: string;
@@ -15,11 +14,11 @@ const VideoBlock: FC<VideoBlockProps | null> = (props): JSX.Element => {
     }
     return (
         <div>
-            { props.heading?.value &&
-                <h1>{props.heading.value}</h1>
+            { props.heading &&
+                <h1>{props.heading}</h1>
             } 
                 
-            <PropertyXhtmlString value={props.mainBody.value}/>
+            <PropertyXhtmlString value={props.mainBody}/>
             <video {...{playsInline: true, controls: true}}>
                 <source src={props.video.expandedValue.url} type="video/mp4"/>
             </video>

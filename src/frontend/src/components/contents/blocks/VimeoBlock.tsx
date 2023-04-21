@@ -1,6 +1,6 @@
 ﻿import { ContentData } from '@episerver/content-delivery';
 import React, { FC } from 'react';
-import PropertyXhtmlString from '@components/properties/PropertyXhtmlString';
+import PropertyXhtmlString from '@components/contents/properties/PropertyXhtmlString';
 
 interface VimeoBlockProps extends ContentData {
     heading?: string;

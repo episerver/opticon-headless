@@ -2,9 +2,9 @@
 import PropertyType from '@models/common/PropertyType';
 import React, { FC, Fragment, useEffect, useState } from 'react';
 import BlogItem from '@models/page/BlogItem';
-import { getContentLoader } from '../../DefaultContext';
+import { getContentLoader } from '../../../DefaultContext';
 import { Link } from 'react-router-dom';
-import Config from "../../config.json";
+import Config from "../../../config.json";
 import * as Unicons from '@iconscout/react-unicons';
 
 interface Root {
