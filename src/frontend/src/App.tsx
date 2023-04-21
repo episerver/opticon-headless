@@ -1,28 +1,37 @@
-import React, { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "@components/layout/Footer";
 import Navbar from "@components/layout/Navbar";
-import ErrorBoundary from "@components/common/ErrorBoundary";
-import { defaultConfig } from '@episerver/content-delivery';
-import Config from "./config.json";
+import ErrorBoundary from "@components/layout/ErrorBoundary";
 import AuthService from './AuthService';
-import Mode from "@components/common/DisplayMode";
-import ScrollTop from "@components/common/ScrollTop";
-import CookieConsent from "@components/common/CookieConsent";
+import Mode from "@components/layout/DisplayMode";
+import ScrollTop from "@components/layout/ScrollTop";
+import CookieConsent from "@components/layout/CookieConsent";
 
 const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [authorized, setAuthorized] = useState<boolean>(false);
+  
+  const checkAuth = () => {
+    AuthService.getUser().then((user: any) => {
+      if (!user || user.expired) {
+        navigate("/signin");
+      } else {
+        setAuthorized(true);
+      }
+    });
+  }
+
   useEffect(() => {
-    defaultConfig.apiUrl = `${Config.CONTENT_DELIVERY_API}/api/episerver/v3.0`;
-    defaultConfig.getAccessToken = () => AuthService.getAccessToken();
-    defaultConfig.selectAllProperties = true;
-    defaultConfig.expandAllProperties = true;
-  }, [])
+    checkAuth();
+  }, [location.key]);
 
   return (
     <>
       <Navbar />
       <ErrorBoundary>
-          <Outlet />
+          {authorized && <Outlet />}
       </ErrorBoundary>
       <Footer />
       <ScrollTop/>

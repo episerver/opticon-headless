@@ -3,8 +3,8 @@ import backgroundImage from "@assets/images/blog/bg.jpg";
 import * as Unicons from '@iconscout/react-unicons';
 import { Link } from "react-router-dom";
 import { ContentData } from "@episerver/content-delivery";
-import { getContentLoader } from "../../DefaultContext";
-import Config from "../../config.json";
+import { getContentLoader } from "../../../DefaultContext";
+import Config from "../../../config.json";
 import Pagination from "@models/common/Pagination";
 import BlogItem from "@models/page/BlogItem";
 

@@ -10,6 +10,7 @@ import SignInCallback from "@views/SignInCallback";
 import SignInRenewal from "@views/SignInRenewal";
 import AccessDenied from "@views/AccessDenied";
 import SignUp from "@views/SignUp";
+import Setting from "@views/Setting";
 import "./main.css";
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
             <Route path="/not-found" element={<NotFound />} />
             <Route path="/" element={<App />}>
                 <Route index loader={PageDataLoader} element={<PageComponentSelector />} />
+                <Route path="/setting" element={<Setting />} />
                 <Route path="/access-denied" element={<AccessDenied />} />
                 <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
             </Route>

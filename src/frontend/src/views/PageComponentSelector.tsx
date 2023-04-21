@@ -2,7 +2,7 @@
 import { getContentResolver } from "../DefaultContext";
 import React, { lazy, Suspense } from "react";
 import { Navigate, useLoaderData } from "react-router-dom";
-import Loading from "@components/common/Loading";
+import Loading from "@components/layout/Loading";
 import AuthService from "../AuthService";
 
 export const PageDataLoader = async ({ request }: any): Promise<ResolvedContent<ContentData>> => {
@@ -15,26 +15,26 @@ export const PageDataLoader = async ({ request }: any): Promise<ResolvedContent<
 const PageComponentSelector = () => {
     const resolveContent = useLoaderData() as ResolvedContent<ContentData>;
     if (!resolveContent.content) {
-        return <Navigate to="/not-found" replace />;
+        return <Navigate to="/not-found"/>;
     }
 
     switch (resolveContent.status) {
         case ResolvedContentStatus.NotFound: 
-            return <Navigate to="/not-found" replace />;
+            return <Navigate to="/not-found"/>;
         case ResolvedContentStatus.Unauthorized:
           AuthService.getUser().then((user: any) => {
             if (!user || user.expired) {
                 AuthService.signIn();
                 return <></>;
             } else {
-                return <Navigate to="/signin" replace />;
+                return <Navigate to="/signin"/>;
             }
           });
         case ResolvedContentStatus.AccessDenied: 
-            return <Navigate to="/access-denied" replace />;
+            return <Navigate to="/access-denied"/>;
       }
 
-    const View = lazy(() => import(`@components/pages/${resolveContent.content?.contentType.at(-1)}`));
+    const View = lazy(() => import(`@components/contents/pages/${resolveContent.content?.contentType.at(-1)}`));
     return (
         <Suspense fallback={<Loading />}>
             <View {...resolveContent.content} />

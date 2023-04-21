@@ -18,8 +18,6 @@ const ErrorBoundary: FC<any> = ({children}) => {
         if (navbar != null) {
           if(hasError){
             navbar.classList.add("nav-sticky");
-          }else{
-            navbar.classList.remove("nav-sticky");
           }
         }
     }, [hasError])
