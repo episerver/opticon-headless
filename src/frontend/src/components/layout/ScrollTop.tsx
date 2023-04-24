@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ArrowUp } from "react-feather";
 
 const ScrollTop = () => {
