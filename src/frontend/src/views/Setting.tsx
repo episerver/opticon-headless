@@ -180,7 +180,7 @@ const Setting = () => {
                                 </div>
                             </div>
                             <div>
-                                <label className="form-label font-medium">Language : </label>
+                                <label className="form-label font-medium">Language </label>
                                 <div className="form-icon relative mt-2">
                                     <Controller
                                         name={"preferredLanguage"}
@@ -199,7 +199,7 @@ const Setting = () => {
                                 </div>
                             </div>
                             <div>
-                                <label className="form-label font-medium">Currency : </label>
+                                <label className="form-label font-medium">Currency </label>
                                 <div className="form-icon relative mt-2">
                                     <Controller
                                         name={"preferredCurrency"}

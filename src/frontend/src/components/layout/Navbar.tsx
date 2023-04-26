@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Config from "../../config.json";
 import UserMenu from "@components/layout/UserMenu";
 import { NavStickyRoutes } from "../../constants/NavStickyRoutes";
+import CartMenu from "./CartMenu";
 
 const Navbar = () => {
     const location = useLocation();
@@ -113,10 +114,8 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul className="buy-button list-none mb-0">
-                    <li className="inline mb-0">
-                        <Link to="/cart" className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white">
-                            <ShoppingCart className="h-4 w-4"/>
-                        </Link>
+                    <li className="inline-block ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                        <CartMenu />
                     </li>
                     <li className="inline-block ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
                         <UserMenu />

@@ -56,7 +56,7 @@ const UserMenu = () => {
                 >
                     <User className="h-4 w-4"/>
                 </button>
-                <div id="user-menu" className="opacity-0 hidden invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+                <div id="user-menu" className="opacity-0 hidden dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                     <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                         <div className="px-4 py-3" onClick={toggleMenu}>         
                             <p className="text-sm leading-5 text-gray-700">Signed in as</p>
