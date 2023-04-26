@@ -15,38 +15,50 @@ const CartDetail = () => {
                                     <div className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-slate-100">
                                         <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center"/>
                                     </div>
-                                    <div className="ml-4 flex flex-1 flex-col">
-                                        <div>
-                                            <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
-                                                <h3>
-                                                    <Link to="#">Throwback Hip Bag</Link>
-                                                </h3>
-                                                <p className="ml-4 text-sm text-gray-500">
-                                                    <X className="h-5 w-5"/>    
-                                                </p>
-                                            </div>
-                                            <p className="mt-1 text-gray-900 dark:text-white font-bold">$90.00</p>
+                                    <div className="ml-4 flex flex-1 flex-col relative">
+                                        <div className="grid grid-cols-6 text-base font-medium text-gray-900 dark:text-white ">
+                                            <h3 className="col-span-4">
+                                                <Link to="#">Throwback Hip Bag</Link>
+                                            </h3>
+                                            <input 
+                                                id="quantity_01" 
+                                                type="number" 
+                                                className="col-span-1 form-input -mt-1"
+                                                defaultValue={1}
+                                            />
+                                            <p className="col-span-1 ml-4 text-sm text-gray-500">
+                                                <X className="h-5 w-5 float-right"/>    
+                                            </p>
                                         </div>
-                                        <div className="flex flex-1 items-end justify-between text-sm"></div>
+                                        <h6 className="line-clamp-2 text-md italic mt-2">
+                                            The ultimate sparkle bag inspired by starry nights! Brilly is a stylish handmade medium-size bucket handbag. Hand-crafted in high-quality rhinestone crystals, it completes an elegant yet chic look that will turn heads and make you the party star
+                                        </h6>
+                                        <p className="mt-1 text-gray-900 dark:text-white font-bold absolute bottom-6">$90.00</p>
                                     </div>
                                 </li>
                                 <li className="flex py-8">
                                     <div className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-slate-100">
                                         <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." className="h-full w-full object-cover object-center"/>
                                     </div>
-                                    <div className="ml-4 flex flex-1 flex-col">
-                                        <div>
-                                            <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
-                                                <h3>
-                                                    <Link to="#">Medium Stuff Satchel</Link>
-                                                </h3>
-                                                <p className="ml-4 text-sm text-gray-500">
-                                                    <X className="h-5 w-5"/>
-                                                </p>
-                                            </div>
-                                            <p className="mt-1 text-gray-900  dark:text-white font-bold">$90.00</p>
+                                    <div className="ml-4 flex flex-1 flex-col relative">
+                                        <div className="grid grid-cols-6 flex justify-between text-base font-medium text-gray-900 dark:text-white">
+                                            <h3 className="col-span-4">
+                                                <Link to="#">Medium Stuff Satchel</Link>
+                                            </h3>
+                                            <input 
+                                                id="quantity_02" 
+                                                type="number" 
+                                                className="col-span-1 form-input -mt-1"
+                                                defaultValue={1}
+                                            />
+                                            <p className="col-span-1 ml-4 text-sm text-gray-500">
+                                                <X className="h-5 w-5 float-right"/>    
+                                            </p>
                                         </div>
-                                        <div className="flex flex-1 items-end justify-between text-sm"></div>
+                                        <h6 className="line-clamp-2 text-md italic mt-2">
+                                            The ultimate sparkle bag inspired by starry nights! Brilly is a stylish handmade medium-size bucket handbag. Hand-crafted in high-quality rhinestone crystals, it completes an elegant yet chic look that will turn heads and make you the party star
+                                        </h6>
+                                        <p className="mt-1 text-gray-900 dark:text-white font-bold absolute bottom-6">$90.00</p>
                                     </div>
                                 </li>
                             </ul>
