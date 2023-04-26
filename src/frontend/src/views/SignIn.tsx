@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import backgroundImage from "@assets/images/cta.jpg";
 import { Link } from "react-router-dom";
 import AuthService from "../AuthService";
 
 const SignIn = () => {
-
     const signIn = () => {
         AuthService.signIn();
     }

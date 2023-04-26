@@ -12,6 +12,7 @@ import AccessDenied from "@views/AccessDenied";
 import SignUp from "@views/SignUp";
 import Setting from "@views/Setting";
 import "./main.css";
+import CartDetail from "@views/CartDetail";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<App />}>
                 <Route index loader={PageDataLoader} element={<PageComponentSelector />} />
                 <Route path="/setting" element={<Setting />} />
+                <Route path="/cart-detail" element={<CartDetail />} />
                 <Route path="/access-denied" element={<AccessDenied />} />
                 <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
             </Route>
