@@ -360,10 +360,9 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         {
             console.log("=== Adding blocks to the home page. ===");
             let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
-            //TODO: refactor patchPropertyContentReferences
-            // await patchPropertyContentReferences(homePages[0], {
-            //     mainContentArea: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" },
-            // });
+            await patchPropertyContentReferences(homePages[0], {
+                mainContentArea: [{ contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }],
+            });
         }
 
         /**
