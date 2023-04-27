@@ -1,7 +1,7 @@
 import { ContentData } from "@episerver/content-delivery";
 
 interface SiteLogo {
-   url: string;
+    url: string;
 }
 
 interface Link {
@@ -10,8 +10,9 @@ interface Link {
     href: string;
 }
 
-export default interface LayoutSetting extends ContentData{
-    siteLogo?: SiteLogo;
+export default interface LayoutSetting extends ContentData {
+    siteLogoDark?: SiteLogo;
+    siteLogoLight?: SiteLogo;
     introduction: string;
     companyAddress: string;
     companyEmail: string;

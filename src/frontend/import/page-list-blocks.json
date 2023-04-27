@@ -3,13 +3,14 @@
         "contentLink": {
             "guidValue": "793392ad-61b5-4fc2-ada0-b75ea30081f5"
         },
-        "name": "Blog list page: Blogs",
+        "name": "Page List Block: Blogs",
         "language": {
             "name": "en"
         },
         "heading": "Recent posts",
         "contentType": ["Block", "PageListBlock"],
         "numberOfResults": 6,
+        "description": "Start reading with blogs that can provide everything you need to travel, book hotels, and relax.",
         "parentLink": {
             "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
         },

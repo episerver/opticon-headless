@@ -1,0 +1,18 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "c31b89fe-7537-4cab-90a7-f629b0124142"
+        },
+        "name": "teaser1.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published",
+        "title": "Teaser 1",
+        "altText": "Teaser 1"
+    }
+]

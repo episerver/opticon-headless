@@ -1,0 +1,16 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "7b2cf7c1-b76a-48a5-819c-2e35d29e4d79"
+        },
+        "name": "Tags",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Page", "ContainerPage"],
+        "parentLink": {
+            "guidValue": "3729d832-357e-409a-87e2-5242400fb47f"
+        },
+        "status": "Published"
+    }
+]
