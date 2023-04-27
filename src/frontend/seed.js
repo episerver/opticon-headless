@@ -11,6 +11,10 @@ if (baseUrl === "$BASE_URL") {
 
 let token = "";
 let site = {};
+const UpdateMediaContentFor = {
+    PageOrBlock: "PageOrBlock",
+    AssetFolder: "AssetFolder",
+};
 
 function getToken() {
     var data = {
@@ -68,7 +72,7 @@ async function publishContent(content) {
                 data: content,
             })
             .catch((err) => {
-                console.error("Error Publishing content: ", err.response.statusText);
+                console.error("Error Publishing content: ", err.response);
             });
     }
 }
@@ -163,7 +167,16 @@ async function patchPropertyContentReferences(content, updateData) {
         });
 }
 
-async function publishContentUsingForm(content, form) {
+async function publishMediaContent(content, form, updateMediaContentFor = UpdateMediaContentFor.PageOrBlock) {
+    let headers = {
+        "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + token,
+        "x-epi-validation-mode": "minimal",
+    };
+    if (updateMediaContentFor == UpdateMediaContentFor.PageOrBlock) {
+        headers["x-epi-parent-location-rule"] = "AssetFolder";
+    }
+
     const contentInfo = await getContentInfo(content.contentLink.guidValue);
 
     if (!contentInfo) {
@@ -175,10 +188,7 @@ async function publishContentUsingForm(content, form) {
             maxBodyLength: Infinity,
             headers: {
                 ...form.getHeaders(),
-                "Content-Type": "multipart/form-data",
-                Authorization: "Bearer " + token,
-                "x-epi-validation-mode": "minimal",
-                "x-epi-parent-location-rule": "AssetFolder",
+                ...headers,
             },
             data: form,
         });
@@ -281,14 +291,89 @@ async function publishContentUsingForm(content, form) {
         }
 
         /**
+         * Adds logo dark and logo light.
+         */
+        {
+            console.log("=== Adds logo dark and logo light. ===");
+            let logos = JSON.parse(fs.readFileSync("./import/images-logos.json", "utf8"));
+            for (let i = 0; i < logos.length; i++) {
+                const logo = logos[i];
+                let file = fs.createReadStream(`./import/images/logos/${logo.name}`);
+                const form = new FormData();
+                form.append("file", file, logo.name);
+                form.append("content", JSON.stringify(logo));
+                await publishMediaContent(logo, form, UpdateMediaContentFor.AssetFolder);
+            }
+
+            let globalSettings = JSON.parse(fs.readFileSync("./import/setting-block.json", "utf8"));
+
+            await patchPropertyContentReferences(globalSettings, {
+                siteLogoDark: globalSettings.siteLogoDark,
+            });
+            await patchPropertyContentReferences(globalSettings, {
+                siteLogoLight: globalSettings.siteLogoLight,
+            });
+        }
+
+        /**
          * Generates navbar item blocks.
          */
         {
             console.log("=== Generates navbar item blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/navbar-item-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
-                const block = blocks[i];
-                await publishContent(block);
+                await publishContent(blocks[i]);
+            }
+        }
+
+        /**
+         * Generates teaser blocks.
+         */
+        {
+            console.log("=== Generates teaser blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/teaser-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                await publishContent(blocks[i]);
+            }
+
+            console.log("=== Adding images for teaser blocks. ===");
+            let images = JSON.parse(fs.readFileSync("./import/images-teaser-blocks.json", "utf8"));
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                let file = fs.createReadStream(`./import/images/teaser-blocks/${image.name}`);
+                const form = new FormData();
+                form.append("file", file, image.name);
+                form.append("content", JSON.stringify(image));
+                await publishMediaContent(image, form, UpdateMediaContentFor.AssetFolder);
+            }
+
+            for (let i = 0; i < blocks.length; i++) {
+                await patchPropertyContentReferences(blocks[i], {
+                    backgroundImage: blocks[i].backgroundImage,
+                });
+            }
+        }
+
+        /**
+         * Add blocks to the home page.
+         */
+        {
+            console.log("=== Adding blocks to the home page. ===");
+            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
+            //TODO: refactor patchPropertyContentReferences
+            // await patchPropertyContentReferences(homePages[0], {
+            //     mainContentArea: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" },
+            // });
+        }
+
+        /**
+         * Generates tags.
+         */
+        {
+            console.log("=== Generates tags. ===");
+            let tags = JSON.parse(fs.readFileSync("./import/tags.json", "utf8"));
+            for (let i = 0; i < tags.length; i++) {
+                await publishContent(tags[i]);
             }
         }
 
@@ -311,7 +396,7 @@ async function publishContentUsingForm(content, form) {
                 const form = new FormData();
                 form.append("file", file, image.name);
                 form.append("content", JSON.stringify(image));
-                await publishContentUsingForm(image, form);
+                await publishMediaContent(image, form);
             }
 
             for (let i = 1; i < blogs.length; i++) {
@@ -356,7 +441,7 @@ async function publishContentUsingForm(content, form) {
                 const form = new FormData();
                 form.append("file", file, image.name);
                 form.append("content", JSON.stringify(image));
-                await publishContentUsingForm(image, form);
+                await publishMediaContent(image, form);
             }
 
             for (let i = 1; i < destinations.length; i++) {
@@ -381,7 +466,7 @@ async function publishContentUsingForm(content, form) {
                 const form = new FormData();
                 form.append("file", file, video.name);
                 form.append("content", JSON.stringify(video));
-                promises.push(publishContentUsingForm(video, form));
+                promises.push(publishMediaContent(video, form));
             }
 
             await Promise.all(promises);

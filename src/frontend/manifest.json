@@ -86,6 +86,16 @@
         ]
       },
       {
+        "id": "707d6a4e-f8cc-44e0-9bcb-df4f5840e9a6",
+        "name": "FolderPage",
+        "baseType": "Page",
+        "editSettings": {
+          "displayName": "Folder Page",
+          "available": true,
+          "sortOrder": 50
+        }
+      },
+      {
         "id": "8a9d9d4b-cd4b-40e8-a777-414cfbda7770",
         "name": "VideoFile",
         "baseType": "Video",
@@ -275,15 +285,27 @@
         },
         "properties": [
           {
-            "name": "SiteLogo",
+            "name": "SiteLogoDark",
             "dataType": "PropertyContentReference",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Site Logo",
+              "displayName": "Site Logo Dark",
               "groupName": "Header",
-              "sortOrder": 0,
-              "helpText": "Site logo."
+              "sortOrder": 10,
+              "helpText": "Site logo dark."
+            }
+          },
+          {
+            "name": "SiteLogoLight",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Site Logo Light",
+              "groupName": "Header",
+              "sortOrder": 10,
+              "helpText": "Site logo light."
             }
           },
           {
@@ -294,7 +316,7 @@
               "visibility": "default",
               "displayName": "Introduction",
               "groupName": "Footer",
-              "sortOrder": 1
+              "sortOrder": 20
             }
           },
           {
@@ -305,7 +327,7 @@
               "visibility": "default",
               "displayName": "Company header",
               "groupName": "Footer",
-              "sortOrder": 2
+              "sortOrder": 30
             }
           },
           {
@@ -316,7 +338,7 @@
               "visibility": "default",
               "displayName": "Company name",
               "groupName": "Footer",
-              "sortOrder": 3
+              "sortOrder": 40
             }
           },
           {
@@ -327,7 +349,7 @@
               "visibility": "default",
               "displayName": "Company address",
               "groupName": "Footer",
-              "sortOrder": 4
+              "sortOrder": 50
             }
           },
           {
@@ -338,7 +360,7 @@
               "visibility": "default",
               "displayName": "Company phone",
               "groupName": "Footer",
-              "sortOrder": 5
+              "sortOrder": 60
             }
           },
           {
@@ -349,7 +371,7 @@
               "visibility": "default",
               "displayName": "Company email",
               "groupName": "Footer",
-              "sortOrder": 6
+              "sortOrder": 70
             }
           },
           {
@@ -360,7 +382,7 @@
               "visibility": "default",
               "displayName": "Links header",
               "groupName": "Footer",
-              "sortOrder": 7
+              "sortOrder": 80
             }
           },
           {
@@ -371,7 +393,7 @@
               "visibility": "default",
               "displayName": "Links",
               "groupName": "Footer",
-              "sortOrder": 8
+              "sortOrder": 90
             }
           },
           {
@@ -382,7 +404,7 @@
               "visibility": "default",
               "displayName": "Social header",
               "groupName": "Footer",
-              "sortOrder": 9
+              "sortOrder": 100
             }
           },
           {
@@ -393,7 +415,7 @@
               "visibility": "default",
               "displayName": "Social links",
               "groupName": "Footer",
-              "sortOrder": 10
+              "sortOrder": 110
             }
           },
           {
@@ -404,7 +426,7 @@
               "visibility": "default",
               "displayName": "Copyright",
               "groupName": "Footer",
-              "sortOrder": 11
+              "sortOrder": 120
             }
           }
         ]
@@ -645,7 +667,44 @@
           "available": true,
           "sortOrder": 425
         },
-        "properties": []
+        "properties": [
+          {
+            "name": "BackgroundImage",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": false,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Background Image",
+              "groupName": "Information",
+              "sortOrder": 10,
+              "helpText": "The image to be used as the background."
+            }
+          },
+          {
+            "name": "Title",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Title",
+              "groupName": "Information",
+              "sortOrder": 20,
+              "helpText": "Headline for the teaser block."
+            }
+          },
+          {
+            "name": "Description",
+            "dataType": "PropertyLongString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Description",
+              "groupName": "Information",
+              "sortOrder": 30,
+              "helpText": "Text underneath the title to give more context or call to action."
+            }
+          }
+        ]
       },
       {
         "id": "527199e6-e8af-4124-a528-2dca5d6f2531",
@@ -1447,6 +1506,6 @@
         "name": "Advanced",
         "sortOrder": 900,
         "systemGroup": true
-      },
+      }
     ]
   }

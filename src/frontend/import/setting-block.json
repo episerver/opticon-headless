@@ -11,6 +11,12 @@
         "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
     },
     "status": "Published",
+    "siteLogoDark": {
+        "guidValue": "d7a3bce9-ff57-44ef-a9c6-dfe2749df077"
+    },
+    "siteLogoLight": {
+        "guidValue": "754670c4-b9f3-4e4c-9bcc-cd20dda4021e"
+    },
     "introduction": "Destinations is a fictional brand of Optimizely created for demo purposes.",
     "companyHeader": "CONTACT OPTIMIZELY",
     "companyName": "",

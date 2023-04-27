@@ -1,0 +1,34 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "d7a3bce9-ff57-44ef-a9c6-dfe2749df077"
+        },
+        "name": "logo-dark.png",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "status": "Published",
+        "title": "Logo Dark",
+        "altText": "Logo Dark"
+    },
+    {
+        "contentLink": {
+            "guidValue": "754670c4-b9f3-4e4c-9bcc-cd20dda4021e"
+        },
+        "name": "logo-light.png",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
+        },
+        "status": "Published",
+        "title": "Logo Light",
+        "altText": "Logo Light"
+    }
+]
