@@ -1,14 +1,13 @@
 import { ContentData } from "@episerver/content-delivery";
 import React, { useEffect, useState } from "react";
-import { getContentLoader } from "../../DefaultContext";
-import { ShoppingCart } from "react-feather";
+import { getContentLoader } from "../../../DefaultContext";
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
 import { Link } from "react-router-dom";
-import Config from "../../config.json";
+import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
-import { NavStickyRoutes } from "../../constants/NavStickyRoutes";
-import CartMenu from "./CartMenu";
+import CartMenu from "../CartMenu";
+import "./Navbar.scss";
 
 const Navbar = () => {
     const [offset, setOffset] = React.useState(0);

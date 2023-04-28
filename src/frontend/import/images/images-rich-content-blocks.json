@@ -1,0 +1,34 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "eeca524a-4328-4c8e-89b8-d48e39c4ea81"
+        },
+        "name": "rich-content1.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published",
+        "title": "Rich Content 1",
+        "altText": "Rich Content 1"
+    },
+    {
+        "contentLink": {
+            "guidValue": "99a628ea-4c6d-4c9b-af57-e33b5a1551b2"
+        },
+        "name": "rich-content2.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published",
+        "title": "Rich Content 2",
+        "altText": "Rich Content 2"
+    }
+]

@@ -942,6 +942,66 @@
         ]
       },
       {
+        "id": "22db9609-50a5-49a9-bc83-55588f82fad7",
+        "name": "SearchBlock",
+        "baseType": "Block",
+        "editSettings": {
+          "displayName": "Search Block",
+          "description": "A block has a searchbox.",
+          "available": true,
+          "sortOrder": 450
+        },
+        "properties": []
+      },
+      {
+        "id": "8a6a416b-d7d9-4d40-8bcd-77b978e840d0",
+        "name": "RichContentBlock",
+        "baseType": "Block",
+        "editSettings": {
+          "displayName": "Rich Content Block",
+          "description": "A block has contenful information.",
+          "available": true,
+          "sortOrder": 500
+        },
+        "properties": [
+          {
+            "name": "BackgroundImage1",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Background Image 1",
+              "groupName": "Information",
+              "sortOrder": 10,
+              "helpText": "The first image."
+            }
+          },
+          {
+            "name": "BackgroundImage2",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Background Image 2",
+              "groupName": "Information",
+              "sortOrder": 20,
+              "helpText": "The second image."
+            }
+          },
+          {
+            "name": "MainBody",
+            "dataType": "PropertyXhtmlString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Main Body",
+              "groupName": "Information",
+              "sortOrder": 30
+            }
+          }
+        ]
+      },
+      {
         "id": "b087f703-677c-4487-9943-d972cfc51438",
         "name": "LandingPage",
         "baseType": "Page",
@@ -1017,7 +1077,7 @@
       },
       {
         "id": "597afd14-391b-4e99-8e4f-8827e3e82354",
-        "name": "LocationListPage",
+        "name": "DestinationListPage",
         "baseType": "Page",
         "editSettings": {
           "displayName": "Destinations List Page",
@@ -1086,7 +1146,7 @@
       },
       {
         "id": "ac26ee4b-104f-4719-8aab-ad6d3fcb0d75",
-        "name": "LocationItemPage",
+        "name": "DestinationItemPage",
         "baseType": "Page",
         "editSettings": {
           "displayName": "Destination Page",
@@ -1224,7 +1284,7 @@
             "branchSpecific": false,
             "editSettings": {
               "visibility": "default",
-              "displayName": "New location",
+              "displayName": "New destination",
               "groupName": "Information",
               "sortOrder": 230
             }
@@ -1235,10 +1295,10 @@
             "branchSpecific": false,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Promoted location",
+              "displayName": "Promoted destination",
               "groupName": "Information",
               "sortOrder": 240,
-              "helpText": "Check this, in order to boost this destination and promote it in suggestions"
+              "helpText": "Check this, in order to boost this destination and promote it in suggestions."
             }
           }
         ]

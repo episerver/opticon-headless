@@ -7,7 +7,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationListPage"],
+        "contentType": ["Page", "DestinationListPage"],
         "parentLink": {
             "guidValue": "3729d832-357e-409a-87e2-5242400fb47f"
         },
@@ -22,7 +22,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -48,7 +48,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -74,7 +74,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -100,7 +100,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -126,7 +126,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -152,7 +152,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -178,7 +178,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -204,7 +204,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -230,7 +230,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -256,7 +256,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -282,7 +282,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -308,7 +308,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -334,7 +334,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -360,7 +360,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -386,7 +386,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -412,7 +412,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -438,7 +438,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -464,7 +464,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -490,7 +490,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -516,7 +516,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -542,7 +542,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -568,7 +568,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -594,7 +594,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -620,7 +620,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -646,7 +646,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -672,7 +672,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -698,7 +698,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -724,7 +724,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -750,7 +750,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -776,7 +776,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -802,7 +802,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -828,7 +828,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -854,7 +854,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -880,7 +880,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -906,7 +906,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -932,7 +932,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -958,7 +958,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -984,7 +984,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1010,7 +1010,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1036,7 +1036,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1062,7 +1062,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1088,7 +1088,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1114,7 +1114,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1140,7 +1140,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1166,7 +1166,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1192,7 +1192,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1218,7 +1218,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1244,7 +1244,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1270,7 +1270,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1296,7 +1296,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1322,7 +1322,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1348,7 +1348,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1374,7 +1374,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1400,7 +1400,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1426,7 +1426,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1452,7 +1452,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1478,7 +1478,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1504,7 +1504,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1530,7 +1530,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1556,7 +1556,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1582,7 +1582,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1608,7 +1608,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1634,7 +1634,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1660,7 +1660,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1686,7 +1686,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },
@@ -1712,7 +1712,7 @@
         "language": {
             "name": "en"
         },
-        "contentType": ["Page", "LocationItemPage"],
+        "contentType": ["Page", "DestinationItemPage"],
         "parentLink": {
             "guidValue": "f6dcccba-356b-48e0-afcd-4c8d4bb3aeba"
         },

@@ -102,6 +102,9 @@ async function patchPropertyContentReferences(content, updateData) {
     let updateDataValue = Object.values(updateData)[0];
     let updateDataInfo = {};
     let found = false;
+
+    // if the content area has content references already, all references must be removed then new data will be updated.
+    // the whole array of references will be passed to patch API, if any references exist, the update would skip.
     if (Array.isArray(updateDataValue)) {
         const ids = [];
         for (let i = 0; i < updateDataValue.length; i++) {
@@ -220,7 +223,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates content folders. ===");
-            let folders = JSON.parse(fs.readFileSync("./import/content-folders.json", "utf8"));
+            let folders = JSON.parse(fs.readFileSync("./import/content-folders/content-folders.json", "utf8"));
             for (let i = 0; i < folders.length; i++) {
                 const folder = folders[i];
                 await publishContent(folder);
@@ -232,7 +235,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates a setting block for global settings. ===");
-            let globalSettings = JSON.parse(fs.readFileSync("./import/setting-block.json", "utf8"));
+            let globalSettings = JSON.parse(fs.readFileSync("./import/blocks/setting-block.json", "utf8"));
             await publishContent(globalSettings);
         }
 
@@ -241,7 +244,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates a home page. ===");
-            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
+            let homePages = JSON.parse(fs.readFileSync("./import/pages/homes.json", "utf8"));
             for (let i = 0; i < homePages.length; i++) {
                 const homePage = homePages[i];
                 await publishContent(homePage);
@@ -295,7 +298,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Adds logo dark and logo light. ===");
-            let logos = JSON.parse(fs.readFileSync("./import/images-logos.json", "utf8"));
+            let logos = JSON.parse(fs.readFileSync("./import/images/images-logos.json", "utf8"));
             for (let i = 0; i < logos.length; i++) {
                 const logo = logos[i];
                 let file = fs.createReadStream(`./import/images/logos/${logo.name}`);
@@ -305,7 +308,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                 await publishMediaContent(logo, form, UpdateMediaContentFor.AssetFolder);
             }
 
-            let globalSettings = JSON.parse(fs.readFileSync("./import/setting-block.json", "utf8"));
+            let globalSettings = JSON.parse(fs.readFileSync("./import/blocks/setting-block.json", "utf8"));
 
             await patchPropertyContentReferences(globalSettings, {
                 siteLogoDark: globalSettings.siteLogoDark,
@@ -320,7 +323,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates navbar item blocks. ===");
-            let blocks = JSON.parse(fs.readFileSync("./import/navbar-item-blocks.json", "utf8"));
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/navbar-item-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
             }
@@ -331,13 +334,13 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates teaser blocks. ===");
-            let blocks = JSON.parse(fs.readFileSync("./import/teaser-blocks.json", "utf8"));
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/teaser-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
             }
 
             console.log("=== Adding images for teaser blocks. ===");
-            let images = JSON.parse(fs.readFileSync("./import/images-teaser-blocks.json", "utf8"));
+            let images = JSON.parse(fs.readFileSync("./import/images/images-teaser-blocks.json", "utf8"));
             for (let i = 0; i < images.length; i++) {
                 const image = images[i];
                 let file = fs.createReadStream(`./import/images/teaser-blocks/${image.name}`);
@@ -355,13 +358,59 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
+         * Generates search blocks.
+         */
+        {
+            console.log("=== Generates search blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/search-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                await publishContent(blocks[i]);
+            }
+        }
+
+        /**
+         * Generates rich content blocks.
+         */
+        {
+            console.log("=== Generates rich content blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/rich-content-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                await publishContent(blocks[i]);
+            }
+
+            console.log("=== Adding images for rich content blocks. ===");
+            let images = JSON.parse(fs.readFileSync("./import/images/images-rich-content-blocks.json", "utf8"));
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                let file = fs.createReadStream(`./import/images/rich-content-blocks/${image.name}`);
+                const form = new FormData();
+                form.append("file", file, image.name);
+                form.append("content", JSON.stringify(image));
+                await publishMediaContent(image, form, UpdateMediaContentFor.AssetFolder);
+            }
+
+            for (let i = 0; i < blocks.length; i++) {
+                await patchPropertyContentReferences(blocks[i], {
+                    backgroundImage1: blocks[i].backgroundImage1,
+                });
+                await patchPropertyContentReferences(blocks[i], {
+                    backgroundImage2: blocks[i].backgroundImage2,
+                });
+            }
+        }
+
+        /**
          * Add blocks to the home page.
          */
         {
             console.log("=== Adding blocks to the home page. ===");
-            let homePages = JSON.parse(fs.readFileSync("./import/homes.json", "utf8"));
+            let homePages = JSON.parse(fs.readFileSync("./import/pages/homes.json", "utf8"));
             await patchPropertyContentReferences(homePages[0], {
-                mainContentArea: [{ contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }],
+                mainContentArea: [
+                    { contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }, // Teaser Block: Banner
+                    { contentLink: { guidValue: "b3cb5663-7d9a-4619-bdce-f28b2b2e742c" } }, // Search Block: Search your trip
+                    { contentLink: { guidValue: "abe42835-8837-4496-a8ee-8c72e379cc2c" } }, // Rich Content Block: Get inspiration
+                ],
             });
         }
 
@@ -370,7 +419,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates tags. ===");
-            let tags = JSON.parse(fs.readFileSync("./import/tags.json", "utf8"));
+            let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
             for (let i = 0; i < tags.length; i++) {
                 await publishContent(tags[i]);
             }
@@ -381,14 +430,14 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates blog pages. ===");
-            let blogs = JSON.parse(fs.readFileSync("./import/blogs.json", "utf8"));
+            let blogs = JSON.parse(fs.readFileSync("./import/pages/blogs.json", "utf8"));
             for (let i = 0; i < blogs.length; i++) {
                 const blog = blogs[i];
                 await publishContent(blog);
             }
 
             console.log("=== Adding images for blogs. ===");
-            let images = JSON.parse(fs.readFileSync("./import/images-blogs.json", "utf8"));
+            let images = JSON.parse(fs.readFileSync("./import/images/images-blogs.json", "utf8"));
             for (let i = 0; i < images.length; i++) {
                 const image = images[i];
                 let file = fs.createReadStream(`./import/images/blogs/${image.name}`);
@@ -410,7 +459,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates page list blocks. ===");
-            let blocks = JSON.parse(fs.readFileSync("./import/page-list-blocks.json", "utf8"));
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/page-list-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 const block = blocks[i];
                 await publishContent(block);
@@ -427,13 +476,13 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generates destinations. ===");
-            let destinations = JSON.parse(fs.readFileSync("./import/destinations.json", "utf8"));
+            let destinations = JSON.parse(fs.readFileSync("./import/pages/destinations.json", "utf8"));
             for (let i = 0; i < destinations.length; i++) {
                 await publishContent(destinations[i]);
             }
 
             console.log("=== Adding images for destinations. ===");
-            let images = JSON.parse(fs.readFileSync("./import/images-destinations.json", "utf8"));
+            let images = JSON.parse(fs.readFileSync("./import/images/images-destinations.json", "utf8"));
             for (let i = 0; i < images.length; i++) {
                 const image = images[i];
                 let file = fs.createReadStream(`./import/images/destinations/${image.name}`);

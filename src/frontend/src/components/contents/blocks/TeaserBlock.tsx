@@ -1,6 +1,5 @@
 import React from "react";
 import { ContentData } from "@episerver/content-delivery";
-import Background from "../../../../import/images/teaser-blocks/teaser1.jpg";
 
 interface TeaserBlockProps extends ContentData {
     title?: any;
@@ -9,7 +8,6 @@ interface TeaserBlockProps extends ContentData {
 }
 
 const TeaserBlock: React.FC<TeaserBlockProps | null> = (props): JSX.Element => {
-    console.log("PROPS", props);
     if (!props) {
         return <></>;
     }
