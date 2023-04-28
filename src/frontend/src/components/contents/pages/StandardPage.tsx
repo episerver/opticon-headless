@@ -4,7 +4,7 @@ import PropertyContentArea from "@components/contents/properties/PropertyContent
 import PropertyXhtmlString from "@components/contents/properties/PropertyXhtmlString";
 import { ContentArea } from "@models/property/ContentArea";
 
-interface StandardProps extends ContentData{
+interface StandardProps extends ContentData {
     mainBody?: string;
     mainContentArea: ContentArea;
 }
@@ -12,8 +12,8 @@ interface StandardProps extends ContentData{
 const StandardPage: FC<StandardProps> = (props): JSX.Element => {
     return (
         <>
-           <PropertyXhtmlString value={props?.mainBody ?? ""} />
-           <PropertyContentArea value={props.mainContentArea} />
+            <PropertyContentArea value={props.mainContentArea} />
+            <PropertyXhtmlString value={props?.mainBody ?? ""} />
         </>
     );
 };

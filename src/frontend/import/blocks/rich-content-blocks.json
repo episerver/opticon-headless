@@ -1,0 +1,23 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "abe42835-8837-4496-a8ee-8c72e379cc2c"
+        },
+        "name": "Rich Content Block: Get inspiration",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "RichContentBlock"],
+        "backgroundImage1": {
+            "guidValue": "eeca524a-4328-4c8e-89b8-d48e39c4ea81"
+        },
+        "backgroundImage2": {
+            "guidValue": "99a628ea-4c6d-4c9b-af57-e33b5a1551b2"
+        },
+        "mainBody": "Start reading with blogs that can provide everything you need to travel, book hotels, and relax.",
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published"
+    }
+]

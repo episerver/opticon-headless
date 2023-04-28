@@ -1,17 +1,16 @@
 import { ContentData } from "@episerver/content-delivery";
 import React, { useEffect, useState } from "react";
-import { getContentLoader } from "../../DefaultContext";
-import { ShoppingCart } from "react-feather";
+import { getContentLoader } from "../../../DefaultContext";
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
-import { Link, useLocation } from "react-router-dom";
-import Config from "../../config.json";
+import { Link } from "react-router-dom";
+import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
-import { NavStickyRoutes } from "../../constants/NavStickyRoutes";
-import CartMenu from "./CartMenu";
+import CartMenu from "../CartMenu";
+import "./Navbar.scss";
 
 const Navbar = () => {
-    const location = useLocation();
+    const [offset, setOffset] = React.useState(0);
     const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[] | null>(null);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
 
@@ -65,48 +64,34 @@ const Navbar = () => {
         }
     };
 
-    const updateNavBarClass = () => {
-        const navbar = document.getElementById("topnav");
-        if (navbar != null) {
-            if (!NavStickyRoutes.includes(location.pathname)) {
-                if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
-                    navbar.classList.add("nav-sticky");
-                } else {
-                    navbar.classList.remove("nav-sticky");
-                }
-            } else {
-                navbar.classList.add("nav-sticky");
-            }
-        }
-    };
-
-    const addScrollEvent = () => {
-        window.addEventListener("scroll", (ev) => {
-            ev.preventDefault();
-            updateNavBarClass();
-        });
-    };
-
     useEffect(() => {
         getLayoutSetting();
         getMenu();
-        addScrollEvent();
+
+        window.addEventListener("scroll", () => {
+            setOffset(window.scrollY);
+        });
+        return () => {
+            window.removeEventListener("scroll", () => {
+                setOffset(window.scrollY);
+            });
+        };
     }, []);
 
-    useEffect(() => {
-        updateNavBarClass();
-    }, [location.key]);
-
     return (
-        <nav id="topnav" className="defaultscroll is-sticky">
+        <nav id="topnav" className={"defaultscroll is-sticky " + (offset > 0 ? "nav-sticky" : "")}>
             <div className="container">
-                <Link to="/" className="logo w-1/5">
-                    {layoutSettings?.siteLogoDark && (
-                        <img src={layoutSettings?.siteLogoDark.url} className="inline-block dark:hidden" alt="" />
-                    )}
-                    {layoutSettings?.siteLogoLight && (
-                        <img src={layoutSettings?.siteLogoLight.url} className="hidden dark:inline-block" alt="" />
-                    )}
+                <Link to="/" className="logo">
+                    <span className="inline-block dark:hidden">
+                        <img src={layoutSettings?.siteLogoDark?.url} className="l-dark" height="24" alt="" />
+                        <img src={layoutSettings?.siteLogoLight?.url} className="l-light" height="24" alt="" />
+                    </span>
+                    <img
+                        src={layoutSettings?.siteLogoLight?.url}
+                        height="24"
+                        className="hidden dark:inline-block"
+                        alt=""
+                    />
                 </Link>
                 <div className="menu-extras">
                     <div className="menu-item">
@@ -129,9 +114,9 @@ const Navbar = () => {
                 </ul>
                 <div id="navigation">
                     <ul className="navigation-menu nav-light">
-                        {menuItems?.map((item) => {
+                        {menuItems?.map((item, index) => {
                             return (
-                                <li key={item.text}>
+                                <li key={index}>
                                     <Link
                                         to={item.link?.replace(Config.BASE_URL, "")}
                                         className="text-black dark:text-white font-bold inline-block"
