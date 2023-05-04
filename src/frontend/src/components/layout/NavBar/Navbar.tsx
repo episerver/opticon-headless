@@ -3,24 +3,21 @@ import React, { useEffect, useState } from "react";
 import { getContentLoader } from "../../../DefaultContext";
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
 import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
-import CartMenu from "../CartMenu";
+import CartMenu from "./../CartMenu";
 import "./Navbar.scss";
 
 const Navbar = () => {
-    const [offset, setOffset] = React.useState(0);
-    const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[] | null>(null);
+    const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[]>([]);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
 
     const getLayoutSetting = async () => {
-        const contentLoader = getContentLoader();
-        const content = (await contentLoader.getContent("de079474-5e46-429a-b3fc-2ef582254785", {
-            branch: "en",
-        })) as LayoutSetting;
-        setLayoutSettings(content);
-    };
+      const contentLoader = getContentLoader();
+      const content = await contentLoader.getContent("de079474-5e46-429a-b3fc-2ef582254785", { branch: "en" }) as LayoutSetting;
+      setLayoutSettings(content);
+    }
 
     const getMenu = () => {
         const contentLoader = getContentLoader();
@@ -32,54 +29,32 @@ const Navbar = () => {
                 if (menuFolder) {
                     contentLoader.getChildren(menuFolder.contentLink.guidValue, { branch: "en" }).then((items) => {
                         if (items) {
-                            setMenuItems(items as NavigationMenuItem[]);
-                        } else {
-                            setMenuItems([
-                                {
-                                    link: "#",
-                                    text: "Please add menu items in menu folder",
-                                },
-                            ]);
+                            const menuItems = (items as NavigationMenuItem[]).filter(item => item.contentType.at(0) === "Block")
+                            setMenuItems(menuItems);
                         }
                     });
-                } else {
-                    setMenuItems([
-                        {
-                            link: "#",
-                            text: "Please create Menu folder under shared blocks and add menu items",
-                        },
-                    ]);
                 }
             }
         });
-    };
+    }
 
     const toggleMenu = () => {
-        document.getElementById("isToggle")?.classList.toggle("open");
-        let isOpen = document.getElementById("navigation") as HTMLElement;
+        document.getElementById('isToggle')?.classList.toggle('open');
+        let isOpen = document.getElementById('navigation') as HTMLElement;
         if (isOpen.style.display === "block") {
             isOpen.style.display = "none";
         } else {
             isOpen.style.display = "block";
         }
-    };
+    }
 
     useEffect(() => {
         getLayoutSetting();
-        getMenu();
-
-        window.addEventListener("scroll", () => {
-            setOffset(window.scrollY);
-        });
-        return () => {
-            window.removeEventListener("scroll", () => {
-                setOffset(window.scrollY);
-            });
-        };
-    }, []);
+        getMenu(); 
+    }, [])
 
     return (
-        <nav id="topnav" className={"defaultscroll is-sticky " + (offset > 0 ? "nav-sticky" : "")}>
+        <nav id="topnav" className="defaultscroll is-sticky">
             <div className="container">
                 <Link to="/" className="logo">
                     <span className="inline-block dark:hidden">
@@ -113,21 +88,16 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div id="navigation">
-                    <ul className="navigation-menu nav-light">
-                        {menuItems?.map((item, index) => {
+                    <ul className="navigation-menu nav-light"> 
+                        {menuItems?.map((item) => {
                             return (
-                                <li key={index}>
-                                    <Link
-                                        to={item.link?.replace(Config.BASE_URL, "")}
-                                        className="text-black dark:text-white font-bold inline-block"
-                                    >
-                                        {item.text}
-                                    </Link>
+                                <li key={item.text}>
+                                    <Link to={item.link.replace(Config.BASE_URL, "")} className="text-black dark:text-white font-bold inline-block">{item.text}</Link>
                                 </li>
                             );
-                        })}
+                        })}             
                     </ul>
-                </div>
+                </div>  
             </div>
         </nav>
     );
