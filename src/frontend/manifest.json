@@ -703,6 +703,18 @@
               "sortOrder": 30,
               "helpText": "Text underneath the title to give more context or call to action."
             }
+          },
+          {
+            "name": "ContentUrl",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Content URL",
+              "groupName": "Information",
+              "sortOrder": 40,
+              "helpText": "The URL to which the content path will be appended."
+            }
           }
         ]
       },

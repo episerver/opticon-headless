@@ -7,10 +7,44 @@ p {
     @apply leading-relaxed;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     @apply leading-normal;
 }
 
 ::selection {
     @apply bg-indigo-600/90 text-white;
+}
+
+@layer base {
+    .no-tailwindcss-base h1,
+    .no-tailwindcss-base h2,
+    .no-tailwindcss-base h3,
+    .no-tailwindcss-base h4,
+    .no-tailwindcss-base h5,
+    .no-tailwindcss-base h6 {
+        font-size: revert;
+        font-weight: revert;
+    }
+
+    .no-tailwindcss-base ol,
+    .no-tailwindcss-base ul {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+
+        li {
+            display: revert;
+        }
+    }
 }
