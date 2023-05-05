@@ -1,5 +1,8 @@
 export const NavStickyRoutes = [
     "/setting",
     "/cart-detail",
-    "/access-denied"
+    "/access-denied",
+    "/checkout",
+    "/order-history",
+    "/order-confirm"
 ]

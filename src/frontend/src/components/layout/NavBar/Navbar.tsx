@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getContentLoader } from "../../../DefaultContext";
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
 import CartMenu from "./../CartMenu";

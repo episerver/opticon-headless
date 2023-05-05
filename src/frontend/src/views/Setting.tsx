@@ -1,6 +1,4 @@
-import DropDown from "@components/common/DropDown";
-import TextValue from "@models/common/TextValue";
-import SettingModal from "@models/page/Setting";
+;import SettingModal from "@models/page/Setting";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Mail, User, UserCheck } from "react-feather";
@@ -9,6 +7,7 @@ import * as Unicons from '@iconscout/react-unicons';
 import Config from "../config.json";
 import authService from "../AuthService";
 import AuthService from "../AuthService";
+import Select from "@components/common/Select";
 
 const Setting = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -186,12 +185,12 @@ const Setting = () => {
                                         name={"preferredLanguage"}
                                         control={control}
                                         render={({ field: { value } }) => (
-                                            <DropDown 
+                                            <Select 
                                                 id={"preferredLanguage"} 
-                                                listItems={[{text: "English", value: "en"}, {text: "Sweden", value: "swe"}]} 
+                                                options={[{text: "English", value: "en"}, {text: "Sweden", value: "swe"}]} 
                                                 value={value} 
-                                                onChange={(item: TextValue) => {
-                                                    setValue("preferredLanguage", item.value)
+                                                onChange={(value: string) => {
+                                                    setValue("preferredLanguage", value)
                                                 }} 
                                             />
                                         )}
@@ -205,12 +204,12 @@ const Setting = () => {
                                         name={"preferredCurrency"}
                                         control={control}
                                         render={({ field: { value } }) => (
-                                            <DropDown 
+                                            <Select 
                                                 id={"preferredCurrency"} 
-                                                listItems={[{text: "USD", value: "USD"}, {text: "MXN", value: "MXN"}]} 
+                                                options={[{text: "USD", value: "USD"}, {text: "MXN", value: "MXN"}]} 
                                                 value={value}
-                                                onChange={(item: TextValue) => {
-                                                    setValue("preferredCurrency", item.value)
+                                                onChange={(value: string) => {
+                                                    setValue("preferredCurrency", value)
                                                 }} 
                                             />
                                         )}

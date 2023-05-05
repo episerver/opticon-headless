@@ -11,8 +11,9 @@ import SignInRenewal from "@views/SignInRenewal";
 import AccessDenied from "@views/AccessDenied";
 import SignUp from "@views/SignUp";
 import Setting from "@views/Setting";
-import "./main.css";
 import CartDetail from "@views/CartDetail";
+import CheckOut from "@views/CheckOut";
+import "./main.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
                 <Route index loader={PageDataLoader} element={<PageComponentSelector />} />
                 <Route path="/setting" element={<Setting />} />
                 <Route path="/cart-detail" element={<CartDetail />} />
+                <Route path="/checkout" element={<CheckOut />} />
                 <Route path="/access-denied" element={<AccessDenied />} />
                 <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
             </Route>
