@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { User } from "react-feather";
 import { Link } from "react-router-dom";
 import * as Unicons from '@iconscout/react-unicons';
