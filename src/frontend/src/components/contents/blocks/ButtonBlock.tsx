@@ -1,9 +1,9 @@
-﻿import { ContentData } from '@episerver/content-delivery';
-import React, { FC } from 'react';
+﻿import React, { FC } from "react";
+import { ContentData } from "@episerver/content-delivery";
 
 interface ButtonBlockProps extends ContentData {
-    text?: string;
-    link?: string;
+    text?: any;
+    link?: any;
 }
 
 const ButtonBlock: FC<ButtonBlockProps | null> = (props): JSX.Element => {
@@ -11,15 +11,13 @@ const ButtonBlock: FC<ButtonBlockProps | null> = (props): JSX.Element => {
         return <></>;
     }
     return (
-        <div className="">
-            <a className=""
-                title={props.text}
-                href={props.link}>
-                {props.text}
-            </a>
-    
-        </div>
-    )
+        <a
+            href={props?.link.value}
+            className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md ltr:mr-2 rtl:ml-2 mt-2"
+        >
+            {props?.text.value}
+        </a>
+    );
 };
 
 export default ButtonBlock;

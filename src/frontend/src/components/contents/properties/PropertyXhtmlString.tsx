@@ -1,15 +1,17 @@
-﻿import React, { FC } from 'react';
+﻿import React from "react";
 
 interface PropertyXhtmlStringProps {
     value?: string;
 }
 
-const PropertyXhtmlString: FC<PropertyXhtmlStringProps> = ({value}) : JSX.Element => {
+const PropertyXhtmlString: React.FC<PropertyXhtmlStringProps> = ({ value }): JSX.Element => {
     if (value === null) {
-        return <></>  ;
+        return <></>;
     }
     return (
-        <div dangerouslySetInnerHTML={{ __html: value ?? '' }} />
+        <div className="container">
+            <div dangerouslySetInnerHTML={{ __html: value ?? "" }} />
+        </div>
     );
 };
 

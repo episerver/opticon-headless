@@ -400,21 +400,6 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
-         * Add blocks to the home page.
-         */
-        {
-            console.log("=== Adding blocks to the home page. ===");
-            let homePages = JSON.parse(fs.readFileSync("./import/pages/homes.json", "utf8"));
-            await patchPropertyContentReferences(homePages[0], {
-                mainContentArea: [
-                    { contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }, // Teaser Block: Banner
-                    { contentLink: { guidValue: "b3cb5663-7d9a-4619-bdce-f28b2b2e742c" } }, // Search Block: Search your trip
-                    { contentLink: { guidValue: "abe42835-8837-4496-a8ee-8c72e379cc2c" } }, // Rich Content Block: Get inspiration
-                ],
-            });
-        }
-
-        /**
          * Generates tags.
          */
         {
@@ -497,6 +482,22 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                     pageImage: destinations[i].pageImage,
                 });
             }
+        }
+
+        /**
+         * Add blocks to the home page.
+         */
+        {
+            console.log("=== Adding blocks to the home page. ===");
+            let homePages = JSON.parse(fs.readFileSync("./import/pages/homes.json", "utf8"));
+            await patchPropertyContentReferences(homePages[0], {
+                mainContentArea: [
+                    { contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }, // Teaser Block: Banner
+                    { contentLink: { guidValue: "b3cb5663-7d9a-4619-bdce-f28b2b2e742c" } }, // Search Block: Search your trip
+                    { contentLink: { guidValue: "abe42835-8837-4496-a8ee-8c72e379cc2c" } }, // Rich Content Block: Get inspiration
+                    { contentLink: { guidValue: "793392ad-61b5-4fc2-ada0-b75ea30081f5" } }, // Page List Block: Blogs
+                ],
+            });
         }
 
         return;

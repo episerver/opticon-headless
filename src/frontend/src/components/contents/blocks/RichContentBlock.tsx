@@ -11,9 +11,8 @@ const RichContentBlock: FC<RichContentBlockProps | null> = (props): JSX.Element 
     if (!props) {
         return <></>;
     }
-    console.log("RICH", props);
     return (
-        <div className="container mt-6 mb-6">
+        <div className={`container my-6 ${props.backgroundImage2 ? `pb-16` : ``}`}>
             <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                 <div className="lg:col-span-5 md:col-span-6">
                     <div className="relative">
@@ -33,38 +32,10 @@ const RichContentBlock: FC<RichContentBlockProps | null> = (props): JSX.Element 
                 </div>
                 <div className="lg:col-span-7 md:col-span-6 mt-8 md:mt-0">
                     <div className="ltr:lg:ml-5 rtl:lg:mr-5">
-                        <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-                            Get inspiration for future trips weekly
-                        </h3>
-
-                        <p className="text-slate-400 max-w-xl">
-                            Start working with Tailwind CSS that can provide everything you need to generate awareness,
-                            drive traffic, connect. Dummy text is text that is used in the publishing industry or by web
-                            designers to occupy the space which will later be filled with 'real' content.
-                        </p>
-
-                        <ul className="list-none text-slate-400 mt-4">
-                            <li className="mb-1 flex">
-                                <i className="uil uil-check-circle text-indigo-600 text-xl ltr:mr-2 rtl:ml-2"></i>{" "}
-                                Digital Marketing Solutions for Tomorrow
-                            </li>
-                            <li className="mb-1 flex">
-                                <i className="uil uil-check-circle text-indigo-600 text-xl ltr:mr-2 rtl:ml-2"></i> Our
-                                Talented & Experienced Marketing Agency
-                            </li>
-                            <li className="mb-1 flex">
-                                <i className="uil uil-check-circle text-indigo-600 text-xl ltr:mr-2 rtl:ml-2"></i>{" "}
-                                Create your own skin to match your brand
-                            </li>
-                        </ul>
-                        <div className="mt-6">
-                            <a
-                                href="contact-one.html"
-                                className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md ltr:mr-2 rtl:ml-2 mt-2"
-                            >
-                                <i className="uil uil-envelope"></i> Contact us
-                            </a>
-                        </div>
+                        <div
+                            className="no-tailwindcss-base"
+                            dangerouslySetInnerHTML={{ __html: props.mainBody.value }}
+                        />
                     </div>
                 </div>
             </div>
