@@ -14,6 +14,8 @@ import Setting from "@views/Setting";
 import CartDetail from "@views/CartDetail";
 import CheckOut from "@views/CheckOut";
 import "./main.css";
+import OrderHistory from "@views/OrderHistory";
+import OrderSummaries from "@views/OrderSummaries";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,6 +31,8 @@ const router = createBrowserRouter(
                 <Route path="/setting" element={<Setting />} />
                 <Route path="/cart-detail" element={<CartDetail />} />
                 <Route path="/checkout" element={<CheckOut />} />
+                <Route path="/order-history" element={<OrderHistory />} />
+                <Route path="/order-summaries" element={<OrderSummaries />} />
                 <Route path="/access-denied" element={<AccessDenied />} />
                 <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
             </Route>
