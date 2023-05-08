@@ -95,7 +95,7 @@ const CheckOut = () => {
                                         <p className="font-bold text-base">Regular</p>
                                         <Unicons.UilCheckCircle className="w-5 h-5 text-indigo-600 invisible group-hover/regular:visible"/>
                                     </div>
-                                    <p className="mt-1 text-sm text-slate-600">1 days</p>
+                                    <p className="mt-1 text-sm text-slate-600 dark:text-white">1 days</p>
                                     <p className="font-bold text-base mt-5">$10.00</p>
                                 </div>
                                 <div className="group/express rounded-lg border hover:border-2 hover:border-indigo-600 cursor-pointer p-3">
@@ -103,7 +103,7 @@ const CheckOut = () => {
                                         <p className="font-bold text-base">Express</p>
                                         <Unicons.UilCheckCircle className="w-5 h-5 text-indigo-600 invisible group-hover/express:visible"/>
                                     </div>
-                                    <p className="mt-1 text-sm text-slate-600">2 days</p>
+                                    <p className="mt-1 text-sm text-slate-600 dark:text-white">2 days</p>
                                     <p className="font-bold text-base mt-5">$25.00</p>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@ const CheckOut = () => {
                                             type="text" 
                                             className="col-span-3 form-input"
                                         />
-                                        <button className="col-span-1 rounded-md border border-transparent bg-slate-300 text-basse font-medium text-slate-800 shadow-sm hover:bg-slate-400 py-1">Apply</button>
+                                        <button className="col-span-1 rounded-md border border-transparent bg-slate-300 text-base font-medium text-slate-800 shadow-sm hover:bg-slate-400 py-1">Apply</button>
                                     </div>
                                 </div>
                             </div>
