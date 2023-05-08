@@ -4,5 +4,5 @@ export const NavStickyRoutes = [
     "/access-denied",
     "/checkout",
     "/order-history",
-    "/order-confirm"
+    "/order-summaries"
 ]
