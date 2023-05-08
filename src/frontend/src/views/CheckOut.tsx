@@ -262,8 +262,8 @@ const CheckOut = () => {
                             </div>
                             <div className="border-t border-gray-200 py-3">
                                 <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
-                                    <p className="font-bold text-xl">Total</p>
-                                    <p className="font-bold text-xl">$262.00</p>
+                                    <p className="font-bold text-lg">Total</p>
+                                    <p className="font-bold text-lg">$262.00</p>
                                 </div>
                             </div>
                             <div className="border-t border-gray-200 pt-6">
