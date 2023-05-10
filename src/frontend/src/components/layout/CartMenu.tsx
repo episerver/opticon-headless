@@ -16,13 +16,14 @@ const CartMenu = () => {
     };
 
     return (
-        <div>
+        <div className="relative">
             <button
                 className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white"
                 onClick={toggleMenu}
             >
                 <ShoppingCart className="h-4 w-4" />
             </button>
+            <span className="absolute w-4 h-4 rounded-full text-indigo-800 bg-white border border-indigo-800 text-xs font-bold text-center -ml-3 -mt-1">1</span>
             <div
                 id="cart-menu"
                 className={`${showMenu ? "" : "hidden"} ease-in relative z-10`}

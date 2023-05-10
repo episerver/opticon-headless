@@ -11,7 +11,7 @@ class AuthService {
       silent_redirect_uri: `${location.origin}/signin-renewal`,
       response_type: 'code',
       scope: 'openid profile offline_access email roles epi_content_delivery',
-      post_logout_redirect_uri: `${location.origin}/signin`,
+      post_logout_redirect_uri: `${location.origin}/`,
       filterProtocolClaims: true,
       loadUserInfo: true,
     };
@@ -25,7 +25,7 @@ class AuthService {
 
   signIn() {
     let args = {};
-    if(!["/signin", "/signup"].includes(location.pathname)){
+    if(!["/signup"].includes(location.pathname)){
       args = {
         state: location.href,
       }

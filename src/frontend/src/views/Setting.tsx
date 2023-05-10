@@ -15,7 +15,6 @@ const Setting = () => {
     const {
         control,
         handleSubmit,
-        watch,
         setValue,
         reset,
         formState: { errors },
@@ -25,33 +24,26 @@ const Setting = () => {
     });
 
     const loadSetting = async () => {
-        setLoading(true);
         const accessToken = await authService.getAccessToken();
-        try{
-            const res = await axios({
-                url: "/api/episerver/v3.0/me",
-                method: "get",
-                baseURL: Config.BASE_URL,
-                withCredentials: false,
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            });
-            const setting = res.data as SettingModal;
-            const user = await AuthService.getUser();
-            reset({
-                username: user?.profile.name,
-                email: setting.email,
-                firstName: setting.firstName,
-                lastName: setting.lastName,
-                preferredCurrency: setting.preferredCurrency,
-                preferredLanguage: setting.preferredLanguage
-            });
-            setLoading(false);
-        }catch(err: any){
-            setLoading(false);
-        }
+        const res = await axios({
+            url: "/api/episerver/v3.0/me",
+            method: "get",
+            baseURL: Config.BASE_URL,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+        const setting = res.data as SettingModal;
+        const user = await AuthService.getUser();
+        reset({
+            username: user?.profile.name,
+            email: setting.email,
+            firstName: setting.firstName,
+            lastName: setting.lastName,
+            preferredCurrency: setting.preferredCurrency,
+            preferredLanguage: setting.preferredLanguage
+        });
     }
 
     const onSubmit = async (form: SettingModal) => {
