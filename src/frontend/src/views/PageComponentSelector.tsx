@@ -22,14 +22,8 @@ const PageComponentSelector = () => {
         case ResolvedContentStatus.NotFound: 
             return <Navigate to="/not-found"/>;
         case ResolvedContentStatus.Unauthorized:
-          AuthService.getUser().then((user: any) => {
-            if (!user || user.expired) {
-                AuthService.signIn();
-                return <></>;
-            } else {
-                return <Navigate to="/signin"/>;
-            }
-          });
+            AuthService.signIn();
+            return <></>;
         case ResolvedContentStatus.AccessDenied: 
             return <Navigate to="/access-denied"/>;
       }

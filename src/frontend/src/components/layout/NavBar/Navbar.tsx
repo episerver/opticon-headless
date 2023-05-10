@@ -3,15 +3,19 @@ import React, { useEffect, useState } from "react";
 import { getContentLoader } from "../../../DefaultContext";
 import NavigationMenuItem from "@models/block/NavigationMenuItem";
 import LayoutSetting from "@models/block/LayoutSetting";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
 import CartMenu from "./../CartMenu";
 import "./Navbar.scss";
+import AuthService from "../../../AuthService";
+import MarketMenu from "../MarketMenu";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [menuItems, setMenuItems] = React.useState<NavigationMenuItem[]>([]);
     const [layoutSettings, setLayoutSettings] = useState<LayoutSetting | undefined>(undefined);
+    const [username, setUsername] = useState<string>("");
 
     const getLayoutSetting = async () => {
       const contentLoader = getContentLoader();
@@ -48,9 +52,18 @@ const Navbar = () => {
         }
     }
 
+    const getUser = () => {
+        AuthService.getUser().then((user: any) => {
+            if (user && !user.expired) {
+              setUsername(user.profile.name);
+            }
+        });
+    }
+
     useEffect(() => {
         getLayoutSetting();
         getMenu(); 
+        getUser();
     }, [])
 
     return (
@@ -84,7 +97,24 @@ const Navbar = () => {
                         <CartMenu />
                     </li>
                     <li className="inline-block ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
-                        <UserMenu />
+                        <MarketMenu />
+                    </li>
+                    <li className="inline-block ltr:pl-1 rtl:pr-1 mb-0 cursor-pointer dropdown">
+                        {username && <UserMenu username={username}/>}
+                        {!username && <>
+                            <button 
+                                className="h-8 rounded-md border border-indigo-800 dark:border-hidden bg-white text-indigo-800 dark:text-indigo-800 px-3 font-medium hover:bg-slate-300 ml-4"
+                                onClick={() => AuthService.signIn()}
+                            >
+                                Log in
+                            </button>
+                            <button 
+                                className="h-8 rounded-md border border-indigo-800 dark:border-hidden bg-white text-indigo-800 dark:text-indigo-800 px-3 font-medium hover:bg-slate-300 ml-1"
+                                onClick={() => navigate("/signup")}
+                            >
+                                Sign up
+                            </button>
+                        </>}
                     </li>
                 </ul>
                 <div id="navigation">

@@ -55,7 +55,6 @@ const SignUp = () => {
                     url: "/api/episerver/v3.0/me/signup",
                     method: "post",
                     baseURL: Config.BASE_URL,
-                    withCredentials: false,
                     headers: {
                         Authorization: `Bearer ${res.data.access_token}`,
                         "Content-Type": "application/json",
@@ -214,7 +213,7 @@ const SignUp = () => {
                                     </div>
                                     <div className="text-center">   
                                         <span className="text-slate-400 ltr:mr-2 rtl:ml-2">Already have an account ? </span> 
-                                        <Link to="/signin" className="text-black dark:text-white font-bold inline-block">Sign in</Link>
+                                        <p onClick={() => AuthService.signIn()} className="text-black dark:text-white font-bold inline-block cursor-pointer">Sign in</p>
                                     </div>
                                 </div>
                             </form>
