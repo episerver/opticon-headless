@@ -13,7 +13,9 @@ const StandardPage: FC<StandardProps> = (props): JSX.Element => {
     return (
         <>
             <PropertyContentArea value={props.mainContentArea} />
-            <PropertyXhtmlString value={props?.mainBody ?? ""} />
+            <div className="container">
+                <PropertyXhtmlString value={props?.mainBody ?? ""} />
+            </div>
         </>
     );
 };

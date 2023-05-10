@@ -1,0 +1,18 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "af2a5ea4-8263-4f47-a752-d7608eb284e7"
+        },
+        "name": "hero1.jpg",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published",
+        "title": "Hero 1",
+        "altText": "Hero 1"
+    }
+]

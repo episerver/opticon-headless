@@ -1,0 +1,16 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "61d0bc40-9718-4aba-b44e-0973e136f99f"
+        },
+        "name": "beach.mp4",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Video", "Media", "VideoFile"],
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published"
+    }
+]

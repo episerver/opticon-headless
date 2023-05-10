@@ -1,4 +1,4 @@
-export default interface TextValue{
+export default interface TextValue {
     text: string;
     value: string;
 }

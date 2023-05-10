@@ -8,11 +8,7 @@ const PropertyXhtmlString: React.FC<PropertyXhtmlStringProps> = ({ value }): JSX
     if (value === null) {
         return <></>;
     }
-    return (
-        <div className="container">
-            <div dangerouslySetInnerHTML={{ __html: value ?? "" }} />
-        </div>
-    );
+    return <div className="no-tailwindcss-base" dangerouslySetInnerHTML={{ __html: value ?? "" }} />;
 };
 
 export default PropertyXhtmlString;

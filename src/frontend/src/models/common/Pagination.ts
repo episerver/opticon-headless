@@ -1,4 +1,4 @@
-export default interface Pagination{
+export default interface Pagination {
     pageSize: number;
     pageIndex: number;
     keyword?: string;

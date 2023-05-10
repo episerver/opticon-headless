@@ -8,6 +8,8 @@
             "name": "en"
         },
         "contentType": ["Block", "RichContentBlock"],
+        "marginTop": 45,
+        "marginBottom": 0,
         "backgroundImage1": {
             "guidValue": "eeca524a-4328-4c8e-89b8-d48e39c4ea81"
         },

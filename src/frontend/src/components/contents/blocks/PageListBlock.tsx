@@ -1,25 +1,26 @@
 ﻿import { ContentData } from "@episerver/content-delivery";
 import PropertyType from "@models/common/PropertyType";
-import React, { FC, Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogItem from "@models/page/BlogItem";
 import { getContentLoader } from "../../../DefaultContext";
 import { Link } from "react-router-dom";
 import Config from "../../../config.json";
 import * as Unicons from "@iconscout/react-unicons";
+import BlockType from "@models/block/BlockType";
 
 interface Root {
     expandedValue: BlogItem[];
     propertyDataType: string;
 }
 
-interface PageListBlockProps extends ContentData {
+interface PageListBlockProps extends ContentData, BlockType {
     heading?: PropertyType;
     description?: PropertyType;
     numberOfResults?: PropertyType;
     roots?: Root;
 }
 
-const PageListBlock: FC<PageListBlockProps> = (props): JSX.Element => {
+const PageListBlock: React.FC<PageListBlockProps> = (props): JSX.Element => {
     const [contents, setContents] = useState<BlogItem[]>([]);
 
     const getContents = async () => {
@@ -40,7 +41,10 @@ const PageListBlock: FC<PageListBlockProps> = (props): JSX.Element => {
     }, []);
 
     return (
-        <div className="container md:mt-24 mt-16 mb-6">
+        <div
+            className="container"
+            style={{ marginTop: `${props.marginTop.value}px`, marginBottom: `${props.marginBottom.value}px` }}
+        >
             <div className="grid grid-cols-1 pb-8 text-center">
                 <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
                     {props.heading?.value}

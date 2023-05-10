@@ -1,6 +1,7 @@
 ﻿{
     "ENV": "$ENV",
     "BASE_URL": "http://localhost:5000/",
+    "CLIENT_URL": "http://localhost:8080",
     "USERNAME": "admin",
     "PASSWORD": "7101991hH!@#",
     "CONTENT_DELIVERY_API": "http://localhost:5000",

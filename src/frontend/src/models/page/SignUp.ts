@@ -1,4 +1,4 @@
-export default interface SignUpModel{
+export default interface SignUpModel {
     username: string;
     email: string;
     firstName?: string;

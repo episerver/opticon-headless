@@ -1,4 +1,4 @@
-﻿import React, { FC } from 'react';
+﻿import React, { FC } from "react";
 
 interface PropertyButtonProps {
     className?: string;
@@ -9,9 +9,8 @@ const PropertyButton: FC<PropertyButtonProps> = ({ className, title }): JSX.Elem
     if (title == null || title == undefined) {
         return <></>;
     }
-        
-    return (<button className={className}>{title}</button>)
-    
-}
+
+    return <button className={className}>{title}</button>;
+};
 
 export default PropertyButton;
