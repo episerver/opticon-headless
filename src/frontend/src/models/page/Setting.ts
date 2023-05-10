@@ -1,4 +1,4 @@
-export default interface SettingModal{
+export default interface SettingModal {
     username?: string;
     firstName?: string;
     lastName?: string;

@@ -7,6 +7,8 @@
         "language": {
             "name": "en"
         },
+        "marginTop": 75,
+        "marginBottom": 75,
         "heading": "Recent posts",
         "contentType": ["Block", "PageListBlock"],
         "numberOfResults": 6,

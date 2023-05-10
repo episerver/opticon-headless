@@ -1,6 +1,6 @@
 import { ContentData } from "@episerver/content-delivery";
 
-export default interface NavigationMenuItem extends ContentData{
+export default interface NavigationMenuItem extends ContentData {
     text: string;
     link: string;
 }

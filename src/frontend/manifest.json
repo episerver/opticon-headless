@@ -443,6 +443,30 @@
         },
         "properties": [
           {
+            "name": "MarginTop",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Top",
+              "groupName": "Information",
+              "sortOrder": 5,
+              "helpText": "The space from the top of the block."
+            }
+          },
+          {
+            "name": "MarginBottom",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Bottom",
+              "groupName": "Information",
+              "sortOrder": 6,
+              "helpText": "The space from the bottom of the block."
+            }
+          },
+          {
             "name": "Title",
             "dataType": "PropertyString",
             "branchSpecific": true,
@@ -450,7 +474,7 @@
               "visibility": "default",
               "displayName": "Title",
               "groupName": "Information",
-              "sortOrder": 5,
+              "sortOrder": 10,
               "helpText": "The title to show."
             }
           },
@@ -462,7 +486,7 @@
               "visibility": "default",
               "displayName": "Main Body",
               "groupName": "Information",
-              "sortOrder": 10,
+              "sortOrder": 20,
               "helpText": "The text to show."
             }
           }
@@ -730,88 +754,123 @@
         },
         "properties": [
           {
-            "name": "BackgroundImage",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": false,
+            "name": "FullWidth",
+            "dataType": "PropertyBoolean",
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Background Image",
+              "displayName": "Full Width",
               "groupName": "Information",
-              "sortOrder": 0,
-              "helpText": "The image to be used as the background.  If background video is set it takes precedent."
+              "sortOrder": 10,
+              "helpText": "Determine the hero block is full width or not."
+            }
+          },
+          {
+            "name": "Height",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "HeightHeight",
+              "groupName": "Information",
+              "sortOrder": 11,
+              "helpText": "Determine the height of hero block based on percentage (0 to 100)."
             }
           },
           {
             "name": "BackgroundVideo",
             "dataType": "PropertyContentReference",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Background Video",
               "groupName": "Information",
-              "sortOrder": 1,
+              "sortOrder": 20,
               "helpText": "The background video to use."
             }
           },
           {
-            "name": "Title",
+            "name": "BackgroundImage",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Background Image",
+              "groupName": "Information",
+              "sortOrder": 30,
+              "helpText": "The image to be used as the background. If the background video is set, it takes precedent."
+            }
+          },
+          {
+            "name": "OverlayColor",
             "dataType": "PropertyString",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Title",
+              "displayName": "Overlay Color",
               "groupName": "Information",
-              "sortOrder": 2,
-              "helpText": "Headline for the hero block"
+              "sortOrder": 40,
+              "helpText": "The layer to cover background video or background image."
             }
           },
           {
-            "name": "Description",
-            "dataType": "PropertyLongString",
+            "name": "OverlayColorOpacity",
+            "dataType": "PropertyFloatNumber",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Description",
+              "displayName": "Overlay Color Opacity",
               "groupName": "Information",
-              "sortOrder": 3,
-              "helpText": "Text underneath the title to give more context or call to action"
+              "sortOrder": 50,
+              "helpText": "The opacity value of the OverlayColor layer (0 to 1)."
             }
           },
           {
-            "name": "Link",
-            "dataType": "PropertyUrl",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Link",
-              "groupName": "Information",
-              "sortOrder": 4,
-              "helpText": "The link where to call to action should take the user to.",
-              "hint": "Url"
-            }
-          },
-          {
-            "name": "ButtonText",
+            "name": "CalloutTextColor",
             "dataType": "PropertyString",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Button Text",
+              "displayName": "Callout Text Color",
               "groupName": "Information",
-              "sortOrder": 5,
-              "helpText": "The call to action text on the button.  If no text is set, no button is showed."
+              "sortOrder": 60,
+              "helpText": "The color of the text."
             }
           },
           {
-            "name": "IsScreenWidth",
-            "dataType": "PropertyBoolean",
-            "branchSpecific": false,
+            "name": "CalloutVerticalAlign",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Is Screen width",
+              "displayName": "Callout Vertical Align",
               "groupName": "Information",
-              "sortOrder": 6,
-              "helpText": "If selected the hero block will be the screen width rather than the width of the parent container or display option."
+              "sortOrder": 70,
+              "helpText": "The position of the text in vertical axis. Top or Center or Bottom (corresponding values: start, center, end)."
+            }
+          },
+          {
+            "name": "CalloutHorizontalAlign",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Callout Horizontal Align",
+              "groupName": "Information",
+              "sortOrder": 80,
+              "helpText": "The position of the text in horizontal axis. Left or Center or Right (corresponding values: left, center, right)."
+            }
+          },
+          {
+            "name": "MainBody",
+            "dataType": "PropertyXhtmlString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Main Body",
+              "groupName": "Information",
+              "sortOrder": 90,
+              "helpText": "The text to display."
             }
           }
         ]
@@ -904,6 +963,30 @@
         },
         "properties": [
           {
+            "name": "MarginTop",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Top",
+              "groupName": "Information",
+              "sortOrder": 5,
+              "helpText": "The space from the top of the block."
+            }
+          },
+          {
+            "name": "MarginBottom",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Bottom",
+              "groupName": "Information",
+              "sortOrder": 6,
+              "helpText": "The space from the bottom of the block."
+            }
+          },
+          {
             "name": "Heading",
             "dataType": "PropertyString",
             "branchSpecific": true,
@@ -976,6 +1059,30 @@
           "sortOrder": 500
         },
         "properties": [
+          {
+            "name": "MarginTop",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Top",
+              "groupName": "Information",
+              "sortOrder": 5,
+              "helpText": "The space from the top of the block."
+            }
+          },
+          {
+            "name": "MarginBottom",
+            "dataType": "PropertyNumber",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Margin Bottom",
+              "groupName": "Information",
+              "sortOrder": 6,
+              "helpText": "The space from the bottom of the block."
+            }
+          },
           {
             "name": "BackgroundImage1",
             "dataType": "PropertyContentReference",

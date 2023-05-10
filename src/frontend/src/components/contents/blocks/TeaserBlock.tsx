@@ -2,6 +2,7 @@ import React from "react";
 import { ContentData } from "@episerver/content-delivery";
 import { ArrowRight } from "react-feather";
 import PropertyType from "@models/common/PropertyType";
+import Config from "../../../config.json";
 
 interface TeaserBlockProps extends ContentData {
     title?: PropertyType;
@@ -35,7 +36,7 @@ const TeaserBlock: React.FC<TeaserBlockProps | null> = (props): JSX.Element => {
                         </h1>
                         <p className="text-white/70 text-xl max-w-xl">{props.description?.value}</p>
                         {props.contentUrl?.value ? (
-                            <a href={"http://localhost:8080" + new URL(props.contentUrl?.value.url).pathname}>
+                            <a href={Config.CLIENT_URL + new URL(props.contentUrl?.value.url).pathname}>
                                 <i className="mdi mdi-arrow-down text-center inline-flex items-center justify-center rounded-full bg-white dark:bg-slate-900 h-12 w-12 mx-auto shadow-md dark:shadow-gray-800 mt-6">
                                     <ArrowRight />
                                 </i>

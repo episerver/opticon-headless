@@ -1,0 +1,30 @@
+[
+    {
+        "contentLink": {
+            "guidValue": "ae1aed1d-22ae-4dc6-b07d-73ecdba15b64"
+        },
+        "name": "Hero Block: The Beach",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Block", "HeroBlock"],
+        "fullWidth": false,
+        "height": 50,
+        "backgroundVideo": {
+            "guidValue": "61d0bc40-9718-4aba-b44e-0973e136f99f"
+        },
+        "backgroundImage": {
+            "guidValue": "af2a5ea4-8263-4f47-a752-d7608eb284e7"
+        },
+        "overlayColor": "gray",
+        "overlayColorOpacity": 0.2,
+        "calloutTextColor": "#ffffff",
+        "calloutVerticalAlign": "center",
+        "calloutHorizontalAlign": "center",
+        "mainBody": "<h1>Enjoy your moment!</h1>",
+        "parentLink": {
+            "guidValue": "e8793a89-d1c0-4c1f-a438-c616fbf830e3"
+        },
+        "status": "Published"
+    }
+]

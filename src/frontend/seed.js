@@ -485,6 +485,60 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
+         * Generates text blocks.
+         */
+        {
+            console.log("=== Generates text blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/text-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                await publishContent(blocks[i]);
+            }
+        }
+
+        /**
+         * Generates hero blocks.
+         */
+        {
+            console.log("=== Generates hero blocks. ===");
+            let blocks = JSON.parse(fs.readFileSync("./import/blocks/hero-blocks.json", "utf8"));
+            for (let i = 0; i < blocks.length; i++) {
+                await publishContent(blocks[i]);
+            }
+
+            console.log("=== Adding videos for hero blocks. ===");
+            let videos = JSON.parse(fs.readFileSync("./import/videos/videos-hero-blocks.json", "utf8"));
+            for (let i = 0; i < videos.length; i++) {
+                const video = videos[i];
+                let file = fs.createReadStream(`./import/videos/hero-blocks/${video.name}`);
+                const form = new FormData();
+                form.append("file", file, video.name);
+                form.append("content", JSON.stringify(video));
+                await publishMediaContent(video, form, UpdateMediaContentFor.AssetFolder);
+            }
+
+            console.log("=== Adding images for hero blocks. ===");
+            let images = JSON.parse(fs.readFileSync("./import/images/images-hero-blocks.json", "utf8"));
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                let file = fs.createReadStream(`./import/images/hero-blocks/${image.name}`);
+                const form = new FormData();
+                form.append("file", file, image.name);
+                form.append("content", JSON.stringify(image));
+                await publishMediaContent(image, form, UpdateMediaContentFor.AssetFolder);
+            }
+
+            for (let i = 0; i < blocks.length; i++) {
+                await patchPropertyContentReferences(blocks[i], {
+                    backgroundVideo: blocks[i].backgroundVideo,
+                });
+
+                await patchPropertyContentReferences(blocks[i], {
+                    backgroundImage: blocks[i].backgroundImage,
+                });
+            }
+        }
+
+        /**
          * Add blocks to the home page.
          */
         {
@@ -495,30 +549,11 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                     { contentLink: { guidValue: "543b721a-84ff-4d00-aa96-ee6654f0572f" } }, // Teaser Block: Banner
                     { contentLink: { guidValue: "b3cb5663-7d9a-4619-bdce-f28b2b2e742c" } }, // Search Block: Search your trip
                     { contentLink: { guidValue: "abe42835-8837-4496-a8ee-8c72e379cc2c" } }, // Rich Content Block: Get inspiration
+                    { contentLink: { guidValue: "fc3c7eb8-ccb2-4aa8-b619-0a311481b898" } }, // Text Block: Welcome
+                    { contentLink: { guidValue: "ae1aed1d-22ae-4dc6-b07d-73ecdba15b64" } }, // Hero Block: Beach Video
                     { contentLink: { guidValue: "793392ad-61b5-4fc2-ada0-b75ea30081f5" } }, // Page List Block: Blogs
                 ],
             });
-        }
-
-        return;
-
-        /**
-         * Upload videos.
-         */
-        {
-            console.log("=== Upload videos. ===");
-            let videos = JSON.parse(fs.readFileSync("./import/videos.json", "utf8"));
-            let promises = [];
-            for (let i = 0; i < videos.length; i++) {
-                const video = videos[i];
-                let file = fs.createReadStream(`./import/videos/${video.name}`);
-                const form = new FormData();
-                form.append("file", file, video.name);
-                form.append("content", JSON.stringify(video));
-                promises.push(publishMediaContent(video, form));
-            }
-
-            await Promise.all(promises);
         }
     } catch (error) {
         console.error(error);
