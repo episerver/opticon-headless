@@ -14,11 +14,22 @@
         "contentLink": {
             "guidValue": "3127a001-a816-4bd8-8deb-8e5d3f5d89d1"
         },
-        "name": "Menu",
+        "name": "NavBar",
         "contentType": ["Folder", "SysContentFolder"],
         "parentLink": {
             "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
         },
-        "routeSegment": "menu"
+        "routeSegment": "navbar"
+    },
+    {
+        "contentLink": {
+            "guidValue": "bbb43b99-d122-48d4-8ca9-bef29b278bc5"
+        },
+        "name": "Footer",
+        "contentType": ["Folder", "SysContentFolder"],
+        "parentLink": {
+            "guidValue": "e56f85d0-e833-4e02-976a-2d11fe4d598c"
+        },
+        "routeSegment": "footer"
     }
 ]

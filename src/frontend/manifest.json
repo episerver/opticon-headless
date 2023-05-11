@@ -309,6 +309,17 @@
             }
           },
           {
+            "name": "FooterLogo",
+            "dataType": "PropertyContentReference",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Footer Logo",
+              "groupName": "Footer",
+              "sortOrder": 20
+            }
+          },
+          {
             "name": "Introduction",
             "dataType": "PropertyString",
             "branchSpecific": true,
@@ -316,106 +327,97 @@
               "visibility": "default",
               "displayName": "Introduction",
               "groupName": "Footer",
-              "sortOrder": 20
-            }
-          },
-          {
-            "name": "CompanyHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Company header",
-              "groupName": "Footer",
               "sortOrder": 30
             }
           },
           {
-            "name": "CompanyName",
+            "name": "LinkedInUrl",
             "dataType": "PropertyString",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Company name",
+              "displayName": "LinkedIn Url",
               "groupName": "Footer",
               "sortOrder": 40
             }
           },
           {
-            "name": "CompanyAddress",
+            "name": "FacebookUrl",
             "dataType": "PropertyString",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Company address",
+              "displayName": "Facebook Url",
+              "groupName": "Footer",
+              "sortOrder": 41
+            }
+          },
+          {
+            "name": "InstagramUrl",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Instagram Url",
+              "groupName": "Footer",
+              "sortOrder": 42
+            }
+          },
+          {
+            "name": "TwitterUrl",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Twitter Url",
+              "groupName": "Footer",
+              "sortOrder": 43
+            }
+          },
+          {
+            "name": "Header1",
+            "dataType": "PropertyString",
+            "branchSpecific": true,
+            "editSettings": {
+              "visibility": "default",
+              "displayName": "Header 1",
               "groupName": "Footer",
               "sortOrder": 50
             }
           },
           {
-            "name": "CompanyPhone",
-            "dataType": "PropertyString",
+            "name": "Header1Links",
+            "dataType": "PropertyLinkCollection",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Company phone",
+              "displayName": "Header 1 Links",
               "groupName": "Footer",
-              "sortOrder": 60
+              "sortOrder": 60,
+              "helpText": "Links of Header 1 Column."
             }
           },
           {
-            "name": "CompanyEmail",
+            "name": "Header2",
             "dataType": "PropertyString",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Company email",
+              "displayName": "Header 2",
               "groupName": "Footer",
               "sortOrder": 70
             }
           },
           {
-            "name": "LinksHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Links header",
-              "groupName": "Footer",
-              "sortOrder": 80
-            }
-          },
-          {
-            "name": "Links",
+            "name": "Header2Links",
             "dataType": "PropertyLinkCollection",
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "Links",
+              "displayName": "Header 2 Links",
               "groupName": "Footer",
-              "sortOrder": 90
-            }
-          },
-          {
-            "name": "SocialHeader",
-            "dataType": "PropertyString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Social header",
-              "groupName": "Footer",
-              "sortOrder": 100
-            }
-          },
-          {
-            "name": "SocialLinks",
-            "dataType": "PropertyLinkCollection",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Social links",
-              "groupName": "Footer",
-              "sortOrder": 110
+              "sortOrder": 80,
+              "helpText": "Links of Header 2 Column."
             }
           },
           {
@@ -426,7 +428,7 @@
               "visibility": "default",
               "displayName": "Copyright",
               "groupName": "Footer",
-              "sortOrder": 120
+              "sortOrder": 90
             }
           }
         ]

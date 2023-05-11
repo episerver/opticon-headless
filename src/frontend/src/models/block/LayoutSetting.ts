@@ -8,20 +8,21 @@ interface Link {
     title: string;
     text: string;
     href: string;
+    target: string;
 }
 
 export default interface LayoutSetting extends ContentData {
     siteLogoDark?: SiteLogo;
     siteLogoLight?: SiteLogo;
+    footerLogo: SiteLogo;
     introduction: string;
-    companyAddress: string;
-    companyEmail: string;
-    companyHeader: string;
-    companyName: string;
-    companyPhone: string;
-    linksHeader: string;
-    links?: Link[];
-    socialHeader: string;
-    socialLinks?: Link[];
+    linkedInUrl: string;
+    facebookUrl: string;
+    instagramUrl: string;
+    twitterUrl: string;
+    header1: string;
+    header1Links?: Link[];
+    header2: string;
+    header2Links?: Link[];
     copyright: string;
 }

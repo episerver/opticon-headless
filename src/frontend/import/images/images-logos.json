@@ -30,5 +30,21 @@
         "status": "Published",
         "title": "Logo Light",
         "altText": "Logo Light"
+    },
+    {
+        "contentLink": {
+            "guidValue": "160ed074-141b-49b1-ad20-f3d3b7e99b62"
+        },
+        "name": "Optimizely_Logo_Mono_Light_Digital.png",
+        "language": {
+            "name": "en"
+        },
+        "contentType": ["Image", "Media", "ImageMediaData"],
+        "parentLink": {
+            "guidValue": "bbb43b99-d122-48d4-8ca9-bef29b278bc5"
+        },
+        "status": "Published",
+        "title": "Optimizely Logo Light",
+        "altText": "Optimizely Logo Light"
     }
 ]
