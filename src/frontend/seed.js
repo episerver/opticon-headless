@@ -294,10 +294,10 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
-         * Adds logo dark and logo light.
+         * Adds logos.
          */
         {
-            console.log("=== Adds logo dark and logo light. ===");
+            console.log("=== Adds logos. ===");
             let logos = JSON.parse(fs.readFileSync("./import/images/images-logos.json", "utf8"));
             for (let i = 0; i < logos.length; i++) {
                 const logo = logos[i];
@@ -315,6 +315,9 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
             });
             await patchPropertyContentReferences(globalSettings, {
                 siteLogoLight: globalSettings.siteLogoLight,
+            });
+            await patchPropertyContentReferences(globalSettings, {
+                footerLogo: globalSettings.footerLogo,
             });
         }
 

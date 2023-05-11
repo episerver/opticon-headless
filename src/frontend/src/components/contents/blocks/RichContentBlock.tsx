@@ -11,7 +11,6 @@ interface RichContentBlockProps extends ContentData, BlockType {
 }
 
 const RichContentBlock: React.FC<RichContentBlockProps | null> = (props): JSX.Element => {
-    console.log(props);
     if (!props) {
         return <></>;
     }

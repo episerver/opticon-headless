@@ -17,52 +17,91 @@
     "siteLogoLight": {
         "guidValue": "754670c4-b9f3-4e4c-9bcc-cd20dda4021e"
     },
-    "introduction": "Destinations is a fictional brand of Optimizely created for demo purposes.",
-    "companyHeader": "CONTACT OPTIMIZELY",
-    "companyName": "",
-    "companyAddress": "119 5th Ave 7th floor New York, NY 10003, USA",
-    "companyPhone": "+1 603 594 0249",
-    "companyEmail": "info@optimizely.com",
-    "linksHeader": "OPTIMIZELY SITES",
-    "links": [
+    "footerLogo": {
+        "guidValue": "160ed074-141b-49b1-ad20-f3d3b7e99b62"
+    },
+    "introduction": "Optimizely is made to help you create great content more easily. Scale up your experimentation more seamlessly. And convert customers more profitably.",
+    "linkedInUrl": "https://www.linkedin.com/company/optimizely",
+    "facebookUrl": "https://www.facebook.com/optimizely/",
+    "instagramUrl": "https://www.instagram.com/optimizely/",
+    "twitterUrl": "https://twitter.com/Optimizely",
+    "header1": "Company",
+    "header1links": [
         {
             "href": "https://optimizely.com",
             "title": "Optimizely",
             "target": "_blank",
-            "text": "optimizely.com"
+            "text": "Optimizely.com"
         },
         {
-            "href": "https://world.optimizely.com",
-            "title": "Developer Community",
+            "href": "https://www.optimizely.com/company/",
+            "title": "About us",
             "target": "_blank",
-            "text": "Developer Community"
+            "text": "About us"
+        },
+        {
+            "href": "https://www.optimizely.com/support/",
+            "title": "Support",
+            "target": "_blank",
+            "text": "Support"
+        },
+        {
+            "href": "https://www.optimizely.com/company/executive-team/",
+            "title": "Executive Team",
+            "target": "_blank",
+            "text": "Executive Team"
+        },
+        {
+            "href": "https://www.optimizely.com/plans/",
+            "title": "Plans & pricing",
+            "target": "_blank",
+            "text": "Plans & pricing"
+        },
+        {
+            "href": "https://world.optimizely.com/",
+            "title": "Dev Community",
+            "target": "_blank",
+            "text": "Dev Community"
+        },
+        {
+            "href": "https://www.optimizely.com/contact/",
+            "title": "Contact Us",
+            "target": "_blank",
+            "text": "Contact Us"
+        }
+    ],
+    "header2": "Learning Resources",
+    "header2links": [
+        {
+            "href": "https://docs.developers.optimizely.com/",
+            "title": "Developer guides",
+            "target": "_blank",
+            "text": "Developer guides"
         },
         {
             "href": "https://webhelp.optimizely.com/latest/en/home.htm",
-            "title": "User Guides",
+            "title": "User guide",
             "target": "_blank",
-            "text": "User Guides"
+            "text": "User guide"
+        },
+        {
+            "href": "https://world.optimizely.com/resources/videos/",
+            "title": "Video tutorials",
+            "target": "_blank",
+            "text": "Video tutorials"
+        },
+        {
+            "href": "https://github.com/episerver",
+            "title": "GitHub",
+            "target": "_blank",
+            "text": "GitHub"
+        },
+        {
+            "href": "https://www.optimizely.com/support/education/",
+            "title": "Optimizely Academy",
+            "target": "_blank",
+            "text": "Optimizely Academy"
         }
     ],
-    "socialHeader": "Follow Us",
-    "socialLinks": [
-        {
-            "href": "https://www.facebook.com/optimizely",
-            "title": "Facebook",
-            "target": "_blank",
-            "text": "Facebook"
-        },
-        {
-            "href": "https://twitter.com/optimizely",
-            "title": "Twitter",
-            "target": "_blank",
-            "text": "Twitter"
-        },
-        {
-            "href": "http://www.linkedin.com/company/optimizely",
-            "title": "LinkedIn",
-            "target": "_blank",
-            "text": "LinkedIn"
-        }
-    ]
+    "copyright": "This is a demo site of Optimizely using Headless APIs and Commerce APIs."
 }
