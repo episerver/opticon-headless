@@ -1,16 +1,16 @@
 import TextValue from "@models/common/TextValue";
 import React, { useEffect, useRef, useState } from "react";
 import { Check, Globe } from "react-feather";
-import { MarketIcons } from "../../constants/MarketIcons";
 import axios from "axios";
 import Config from "../../config.json";
+import {DisplayMarket, Market} from "@models/Market";
+import { Currencies } from "../../constants/Currencies";
+import { Languages } from "../../constants/Languages";
 
 const MarketMenu = () => {
     const ref = useRef<any>(null);
-    const [markets, setMarkets] = useState<TextValue[]>([]);
-    const [currencies, setCurrencies] = useState<TextValue[]>([]);
-    const [languages, setLanguages] = useState<TextValue[]>([]);
-    const [selectedMarket, setSelectedMarket] = useState<TextValue>();
+    const [markets, setMarkets] = useState<DisplayMarket[]>([]);
+    const [selectedMarket, setSelectedMarket] = useState<DisplayMarket>();
     const [selectedCurrency, setSelectedCurrency] = useState<TextValue>();
     const [selectedLanguage, setSelectedLanguage] = useState<TextValue>();
     
@@ -44,62 +44,90 @@ const MarketMenu = () => {
                 "Content-Type": "application/json",
             },
         });
-        const markets: TextValue[] = [
-            {text: "Australia", value: "australia"},
-            {text: "Brazil", value: "brazil"},
-            {text: "Canada", value: "canada"},
-        ]
+        const data = res.data as Market[];
+        const markets: DisplayMarket[] = data.map(market => {
+            const displayMarket: DisplayMarket = {
+                id: market.id,
+                name: market.name,
+                defaultCurrency: market.defaultCurrency,
+                defaultLanguage: market.defaultLanguage,
+                currencies: loadCurrencies(market.currencies),
+                languages: loadLanguages(market.languages)
+            }
+            return displayMarket;
+        });
         setMarkets(markets);
         const currentMarket = localStorage.getItem("market");
+
         if(currentMarket){
-            setSelectedMarket(JSON.parse(currentMarket ?? ""));
+            setSelectedMarket(markets.find(market => market.id === currentMarket));
         }else{
             setSelectedMarket(markets[0]);
-            localStorage.setItem("market", JSON.stringify(markets[0]));
+            localStorage.setItem("market", markets[0].id);
         } 
+        resetSelectedLanguage(markets[0], false);
+        resetSelectedCurrency(markets[0], false);
     }
 
-    const loadCurrencies = () => {
-        const currencies: TextValue[] = [
-            {text: "CAD - $", value: "$"},
-        ]
-        setCurrencies(currencies);
+    const loadCurrencies = (codes: string[]): TextValue[] => {
+        const currencies: TextValue[] = codes.map(code => ({
+            text: Currencies[code].code,
+            value: Currencies[code].symbol_native,
+        }))
+        return currencies;
+    }
+
+    const resetSelectedCurrency = (market: DisplayMarket, takeDefaultValue: boolean = false) => {
         const currentCurrency = localStorage.getItem("currency");
-        if(currentCurrency){
-            setSelectedCurrency(JSON.parse(currentCurrency ?? ""));
+        if(takeDefaultValue || !currentCurrency){
+            setSelectedCurrency(market.currencies.find(currency => currency.text === market.defaultCurrency));
+            localStorage.setItem("currency", market.defaultCurrency); 
         }else{
-            setSelectedCurrency(currencies[0]);
-            localStorage.setItem("currency", JSON.stringify(currencies[0]));
-        } 
+            const currency = market.currencies.find(currency => currency.text === currentCurrency);
+            setSelectedCurrency(currency);
+            if(!currency){
+                localStorage.removeItem("language");
+            }
+        }
     }
 
-    const loadLanguages = () => {
-        const languages: TextValue[] = [
-            {text: "English", value: "en"},
-        ]
-        setLanguages(languages);
+    const loadLanguages = (codes: string[]): TextValue[] => {
+        const languages: TextValue[] = codes.map(code => ({
+            text: Languages[code],
+            value: code
+        }))
+        return languages;
+    }
+
+    const resetSelectedLanguage = (market: DisplayMarket, takeDefaultValue: boolean = false) => {
         const currentLanguage = localStorage.getItem("language");
-        if(currentLanguage){
-            setSelectedLanguage(JSON.parse(currentLanguage ?? ""));
+        if(takeDefaultValue || !currentLanguage){
+            setSelectedLanguage(market.languages.find(language => language.value === market.defaultLanguage));
+            localStorage.setItem("language", market.defaultLanguage);
         }else{
-            setSelectedLanguage(languages[0]);
-            localStorage.setItem("language", JSON.stringify(languages[0]));
-        } 
+            const language = market.languages.find(language => language.value === currentLanguage);
+            setSelectedLanguage(language);
+            if(!language){
+                localStorage.removeItem("language");
+            }
+        }
     }
 
-    const onChangeMarket = (market: TextValue) => {
+    const onChangeMarket = (market: DisplayMarket) => {
         setSelectedMarket(market);
-        localStorage.setItem("market", JSON.stringify(market));
+        resetSelectedLanguage(market, true);
+        resetSelectedCurrency(market, true);
+        localStorage.setItem("market", market.id);
     }
 
     const onChangeCurrency = (currency: TextValue) => {
-        setSelectedMarket(currency);
-        localStorage.setItem("currency", JSON.stringify(currency));
+        setSelectedCurrency(currency);
+        localStorage.setItem("currency", currency.value);
     }
 
     const onChangeLanguage = (language: TextValue) => {
         setSelectedLanguage(language);
-        localStorage.setItem("language", JSON.stringify(language));
+        localStorage.setItem("language", language.value);
     }
 
     useEffect(() => {
@@ -110,11 +138,6 @@ const MarketMenu = () => {
     useEffect(() => {
         loadMarkets();
     }, [])
-
-    useEffect(() => {
-        loadCurrencies();
-        loadLanguages();
-    }, [selectedMarket])
 
     return (
         <div ref={ref}>
@@ -131,15 +154,12 @@ const MarketMenu = () => {
             >
                 <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border-2 border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                     <div className="dark:text-black">
-                        <p className="font-bold text-md bg-slate-200 p-1 pl-2">Market: {selectedMarket?.text}</p>
+                        <p className="font-bold text-md bg-slate-200 p-1 pl-2">Market: {selectedMarket?.name}</p>
                         <div className="overflow-auto max-h-52 p-1 pl-2">
                             {
-                                markets.map((market) => (<div key={market.value} className="flex justify-between p-1" onClick={() => onChangeMarket(market)}>
-                                    <div className="flex space-x-2">
-                                        <img src={MarketIcons[market.value]} className="w-4 h-4"/>
-                                        <span>{market.text}</span>
-                                    </div>
-                                    {selectedMarket?.value === market.value && <Check className="w-5 h-5"/>}
+                                markets.map((market) => (<div key={market.id} className="flex justify-between hover:bg-slate-50 p-1" onClick={() => onChangeMarket(market)}>
+                                    <span className={selectedMarket?.id === market.id ? "font-bold text-indigo-600" : ""}>{market.name}</span>
+                                    {selectedMarket?.id === market.id && <Check className="w-5 h-5 text-indigo-600"/>}
                                 </div>))
                             }
                         </div>
@@ -148,11 +168,9 @@ const MarketMenu = () => {
                         <p className="font-bold text-md bg-slate-200 p-1 pl-2">Currency: {selectedCurrency?.value}</p>
                         <div className="overflow-auto max-h-52 p-1">
                             {
-                                currencies.map((currency) => (<div key={currency.value} className="flex justify-between p-1" onClick={() => onChangeCurrency(currency)}>
-                                    <div className="flex space-x-2">
-                                        <span>{currency.text}</span>
-                                    </div>
-                                    {selectedCurrency?.value === currency.value && <Check className="w-5 h-5"/>}
+                                selectedMarket?.currencies.map((currency) => (<div key={currency.text} className="flex justify-between hover:bg-slate-50 p-1" onClick={() => onChangeCurrency(currency)}>
+                                    <span className={selectedCurrency?.text === currency.text ? "font-bold text-indigo-600" : ""}>{currency.text}</span>
+                                    {selectedCurrency?.text === currency.text && <Check className="w-5 h-5 text-indigo-600"/>}
                                 </div>))
                             }
                         </div>
@@ -161,11 +179,9 @@ const MarketMenu = () => {
                         <p className="font-bold text-md bg-slate-200 p-1 pl-2">Language: {selectedLanguage?.value}</p>
                         <div className="overflow-auto max-h-52 p-1">
                             {
-                                languages.map((language) => (<div key={language.value} className="flex justify-between p-1" onClick={() => onChangeLanguage(language)}>
-                                    <div className="flex space-x-2">
-                                        <span>{language.text}</span>
-                                    </div>
-                                    {selectedLanguage?.value === language.value && <Check className="w-5 h-5"/>}
+                                selectedMarket?.languages.map((language) => (<div key={language.text} className="flex justify-between hover:bg-slate-50 p-1" onClick={() => onChangeLanguage(language)}>
+                                    <span className={selectedLanguage?.text === language.text ? "font-bold text-indigo-600" : ""}>{language.text}</span>
+                                    {selectedLanguage?.text === language.text && <Check className="w-5 h-5 text-indigo-600"/>}
                                 </div>))
                             }
                         </div>

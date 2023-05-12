@@ -41,8 +41,6 @@ const Setting = () => {
             email: setting.email,
             firstName: setting.firstName,
             lastName: setting.lastName,
-            preferredCurrency: setting.preferredCurrency,
-            preferredLanguage: setting.preferredLanguage
         });
     }
 
@@ -168,44 +166,6 @@ const Setting = () => {
                                     {!!errors.email?.message && <p className="text-red-500">
                                         {errors.email?.message ?? ""}
                                     </p>}
-                                </div>
-                            </div>
-                            <div>
-                                <label className="form-label font-medium">Language </label>
-                                <div className="form-icon relative mt-2">
-                                    <Controller
-                                        name={"preferredLanguage"}
-                                        control={control}
-                                        render={({ field: { value } }) => (
-                                            <Select 
-                                                id={"preferredLanguage"} 
-                                                options={[{text: "English", value: "en"}, {text: "Sweden", value: "swe"}]} 
-                                                value={value} 
-                                                onChange={(value: string) => {
-                                                    setValue("preferredLanguage", value)
-                                                }} 
-                                            />
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="form-label font-medium">Currency </label>
-                                <div className="form-icon relative mt-2">
-                                    <Controller
-                                        name={"preferredCurrency"}
-                                        control={control}
-                                        render={({ field: { value } }) => (
-                                            <Select 
-                                                id={"preferredCurrency"} 
-                                                options={[{text: "USD", value: "USD"}, {text: "MXN", value: "MXN"}]} 
-                                                value={value}
-                                                onChange={(value: string) => {
-                                                    setValue("preferredCurrency", value)
-                                                }} 
-                                            />
-                                        )}
-                                    />
                                 </div>
                             </div>
                         </div>

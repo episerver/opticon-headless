@@ -33,6 +33,9 @@ const UserMenu: FC<UserMenuProps> = (props) => {
     }
 
     const signOut = () => {
+        localStorage.removeItem("market");
+        localStorage.removeItem("currency");
+        localStorage.removeItem("language");
         AuthService.signOut();
     }
 
@@ -51,16 +54,16 @@ const UserMenu: FC<UserMenuProps> = (props) => {
             </button>
             <div id="user-menu" className="opacity-0 hidden dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95" onClick={toggleMenu}>
                 <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                    <div className="px-4 py-3">         
+                    <div className="px-4 py-3 hover:bg-slate-50">         
                         <p className="text-sm leading-5 text-gray-700">Signed in as <span className="font-bold">{props.username}</span></p>
                     </div>
-                    <div className="py-1">
+                    <div className="hover:bg-slate-50 py-1">
                         <Link to="/setting" className="flex items-center pl-2">
                             <Unicons.UilSetting className="h-5 w-5 text-gray-800"/>
                             <p className="text-gray-700 flex justify-between w-full px-2 py-2 text-sm leading-5 text-left" role="menuitem">Setting</p>
                         </Link>
                     </div>
-                    <div className="py-1">
+                    <div className="hover:bg-slate-50 py-1">
                         <div className="flex items-center pl-2" onClick={signOut}>
                             <Unicons.UilPower className="h-5 w-5 text-gray-800"/>
                             <p className="text-gray-700 flex justify-between w-full px-2 py-2 text-sm leading-5 text-left" role="menuitem">Sign out</p>
