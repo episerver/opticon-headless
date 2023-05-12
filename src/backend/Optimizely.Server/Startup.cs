@@ -110,7 +110,7 @@ namespace Optimizely.Server
                 {
                     ClientId = "frontend",
                     Scopes = { "openid", "offline_access", "profile", "email", "roles", "anonymous_id", ContentDeliveryApiOptionsDefaults.Scope },
-                    PostLogoutRedirectUris = { new Uri(_frontendUri, "/signin"), },
+                    PostLogoutRedirectUris = { new Uri(_frontendUri, "/"), },
                     RedirectUris =
                     {
                         new Uri(_frontendUri, "/signin-callback"),

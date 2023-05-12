@@ -28,7 +28,7 @@ const Navbar = () => {
         contentLoader.getChildren("3", { branch: "en" }).then((result) => {
             if (result) {
                 const menuFolder = (result as ContentData[]).find((obj) => {
-                    return obj.name === "Menu";
+                    return obj.name === "NavBar";
                 });
                 if (menuFolder) {
                     contentLoader.getChildren(menuFolder.contentLink.guidValue, { branch: "en" }).then((items) => {

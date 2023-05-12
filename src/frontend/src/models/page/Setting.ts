@@ -3,6 +3,4 @@ export default interface SettingModal {
     firstName?: string;
     lastName?: string;
     email?: string;
-    preferredLanguage?: string;
-    preferredCurrency?: string;
 }

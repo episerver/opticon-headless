@@ -8,7 +8,7 @@ const CartDetail = () => {
         <div className="pb-16 pt-20 min-h-[40rem]">
              <div className="container lg:mt-16 mt-8">
                 {!isEmpty && <>
-                    <p className="lg:w-2/3 text-2xl font-bold font-medium text-gray-900 dark:text-white border-b-[1px] border-gray-200 pb-10">Cart</p>
+                    <p className="lg:w-2/3 text-2xl font-medium text-gray-900 dark:text-white border-b-[1px] border-gray-200 pb-10">Cart</p>
                     <div className="lg:grid lg:grid-cols-3 lg:gap-12">
                         <ul className="lg:col-span-2 divide-y divide-gray-200">
                             <li className="flex py-8">
@@ -38,7 +38,7 @@ const CartDetail = () => {
                                     <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." className="h-full w-full object-cover object-center"/>
                                 </div>
                                 <div className="ml-4 flex flex-1 flex-col relative">
-                                    <div className="grid grid-cols-6 flex justify-between text-base font-medium text-gray-900 dark:text-white">
+                                    <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
                                         <h3 className="col-span-4">
                                             <Link to="#">Medium Stuff Satchel</Link>
                                         </h3>
@@ -57,7 +57,7 @@ const CartDetail = () => {
                             </li>
                         </ul>
                         <div className="lg:col-span-1 p-7 bg-slate-100 dark:bg-slate-500 rounded-lg h-fit">
-                            <p className="text-xl font-bold font-medium text-gray-900 dark:text-white">Order Summary</p>
+                            <p className="text-xl font-medium text-gray-900 dark:text-white">Order Summary</p>
                             <ul className="divide-y divide-gray-200 mt-6">
                                 <li className="w-full py-3 h-12">
                                     <p className="float-left">Subtotal</p>
