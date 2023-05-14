@@ -84,3 +84,4 @@ modules/
 /src/backend/Optimizely.Server/App_Data/
 /src/frontend/dist/
 *.log
+/src/frontend/public
