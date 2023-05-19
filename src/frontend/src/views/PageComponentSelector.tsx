@@ -1,9 +1,10 @@
 ﻿import { ContentData, ResolvedContent, ResolvedContentStatus } from "@episerver/content-delivery";
 import { getContentResolver } from "../DefaultContext";
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { Navigate, useLoaderData } from "react-router-dom";
 import Loading from "@components/layout/Loading";
 import AuthService from "../AuthService";
+import loadable from "@loadable/component";
 
 export const PageDataLoader = async ({ request }: any): Promise<ResolvedContent<ContentData>> => {
     const url = new URL(request.url);
@@ -15,26 +16,24 @@ export const PageDataLoader = async ({ request }: any): Promise<ResolvedContent<
 const PageComponentSelector = () => {
     const resolveContent = useLoaderData() as ResolvedContent<ContentData>;
     if (!resolveContent.content) {
-        return <Navigate to="/not-found"/>;
+        return <Navigate to="/not-found" />;
     }
 
     switch (resolveContent.status) {
-        case ResolvedContentStatus.NotFound: 
-            return <Navigate to="/not-found"/>;
+        case ResolvedContentStatus.NotFound:
+            return <Navigate to="/not-found" />;
         case ResolvedContentStatus.Unauthorized:
             AuthService.signIn();
             return <></>;
-        case ResolvedContentStatus.AccessDenied: 
-            return <Navigate to="/access-denied"/>;
-      }
+        case ResolvedContentStatus.AccessDenied:
+            return <Navigate to="/access-denied" />;
+    }
 
-    const View = lazy(() => import(`@components/contents/pages/${resolveContent.content?.contentType.at(-1)}`));
-    return (
-        <Suspense fallback={<Loading />}>
-            <View {...resolveContent.content} />
-        </Suspense>
-    );
+    const View = loadable(() => import(`@components/contents/pages/${resolveContent.content?.contentType.at(-1)}`), {
+        fallback: <Loading />,
+    });
+
+    return <View {...resolveContent.content} />;
 };
 
 export default PageComponentSelector;
-

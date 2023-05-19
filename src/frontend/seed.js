@@ -209,7 +209,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Gets a token.
          */
         {
-            console.log("=== Gets a token. ===");
+            console.log("=== Getting a token. ===");
             let tokenResponse = await getToken();
             if (!tokenResponse) {
                 throw new Error("Error getting token, please make sure the backend site is available.");
@@ -222,7 +222,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates content folders.
          */
         {
-            console.log("=== Generates content folders. ===");
+            console.log("=== Generating content folders. ===");
             let folders = JSON.parse(fs.readFileSync("./import/content-folders/content-folders.json", "utf8"));
             for (let i = 0; i < folders.length; i++) {
                 const folder = folders[i];
@@ -234,7 +234,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates a setting block for global settings.
          */
         {
-            console.log("=== Generates a setting block for global settings. ===");
+            console.log("=== Generating a setting block for global settings. ===");
             let globalSettings = JSON.parse(fs.readFileSync("./import/blocks/setting-block.json", "utf8"));
             await publishContent(globalSettings);
         }
@@ -243,7 +243,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates a home page.
          */
         {
-            console.log("=== Generates a home page. ===");
+            console.log("=== Generating a home page. ===");
             let homePages = JSON.parse(fs.readFileSync("./import/pages/homes.json", "utf8"));
             for (let i = 0; i < homePages.length; i++) {
                 const homePage = homePages[i];
@@ -255,6 +255,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Creates a new site.
          */
         {
+            console.log("=== Creating a new site. ===");
             site = await axios
                 .request({
                     url: "/api/episerver/v3.0/site",
@@ -297,7 +298,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Adds logos.
          */
         {
-            console.log("=== Adds logos. ===");
+            console.log("=== Adding logos. ===");
             let logos = JSON.parse(fs.readFileSync("./import/images/images-logos.json", "utf8"));
             for (let i = 0; i < logos.length; i++) {
                 const logo = logos[i];
@@ -325,7 +326,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates navbar item blocks.
          */
         {
-            console.log("=== Generates navbar item blocks. ===");
+            console.log("=== Generating navbar item blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/navbar-item-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -336,7 +337,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates teaser blocks.
          */
         {
-            console.log("=== Generates teaser blocks. ===");
+            console.log("=== Generating teaser blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/teaser-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -364,7 +365,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates search blocks.
          */
         {
-            console.log("=== Generates search blocks. ===");
+            console.log("=== Generating search blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/search-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -375,7 +376,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates rich content blocks.
          */
         {
-            console.log("=== Generates rich content blocks. ===");
+            console.log("=== Generating rich content blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/rich-content-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -406,7 +407,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates tags.
          */
         {
-            console.log("=== Generates tags. ===");
+            console.log("=== Generating tags. ===");
             let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
             for (let i = 0; i < tags.length; i++) {
                 await publishContent(tags[i]);
@@ -446,7 +447,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates blog list page blocks.
          */
         {
-            console.log("=== Generates page list blocks. ===");
+            console.log("=== Generating page list blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/page-list-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 const block = blocks[i];
@@ -463,7 +464,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates destinations.
          */
         {
-            console.log("=== Generates destinations. ===");
+            console.log("=== Generating destinations. ===");
             let destinations = JSON.parse(fs.readFileSync("./import/pages/destinations.json", "utf8"));
             for (let i = 0; i < destinations.length; i++) {
                 await publishContent(destinations[i]);
@@ -491,7 +492,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates text blocks.
          */
         {
-            console.log("=== Generates text blocks. ===");
+            console.log("=== Generating text blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/text-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -502,7 +503,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          * Generates hero blocks.
          */
         {
-            console.log("=== Generates hero blocks. ===");
+            console.log("=== Generating hero blocks. ===");
             let blocks = JSON.parse(fs.readFileSync("./import/blocks/hero-blocks.json", "utf8"));
             for (let i = 0; i < blocks.length; i++) {
                 await publishContent(blocks[i]);
@@ -531,18 +532,22 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
             }
 
             for (let i = 0; i < blocks.length; i++) {
-                await patchPropertyContentReferences(blocks[i], {
-                    backgroundVideo: blocks[i].backgroundVideo,
-                });
+                if (blocks[i].backgroundVideo) {
+                    await patchPropertyContentReferences(blocks[i], {
+                        backgroundVideo: blocks[i].backgroundVideo,
+                    });
+                }
 
-                await patchPropertyContentReferences(blocks[i], {
-                    backgroundImage: blocks[i].backgroundImage,
-                });
+                if (blocks[i].backgroundImage) {
+                    await patchPropertyContentReferences(blocks[i], {
+                        backgroundImage: blocks[i].backgroundImage,
+                    });
+                }
             }
         }
 
         /**
-         * Add blocks to the home page.
+         * Adds blocks to the home page.
          */
         {
             console.log("=== Adding blocks to the home page. ===");
@@ -557,6 +562,12 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                     { contentLink: { guidValue: "793392ad-61b5-4fc2-ada0-b75ea30081f5" } }, // Page List Block: Blogs
                 ],
             });
+        }
+        /**
+         * Adds a hero block to the destination list page
+         */
+        {
+            console.log("=== Adding a hero block to the destination list page. ===");
         }
     } catch (error) {
         console.error(error);

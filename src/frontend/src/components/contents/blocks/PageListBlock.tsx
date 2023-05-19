@@ -27,7 +27,7 @@ const PageListBlock: React.FC<PageListBlockProps> = (props): JSX.Element => {
         const contentLoader = getContentLoader();
         let promises = [] as any;
 
-        props.roots?.expandedValue.forEach((content) => {
+        props.roots?.expandedValue?.forEach((content) => {
             promises.push(contentLoader.getChildren(content.contentLink.guidValue, { branch: "en" }));
         });
 

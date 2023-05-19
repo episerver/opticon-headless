@@ -6,15 +6,15 @@ const useError = () => {
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
-      if (hasError) {
-        setHasError(false);
-      }
+        if (hasError) {
+            setHasError(false);
+        }
     }, [location.key]);
 
     return {
         hasError,
-        setHasError
-    }
-}
+        setHasError,
+    };
+};
 
 export default useError;

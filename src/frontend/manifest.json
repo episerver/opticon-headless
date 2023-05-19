@@ -773,7 +773,7 @@
             "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
-              "displayName": "HeightHeight",
+              "displayName": "Height",
               "groupName": "Information",
               "sortOrder": 11,
               "helpText": "Determine the height of hero block based on percentage (0 to 100)."
@@ -1208,29 +1208,6 @@
         },
         "properties": [
           {
-            "name": "MetaTitle",
-            "dataType": "PropertyLongString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Title",
-              "groupName": "Information",
-              "sortOrder": 10
-            }
-          },
-          {
-            "name": "PageImage",
-            "dataType": "PropertyContentReference",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Image",
-              "groupName": "Information",
-              "sortOrder": 20,
-              "hint": "image"
-            }
-          },
-          {
             "name": "MainContentArea",
             "dataType": "PropertyContentArea",
             "branchSpecific": true,
@@ -1238,29 +1215,7 @@
               "visibility": "default",
               "displayName": "Main content area",
               "groupName": "Information",
-              "sortOrder": 30
-            }
-          },
-          {
-            "name": "MainBody",
-            "dataType": "PropertyXhtmlString",
-            "branchSpecific": true,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Main body",
-              "groupName": "Information",
-              "sortOrder": 40
-            }
-          },
-          {
-            "name": "FilterArea",
-            "dataType": "PropertyContentArea",
-            "branchSpecific": false,
-            "editSettings": {
-              "visibility": "default",
-              "displayName": "Filter area",
-              "groupName": "Information",
-              "sortOrder": 50
+              "sortOrder": 10
             }
           }
         ]
@@ -1279,7 +1234,7 @@
           {
             "name": "MainIntro",
             "dataType": "PropertyLongString",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Intro text",
@@ -1291,7 +1246,7 @@
           {
             "name": "Continent",
             "dataType": "PropertyString",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Continent",
@@ -1302,7 +1257,7 @@
           {
             "name": "Country",
             "dataType": "PropertyString",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Country",
@@ -1313,7 +1268,7 @@
           {
             "name": "Latitude",
             "dataType": "PropertyFloatNumber",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Latitude",
@@ -1324,7 +1279,7 @@
           {
             "name": "Longitude",
             "dataType": "PropertyFloatNumber",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Longitude",
@@ -1335,7 +1290,7 @@
           {
             "name": "AvgTemp",
             "dataType": "PropertyFloatNumber",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Average temperature",
@@ -1346,7 +1301,7 @@
           {
             "name": "AirportInitials",
             "dataType": "PropertyString",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Airport initials",
@@ -1357,7 +1312,7 @@
           {
             "name": "YearlyPassengers",
             "dataType": "PropertyNumber",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Yearly passengers",
@@ -1402,7 +1357,7 @@
           {
             "name": "New",
             "dataType": "PropertyBoolean",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "New destination",
@@ -1413,7 +1368,7 @@
           {
             "name": "Promoted",
             "dataType": "PropertyBoolean",
-            "branchSpecific": false,
+            "branchSpecific": true,
             "editSettings": {
               "visibility": "default",
               "displayName": "Promoted destination",
