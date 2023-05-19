@@ -1,6 +1,7 @@
-﻿import React, { lazy, Suspense } from "react";
+﻿import React from "react";
 import Loading from "@components/layout/Loading";
 import { ContentData } from "@episerver/content-delivery";
+import loadable from "@loadable/component";
 
 interface PropertyContentReferenceProps {
     value?: ContentData;
@@ -12,34 +13,40 @@ const PropertyContentReference: React.FC<PropertyContentReferenceProps> = ({ val
         return <></>;
     }
 
-    if (value.contentType[0] === "Video") {
-        return (
-            <video className={className} autoPlay loop muted>
-                <source src={value.contentLink.url} type="video/mp4" />
-            </video>
-        );
-    } else if (value.contentType[0] === "Image") {
-        return <img src={value.contentLink.url} className={className} />;
-    } else if (value.contentType[0] === "Page") {
-        const View = lazy(() => import(`../pages/${value.contentType.at(-1)}`));
-        return (
-            <div className={className}>
-                <Suspense fallback={<Loading />}>
-                    <View value={value} />
-                </Suspense>
-            </div>
-        );
-    } else if (value.contentType[0] === "Block") {
-        const View = lazy(() => import(`../blocks/${value.contentType.at(-1)}`));
-        return (
-            <div className={className}>
-                <Suspense fallback={<Loading />}>
-                    <View value={value} />
-                </Suspense>
-            </div>
-        );
+    let View: any;
+    switch (value.contentType[0]) {
+        case "Video":
+        case "Image":
+            View = loadable(() => import(`@components/contents/media/${value.contentType.at(-1)}`), {
+                fallback: <Loading />,
+            });
+            return (
+                <div className={className}>
+                    <View {...value} />
+                </div>
+            );
+
+        case "Page":
+            View = loadable(() => import(`@components/contents/pages/${value.contentType.at(-1)}`), {
+                fallback: <Loading />,
+            });
+            return (
+                <div className={className}>
+                    <View {...value} />
+                </div>
+            );
+        case "Block":
+            View = loadable(() => import(`@components/contents/blocks/${value.contentType.at(-1)}`), {
+                fallback: <Loading />,
+            });
+            return (
+                <div className={className}>
+                    <View {...value} />
+                </div>
+            );
+        default:
+            return <></>;
     }
-    return <></>;
 };
 
 export default PropertyContentReference;

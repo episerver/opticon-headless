@@ -1,15 +1,15 @@
-﻿import { ContentData } from "@episerver/content-delivery";
-import React, { FC } from "react";
+﻿import React from "react";
+import { ContentData } from "@episerver/content-delivery";
+import { ContentArea } from "@models/property/ContentArea";
 import PropertyContentArea from "@components/contents/properties/PropertyContentArea";
 import PropertyXhtmlString from "@components/contents/properties/PropertyXhtmlString";
-import { ContentArea } from "@models/property/ContentArea";
 
-interface StandardProps extends ContentData {
+interface StandardPageProps extends ContentData {
     mainBody?: string;
     mainContentArea: ContentArea;
 }
 
-const StandardPage: FC<StandardProps> = (props): JSX.Element => {
+const StandardPage: React.FC<StandardPageProps> = (props): JSX.Element => {
     return (
         <>
             <PropertyContentArea value={props.mainContentArea} />

@@ -1,6 +1,7 @@
-﻿import React, { lazy, Suspense } from "react";
+﻿import React from "react";
 import Loading from "@components/layout/Loading";
 import { ContentArea } from "@models/property/ContentArea";
+import loadable from "@loadable/component";
 
 interface PropertyContentAreaProps {
     value: ContentArea;
@@ -15,39 +16,42 @@ const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX
         <>
             {value?.map((contentAreaItem, index) => {
                 const content = contentAreaItem.contentLink.expanded;
+                let View: any;
                 if (content) {
                     const baseType = content.contentType.at(0);
-                    if (baseType === "Page") {
-                        const View = lazy(() => import(`@components/contents/pages/${content.contentType.at(-1)}`));
-                        return (
-                            <Suspense key={index} fallback={<Loading />}>
-                                <View {...content} />
-                            </Suspense>
-                        );
-                    } else if (baseType === "Video") {
-                        const View = lazy(() => import(`@components/contents/media/${content.contentType.at(-1)}`));
-                        return (
-                            <Suspense key={index} fallback={<Loading />}>
-                                <View {...content} />
-                            </Suspense>
-                        );
-                    } else if (baseType === "Image") {
-                        const View = lazy(() => import(`@components/contents/media/${content.contentType.at(-1)}`));
-                        return (
-                            <Suspense key={index} fallback={<Loading />}>
-                                <View {...content} />
-                            </Suspense>
-                        );
-                    } else if (baseType === "Block") {
-                        const View = lazy(() => import(`@components/contents/blocks/${content.contentType.at(-1)}`));
-                        return (
-                            <Suspense key={index} fallback={<Loading />}>
-                                <View {...content} />
-                            </Suspense>
-                        );
+                    switch (baseType) {
+                        case "Page":
+                            View = loadable(() => import(`@components/contents/pages/${content.contentType.at(-1)}`), {
+                                fallback: <Loading />,
+                            });
+                            return (
+                                <div key={index}>
+                                    <View {...content} />
+                                </div>
+                            );
+                        case "Video":
+                        case "Image":
+                            View = loadable(() => import(`@components/contents/media/${content.contentType.at(-1)}`), {
+                                fallback: <Loading />,
+                            });
+                            return (
+                                <div key={index}>
+                                    <View {...content} />
+                                </div>
+                            );
+                        case "Block":
+                            View = loadable(() => import(`@components/contents/blocks/${content.contentType.at(-1)}`), {
+                                fallback: <Loading />,
+                            });
+                            return (
+                                <div key={index}>
+                                    <View {...content} />
+                                </div>
+                            );
+                        default:
+                            return <></>;
                     }
                 }
-                return <></>;
             })}
         </>
     );

@@ -159,23 +159,9 @@ const Footer: React.FC = () => {
                             <p className="mb-0">{layoutSettings?.copyright}</p>
                         </div>
 
-                        <ul className="list-none ltr:md:text-right rtl:md:text-left text-center mt-6 md:mt-0">
-                            <li className="inline">
-                                <img src={AmericanExpress} className="max-h-6 inline" title="American Express" alt="" />
-                            </li>
-                            <li className="inline ml-1">
-                                <img src={Discovery} className="max-h-6 inline" title="Discover" />
-                            </li>
-                            <li className="inline ml-1">
-                                <img src={MasterCard} className="max-h-6 inline" title="Master Card" />
-                            </li>
-                            <li className="inline ml-1">
-                                <img src={PayPal} className="max-h-6 inline" title="Paypal" />
-                            </li>
-                            <li className="inline ml-1">
-                                <img src={Visa} className="max-h-6 inline" title="Visa" />
-                            </li>
-                        </ul>
+                        <div className="ltr:md:text-right rtl:md:text-left text-center mt-6 md:mt-0">
+                            © {new Date().getFullYear()} Optimizely, Inc. All Rights Reserved.
+                        </div>
                     </div>
                 </div>
             </div>
