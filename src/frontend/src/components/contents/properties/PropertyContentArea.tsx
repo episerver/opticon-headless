@@ -7,15 +7,38 @@ interface PropertyContentAreaProps {
     value: ContentArea;
 }
 
+const mappingDisplayOptionToTailwindCssClass = (option: string) => {
+    switch (option) {
+        case "onesixth":
+            return "col-span-2";
+        case "onefourth":
+            return "col-span-3";
+        case "onethird":
+            return "col-span-4";
+        case "half":
+            return "col-span-6";
+        case "twothird":
+            return "col-span-8";
+        case "threefourth":
+            return "col-span-9";
+        case "fivesixth":
+            return "col-span-10";
+        case "full":
+        default:
+            return "col-span-12";
+    }
+};
+
 const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX.Element => {
     if (value === null) {
         return <></>;
     }
 
     return (
-        <>
+        <div className="grid grid-cols-12">
             {value?.map((contentAreaItem, index) => {
                 const content = contentAreaItem.contentLink.expanded;
+                const displayOptionClass = mappingDisplayOptionToTailwindCssClass(contentAreaItem.displayOption);
                 let View: any;
                 if (content) {
                     const baseType = content.contentType.at(0);
@@ -25,7 +48,7 @@ const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX
                                 fallback: <Loading />,
                             });
                             return (
-                                <div key={index}>
+                                <div key={index} className={displayOptionClass}>
                                     <View {...content} />
                                 </div>
                             );
@@ -35,7 +58,7 @@ const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX
                                 fallback: <Loading />,
                             });
                             return (
-                                <div key={index}>
+                                <div key={index} className={displayOptionClass}>
                                     <View {...content} />
                                 </div>
                             );
@@ -44,7 +67,7 @@ const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX
                                 fallback: <Loading />,
                             });
                             return (
-                                <div key={index}>
+                                <div key={index} className={displayOptionClass}>
                                     <View {...content} />
                                 </div>
                             );
@@ -53,7 +76,7 @@ const PropertyContentArea: React.FC<PropertyContentAreaProps> = ({ value }): JSX
                     }
                 }
             })}
-        </>
+        </div>
     );
 };
 

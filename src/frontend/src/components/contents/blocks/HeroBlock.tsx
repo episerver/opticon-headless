@@ -19,6 +19,7 @@ const HeroBlock: React.FC<HeroBlockProps | null> = (props): JSX.Element => {
     if (!props) {
         return <></>;
     }
+
     return (
         <div className={props.fullWidth.value ? "" : "container"}>
             <div className="pb-[50%] relative truncate" style={{ paddingBottom: `${props.height.value}%` }}>
