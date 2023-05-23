@@ -563,11 +563,30 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                 ],
             });
         }
+
         /**
          * Adds a hero block to the destination list page
          */
         {
             console.log("=== Adding a hero block to the destination list page. ===");
+            const destinations = JSON.parse(fs.readFileSync("./import/pages/destinations.json", "utf8"));
+            const destinationListPage = destinations[0];
+            await patchPropertyContentReferences(destinationListPage, {
+                mainContentArea: [
+                    { contentLink: { guidValue: "4bd1b928-fab3-4a93-9e84-a7f47f2eb023" } }, // Hero Block: Destinations
+                ],
+            });
+        }
+
+        /**
+         * Generates tag pages.
+         */
+        {
+            console.log("=== Generating tag pages. ===");
+            let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
+            for (let i = 0; i < tags.length; i++) {
+                await publishContent(tags[i]);
+            }
         }
     } catch (error) {
         console.error(error);
