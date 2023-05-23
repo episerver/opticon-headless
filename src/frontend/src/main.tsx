@@ -15,6 +15,9 @@ import OrderHistory from "@views/OrderHistory";
 import OrderSummaries from "@views/OrderSummaries";
 import RequireAuth from "@components/auth/RequireAuth";
 import App from "./App";
+import DataProvider from "./store/DataProvider";
+import Notify from "@components/Notify";
+import Modal from "@components/common/Modal";
 import "./main.css";
 
 const router = createBrowserRouter(
@@ -41,6 +44,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root") ?? document.createElement("div")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <DataProvider>
+            <RouterProvider router={router} />
+            <Notify />
+        </DataProvider>
     </React.StrictMode>
 );

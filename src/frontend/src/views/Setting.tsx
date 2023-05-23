@@ -1,13 +1,10 @@
 ;import SettingModal from "@models/page/Setting";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Mail, User, UserCheck } from "react-feather";
 import { Controller, useForm } from "react-hook-form";
 import * as Unicons from '@iconscout/react-unicons';
-import Config from "../config.json";
-import authService from "../AuthService";
 import AuthService from "../AuthService";
-import Select from "@components/common/Select";
+import { getData, putData } from "../utils/FetchData";
 
 const Setting = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -15,7 +12,6 @@ const Setting = () => {
     const {
         control,
         handleSubmit,
-        setValue,
         reset,
         formState: { errors },
     } = useForm<SettingModal>({
@@ -24,16 +20,7 @@ const Setting = () => {
     });
 
     const loadSetting = async () => {
-        const accessToken = await authService.getAccessToken();
-        const res = await axios({
-            url: "/api/episerver/v3.0/me",
-            method: "get",
-            baseURL: Config.BASE_URL,
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
-            },
-        });
+        const res = await getData("api/episerver/v3.0/me");
         const setting = res.data as SettingModal;
         const user = await AuthService.getUser();
         reset({
@@ -48,18 +35,7 @@ const Setting = () => {
         try{
             setLoading(true);
             const {username, ...data} = form;
-            const accessToken = await authService.getAccessToken();
-            await axios({
-                url: "/api/episerver/v3.0/me",
-                method: "put",
-                baseURL: Config.BASE_URL,
-                withCredentials: false,
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${accessToken}`,
-                },
-                data: data,
-            });
+            await putData("api/episerver/v3.0/me", data);
             setLoading(false);
         }catch(err: any){
             setLoading(false);

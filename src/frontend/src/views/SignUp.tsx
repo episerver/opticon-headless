@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import backgroundImage from "@assets/images/cta.jpg";
-import { Link } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 import SignUpModel from "@models/page/SignUp";
-import axios from "axios";
-import qs from "qs";
 import * as Unicons from '@iconscout/react-unicons';
-import Config from "../config.json";
 import AuthService from "../AuthService";
+import { postData } from "../utils/FetchData";
 
 const SignUp = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -32,38 +29,12 @@ const SignUp = () => {
     const values = watch();
 
     const onSubmit = async (form: SignUpModel) => {
-        // Get anonymous token for signing up
         setLoading(true);
         try{
-            let res = await axios({
-                url: "/api/episerver/connect/token/anonymous",
-                method: "post",
-                baseURL: Config.BASE_URL,
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                data: qs.stringify({
-                    grant_type: "anonymous",
-                    client_id: "frontend",
-                    scope: "anonymous_id"
-                }),
-            });
-    
-            if(res.status === 200){ 
-                const {confirmPassword, ...data} = form;
-                res = await axios({
-                    url: "/api/episerver/v3.0/me/signup",
-                    method: "post",
-                    baseURL: Config.BASE_URL,
-                    headers: {
-                        Authorization: `Bearer ${res.data.access_token}`,
-                        "Content-Type": "application/json",
-                    },
-                    data: data,
-                });
-                if(res.status === 201){
-                    AuthService.signIn();
-                }
+            const {confirmPassword, ...data} = form;
+            const res = await postData("/api/episerver/v3.0/me/signup", data);
+            if(res.status === 201){
+                AuthService.signIn();
             }
             setLoading(false);
         }catch(err: any){
