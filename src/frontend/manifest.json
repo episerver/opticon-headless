@@ -1463,19 +1463,6 @@
         ]
       },
       {
-        "id": "d2ea7f1b-d69a-48c5-99f9-963674880d43",
-        "name": "TagPage",
-        "baseType": "Page",
-        "version": "1.0.0.0",
-        "editSettings": {
-          "displayName": "Tag Page",
-          "description": "Used to define a Tag.",
-          "available": true,
-          "sortOrder": 720
-        },
-        "properties": []
-      },
-      {
         "id": "f04ab423-53a8-4ef0-94db-057422fe74a9",
         "name": "RegisterPage",
         "baseType": "Page",

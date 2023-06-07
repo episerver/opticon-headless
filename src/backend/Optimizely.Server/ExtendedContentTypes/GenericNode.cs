@@ -11,41 +11,18 @@ namespace Optimizely.Server.ExtendedContentTypes;
 public class GenericNode : NodeContent
 {
     [CultureSpecific]
-    [Display(Name = "Long name", GroupName = SystemTabNames.Content, Order = 5)]
-    [BackingType(typeof(PropertyString))]
+    [Display(Name = "Long Name", GroupName = SystemTabNames.Content, Order = 5)]
     public virtual string LongName { get; set; }
 
     [CultureSpecific]
-    [Display(Name = "Teaser", GroupName = SystemTabNames.Content, Order = 10)]
-    public virtual string Teaser { get; set; }
-
-    [Searchable]
-    [CultureSpecific]
-    [Tokenize]
-    [IncludeInDefaultSearch]
-    [Display(Name = "Description", GroupName = SystemTabNames.Content, Order = 15)]
+    [Display(Name = "Description", GroupName = SystemTabNames.Content, Order = 10)]
     public virtual XhtmlString Description { get; set; }
 
     [CultureSpecific]
     [Display(
        Name = "Featured products",
        GroupName = SystemTabNames.Content,
-       Order = 4)]
+       Order = 15)]
     [AllowedTypes(AllowedTypes = new[] { typeof(ProductContent), typeof(NodeContent), typeof(PackageContent), typeof(BundleContent) })]
     public virtual ContentArea FeaturedProducts { get; set; }
-
-    [CultureSpecific]
-    [Display(
-        Name = "Top content area",
-        Description = "",
-        GroupName = SystemTabNames.Content,
-        Order = 20)]
-    public virtual ContentArea TopContentArea { get; set; }
-
-    [Display(Name = "Partial page size", Order = 25)]
-    public virtual int PartialPageSize { get; set; }
-
-    [CultureSpecific]
-    [Display(Name = "Show recommendations", Order = 30)]
-    public virtual bool ShowRecommendations { get; set; }
 }

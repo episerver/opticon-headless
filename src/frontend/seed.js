@@ -577,17 +577,6 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                 ],
             });
         }
-
-        /**
-         * Generates tag pages.
-         */
-        {
-            console.log("=== Generating tag pages. ===");
-            let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
-            for (let i = 0; i < tags.length; i++) {
-                await publishContent(tags[i]);
-            }
-        }
     } catch (error) {
         console.error(error);
     }
