@@ -4,4 +4,5 @@ export default interface Product extends ContentData {
     code: string;
     price: number;
     displayName: string;
+    assets?: string[];
 }

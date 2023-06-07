@@ -17,7 +17,6 @@ import RequireAuth from "@components/auth/RequireAuth";
 import App from "./App";
 import DataProvider from "./store/DataProvider";
 import Notify from "@components/Notify";
-import Modal from "@components/common/Modal";
 import "./main.css";
 
 const router = createBrowserRouter(

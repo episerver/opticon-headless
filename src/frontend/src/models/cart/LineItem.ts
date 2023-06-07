@@ -1,5 +1,5 @@
 export default interface LineItem {
-    id: string;
+    id?: string;
     contentId: string;
     code: string;
     placedPrice: number;

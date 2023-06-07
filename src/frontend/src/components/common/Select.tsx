@@ -16,8 +16,8 @@ const Select: React.FC<SelectProps> = (props) => {
             className={`${props.className} form-select rounded-md border border-inherit dark:border-gray-800 dark:bg-slate-900 dark:text-slate-200 px-4 py-2 w-full`}
             onChange={(e) => props.onChange(e.target.value)}
         >
-            {props.options.map((option) => (
-                <option key={option.value} value={option.value}>
+            {props.options.map((option, index) => (
+                <option key={index} value={option.value}>
                     {option.text}
                 </option>
             ))}

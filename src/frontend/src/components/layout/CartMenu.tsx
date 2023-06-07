@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ShoppingCart, X } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
+import { DataContext } from "../../store/DataProvider";
+import Cart from "@models/cart/Cart";
+import { getData } from "../../utils/FetchData";
+import { useEffect } from "react";
+import LineItem from "@models/cart/LineItem";
 
 const CartMenu = () => {
     const navigate = useNavigate();
+    const { state: { market, cart }, dispatch } = useContext(DataContext);
     const [showMenu, setShowMenu] = useState<boolean>(false);
 
     const toggleMenu = () => {
@@ -14,6 +20,22 @@ const CartMenu = () => {
         setShowMenu(false);
         navigate(path);
     };
+
+    const getImages = async () => {
+        const promisesArr = [] as Promise<any>[];
+        cart.shipments?.[0].lineItems.forEach((lineItem: LineItem) => {
+            promisesArr.push(getData(`api/episerver/v3.0/content/${lineItem.contentId}`));
+        })
+        if(promisesArr.length > 0){
+            Promise.all(promisesArr).then(res => {
+                console.log(res);
+            });
+        }
+    }
+
+    useEffect(() => {
+        getImages();
+    }, [cart?.shipments?.[0].lineItems])
 
     return (
         <div className="relative">

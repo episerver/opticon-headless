@@ -11,25 +11,25 @@ const CheckOut = () => {
                 <div className="lg:mt-16 mt-8 lg:grid lg:grid-cols-2 lg:gap-12">
                     <div className="flex flex-col divide-y">
                         <div className="w-full divide-gray-200 pb-10">
-                            <p className="text-xl font-bold font-medium text-gray-900 dark:text-white pb-5">Contact information</p>
-                            <label className="font-bold form-label font-medium">Email address</label>
+                            <p className="text-xl font-medium text-gray-900 dark:text-white pb-5">Contact information</p>
+                            <label className="form-label font-medium">Email address</label>
                             <input 
                                 type="text" 
                                 className="form-input mt-2"
                             />
                         </div>
                         <div className="w-full pt-8 pb-10">
-                            <p className="text-xl font-bold font-medium text-gray-900 dark:text-white">Shipping information</p>
+                            <p className="text-xl font-medium text-gray-900 dark:text-white">Shipping information</p>
                             <div className="grid grid-cols-2 gap-5 mt-5">
                                 <div>
-                                    <label className="font-bold form-label font-medium">First name</label>
+                                    <label className="form-label font-medium">First name</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
                                     />
                                 </div>
                                 <div>
-                                    <label className="font-bold form-label font-medium">Last name</label>
+                                    <label className="form-label font-medium">Last name</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
@@ -37,14 +37,14 @@ const CheckOut = () => {
                                 </div>
                             </div>
                             <div className="mt-3">
-                                <label className="font-bold form-label font-medium">Company</label>
+                                <label className="form-label font-medium">Company</label>
                                 <input 
                                     type="text" 
                                     className="form-input mt-2"
                                 />
                             </div>
                             <div className="mt-3">
-                                <label className="font-bold form-label font-medium">Address</label>
+                                <label className="form-label font-medium">Address</label>
                                 <input 
                                     type="text" 
                                     className="form-input mt-2"
@@ -52,14 +52,14 @@ const CheckOut = () => {
                             </div>
                             <div className="grid grid-cols-2 gap-5 mt-4">
                                 <div>
-                                    <label className="font-bold form-label font-medium">City</label>
+                                    <label className="form-label font-medium">City</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
                                     />
                                 </div>
                                 <div>
-                                    <label className="font-bold form-label font-medium">Country</label>
+                                    <label className="form-label font-medium">Country</label>
                                     <Select 
                                         id="country"
                                         className="mt-2"
@@ -70,7 +70,7 @@ const CheckOut = () => {
                             </div>
                             <div className="grid grid-cols-2 gap-5 mt-4">
                                 <div>
-                                    <label className="font-bold form-label font-medium">State / Province</label>
+                                    <label className="form-label font-medium">State / Province</label>
                                     <Select 
                                         id="province"
                                         className="mt-2"
@@ -79,7 +79,7 @@ const CheckOut = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="font-bold form-label font-medium">Postal code</label>
+                                    <label className="form-label font-medium">Postal code</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
@@ -88,7 +88,7 @@ const CheckOut = () => {
                             </div>
                         </div>
                         <div className="w-full pt-8 pb-10">
-                            <p className="text-xl font-bold font-medium text-gray-900 dark:text-white">Delivery method</p>
+                            <p className="text-xl font-medium text-gray-900 dark:text-white">Delivery method</p>
                             <div className="grid grid-cols-2 gap-5 mt-3">
                                 <div className="group/regular rounded-lg border hover:border-2 hover:border-indigo-600 cursor-pointer p-3">
                                     <div className="flex justify-between">
@@ -109,7 +109,7 @@ const CheckOut = () => {
                             </div>
                         </div>
                         <div className="w-full divide-gray-200 mt-1 pt-8">
-                            <p className="text-xl font-bold font-medium text-gray-900 dark:text-white pb-5">Payment</p>
+                            <p className="text-xl font-medium text-gray-900 dark:text-white pb-5">Payment</p>
                             <div className="grid grid-cols-2">
                                 <Radio 
                                     id="creditCard" 
@@ -139,7 +139,7 @@ const CheckOut = () => {
                                 />
                             </div>
                             <div className="mt-3">
-                                <label className="font-bold form-label font-medium">Name on card</label>
+                                <label className="form-label font-medium">Name on card</label>
                                 <input 
                                     type="text" 
                                     className="form-input mt-2"
@@ -147,14 +147,14 @@ const CheckOut = () => {
                             </div>
                             <div className="grid grid-cols-2 gap-5 mt-5">
                                 <div>
-                                    <label className="font-bold form-label font-medium">Card number</label>
+                                    <label className="form-label font-medium">Card number</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
                                     />
                                 </div> 
                                 <div>
-                                    <label className="font-bold form-label font-medium">Security code</label>
+                                    <label className="form-label font-medium">Security code</label>
                                     <input 
                                         type="text" 
                                         className="form-input mt-2"
@@ -163,7 +163,7 @@ const CheckOut = () => {
                             </div>
                             <div className="grid grid-cols-2 gap-5 mt-5">
                                 <div>
-                                    <label className="font-bold form-label font-medium">Expiration year</label>
+                                    <label className="form-label font-medium">Expiration year</label>
                                     <Select 
                                         id="expiredYear"
                                         className="mt-2"
@@ -176,7 +176,7 @@ const CheckOut = () => {
                                     />
                                 </div> 
                                 <div>
-                                    <label className="font-bold form-label font-medium">Expiration month</label>
+                                    <label className="form-label font-medium">Expiration month</label>
                                     <Select 
                                         id="expiredMonth"
                                         className="mt-2"
@@ -201,7 +201,7 @@ const CheckOut = () => {
                         </div>
                     </div>
                     <div className="mt-10 lg:mt-0">
-                        <p className="text-xl font-bold font-medium text-gray-900 dark:text-white pb-5">Order summary</p>
+                        <p className="text-xl font-medium text-gray-900 dark:text-white pb-5">Order summary</p>
                         <div className="shadow p-6">
                             <div className="flow-root">
                                 <ul role="list" className="-my-6 divide-y divide-gray-200">
@@ -236,7 +236,7 @@ const CheckOut = () => {
                             </div>
                             <div className="border-t border-gray-200 py-6 mt-10">
                                 <div className="text-base font-medium text-gray-900 dark:text-white">
-                                    <label className="font-bold form-label font-medium">Discount code</label>
+                                    <label className="form-label font-medium">Discount code</label>
                                     <div className="grid grid-cols-4 gap-5 mt-2">
                                         <input 
                                             type="text" 

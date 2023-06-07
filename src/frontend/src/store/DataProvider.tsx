@@ -5,8 +5,9 @@ import reducers from "./Reducers";
 import qs from 'qs';
 import Config from "../config.json";
 import { ACTIONS } from './Action';
-import { getData } from '../utils/FetchData';
+import { getData, putData } from '../utils/FetchData';
 import Cart from '@models/cart/Cart';
+import _ from 'lodash';
 
 export const DataContext = createContext({} as any);
 
@@ -37,11 +38,30 @@ const DataProvider = (props: any) => {
     const getCart = async () => {
         if(market.marketId){
             const res = await getData(`api/episerver/v3.0/me/carts/Default/${market.marketId}/true`);
-            const cart = res.data as Cart;
-            dispatch({ 
-                type: ACTIONS.UPDATE_CART,
-                payload: cart
-            })
+            const {lastUpdated, ...rest} = res.data;
+            if(!_.isEqual(cart, rest)){
+                const cart = rest as Cart;
+                dispatch({ 
+                    type: ACTIONS.UPDATE_CART,
+                    payload: cart
+                })
+            }
+        }
+    }
+
+    const updateCart = async () => {
+        const res = await putData(`api/episerver/v3.0/me/carts`, cart as Cart);
+        if(res.status === 200){
+            const {lastUpdated, ...rest} = res.data;
+            if(!_.isEqual(cart, rest)){
+                const cart = rest as Cart;
+                dispatch({ 
+                    type: ACTIONS.UPDATE_CART,
+                    payload: cart
+                })
+            }
+        }else{
+            dispatch({ type: 'NOTIFY', payload: {error: 'Fail to update cart.'} });
         }
     }
 
@@ -56,7 +76,7 @@ const DataProvider = (props: any) => {
         })
     }
 
-    const persistentMarket = () => {
+    const persistMarket = () => {
         if(market.marketId){
             localStorage.setItem("marketId", market.marketId);
         }
@@ -74,12 +94,18 @@ const DataProvider = (props: any) => {
     }, [])
 
     useEffect(() => {
-        persistentMarket();
+        persistMarket();
     }, [market])
 
     useEffect(() => {
         getCart();
     }, [market.marketId])
+
+    useEffect(() => {
+        if(!_.isEmpty(cart)){
+            updateCart();
+        }
+    }, [JSON.stringify(cart)])
 
     return(
         <DataContext.Provider value={{state, dispatch}}>

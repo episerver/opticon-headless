@@ -5,34 +5,15 @@ import {DisplayMarket, Market} from "@models/Market";
 import { Currencies } from "../../constants/Currencies";
 import { Languages } from "../../constants/Languages";
 import { getData } from "../../utils/FetchData";
-import { ACTIONS } from "../../store/Action";
+import { ACTIONS, addToCart } from "../../store/Action";
 import { DataContext } from "../../store/DataProvider";
+import _ from 'lodash';
+import useMenu from "../../hooks/UseMenu";
 
 const MarketMenu = () => {
-    const { state: { market }, dispatch } = useContext(DataContext)
+    const { state: { market }, dispatch } = useContext(DataContext);
     const [markets, setMarkets] = useState<DisplayMarket[]>([]);
-    const ref = useRef<any>(null);
-    
-    const handleClickOutSide = (event: any) => {
-        const { target } = event;
-        if (ref.current && !ref.current.contains(target)) {
-            const el = document.getElementById("market-menu");
-            if(el && !el.className.includes("hidden")){
-                el.classList.add("hidden");
-            }
-        }
-    }
-
-    const toggleMenu = () => {
-        const el = document.getElementById("market-menu");
-        if(el){
-            if(el.className.includes("hidden")){
-                el.classList.remove("hidden");
-            }else{
-                el.classList.add("hidden");
-            }
-        }
-    }
+    const {menuId, menuAreaRef, toggleMenu} = useMenu("market-menu");
 
     const loadMarkets= async () => {
         const res = await getData("api/episerver/v3.0/markets");
@@ -141,16 +122,11 @@ const MarketMenu = () => {
     }
 
     useEffect(() => {
-        document.addEventListener('click', handleClickOutSide)
-        return () => document.removeEventListener('click', handleClickOutSide)
-    }, [])
-
-    useEffect(() => {
         loadMarkets();
     }, [])
 
     return (
-        <div ref={ref}>
+        <div ref={menuAreaRef}>
             <button 
                 className="btn btn-icon rounded-full bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white"
                 onClick={toggleMenu}
@@ -158,7 +134,7 @@ const MarketMenu = () => {
                 <Globe className="h-4 w-4"/>
             </button>
             <div 
-                id="market-menu" 
+                id={menuId}
                 className="opacity-0 hidden dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"
                 onClick={toggleMenu}
             >
