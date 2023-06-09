@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Optimizely.Server
+namespace Optimizely.Server.Controllers
 {
     [Authorize(Policy = "ContentManagementAuthorizationPolicy")]
     public class SitesController : ControllerBase
@@ -21,7 +21,7 @@ namespace Optimizely.Server
 
         public SitesController(ISiteDefinitionRepository siteDefinitionRepository,
             IPermanentLinkMapper permanentLinkMapper,
-            IContentRepository contentRepository, 
+            IContentRepository contentRepository,
             IContentTypeRepository contentTypeRepository)
         {
             _siteDefinitionRepository = siteDefinitionRepository;
