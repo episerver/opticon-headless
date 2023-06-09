@@ -18,6 +18,11 @@ const reducers = (state: GlobalState, action: any) => {
                 ...state,
                 cart: action.payload
             };
+        case ACTIONS.UPDATE_CART_VALIDATION:
+            return {
+                ...state,
+                cartValidation: action.payload
+            };
         default:
             return state;
     }

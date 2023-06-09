@@ -7,9 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Config from "../../../config.json";
 import UserMenu from "@components/layout/UserMenu";
 import CartMenu from "./../CartMenu";
-import "./Navbar.scss";
 import AuthService from "../../../AuthService";
 import MarketMenu from "../MarketMenu";
+import "./Navbar.scss";
 
 const Navbar = () => {
     const navigate = useNavigate();

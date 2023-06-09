@@ -3,7 +3,6 @@ import LineItem from "@models/cart/LineItem";
 
 export const convertToLineItem = (product: Product): LineItem => {
    const lineItem = {
-    id: "",
     contentId: product.contentLink.guidValue,
     code: product.code,
     placedPrice: product.price,

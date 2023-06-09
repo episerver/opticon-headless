@@ -1,11 +1,11 @@
 import AvailableShippingMethod from "./AvailableShippingMethod";
 import Cart from "./Cart";
-import Total from "./Total";
+import Totals from "./Totals";
 import ValidationIssue from "./ValidationIssue";
 
 export default interface CartValidation {
     cart: Cart;
-    total: Total;
+    totals: Totals;
     availableShippingMethods: AvailableShippingMethod;
     validationIssues: ValidationIssue[];
 }

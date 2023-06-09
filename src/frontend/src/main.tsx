@@ -17,7 +17,6 @@ import RequireAuth from "@components/auth/RequireAuth";
 import App from "./App";
 import DataProvider from "./store/DataProvider";
 import Notify from "@components/Notify";
-import Modal from "@components/common/Modal";
 import "./main.css";
 
 const router = createBrowserRouter(
@@ -34,7 +33,7 @@ const router = createBrowserRouter(
                 <Route path="/cart-detail" element={<CartDetail />} />
                 <Route path="/checkout" element={<CheckOut />} />
                 <Route path="/order-history" element={<OrderHistory />} />
-                <Route path="/order-summaries" element={<OrderSummaries />} />
+                <Route path="/order-summaries/:orderNumber" element={<OrderSummaries />} />
                 <Route path="/access-denied" element={<AccessDenied />} />
                 <Route path="/*" loader={PageDataLoader} element={<PageComponentSelector />} />
             </Route>

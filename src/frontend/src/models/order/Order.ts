@@ -1,6 +1,6 @@
 import Payment from "@models/cart/Payment";
 import Shipment from "@models/cart/Shipment";
-import Total from "../cart/Total";
+import Total from "../cart/Totals";
 
 export default interface Order {
     name: string;
