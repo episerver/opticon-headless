@@ -1,6 +1,6 @@
 import ShippingTotal from "./ShippingTotal";
 
-export default interface Total {
+export default interface Totals {
     total: number;
     subTotal: number;
     shippingTotal: number;

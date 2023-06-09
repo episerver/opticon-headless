@@ -44,7 +44,7 @@ async function getContentInfo(contentGuid) {
             method: "get",
             baseURL: baseUrl,
             headers: {
-                Authorization: "Bearer: " + token,
+                Authorization: "Bearer " + token,
                 "Content-Type": "application/json",
             },
         })

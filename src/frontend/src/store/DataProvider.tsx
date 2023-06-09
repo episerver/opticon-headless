@@ -5,14 +5,15 @@ import reducers from "./Reducers";
 import qs from 'qs';
 import Config from "../config.json";
 import { ACTIONS } from './Action';
-import { getData } from '../utils/FetchData';
+import { getData, postData, putData } from '../utils/FetchData';
 import Cart from '@models/cart/Cart';
+import _ from 'lodash';
+import CartValidation from '@models/cart/CartValidation';
 
 export const DataContext = createContext({} as any);
 
 const DataProvider = (props: any) => {
-    const initialState = {notify: {}, cart: {}, market: {}} as GlobalState;
-
+    const initialState = {notify: {}, cart: {}, cartValidation: {}, market: {}} as GlobalState;
     const [state, dispatch] = useReducer(reducers, initialState);
     const { cart, market } = state;
 
@@ -37,10 +38,41 @@ const DataProvider = (props: any) => {
     const getCart = async () => {
         if(market.marketId){
             const res = await getData(`api/episerver/v3.0/me/carts/Default/${market.marketId}/true`);
-            const cart = res.data as Cart;
+            const {lastUpdated, ...rest} = res.data;
+            if(!_.isEqual(cart, rest)){
+                const cart = rest as Cart;
+                dispatch({ 
+                    type: ACTIONS.UPDATE_CART,
+                    payload: cart
+                })
+            }
+        }
+    }
+
+    const updateCart = async () => {
+        const res = await putData(`api/episerver/v3.0/me/carts`, cart as Cart);
+        if(res.status === 200){
+            const {lastUpdated, ...rest} = res.data;
+            validateCart();
+            if(!_.isEqual(cart, rest)){
+                const cart = rest as Cart;
+                dispatch({ 
+                    type: ACTIONS.UPDATE_CART,
+                    payload: cart
+                })
+            }
+        }else{
+            dispatch({ type: 'NOTIFY', payload: {error: 'Fail to update cart.'} });
+        }
+    }
+
+    const validateCart = async () => {
+        const res = await postData(`api/episerver/v3.0/me/carts/Default/${market.marketId}/preparecheckout`, null);
+        if(res.status === 200){
+            const validation = res.data as CartValidation;
             dispatch({ 
-                type: ACTIONS.UPDATE_CART,
-                payload: cart
+                type: ACTIONS.UPDATE_CART_VALIDATION,
+                payload: validation
             })
         }
     }
@@ -56,7 +88,7 @@ const DataProvider = (props: any) => {
         })
     }
 
-    const persistentMarket = () => {
+    const persistMarket = () => {
         if(market.marketId){
             localStorage.setItem("marketId", market.marketId);
         }
@@ -74,12 +106,18 @@ const DataProvider = (props: any) => {
     }, [])
 
     useEffect(() => {
-        persistentMarket();
+        persistMarket();
     }, [market])
 
     useEffect(() => {
         getCart();
     }, [market.marketId])
+
+    useEffect(() => {
+        if(!_.isEmpty(cart)){
+            updateCart();
+        }
+    }, [JSON.stringify(cart)])
 
     return(
         <DataContext.Provider value={{state, dispatch}}>
