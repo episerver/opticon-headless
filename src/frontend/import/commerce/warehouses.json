@@ -1,0 +1,105 @@
+[
+    {
+        "Code": "Amsterdam",
+        "Name": "Amsterdam",
+        "IsActive": true,
+        "IsPrimary": false,
+        "IsFulfillmentCenter": false,
+        "IsPickupLocation": true,
+        "IsDeliveryLocation": true,
+        "ContactInformation": {
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Line1": "Stadhouderskade 78",
+            "City": "Amsterdamty",
+            "CountryCode": "NLD",
+            "CountryName": "Netherlands",
+            "PostalCode": "1072",
+            "RegionCode": "AE",
+            "RegionName": "AE",
+            "Email": "sales@company.com"
+        }
+    },
+    {
+        "Code": "Barcelona",
+        "Name": "Barcelona",
+        "IsActive": true,
+        "IsPrimary": false,
+        "IsFulfillmentCenter": false,
+        "IsPickupLocation": true,
+        "IsDeliveryLocation": true,
+        "ContactInformation": {
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Line1": "Carrer de Sant Quintí, 89,",
+            "City": "Barcelona",
+            "CountryCode": "ESP",
+            "CountryName": "Spain",
+            "PostalCode": "08041",
+            "RegionCode": "AE",
+            "RegionName": "AE",
+            "Email": "sales@company.com"
+        }
+    },
+    {
+        "Code": "Berlin",
+        "Name": "Berlin",
+        "IsActive": true,
+        "IsPrimary": false,
+        "IsFulfillmentCenter": false,
+        "IsPickupLocation": true,
+        "IsDeliveryLocation": true,
+        "ContactInformation": {
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Line1": "Bodestraße 1-3",
+            "City": "Berlin",
+            "CountryCode": "DEU",
+            "CountryName": "Germany",
+            "PostalCode": "10178",
+            "Email": "sales@company.com"
+        }
+    },
+    {
+        "Code": "Manchester",
+        "Name": "Manchester",
+        "IsActive": true,
+        "IsPrimary": false,
+        "IsFulfillmentCenter": false,
+        "IsPickupLocation": true,
+        "IsDeliveryLocation": true,
+        "ContactInformation": {
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Line1": "Sir Matt Busby Way",
+            "City": "Manchester",
+            "CountryCode": "GBR",
+            "CountryName": "United Kingdom",
+            "PostalCode": "M16 0RA",
+            "RegionCode": "Stretford",
+            "RegionName": "Stretford",
+            "Email": "sales@company.com"
+        }
+    },
+    {
+        "Code": "New York",
+        "Name": "New York",
+        "IsActive": true,
+        "IsPrimary": false,
+        "IsFulfillmentCenter": false,
+        "IsPickupLocation": true,
+        "IsDeliveryLocation": true,
+        "ContactInformation": {
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Line1": "155 Varick St",
+            "City": "New York",
+            "CountryCode": "USA",
+            "CountryName": "United States",
+            "PostalCode": "10013",
+            "RegionCode": "NY",
+            "RegionName": "New York",
+            "Email": "sales@company.com"
+        }
+    }
+]

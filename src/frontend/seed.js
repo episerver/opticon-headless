@@ -44,7 +44,7 @@ async function getContentInfo(contentGuid) {
             method: "get",
             baseURL: baseUrl,
             headers: {
-                Authorization: "Bearer: " + token,
+                Authorization: "Bearer " + token,
                 "Content-Type": "application/json",
             },
         })
@@ -404,17 +404,6 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
-         * Generates tags.
-         */
-        {
-            console.log("=== Generating tags. ===");
-            let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
-            for (let i = 0; i < tags.length; i++) {
-                await publishContent(tags[i]);
-            }
-        }
-
-        /**
          * Generates blogs.
          */
         {
@@ -565,7 +554,7 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
-         * Adds a hero block to the destination list page
+         * Adds a hero block to the destination list page.
          */
         {
             console.log("=== Adding a hero block to the destination list page. ===");
@@ -579,14 +568,29 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
         }
 
         /**
-         * Generates tag pages.
+         * Generates warehouses.
          */
         {
-            console.log("=== Generating tag pages. ===");
-            let tags = JSON.parse(fs.readFileSync("./import/pages/tags.json", "utf8"));
-            for (let i = 0; i < tags.length; i++) {
-                await publishContent(tags[i]);
-            }
+            console.log("=== Generating warehouses. ===");
+            let warehouseData = fs.readFileSync("./import/commerce/warehouses.json", "utf8");
+
+            await axios
+                .request({
+                    url: "/api/episerver/v3.0/warehouse/createwarehouses",
+                    method: "post",
+                    baseURL: baseUrl,
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: "Bearer " + token,
+                    },
+                    data: warehouseData,
+                })
+                .then((result) => {
+                    console.log(result.data);
+                })
+                .catch((err) => {
+                    console.error("Error Publishing content: ", err.response);
+                });
         }
     } catch (error) {
         console.error(error);
