@@ -39,6 +39,12 @@ const UserMenu: FC<UserMenuProps> = (props) => {
                         </Link>
                     </div>
                     <div className="hover:bg-slate-50 py-1">
+                        <Link to="/order-history" className="flex items-center pl-2">
+                            <Unicons.UilHistoryAlt className="h-5 w-5 text-gray-800"/>
+                            <p className="text-gray-700 flex justify-between w-full px-2 py-2 text-sm leading-5 text-left" role="menuitem">Order history</p>
+                        </Link>
+                    </div>
+                    <div className="hover:bg-slate-50 py-1">
                         <div className="flex items-center pl-2" onClick={signOut}>
                             <Unicons.UilPower className="h-5 w-5 text-gray-800"/>
                             <p className="text-gray-700 flex justify-between w-full px-2 py-2 text-sm leading-5 text-left" role="menuitem">Sign out</p>

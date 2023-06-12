@@ -15,6 +15,7 @@ export interface Modal {
 export default interface GlobalState {
     notify: Notify;
     cart: Cart;
+    lineItemImages: string[];
     cartValidation: CartValidation;
     market: MarketInfo;
     modal: Modal;

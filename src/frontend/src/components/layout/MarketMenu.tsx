@@ -30,12 +30,15 @@ const MarketMenu = () => {
             return displayMarket;
         });
         setMarkets(markets);
+        const marketId = !!market.marketId && market.marketId !== "undefined" ? market.marketId : markets[0].id;
+        const selectedMarket = markets.find(m => m.id === marketId) as DisplayMarket;
+
         dispatch({ 
             type: ACTIONS.UPDATE_MARKET,
             payload: {
-                marketId: !!market.marketId && market.marketId !== "undefined" ? market.marketId : markets[0].id,
-                currency: resetSelectedCurrency(markets[0], false),
-                language: resetSelectedLanguage(markets[0], false)
+                marketId: marketId,
+                currency: resetSelectedCurrency(selectedMarket, false),
+                language: resetSelectedLanguage(selectedMarket, false)
             }
         })
     }
@@ -101,8 +104,8 @@ const MarketMenu = () => {
             type: ACTIONS.UPDATE_MARKET,
             payload: { 
                 marketId: market.id,
-                currency: resetSelectedCurrency(markets[0], true),
-                language: resetSelectedLanguage(markets[0], true)
+                currency: resetSelectedCurrency(market, true),
+                language: resetSelectedLanguage(market, true)
             }
         })
     }
@@ -122,8 +125,10 @@ const MarketMenu = () => {
     }
 
     useEffect(() => {
-        loadMarkets();
-    }, [])
+        if(!_.isEmpty(market)){
+            loadMarkets();
+        }
+    }, [_.isEmpty(market)])
 
     return (
         <div ref={menuAreaRef}>
@@ -144,8 +149,8 @@ const MarketMenu = () => {
                         <div className="overflow-auto max-h-52 p-1 pl-2">
                             {
                                 markets.map((m) => (<div key={m.id} className="flex justify-between hover:bg-slate-50 p-1" onClick={() => onChangeMarket(m)}>
-                                    <span className={market?.id === market.id ? "font-bold text-indigo-600" : ""}>{m.name}</span>
-                                    {market?.id === market.id && <Check className="w-5 h-5 text-indigo-600"/>}
+                                    <span className={selectedMarket()?.id === m.id ? "font-bold text-indigo-600" : ""}>{m.name}</span>
+                                    {selectedMarket()?.id === m.id && <Check className="w-5 h-5 text-indigo-600"/>}
                                 </div>))
                             }
                         </div>

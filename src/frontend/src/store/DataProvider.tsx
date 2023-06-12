@@ -9,11 +9,12 @@ import { getData, postData, putData } from '../utils/FetchData';
 import Cart from '@models/cart/Cart';
 import _ from 'lodash';
 import CartValidation from '@models/cart/CartValidation';
+import LineItem from '@models/cart/LineItem';
 
 export const DataContext = createContext({} as any);
 
 const DataProvider = (props: any) => {
-    const initialState = {notify: {}, cart: {}, cartValidation: {}, market: {}} as GlobalState;
+    const initialState = {notify: {}, cart: {}, cartValidation: {}, market: {}, lineItemImages: [] as string[]} as GlobalState;
     const [state, dispatch] = useReducer(reducers, initialState);
     const { cart, market } = state;
 
@@ -61,8 +62,6 @@ const DataProvider = (props: any) => {
                     payload: cart
                 })
             }
-        }else{
-            dispatch({ type: 'NOTIFY', payload: {error: 'Fail to update cart.'} });
         }
     }
 
@@ -74,6 +73,21 @@ const DataProvider = (props: any) => {
                 type: ACTIONS.UPDATE_CART_VALIDATION,
                 payload: validation
             })
+        }
+    }
+
+    const updateLineItemImages = async () => {
+        const promisesArr = [] as Promise<any>[];
+        cart.shipments?.[0].lineItems.forEach((lineItem: LineItem) => {
+            promisesArr.push(getData(`api/episerver/v3.0/content/${lineItem.contentId}`));
+        })
+        if(promisesArr.length > 0){
+            Promise.all(promisesArr).then(res => {
+                dispatch({ 
+                    type: ACTIONS.UPDATE_LINE_ITEM_IMAGES,
+                    payload: res.map(r => r.data.assets[0] ?? "")
+                })
+            });
         }
     }
 
@@ -118,6 +132,10 @@ const DataProvider = (props: any) => {
             updateCart();
         }
     }, [JSON.stringify(cart)])
+
+    useEffect(() => {
+        updateLineItemImages();
+    }, [cart.shipments?.[0]?.lineItems.length])
 
     return(
         <DataContext.Provider value={{state, dispatch}}>

@@ -23,6 +23,11 @@ const reducers = (state: GlobalState, action: any) => {
                 ...state,
                 cartValidation: action.payload
             };
+        case ACTIONS.UPDATE_LINE_ITEM_IMAGES:
+            return {
+                ...state,
+                lineItemImages: action.payload
+            };
         default:
             return state;
     }

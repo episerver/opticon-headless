@@ -11,7 +11,7 @@ export default interface Payment {
     billingAddress: Address;
     savedBillingAddressName: string;
     customerName: string;
-    paymentId: number;
+    paymentId: string;
     systemKeyword: string;
     paymentType: string;
     providerTransactionID: string;

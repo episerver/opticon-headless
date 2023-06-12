@@ -3,6 +3,7 @@ using EPiServer.Cms.Shell;
 using EPiServer.Cms.Shell.UI;
 using EPiServer.Cms.Shell.UI.Configurations;
 using EPiServer.Cms.UI.AspNetIdentity;
+using EPiServer.Commerce.Bolt;
 using EPiServer.ContentApi.Cms;
 using EPiServer.ContentApi.Cms.Internal;
 using EPiServer.ContentApi.Commerce;
@@ -59,6 +60,12 @@ namespace Optimizely.Server
             });
             services.AddCommerce()
             .AddCmsAspNetIdentity<ApplicationUser>();
+
+            services.Configure<BoltOptions>(x =>
+            {
+                x.EnvironmentType = EnvironmentType.Sandbox;
+                x.AutoCapture = true;
+            });
 
             services.AddFind();
             services.AddAdvancedReviews();

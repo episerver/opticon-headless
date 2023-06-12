@@ -32,7 +32,7 @@ const SignUp = () => {
         setLoading(true);
         try{
             const {confirmPassword, ...data} = form;
-            const res = await postData("/api/episerver/v3.0/me/signup", data);
+            const res = await postData("api/episerver/v3.0/me/signup", data);
             if(res.status === 201){
                 AuthService.signIn();
             }

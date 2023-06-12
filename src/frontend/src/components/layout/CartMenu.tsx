@@ -11,7 +11,7 @@ import Modal from "@components/common/Modal";
 
 const CartMenu = () => {
     const navigate = useNavigate();
-    const { state: { cart, market, cartValidation }, dispatch } = useContext(DataContext);
+    const { state: { cart, market, cartValidation, lineItemImages }, dispatch } = useContext(DataContext);
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState<LineItem>();
@@ -24,22 +24,6 @@ const CartMenu = () => {
         setShowMenu(false);
         navigate(path);
     };
-
-    const getImages = async () => {
-        const promisesArr = [] as Promise<any>[];
-        cart.shipments?.[0].lineItems.forEach((lineItem: LineItem) => {
-            promisesArr.push(getData(`api/episerver/v3.0/content/${lineItem.contentId}`));
-        })
-        if(promisesArr.length > 0){
-            Promise.all(promisesArr).then(res => {
-                console.log(res);
-            });
-        }
-    }
-
-    useEffect(() => {
-        // getImages();
-    }, [cart.shipments?.[0].lineItems])
 
     return (
         <>
@@ -83,14 +67,14 @@ const CartMenu = () => {
                                             <div className="mt-8">
                                                 <div className="flow-root">
                                                     <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                                        {cart.shipments?.[0].lineItems.map((lineItem: LineItem) => (
+                                                        {cart.shipments?.[0].lineItems.map((lineItem: LineItem, index: number) => (
                                                             <li key={lineItem.contentId} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                                    <img
-                                                                        src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+                                                                    {lineItemImages[index] && <img
+                                                                        src={lineItemImages[index]}
                                                                         alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
                                                                         className="h-full w-full object-cover object-center"
-                                                                    />
+                                                                    />}
                                                                 </div>
                                                                 <div className="ml-4 flex flex-1 flex-col">
                                                                     <div>

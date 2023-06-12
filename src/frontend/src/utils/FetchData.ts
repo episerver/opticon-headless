@@ -49,9 +49,7 @@ export const deleteData = async (url: string, header?: any) => {
         method: 'DELETE',
         headers: await getHeaders(header)
     })
-
-    const data = await res.json();
-    return {status: res.status, data};
+    return {status: 204};
 }
 
 const getHeaders = async (header: any) => {
@@ -59,9 +57,11 @@ const getHeaders = async (header: any) => {
     if(!accessToken){
         accessToken = localStorage.getItem("anonymous_access_token");
     }
+    const acceptLanguage = localStorage.getItem("language") ?? "*";
     const defaultHeader = {
         "Content-Type": "application/json",
-        'Authorization': `Bearer ${accessToken}`
+        "Accept-Language": acceptLanguage,
+        "Authorization": `Bearer ${accessToken}`
     }
    return !!header ? header : defaultHeader;
 }

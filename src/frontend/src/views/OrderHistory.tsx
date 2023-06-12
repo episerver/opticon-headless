@@ -65,7 +65,7 @@ const OrderHistory = () => {
                 {isEmpty && <>
                    <div className="flex flex-col">
                        <p className="mx-auto font-bold text-medium text-2xl dark:text-white">You have no order</p>
-                       <button className="mx-auto justify-center rounded-md border border-transparent bg-indigo-600 mt-5 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Search for travel</button>
+                       <button className="mx-auto justify-center rounded-md border border-transparent bg-indigo-600 mt-5 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Search for food</button>
                    </div>
                 </>}
              </div>

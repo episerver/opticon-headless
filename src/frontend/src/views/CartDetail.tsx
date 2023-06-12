@@ -6,13 +6,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from "../store/DataProvider";
 import { Currencies } from "../constants/Currencies";
 import Modal from "@components/common/Modal";
-import { deleteItem, updateQuantity } from "../store/Action";
+import { ACTIONS, deleteItem, updateQuantity } from "../store/Action";
 import _ from 'lodash';
 import Shipment from "@models/cart/Shipment";
+import { isEmptyCart } from "../utils/Cart";
+import { deleteData, getData } from "../utils/FetchData";
+import Cart from "@models/cart/Cart";
 
 const CartDetail = () => {
     const navigate = useNavigate();
-    const { state: { cart, market, cartValidation }, dispatch } = useContext(DataContext);
+    const { state: { cart, market, cartValidation, lineItemImages }, dispatch } = useContext(DataContext);
     const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
     const [selectedLineItem, setSelectedLineItem] = useState<LineItem>();
 
@@ -36,7 +39,7 @@ const CartDetail = () => {
 
     const values = watch();
 
-    const onChangeInput = (contentId: string, e: any, onchange: Function) => {
+    const onChangeQuantity = (contentId: string, e: any, onchange: Function) => {
         onchange(e);
         const quantity = !!e.target.value ? parseFloat(e.target.value) : 0;
         if(quantity > 0){
@@ -44,8 +47,22 @@ const CartDetail = () => {
         }
     }
 
-    const isCartEmpty = () => {
-        return !(!cart.shipments || cart.shipments && cart.shipments[0].lineItems.length > 0);
+    const clearCart = async () => {
+        const res = await deleteData(`api/episerver/v3.0/me/carts/Default/${market.marketId}`);
+        if(res.status === 204){
+            const res = await getData(`api/episerver/v3.0/me/carts/Default/${market.marketId}/true`);
+            const {lastUpdated, ...rest} = res.data;
+            if(!_.isEqual(cart, rest)){
+                const cart = rest as Cart;
+                dispatch({ 
+                    type: ACTIONS.UPDATE_CART,
+                    payload: cart
+                })
+            }
+            dispatch({ type: 'NOTIFY', payload: {success: 'Your cart have been cleared.'} });
+        }else{
+            dispatch({ type: 'NOTIFY', payload: {error: 'Fail to clear cart.'} });
+        }
     }
 
     useEffect(() => {
@@ -58,14 +75,22 @@ const CartDetail = () => {
         <>
             <div className="pb-16 pt-20 min-h-[40rem]">
                 <div className="container lg:mt-16 mt-8">
-                    {!isCartEmpty() && <>
-                        <p className="lg:w-2/3 text-2xl font-medium text-gray-900 dark:text-white border-b-[1px] border-gray-200 pb-5">Cart</p>
+                    {!isEmptyCart(cart) && <>
+                        <div className="lg:w-2/3 flex justify-items-end border-b-[1px] border-gray-200">
+                            <p className="flex-1 w-2/3 text-2xl font-medium text-gray-900 dark:text-white pb-5">Cart</p>
+                            <button 
+                                className="flex-none gap-1 rounded-md px-3 mb-2 text-sm font-medium text-indigo-600 border-[1px] border-indigo-600 hover:text-indigo hover:border-indigo"
+                                onClick={clearCart}
+                            >
+                                Clear cart
+                            </button>
+                        </div>
                         <div className="lg:grid lg:grid-cols-3 lg:gap-12">
                             <ul className="lg:col-span-2 divide-y divide-gray-200">
                                 {fields.map((lineItem: LineItem, index: number) => (
                                     <li key={lineItem.contentId} className="flex py-8">
                                         <div className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-slate-100">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center"/>
+                                            {lineItemImages[index] && <img src={lineItemImages[index]} alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center"/>}
                                         </div>
                                         <div className="ml-4 flex flex-1 flex-col relative">
                                             <div className="grid grid-cols-6 text-base font-medium text-gray-900 dark:text-white ">
@@ -92,7 +117,7 @@ const CartDetail = () => {
                                                                 type="number"
                                                                 className="col-span-1 form-input"
                                                                 defaultValue={value ?? ""}
-                                                                onChange={(e) => onChangeInput(lineItem.contentId, e, onChange) }
+                                                                onChange={(e) => onChangeQuantity(lineItem.contentId, e, onChange) }
                                                             />
                                                         )}
                                                     />
@@ -142,12 +167,13 @@ const CartDetail = () => {
                             </div>
                         </div>
                     </>}
-                    {isCartEmpty() && <>
-                    <div className="flex flex-col">
-                        <p className="mx-auto font-bold text-medium text-2xl dark:text-white">Your cart is empty</p>
-                        <button className="mx-auto justify-center rounded-md border border-transparent bg-indigo-600 mt-5 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Search for travel</button>
-                    </div>
-                    </>}
+                    {
+                        isEmptyCart(cart) &&
+                        <div className="flex flex-col">
+                            <p className="mx-auto font-bold text-medium text-2xl dark:text-white">Your cart is empty</p>
+                            <button className="mx-auto justify-center rounded-md border border-transparent bg-indigo-600 mt-5 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Search for food</button>
+                        </div>
+                    }
                 </div>
             </div>
             <Modal 

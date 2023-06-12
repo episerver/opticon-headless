@@ -1,4 +1,5 @@
 import Product from "@models/Product";
+import Cart from "@models/cart/Cart";
 import LineItem from "@models/cart/LineItem";
 
 export const convertToLineItem = (product: Product): LineItem => {
@@ -11,4 +12,8 @@ export const convertToLineItem = (product: Product): LineItem => {
     isGift: false
    }
    return lineItem;
+}
+
+export const isEmptyCart = (cart: Cart) => {
+   return !(!cart.shipments || cart.shipments && cart.shipments[0].lineItems.length > 0);
 }
