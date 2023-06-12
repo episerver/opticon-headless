@@ -1,0 +1,56 @@
+[
+    {
+        "marketId": "AUS",
+        "marketName": "Australia",
+        "marketDescription": "Australia",
+        "isEnabled": true,
+        "defaultLanguage": "en",
+        "languages": [{ "key": "en", "value": "en" }],
+        "defaultCurrency": "AUD",
+        "currencies": [{ "key": "AUD", "value": "AUD" }],
+        "countries": ["AUS"],
+        "pricesIncludeTax": false
+    },
+    {
+        "marketId": "CAN",
+        "marketName": "Canada",
+        "marketDescription": "Canada",
+        "isEnabled": true,
+        "defaultLanguage": "en",
+        "languages": [{ "key": "en", "value": "en" }],
+        "defaultCurrency": "CAD",
+        "currencies": [{ "key": "CAD", "value": "CAD" }],
+        "countries": ["CAN"],
+        "pricesIncludeTax": false
+    },
+    {
+        "marketId": "SWE",
+        "marketName": "Sweden",
+        "marketDescription": "Sweden",
+        "isEnabled": true,
+        "defaultLanguage": "sv",
+        "languages": [
+            { "key": "sv", "value": "sv" },
+            { "key": "en", "value": "en" }
+        ],
+        "defaultCurrency": "SEK",
+        "currencies": [
+            { "key": "SEK", "value": "SEK" },
+            { "key": "USD", "value": "USD" }
+        ],
+        "countries": ["SWE"],
+        "pricesIncludeTax": false
+    },
+    {
+        "marketId": "US",
+        "marketName": "USA",
+        "marketDescription": "USA",
+        "isEnabled": true,
+        "defaultLanguage": "en",
+        "languages": [{ "key": "en", "value": "en" }],
+        "defaultCurrency": "USD",
+        "currencies": [{ "key": "USD", "value": "USD" }],
+        "countries": ["USA"],
+        "pricesIncludeTax": false
+    }
+]

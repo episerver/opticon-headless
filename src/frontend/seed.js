@@ -572,25 +572,61 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
          */
         {
             console.log("=== Generating warehouses. ===");
-            let warehouseData = fs.readFileSync("./import/commerce/warehouses.json", "utf8");
+            let warehouses = JSON.parse(fs.readFileSync("./import/commerce/warehouses.json", "utf8"));
 
-            await axios
-                .request({
-                    url: "/api/episerver/v3.0/warehouse/createwarehouses",
-                    method: "post",
-                    baseURL: baseUrl,
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "Bearer " + token,
-                    },
-                    data: warehouseData,
-                })
-                .then((result) => {
-                    console.log(result.data);
-                })
-                .catch((err) => {
-                    console.error("Error Publishing content: ", err.response);
-                });
+            for (let i = 0; i < warehouses.length; i++) {
+                const warehouse = warehouses[i];
+                await axios
+                    .request({
+                        url: "/api/episerver/v3.0/warehouses",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                        data: warehouse,
+                    })
+                    .then((result) => {
+                        if (result.status === 200) {
+                            console.log(result.data);
+                        }
+                    })
+                    .catch((err) => {
+                        console.error("Error Publishing content: ", err.response);
+                    });
+            }
+        }
+
+        /**
+         * Generates markets.
+         */
+        {
+            console.log("=== Generating markets. ===");
+            let markets = JSON.parse(fs.readFileSync("./import/commerce/markets.json", "utf8"));
+
+            for (let i = 0; i < markets.length; i++) {
+                const market = markets[i];
+                await axios
+                    .request({
+                        url: "/api/episerver/v3.0/markets",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                        data: market,
+                    })
+                    .then((result) => {
+                        if (result.status === 200) {
+                            console.log(result.data);
+                        }
+                    })
+                    .catch((err) => {
+                        console.error("Error Publishing content: ", err.response);
+                    });
+            }
         }
     } catch (error) {
         console.error(error);
