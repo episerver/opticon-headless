@@ -1,0 +1,12 @@
+[
+    {
+        "guid": "bf655a13-a644-45fb-ab64-21a5caa8dc6c",
+        "catalogName": "Food",
+        "catalogLanguages": ["en", "sv"],
+        "defaultLanguage": "en",
+        "defaultCurrency": "USD",
+        "weightBase": "kgs",
+        "lengthBase": "cm",
+        "owner": "Optimizely"
+    }
+]
