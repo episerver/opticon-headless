@@ -628,6 +628,99 @@ async function publishMediaContent(content, form, updateMediaContentFor = Update
                     });
             }
         }
+
+        /**
+         * Generates catalogs.
+         */
+        {
+            console.log("=== Generating catalogs. ===");
+            let catalogs = JSON.parse(fs.readFileSync("./import/commerce/catalogs.json", "utf8"));
+
+            for (let i = 0; i < catalogs.length; i++) {
+                const catalog = catalogs[i];
+                await axios
+                    .request({
+                        url: "/api/episerver/v3.0/catalogs",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                        data: catalog,
+                    })
+                    .then((result) => {
+                        if (result.status === 200) {
+                            console.log(result.data);
+                        }
+                    })
+                    .catch((err) => {
+                        console.error("Error Publishing content: ", err.response);
+                    });
+            }
+        }
+
+        /**
+         * Generates categories.
+         */
+        {
+            console.log("=== Generating categories. ===");
+            let categories = JSON.parse(fs.readFileSync("./import/commerce/categories.json", "utf8"));
+
+            for (let i = 0; i < categories.length; i++) {
+                const category = categories[i];
+                await axios
+                    .request({
+                        url: "/api/episerver/v3.0/categories",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                        data: category,
+                    })
+                    .then((result) => {
+                        if (result.status === 200) {
+                            console.log(result.data);
+                        }
+                    })
+                    .catch((err) => {
+                        console.error("Error Publishing content: ", err.response);
+                    });
+            }
+        }
+
+        /**
+         * Generates products.
+         */
+        {
+            console.log("=== Generating products. ===");
+            let products = JSON.parse(fs.readFileSync("./import/commerce/products.json", "utf8"));
+
+            for (let i = 0; i < products.length; i++) {
+                const product = products[i];
+                await axios
+                    .request({
+                        url: "/api/episerver/v3.0/products",
+                        method: "post",
+                        baseURL: baseUrl,
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + token,
+                        },
+                        data: product,
+                    })
+                    .then((result) => {
+                        if (result.status === 200) {
+                            console.log(result.data);
+                        }
+                    })
+                    .catch((err) => {
+                        console.error("Error Publishing content: ", err.response);
+                    });
+            }
+        }
     } catch (error) {
         console.error(error);
     }

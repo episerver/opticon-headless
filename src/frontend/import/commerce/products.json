@@ -1,0 +1,32 @@
+[
+    {
+        "guid": "ab14c387-c0f1-4218-90df-8ac5db5be89e",
+        "parentGuid": "42176f24-f896-4849-86fc-1f30f9fc4a43",
+        "name": "Salad",
+        "code": "salad"
+    },
+    {
+        "guid": "814c9cb6-1e64-41ef-8983-b233e8377005",
+        "parentGuid": "42176f24-f896-4849-86fc-1f30f9fc4a43",
+        "name": "Soup",
+        "code": "soup"
+    },
+    {
+        "guid": "76baaae4-db4c-4fcb-b2ef-90547715d098",
+        "parentGuid": "42176f24-f896-4849-86fc-1f30f9fc4a43",
+        "name": "Vietnamese Meal",
+        "code": "vietnamese-meal"
+    },
+    {
+        "guid": "45083364-1645-469e-8149-0e475579d97e",
+        "parentGuid": "bbd65113-c3d1-4443-b2d6-9de3ed8cabae",
+        "name": "Dessert",
+        "code": "dessert"
+    },
+    {
+        "guid": "37cdc814-1865-4991-b47e-6f8dc60a9d39",
+        "parentGuid": "bbd65113-c3d1-4443-b2d6-9de3ed8cabae",
+        "name": "Entree",
+        "code": "entree"
+    }
+]
