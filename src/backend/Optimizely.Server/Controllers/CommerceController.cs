@@ -26,7 +26,6 @@ using Mediachase.Commerce.Pricing;
 using Mediachase.Commerce;
 using Mediachase.Commerce.InventoryService;
 using EPiServer.Commerce.Catalog.Linking;
-using Mediachase.Commerce.Catalog.Dto;
 
 namespace Optimizely.Server.Controllers
 {
