@@ -16,7 +16,7 @@ This project is a sample consuming CMS and Customized Commerce headless APIs.
 - Backend: an ASP.NET server side where Optimizely CMS and Customized Commerce headless APIs installed.
 - Frontend: a React app client side to consume APIs from the backend.
 
-![Overview Diagram](https://github.com/episerver/opticon-headless/blob/update-readme/diagram.png?raw=true)
+![Overview Diagram](https://raw.githubusercontent.com/episerver/opticon-headless/main/diagram.png?raw=true)
 
 "Extra" APIs are in the Controllers Folder for demo purpose only such as seeding data.
 
